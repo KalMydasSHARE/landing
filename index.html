@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KalMydas — Trading algorithmique sur l'or, accessible à tous</title>
+  <meta name="description" content="Investissez dans des stratégies de trading algorithmique sur l'or (XAUUSD) backtestées sur 20 ans. Dès 10$. Transparent, décentralisé, sur Base L2." />
+  <meta property="og:title" content="KalMydas — L'or, algorithmiquement" />
+  <meta property="og:description" content="5 stratégies de trading sur l'or backtestées jusqu'à 21 ans. Rendements de 4% à 33% par an. Dès 10$." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kalmydas.ch" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a0f;
+      --bg-card: #12121a;
+      --bg-card-hover: #1a1a28;
+      --border: #1e1e2e;
+      --border-gold: #c9a84c33;
+      --gold: #c9a84c;
+      --gold-light: #e8d48b;
+      --gold-dark: #9a7a2e;
+      --text: #e8e8ed;
+      --text-dim: #8888a0;
+      --text-muted: #55556a;
+      --green: #22c55e;
+      --blue: #3b82f6;
+      --orange: #f97316;
+      --yellow: #eab308;
+      --red: #ef4444;
+      --purple: #8b5cf6;
+      --gradient-gold: linear-gradient(135deg, #c9a84c, #e8d48b, #c9a84c);
+      --gradient-dark: linear-gradient(180deg, #0a0a0f 0%, #10101a 100%);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(10, 10, 15, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+
+    nav.scrolled {
+      padding: 0.6rem 2rem;
+      background: rgba(10, 10, 15, 0.95);
+    }
+
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: var(--gradient-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      padding: 0.5rem 1.5rem;
+      background: var(--gradient-gold);
+      color: #0a0a0f !important;
+      border-radius: 8px;
+      font-weight: 700 !important;
+      transition: transform 0.3s, box-shadow 0.3s !important;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(201, 168, 76, 0.3);
+    }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 50% 50%, rgba(201, 168, 76, 0.06) 0%, transparent 50%);
+      animation: pulse 8s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 1; }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      border: 1px solid var(--border-gold);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      background: rgba(201, 168, 76, 0.05);
+    }
+
+    .hero-badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: blink 2s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 .gold {
+      background: var(--gradient-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-dim);
+      max-width: 650px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2rem;
+      background: var(--gradient-gold);
+      color: #0a0a0f;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(201, 168, 76, 0.3);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2rem;
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(201, 168, 76, 0.05);
+    }
+
+    /* ===== STATS BAR ===== */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stat-item {
+      padding: 2rem;
+      text-align: center;
+      background: var(--bg);
+    }
+
+    .stat-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 6rem 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      font-size: 1.1rem;
+      color: var(--text-dim);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ===== HOW IT WORKS ===== */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      position: relative;
+    }
+
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 3rem;
+      left: 15%;
+      right: 15%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.3;
+    }
+
+    .step-card {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    .step-card:hover {
+      border-color: var(--border-gold);
+      background: var(--bg-card-hover);
+      transform: translateY(-4px);
+    }
+
+    .step-number {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      color: #0a0a0f;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+
+    .step-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .step-card p {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+    }
+
+    /* ===== STRATEGIES ===== */
+    .strategies-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .strategy-card {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      transition: all 0.4s;
+      cursor: default;
+    }
+
+    .strategy-card:hover {
+      border-color: var(--border-gold);
+      background: var(--bg-card-hover);
+      transform: translateX(4px);
+    }
+
+    .strategy-icon {
+      font-size: 2.5rem;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+      background: rgba(201, 168, 76, 0.08);
+    }
+
+    .strategy-info h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .strategy-info .desc {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .strategy-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .strategy-stats {
+      text-align: right;
+      min-width: 140px;
+    }
+
+    .strategy-apy {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .strategy-meta {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      margin-top: 0.3rem;
+    }
+
+    /* ===== TOKEN ===== */
+    .token-section {
+      background: linear-gradient(180deg, var(--bg) 0%, #0d0d15 50%, var(--bg) 100%);
+    }
+
+    .token-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .token-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .token-circle {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201, 168, 76, 0.15) 0%, transparent 70%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .token-circle::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 50%;
+      border: 2px solid;
+      border-image: var(--gradient-gold) 1;
+      border-radius: 50%;
+      border: 2px solid rgba(201, 168, 76, 0.3);
+      animation: spin 20s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .token-symbol {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      background: var(--gradient-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .token-info h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .token-info p {
+      color: var(--text-dim);
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    .token-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .token-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .token-features .check {
+      color: var(--gold);
+      font-size: 1.1rem;
+    }
+
+    /* ===== SECURITY ===== */
+    .security-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .security-card {
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .security-card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-4px);
+    }
+
+    .security-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .security-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .security-card p {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+
+    /* ===== ROADMAP ===== */
+    .roadmap-timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .roadmap-timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 24px;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--gold), var(--gold-dark), var(--text-muted));
+    }
+
+    .roadmap-item {
+      position: relative;
+      padding-left: 64px;
+      margin-bottom: 3rem;
+    }
+
+    .roadmap-item:last-child { margin-bottom: 0; }
+
+    .roadmap-dot {
+      position: absolute;
+      left: 15px;
+      top: 0.25rem;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 3px solid var(--gold);
+      background: var(--bg);
+    }
+
+    .roadmap-item.active .roadmap-dot {
+      background: var(--gold);
+      box-shadow: 0 0 12px rgba(201, 168, 76, 0.4);
+    }
+
+    .roadmap-item.future .roadmap-dot {
+      border-color: var(--text-muted);
+    }
+
+    .roadmap-phase {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.3rem;
+    }
+
+    .roadmap-item.future .roadmap-phase { color: var(--text-muted); }
+
+    .roadmap-item h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .roadmap-item p {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+    }
+
+    .roadmap-item .tag-done {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      background: rgba(34, 197, 94, 0.15);
+      color: var(--green);
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 4px;
+      margin-left: 0.5rem;
+    }
+
+    .roadmap-item .tag-progress {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      background: rgba(201, 168, 76, 0.15);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 4px;
+      margin-left: 0.5rem;
+    }
+
+    /* ===== CTA ===== */
+    .cta-section {
+      padding: 8rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(201, 168, 76, 0.08) 0%, transparent 60%);
+      border-radius: 50%;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-content h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .cta-content p {
+      color: var(--text-dim);
+      font-size: 1.15rem;
+      margin-bottom: 2.5rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      background: var(--gradient-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-copy {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(10, 10, 15, 0.98);
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid var(--border);
+        gap: 1rem;
+      }
+
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .steps-grid { grid-template-columns: 1fr; }
+      .steps-grid::before { display: none; }
+      .strategy-card { grid-template-columns: auto 1fr; }
+      .strategy-stats { grid-column: span 2; text-align: left; }
+      .token-grid { grid-template-columns: 1fr; }
+      .token-visual { order: -1; }
+      .security-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .stats-bar { grid-template-columns: 1fr; }
+      .stat-item { padding: 1.2rem; }
+      .stat-value { font-size: 1.5rem; }
+      .hero-buttons { flex-direction: column; align-items: center; }
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== COMPARISON TABLE ===== */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    .comparison-table th {
+      padding: 1rem;
+      text-align: left;
+      color: var(--text-dim);
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .comparison-table td {
+      padding: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .comparison-table tr:hover td {
+      background: rgba(201, 168, 76, 0.03);
+    }
+
+    .comparison-table .highlight {
+      color: var(--gold);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">KalMydas</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#how">Comment ça marche</a></li>
+      <li><a href="#strategies">Stratégies</a></li>
+      <li><a href="#token">Token KAL</a></li>
+      <li><a href="#security">Sécurité</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
+      <li><a href="token-sale.html">Token Sale</a></li>
+      <li><a href="pitch-deck.html">Pitch Deck</a></li>
+      <li><a href="#start" class="nav-cta">Commencer</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Testnet en ligne — Base Sepolia
+      </div>
+      <h1>
+        L'or, <span class="gold">algorithmiquement</span>
+      </h1>
+      <p>
+        5 robots de trading sur l'or (XAUUSD), backtestés sur 20 ans.
+        Des rendements de 4% à 33% par an. Accessible dès 10$.
+        Transparent, décentralisé, sur Base L2.
+      </p>
+      <div class="hero-buttons">
+        <a href="#start" class="btn-primary">
+          ⚡ Lancer l'application
+        </a>
+        <a href="#strategies" class="btn-secondary">
+          📊 Voir les stratégies
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS BAR ===== -->
+  <div class="stats-bar">
+    <div class="stat-item fade-in">
+      <div class="stat-value">5</div>
+      <div class="stat-label">Stratégies de trading</div>
+    </div>
+    <div class="stat-item fade-in">
+      <div class="stat-value">20+ ans</div>
+      <div class="stat-label">De backtests</div>
+    </div>
+    <div class="stat-item fade-in">
+      <div class="stat-value">15</div>
+      <div class="stat-label">Smart contracts</div>
+    </div>
+    <div class="stat-item fade-in">
+      <div class="stat-value">177</div>
+      <div class="stat-label">Tests unitaires</div>
+    </div>
+  </div>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section id="how">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">Simple et rapide</p>
+        <h2 class="section-title">Comment ça marche ?</h2>
+        <p class="section-desc">3 étapes pour accéder au trading algorithmique professionnel sur l'or</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card fade-in">
+          <div class="step-number">1</div>
+          <h3>Connectez-vous</h3>
+          <p>Email ou wallet — créez votre compte en 30 secondes grâce à l'authentification simplifiée</p>
+        </div>
+        <div class="step-card fade-in">
+          <div class="step-number">2</div>
+          <h3>Choisissez votre stratégie</h3>
+          <p>Du prudent à l'offensif — 5 profils de risque adaptés à vos objectifs. Dès 10$</p>
+        </div>
+        <div class="step-card fade-in">
+          <div class="step-number">3</div>
+          <h3>Récoltez vos gains</h3>
+          <p>Les robots tradent pour vous 24h/24. Retirez quand vous voulez, sans blocage</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STRATEGIES ===== -->
+  <section id="strategies" style="background: linear-gradient(180deg, var(--bg) 0%, #0d0d15 50%, var(--bg) 100%);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">5 approches, 5 profils</p>
+        <h2 class="section-title">Nos stratégies de trading</h2>
+        <p class="section-desc">Chaque robot exploite l'or (XAUUSD) avec une approche unique, backtestée sur des données réelles</p>
+      </div>
+      <div class="strategies-grid">
+
+        <!-- HORIZON -->
+        <div class="strategy-card fade-in">
+          <div class="strategy-icon">🌅</div>
+          <div class="strategy-info">
+            <h3>Horizon</h3>
+            <p class="desc">Suivi de tendance sur l'or — prudent et régulier</p>
+            <div class="strategy-tags">
+              <span class="tag" style="background: rgba(34,197,94,0.15); color: #22c55e;">Prudent</span>
+              <span class="tag" style="background: rgba(255,255,255,0.05); color: var(--text-dim);">11 ans de backtest</span>
+              <span class="tag" style="background: rgba(255,255,255,0.05); color: var(--text-dim);">PF 1.31</span>
+            </div>
+          </div>
+          <div class="strategy-stats">
+            <div class="strategy-apy" style="color: #22c55e;">4%</div>
+            <div class="strategy-meta">par an • 1 098 trades</div>
+          </div>
+        </div>
+
+        <!-- VALKYRIE -->
+        <div class="strategy-card fade-in">
+          <div class="strategy-icon">⚔️</div>
+          <div class="strategy-info">
+            <h3>Valkyrie</h3>
+            <p class="desc">Breakout + pyramide sur l'or — équilibre risque/rendement</p>
+            <div class="strategy-tags">
+              <span class="tag" style="background: rgba(59,130,246,0.15); color: #3b82f6;">Équilibré</span>
+              <span class="tag" style="background: rgba(255,255,255,0.05); color: var(--text-dim);">16 ans de backtest</span>
+              <span class="tag" style="background: rgba(255,255,255,0.05); color: var(--text-dim);">PF 2.30</span>
+            </div>
+          </div>
+          <div class="strategy-stats">
+            <div class="strategy-apy" style="color: #3b82f6;">12.8%</div>
+            <div class="strategy-meta">par an • 329 trades</div>
+          </div>
+        </div>
+
+        <!-- REVOLUTION -->
+        <div class="strategy-card fade-in">
+          <div class="strategy-icon">🔥</div>
+          <div class="strategy-info">
+            <h3>Revolution</h3>
+            <p class="desc">Breakout tendanciel + triple filtre — rendements dynamiques</p>
+            <div class="strategy-tags">
+              <span class="tag" style="background: rgba(249,115,22,0.15); color: #f97316;">Dynamique</span>
+              <span class="tag" style="background: rgba(255,255,255,0.05); color: var(--text-dim);">21 ans de backtest</span>
+              <span class="tag" style="background: rgba(255,255,255,0.05); color: var(--text-dim);">PF 1.11</span>
+            </div>
+          </div>
+          <div class="strategy-stats">
+            <div class="strategy-apy" style="color: #f97316;">24.6%</div>
+            <div class="strategy-meta">par an • 2 166 trades</div>
+          </div>
+        </div>
+
+        <!-- TREASURY -->
+        <div class="strategy-card fade-in">
+          <div class="strategy-icon">🏦</div>
+          <div class="strategy-info">
+            <h3>Treasury</h3>
+            <p class="desc">Phoenix Engine — trailing adaptatif + protection du capital</p>
+            <div class="strategy-tags">
+              <span class="tag" style="background: rgba(234,179,8,0.15); color: #eab308;">Dynamique</span>
+              <span class="tag" style="background: rgba(255,255,255,0.05); color: var(--text-dim);">21 ans de backtest</span>
+              <span class="tag" style="background: rgba(255,255,255,0.05); color: var(--text-dim);">PF 1.35</span>
+            </div>
+          </div>
+          <div class="strategy-stats">
+            <div class="strategy-apy" style="color: #eab308;">33.2%</div>
+            <div class="strategy-meta">par an • 1 815 trades</div>
+          </div>
+        </div>
+
+        <!-- ORION -->
+        <div class="strategy-card fade-in">
+          <div class="strategy-icon">⭐</div>
+          <div class="strategy-info">
+            <h3>Orion</h3>
+            <p class="desc">Mission x10 sur l'or — objectif atteint en 4 ans historiquement</p>
+            <div class="strategy-tags">
+              <span class="tag" style="background: rgba(239,68,68,0.15); color: #ef4444;">Offensif</span>
+              <span class="tag" style="background: rgba(255,255,255,0.05); color: var(--text-dim);">20 ans de données</span>
+              <span class="tag" style="background: rgba(255,255,255,0.05); color: var(--text-dim);">PF 1.65</span>
+            </div>
+          </div>
+          <div class="strategy-stats">
+            <div class="strategy-apy" style="color: #ef4444;">+913%</div>
+            <div class="strategy-meta">en 4 ans • 800 trades</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparison mini-table -->
+      <div class="fade-in" style="margin-top: 3rem; overflow-x: auto;">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Stratégie</th>
+              <th>Rendement</th>
+              <th>Win Rate</th>
+              <th>DD Max</th>
+              <th>Backtest</th>
+              <th>Fee perf.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>🌅 Horizon</td>
+              <td class="highlight">4% / an</td>
+              <td>21.49%</td>
+              <td>46.01%</td>
+              <td>11 ans</td>
+              <td>10%</td>
+            </tr>
+            <tr>
+              <td>⚔️ Valkyrie</td>
+              <td class="highlight">12.8% / an</td>
+              <td>46.5%</td>
+              <td>59.14%</td>
+              <td>16 ans</td>
+              <td>20%</td>
+            </tr>
+            <tr>
+              <td>🔥 Revolution</td>
+              <td class="highlight">24.6% / an</td>
+              <td>35%</td>
+              <td>63.66%</td>
+              <td>21 ans</td>
+              <td>20%</td>
+            </tr>
+            <tr>
+              <td>🏦 Treasury</td>
+              <td class="highlight">33.2% / an</td>
+              <td>38.18%</td>
+              <td>70.26%</td>
+              <td>21 ans</td>
+              <td>20%</td>
+            </tr>
+            <tr>
+              <td>⭐ Orion</td>
+              <td class="highlight">+913% (4 ans)</td>
+              <td>64.88%</td>
+              <td>9.11%</td>
+              <td>20 ans</td>
+              <td>20%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: 1rem;">
+        ⚠️ Les performances passées ne garantissent pas les résultats futurs. Le trading comporte des risques de perte en capital.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== TOKEN KAL ===== -->
+  <section id="token" class="token-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">Utility Token</p>
+        <h2 class="section-title">Le token KAL</h2>
+        <p class="section-desc">Un token ERC-20 au cœur de l'écosystème KalMydas</p>
+      </div>
+      <div class="token-grid">
+        <div class="token-visual fade-in">
+          <div class="token-circle">
+            <div class="token-symbol">KAL</div>
+          </div>
+        </div>
+        <div class="token-info fade-in">
+          <h3>Conçu pour créer de la valeur</h3>
+          <p>
+            Le token KAL utilise une courbe de prix (bonding curve) mathématique :
+            plus la demande augmente, plus le prix monte automatiquement.
+            Les premiers investisseurs bénéficient du meilleur prix.
+          </p>
+          <ul class="token-features">
+            <li><span class="check">✦</span> <strong>Bonding Curve</strong> — Prix qui augmente avec l'adoption</li>
+            <li><span class="check">✦</span> <strong>Buyback & Burn</strong> — Les frais de performance rachètent et détruisent du KAL</li>
+            <li><span class="check">✦</span> <strong>Récompenses LP</strong> — Staking de liquidité avec rewards en KAL</li>
+            <li><span class="check">✦</span> <strong>Bonus dépôt</strong> — Jusqu'à +5% en KAL sur vos investissements</li>
+            <li><span class="check">✦</span> <strong>Gouvernance</strong> — Votes communautaires (prévu 2027)</li>
+            <li><span class="check">✦</span> <strong>Déflationniste</strong> — Offre qui diminue avec le temps</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECURITY ===== -->
+  <section id="security">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">Confiance & Transparence</p>
+        <h2 class="section-title">Sécurité de vos fonds</h2>
+        <p class="section-desc">Vos actifs sont protégés par des smart contracts auditables, déployés sur la blockchain</p>
+      </div>
+      <div class="security-grid">
+        <div class="security-card fade-in">
+          <div class="security-icon">🔒</div>
+          <h3>Smart contracts vérifiables</h3>
+          <p>15 contrats Solidity, code source public, vérifiable sur BaseScan à tout moment</p>
+        </div>
+        <div class="security-card fade-in">
+          <div class="security-icon">🛡️</div>
+          <h3>177 tests unitaires</h3>
+          <p>Chaque fonction critique est testée automatiquement. Couverture complète des scénarios</p>
+        </div>
+        <div class="security-card fade-in">
+          <div class="security-icon">⛓️</div>
+          <h3>Base L2 par Coinbase</h3>
+          <p>Déployé sur Base, le layer 2 d'Ethereum soutenu par Coinbase. Frais minimes, sécurité maximale</p>
+        </div>
+        <div class="security-card fade-in">
+          <div class="security-icon">🔑</div>
+          <h3>Contrôle total</h3>
+          <p>Vos fonds restent dans les smart contracts. Pas de clé privée centralisée. Retirez quand vous voulez</p>
+        </div>
+        <div class="security-card fade-in">
+          <div class="security-icon">📊</div>
+          <h3>High-Water Mark</h3>
+          <p>Les frais de performance ne s'appliquent que sur les nouveaux gains. Jamais de double facturation</p>
+        </div>
+        <div class="security-card fade-in">
+          <div class="security-icon">🔍</div>
+          <h3>Audit indépendant</h3>
+          <p>Audit de sécurité prévu avant le lancement mainnet (Q2 2026). Résultats publics</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ROADMAP ===== -->
+  <section id="roadmap" style="background: linear-gradient(180deg, var(--bg) 0%, #0d0d15 50%, var(--bg) 100%);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">Vision long terme</p>
+        <h2 class="section-title">Feuille de route</h2>
+      </div>
+      <div class="roadmap-timeline">
+
+        <div class="roadmap-item active fade-in">
+          <div class="roadmap-dot"></div>
+          <div class="roadmap-phase">Phase 1 — Q1 2026 <span class="tag-progress">En cours</span></div>
+          <h3>Fondations</h3>
+          <p>15 smart contracts déployés sur Base Sepolia. 177 tests. MVP frontend connecté on-chain. Whitepaper publié. 5 backtests vérifiés.</p>
+        </div>
+
+        <div class="roadmap-item fade-in">
+          <div class="roadmap-dot"></div>
+          <div class="roadmap-phase">Phase 2 — Q2 2026</div>
+          <h3>Audit & Bêta</h3>
+          <p>Audit de sécurité indépendant. Programme bêta-testeurs. Intégration temps réel des robots MT4. Documentation technique complète.</p>
+        </div>
+
+        <div class="roadmap-item future fade-in">
+          <div class="roadmap-dot"></div>
+          <div class="roadmap-phase">Phase 3 — Q3 2026</div>
+          <h3>Lancement public</h3>
+          <p>Déploiement mainnet Base L2. Lancement officiel des 5 stratégies. Activation du Access Pass NFT. Partenariats liquidité.</p>
+        </div>
+
+        <div class="roadmap-item future fade-in">
+          <div class="roadmap-dot"></div>
+          <div class="roadmap-phase">Phase 4 — Q4 2026</div>
+          <h3>Croissance</h3>
+          <p>Programme de récompenses communautaires. Listing KAL sur DEX. Dashboard analytics avancé. Exploration de nouveaux actifs.</p>
+        </div>
+
+        <div class="roadmap-item future fade-in">
+          <div class="roadmap-dot"></div>
+          <div class="roadmap-phase">2027 et au-delà</div>
+          <h3>Expansion</h3>
+          <p>Application mobile native. Nouvelles stratégies et marchés. Gouvernance DAO. Expansion multi-chain (Arbitrum, Polygon).</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section id="start" class="cta-section">
+    <div class="cta-content fade-in">
+      <h2>Prêt à investir dans <span style="background: var(--gradient-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">l'or algorithmique</span> ?</h2>
+      <p>Rejoignez les premiers investisseurs de KalMydas. Le meilleur prix du token KAL est maintenant.</p>
+      <div class="hero-buttons">
+        <a href="token-sale.html" class="btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">
+          ⚡ Acheter du KAL
+        </a>
+        <a href="whitepaper.html" class="btn-secondary">
+          📄 Lire le Whitepaper
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-logo">KalMydas</div>
+    <div class="footer-links">
+      <a href="token-sale.html">Token Sale</a>
+      <a href="whitepaper.html">Whitepaper</a>
+      <a href="https://sepolia.basescan.org/address/0x3d93048a49f68Bf1AC1987b2d6490614E84CEbfc" target="_blank">BaseScan</a>
+      <a href="https://twitter.com/kalmydas" target="_blank">Twitter</a>
+      <a href="https://t.me/kalmydas" target="_blank">Telegram</a>
+      <a href="mailto:contact@kalmydas.ch">Contact</a>
+    </div>
+    <p class="footer-copy">
+      © 2026 KalMydas. Trading algorithmique décentralisé sur l'or.
+      <br />
+      <span style="font-size: 0.75rem;">Les performances passées ne garantissent pas les résultats futurs. Investir comporte des risques.</span>
+    </p>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+  </script>
+
+</body>
+</html>

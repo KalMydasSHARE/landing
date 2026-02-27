@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KAL Token Sale — KalMydas Presale</title>
+  <meta name="description" content="Achetez le token KAL via la bonding curve. Plus vous êtes tôt, moins le prix est élevé. Participez à la presale KalMydas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a0f;
+      --bg-card: #12121a;
+      --bg-card-hover: #1a1a28;
+      --border: #1e1e2e;
+      --border-gold: #c9a84c33;
+      --gold: #c9a84c;
+      --gold-light: #e8d48b;
+      --gold-dark: #9a7a2e;
+      --text: #e8e8ed;
+      --text-dim: #8888a0;
+      --text-muted: #55556a;
+      --green: #22c55e;
+      --blue: #3b82f6;
+      --orange: #f97316;
+      --red: #ef4444;
+      --purple: #8b5cf6;
+      --gradient-gold: linear-gradient(135deg, #c9a84c, #e8d48b, #c9a84c);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 0.8rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(10, 10, 15, 0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      background: var(--gradient-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7rem 2rem 4rem;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(ellipse at 30% 20%, rgba(201, 168, 76, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-text h1 .gold {
+      background: var(--gradient-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      color: var(--text-dim);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .hero-features {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      list-style: none;
+    }
+
+    .hero-features .icon {
+      color: var(--gold);
+      font-size: 1.1rem;
+    }
+
+    /* SALE CARD */
+    .sale-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 24px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sale-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-gold);
+    }
+
+    .sale-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .sale-header .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.12);
+      color: var(--green);
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .sale-header .badge .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: blink 2s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .sale-header h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    /* PRICE DISPLAY */
+    .price-display {
+      text-align: center;
+      padding: 1.5rem;
+      background: rgba(201, 168, 76, 0.06);
+      border: 1px solid var(--border-gold);
+      border-radius: 16px;
+      margin-bottom: 1.5rem;
+    }
+
+    .price-label {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.3rem;
+    }
+
+    .price-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: var(--gradient-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .price-change {
+      font-size: 0.85rem;
+      color: var(--green);
+      margin-top: 0.3rem;
+    }
+
+    /* PROGRESS BAR */
+    .progress-section {
+      margin-bottom: 1.5rem;
+    }
+
+    .progress-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      margin-bottom: 0.5rem;
+    }
+
+    .progress-bar {
+      height: 10px;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.05);
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 5px;
+      background: var(--gradient-gold);
+      transition: width 2s ease;
+    }
+
+    /* BONDING CURVE VISUAL */
+    .curve-visual {
+      position: relative;
+      height: 120px;
+      margin: 1.5rem 0;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .curve-svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .curve-marker {
+      position: absolute;
+      bottom: 35%;
+      left: 18%;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 10px var(--gold);
+      animation: pulse-dot 2s infinite;
+    }
+
+    .curve-marker-label {
+      position: absolute;
+      bottom: calc(35% + 16px);
+      left: 10%;
+      font-size: 0.7rem;
+      color: var(--gold);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.4); }
+    }
+
+    /* SALE STATS */
+    .sale-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .sale-stat {
+      padding: 0.75rem;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+    }
+
+    .sale-stat .label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .sale-stat .value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    /* CTA BUTTON */
+    .btn-buy {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      background: var(--gradient-gold);
+      color: #0a0a0f;
+      border: none;
+      border-radius: 14px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .btn-buy:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(201, 168, 76, 0.3);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 6rem 2rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      font-size: 1.1rem;
+      color: var(--text-dim);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* TOKENOMICS */
+    .tokenomics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .tokenomics-card {
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      transition: all 0.3s;
+    }
+
+    .tokenomics-card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-2px);
+    }
+
+    .tokenomics-card .icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .tokenomics-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .tokenomics-card p {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* HOW TO BUY */
+    .buy-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .buy-step {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      position: relative;
+    }
+
+    .buy-step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      color: #0a0a0f;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+
+    .buy-step h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .buy-step p {
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+
+    /* EARLY ADVANTAGES */
+    .advantages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .advantage-card {
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .advantage-card:hover {
+      border-color: var(--border-gold);
+      transform: translateY(-4px);
+    }
+
+    .advantage-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .advantage-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .advantage-card p {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+
+    /* FAQ */
+    .faq-list {
+      max-width: 750px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--bg-card);
+    }
+
+    .faq-q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 1.5rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .faq-q:hover { background: var(--bg-card-hover); }
+
+    .faq-q .arrow {
+      color: var(--gold);
+      font-size: 1.2rem;
+      transition: transform 0.3s;
+    }
+
+    .faq-item.open .faq-q .arrow { transform: rotate(180deg); }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 300px;
+      padding: 0 1.5rem 1.2rem;
+    }
+
+    .faq-a p {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      text-align: center;
+      padding: 6rem 2rem;
+      position: relative;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(201, 168, 76, 0.08) 0%, transparent 60%);
+    }
+
+    .cta-section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-section p {
+      color: var(--text-dim);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2rem;
+      background: var(--gradient-gold);
+      color: #0a0a0f;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(201, 168, 76, 0.3);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2rem;
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      background: var(--gradient-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-copy {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    /* ANIMATIONS */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .tokenomics-grid { grid-template-columns: 1fr; }
+      .buy-steps { grid-template-columns: repeat(2, 1fr); }
+      .advantages-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .buy-steps { grid-template-columns: 1fr; }
+    }
+
+    /* DISCLAIMER BANNER */
+    .disclaimer {
+      padding: 0.8rem 2rem;
+      background: rgba(234, 179, 8, 0.08);
+      border-bottom: 1px solid rgba(234, 179, 8, 0.15);
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      margin-top: 52px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">KalMydas</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="#tokenomics">Tokenomics</a></li>
+      <li><a href="#how-to-buy">Comment acheter</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="pitch-deck.html">Pitch Deck</a></li>
+      <li><a href="whitepaper.html">Whitepaper</a></li>
+    </ul>
+  </nav>
+
+  <div class="disclaimer">
+    ⚠️ Le token KAL est un utility token. Les performances passées des stratégies ne garantissent pas les résultats futurs. Investir comporte des risques.
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <h1>Achetez <span class="gold">KAL</span> au meilleur prix</h1>
+        <p>
+          Le token KAL alimente l'écosystème KalMydas.
+          Sa bonding curve mathématique garantit que chaque achat
+          fait monter le prix. Plus vous êtes tôt, plus vous gagnez.
+        </p>
+        <ul class="hero-features">
+          <li><span class="icon">✦</span> Prix qui augmente automatiquement avec la demande</li>
+          <li><span class="icon">✦</span> Mécanisme Buyback & Burn — offre déflationniste</li>
+          <li><span class="icon">✦</span> Bonus KAL sur chaque dépôt dans les stratégies</li>
+          <li><span class="icon">✦</span> Récompenses de staking pour les fournisseurs de liquidité</li>
+          <li><span class="icon">✦</span> Gouvernance communautaire prévue 2027</li>
+        </ul>
+        <a href="#how-to-buy" class="btn-primary" style="display: inline-flex;">
+          ⚡ Acheter du KAL maintenant
+        </a>
+      </div>
+
+      <!-- SALE CARD -->
+      <div class="sale-card">
+        <div class="sale-header">
+          <div class="badge"><span class="dot"></span> Presale active</div>
+          <h2>Token Sale KAL</h2>
+        </div>
+
+        <div class="price-display">
+          <div class="price-label">Prix actuel du KAL</div>
+          <div class="price-value" id="currentPrice">—</div>
+          <div class="price-change">Le prix augmente à chaque achat</div>
+        </div>
+
+        <!-- Bonding Curve Mini Visual -->
+        <div class="curve-visual">
+          <svg class="curve-svg" viewBox="0 0 400 120" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="curveGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="rgba(201,168,76,0.3)" />
+                <stop offset="100%" stop-color="rgba(201,168,76,0)" />
+              </linearGradient>
+            </defs>
+            <path d="M 0 110 Q 100 100 200 70 Q 300 30 400 5" fill="none" stroke="#c9a84c" stroke-width="2" />
+            <path d="M 0 110 Q 100 100 200 70 Q 300 30 400 5 L 400 120 L 0 120 Z" fill="url(#curveGrad)" />
+          </svg>
+          <div class="curve-marker"></div>
+          <div class="curve-marker-label">← Vous êtes ici</div>
+        </div>
+
+        <div class="sale-stats">
+          <div class="sale-stat">
+            <div class="label">Tokens émis</div>
+            <div class="value" id="totalMinted">—</div>
+          </div>
+          <div class="sale-stat">
+            <div class="label">Réseau</div>
+            <div class="value">Base L2</div>
+          </div>
+          <div class="sale-stat">
+            <div class="label">Token standard</div>
+            <div class="value">ERC-20</div>
+          </div>
+          <div class="sale-stat">
+            <div class="label">Contrat vérifié</div>
+            <div class="value" style="color: var(--green);">✓ BaseScan</div>
+          </div>
+        </div>
+
+        <a href="https://kalmydas.ch" class="btn-buy">
+          ⚡ Acheter du KAL
+        </a>
+        <p style="text-align: center; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.75rem;">
+          Achat via USDC sur Base L2 • Frais de réseau : ~0.01$
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOKENOMICS -->
+  <section id="tokenomics" style="background: linear-gradient(180deg, var(--bg) 0%, #0d0d15 50%, var(--bg) 100%);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">Économie du token</p>
+        <h2 class="section-title">Tokenomics KAL</h2>
+        <p class="section-desc">Un modèle économique conçu pour créer de la valeur à long terme</p>
+      </div>
+
+      <div class="tokenomics-grid">
+        <div class="tokenomics-card fade-in">
+          <div class="icon">📈</div>
+          <h3>Bonding Curve</h3>
+          <p>
+            Le prix du KAL suit une courbe mathématique ascendante.
+            Chaque achat augmente le prix pour le suivant.
+            Pas de manipulation, pas d'orderbook externe — tout est transparent et on-chain.
+          </p>
+        </div>
+        <div class="tokenomics-card fade-in">
+          <div class="icon">🔥</div>
+          <h3>Buyback & Burn</h3>
+          <p>
+            Une partie des frais de performance des 5 stratégies de trading
+            est utilisée pour racheter du KAL sur le marché et le détruire définitivement.
+            L'offre diminue, la rareté augmente.
+          </p>
+        </div>
+        <div class="tokenomics-card fade-in">
+          <div class="icon">💎</div>
+          <h3>Récompenses LP</h3>
+          <p>
+            Les fournisseurs de liquidité USDC/KAL reçoivent des récompenses en KAL
+            via un programme d'epochs décroissant (modèle Bitcoin-like).
+            Staking disponible directement dans l'application.
+          </p>
+        </div>
+        <div class="tokenomics-card fade-in">
+          <div class="icon">🎁</div>
+          <h3>Bonus de dépôt</h3>
+          <p>
+            Chaque dépôt dans une stratégie de trading génère un bonus en tokens KAL :
+            +5% pour Horizon, +3% pour Valkyrie, +2% pour Revolution/Treasury, +1% pour Orion.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO BUY -->
+  <section id="how-to-buy">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">Guide d'achat</p>
+        <h2 class="section-title">Comment acheter du KAL ?</h2>
+        <p class="section-desc">4 étapes simples pour obtenir vos premiers tokens KAL</p>
+      </div>
+
+      <div class="buy-steps">
+        <div class="buy-step fade-in">
+          <div class="buy-step-num">1</div>
+          <h3>Obtenez du USDC</h3>
+          <p>Achetez de l'USDC sur un exchange (Coinbase, Binance) et transférez-le sur le réseau Base</p>
+        </div>
+        <div class="buy-step fade-in">
+          <div class="buy-step-num">2</div>
+          <h3>Connectez votre wallet</h3>
+          <p>Connectez-vous sur kalmydas.ch avec votre email ou votre wallet MetaMask / Coinbase Wallet</p>
+        </div>
+        <div class="buy-step fade-in">
+          <div class="buy-step-num">3</div>
+          <h3>Échangez USDC → KAL</h3>
+          <p>Allez dans l'onglet "Marché" et échangez vos USDC contre du KAL au prix actuel de la bonding curve</p>
+        </div>
+        <div class="buy-step fade-in">
+          <div class="buy-step-num">4</div>
+          <h3>Utilisez vos KAL</h3>
+          <p>Fournissez de la liquidité pour gagner des récompenses, ou gardez vos KAL pour profiter de l'appréciation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADVANTAGES -->
+  <section style="background: linear-gradient(180deg, var(--bg) 0%, #0d0d15 50%, var(--bg) 100%);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">Investisseur early</p>
+        <h2 class="section-title">Pourquoi acheter maintenant ?</h2>
+      </div>
+
+      <div class="advantages-grid">
+        <div class="advantage-card fade-in">
+          <div class="advantage-icon">🏆</div>
+          <h3>Meilleur prix garanti</h3>
+          <p>La bonding curve garantit mathématiquement que le prix d'aujourd'hui est le plus bas qu'il sera jamais</p>
+        </div>
+        <div class="advantage-card fade-in">
+          <div class="advantage-icon">🚀</div>
+          <h3>Potentiel de croissance</h3>
+          <p>Avec le buyback & burn des frais de performance, la pression acheteuse augmente naturellement avec le TVL</p>
+        </div>
+        <div class="advantage-card fade-in">
+          <div class="advantage-icon">🎯</div>
+          <h3>Airdrop éligibilité</h3>
+          <p>Les premiers supporters seront éligibles aux futures distributions de tokens KAL via le programme d'airdrop</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">Questions fréquentes</p>
+        <h2 class="section-title">FAQ — Token KAL</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item fade-in">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>Qu'est-ce qu'une bonding curve ?</span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-a">
+            <p>Une bonding curve est un smart contract qui fixe automatiquement le prix d'un token en fonction de l'offre en circulation. Plus il y a de tokens achetés, plus le prix augmente selon une formule mathématique. C'est transparent, prévisible, et impossible à manipuler.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>Comment le KAL prend-il de la valeur ?</span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-a">
+            <p>Trois mécanismes : (1) La bonding curve fait monter le prix à chaque achat. (2) Le buyback & burn utilise les frais de performance des stratégies pour racheter et détruire du KAL, réduisant l'offre. (3) Les bonus de dépôt et récompenses LP créent une demande continue.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>Puis-je revendre mes KAL ?</span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-a">
+            <p>Oui. Vous pouvez échanger vos KAL contre de l'USDC à tout moment via l'échange KAL/USDC intégré à la plateforme. Il n'y a aucun blocage ni période de lock-up.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>Quel est l'investissement minimum ?</span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-a">
+            <p>Il n'y a pas de minimum pour acheter du KAL. Pour investir dans les stratégies de trading, le minimum est de 10 USDC. Les frais de réseau sur Base L2 sont d'environ 0.01$ par transaction.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>Le contrat est-il audité ?</span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-a">
+            <p>Les 15 smart contracts sont actuellement déployés sur le testnet Base Sepolia avec 177 tests unitaires. Un audit de sécurité indépendant est prévu au Q2 2026, avant le lancement mainnet. Le code source sera public et vérifiable sur BaseScan.</p>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>Sur quel réseau se trouve le KAL ?</span>
+            <span class="arrow">▼</span>
+          </div>
+          <div class="faq-a">
+            <p>Le KAL est déployé sur Base, le réseau layer 2 d'Ethereum développé par Coinbase. Base offre des transactions rapides et peu coûteuses (~0.01$ par transaction) tout en bénéficiant de la sécurité d'Ethereum.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Le meilleur moment pour acheter, <span style="background: var(--gradient-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">c'est maintenant</span></h2>
+    <p>Chaque KAL acheté fait monter le prix pour le suivant. Soyez parmi les premiers.</p>
+    <div class="cta-buttons">
+      <a href="https://kalmydas.ch" class="btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">⚡ Acheter du KAL</a>
+      <a href="index.html" class="btn-secondary">🌅 Voir les stratégies</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">KalMydas</div>
+    <div style="display:flex; gap:2rem; justify-content:center; margin-bottom:1rem; flex-wrap:wrap;">
+      <a href="index.html" style="color: var(--text-dim); text-decoration:none; font-size:0.9rem; transition: color 0.3s;">Accueil</a>
+      <a href="whitepaper.html" style="color: var(--text-dim); text-decoration:none; font-size:0.9rem; transition: color 0.3s;">Whitepaper</a>
+      <a href="pitch-deck.html" style="color: var(--text-dim); text-decoration:none; font-size:0.9rem; transition: color 0.3s;">Pitch Deck</a>
+      <a href="https://sepolia.basescan.org/address/0x91850E2eCD2Ef542F3D6284dC146482d41B27bDA" target="_blank" style="color: var(--text-dim); text-decoration:none; font-size:0.9rem; transition: color 0.3s;">BaseScan KAL</a>
+      <a href="https://twitter.com/kalmydas" target="_blank" style="color: var(--text-dim); text-decoration:none; font-size:0.9rem; transition: color 0.3s;">Twitter</a>
+      <a href="https://t.me/kalmydas" target="_blank" style="color: var(--text-dim); text-decoration:none; font-size:0.9rem; transition: color 0.3s;">Telegram</a>
+    </div>
+    <p class="footer-copy">
+      © 2026 KalMydas. Trading algorithmique décentralisé sur l'or.
+      <br /><span style="font-size: 0.75rem;">Les performances passées ne garantissent pas les résultats futurs. Investir comporte des risques de perte en capital.</span>
+    </p>
+  </footer>
+
+  <script>
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Simulate price from bonding curve (will be replaced with real on-chain data)
+    document.getElementById('currentPrice').textContent = '0.0012 USDC';
+    document.getElementById('totalMinted').textContent = '—';
+  </script>
+
+</body>
+</html>
