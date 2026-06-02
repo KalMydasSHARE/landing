@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <script>(function(){try{var m=document.cookie.match(/(?:^|;\s*)km_theme=(light|dark)/);var t=m?m[1]:(localStorage.getItem('km_theme')||'dark');if(t==='light'){document.documentElement.setAttribute('data-theme','light');}}catch(e){}})();</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KalMydas, Trading algorithmique sur l'or, Accessible à tous</title>
@@ -125,6 +126,50 @@
       --radius-xs: 6px;
     }
 
+    /* Palette claire banque privée genevoise, ajoutée 2026-06-02. */
+    [data-theme="light"] {
+      --bg: #FAFAF7;
+      --bg-elevated: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-hover: #F4F1E8;
+      --border: #E5E1D6;
+      --border-subtle: #EFEBE0;
+      --border-gold: rgba(190, 165, 110, 0.35);
+      --gold: #BEA56E;
+      --gold-light: #8E7A4C;
+      --gold-dark: #6E5E3A;
+      --gold-glow: rgba(190, 165, 110, 0.15);
+      --text: #0B1220;
+      --text-secondary: #2A3142;
+      --text-muted: #5A6273;
+      --text-faint: #8A92A3;
+      --green: #0F7A4A;
+      --blue: #1E40AF;
+      --orange: #B45309;
+      --yellow: #92400E;
+      --red: #A8392B;
+      --purple: #6D28D9;
+    }
+
+    [data-theme="light"] nav {
+      background: rgba(255, 255, 255, 0.78);
+      border-bottom-color: transparent;
+    }
+    [data-theme="light"] nav.scrolled {
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom-color: var(--border-subtle);
+    }
+    [data-theme="light"] .hero-bg::after {
+      background: linear-gradient(to top, var(--bg), transparent);
+    }
+    [data-theme="light"] .btn-primary,
+    [data-theme="light"] .nav-cta {
+      color: #FAFAF7 !important;
+    }
+    [data-theme="light"] .lang-option.active {
+      color: #FAFAF7;
+    }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -222,6 +267,54 @@
     .lang-option.active {
       background: var(--gradient-gold);
       color: #060A18;
+    }
+
+    /* ===== THEME TOGGLE (soleil/lune, ajouté 2026-06-02) ===== */
+    .theme-toggle-wrap {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 26px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+      padding: 0;
+      color: var(--text-secondary);
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--gold);
+      color: var(--gold-light);
+    }
+
+    .theme-toggle svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .theme-new-badge {
+      position: absolute;
+      top: -6px;
+      right: -10px;
+      background: #C0392B;
+      color: #FFFFFF;
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 1px 5px;
+      border-radius: 999px;
+      pointer-events: none;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+      text-transform: uppercase;
     }
 
     .nav-cta {
@@ -1531,6 +1624,18 @@
       <li><a href="#roadmap" data-i18n="nav_roadmap">Roadmap</a></li>
       <li><a href="#presale-schedule" data-i18n="nav_presale">Prévente</a></li>
       <li><a href="#about" data-i18n="nav_about">À propos</a></li>
+      <li class="theme-toggle-wrap">
+        <button type="button" id="themeToggle" class="theme-toggle" aria-label="Basculer thème clair sombre" title="Basculer thème clair / sombre">
+          <svg id="themeToggleIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path><path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path><path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+        </button>
+        <span class="theme-new-badge" id="themeNewBadge" data-i18n="theme_new_badge">Nouveau</span>
+      </li>
       <li><a href="https://app.kalmydas.com" class="nav-cta" data-i18n="nav_cta" data-umami-event="cta_nav_lancer_app" data-umami-event-source="navbar">Lancer l'app</a></li>
     </ul>
     <button class="nav-hamburger" id="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
@@ -2949,6 +3054,72 @@
           }
         })
         .catch(function () { /* fallback : laisse les valeurs hardcodées en place */ });
+    })();
+  </script>
+
+  <!-- ===== THEME TOGGLE (ajoute 2026-06-02, cookie partage km_theme cross-subdomain) ===== -->
+  <script>
+    (function () {
+      var SUN_SVG = '<svg id="themeToggleIcon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>';
+      var MOON_SVG = '<svg id="themeToggleIcon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+      function isEn() {
+        try {
+          var m = document.cookie.match(/(?:^|;\s*)km_lang=([a-z]{2})/);
+          return (m && m[1] === 'en') || (document.documentElement.lang === 'en');
+        } catch (e) { return false; }
+      }
+      function applyTheme(theme) {
+        if (theme === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.removeAttribute('data-theme');
+        }
+        try {
+          document.cookie = 'km_theme=' + theme + '; path=/; domain=.kalmydas.com; max-age=31536000; SameSite=Lax';
+          localStorage.setItem('km_theme', theme);
+        } catch (e) {}
+        var btn = document.getElementById('themeToggle');
+        if (btn) {
+          var iconWrap = document.getElementById('themeToggleIcon');
+          if (theme === 'light') {
+            btn.setAttribute('aria-label', isEn() ? 'Switch to dark theme' : 'Passer en theme sombre');
+            btn.setAttribute('title', isEn() ? 'Switch to dark theme' : 'Passer en theme sombre');
+            if (iconWrap) iconWrap.outerHTML = MOON_SVG;
+          } else {
+            btn.setAttribute('aria-label', isEn() ? 'Switch to light theme' : 'Passer en theme clair');
+            btn.setAttribute('title', isEn() ? 'Switch to light theme' : 'Passer en theme clair');
+            if (iconWrap) iconWrap.outerHTML = SUN_SVG;
+          }
+        }
+      }
+      function readCurrent() {
+        try {
+          var m = document.cookie.match(/(?:^|;\s*)km_theme=(light|dark)/);
+          if (m) return m[1];
+          var ls = localStorage.getItem('km_theme');
+          if (ls === 'light' || ls === 'dark') return ls;
+        } catch (e) {}
+        return 'dark';
+      }
+      applyTheme(readCurrent());
+      var toggle = document.getElementById('themeToggle');
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          var next = readCurrent() === 'light' ? 'dark' : 'light';
+          try { if (window.umami && typeof window.umami.track === 'function') { window.umami.track('toggle_theme', { to: next }); } } catch (e) {}
+          applyTheme(next);
+        });
+      }
+      function refreshBadge() {
+        var badge = document.getElementById('themeNewBadge');
+        if (!badge) return;
+        badge.textContent = isEn() ? 'NEW' : 'Nouveau';
+      }
+      refreshBadge();
+      try {
+        var obs = new MutationObserver(function () { refreshBadge(); applyTheme(readCurrent()); });
+        obs.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+      } catch (e) {}
     })();
   </script>
 

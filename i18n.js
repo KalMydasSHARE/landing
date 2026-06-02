@@ -21,6 +21,7 @@ const I18N_EN = {
   nav_presale: "Presale",
   nav_about: "About",
   nav_cta: "Launch app",
+  theme_new_badge: "NEW",
 
   /* ===== HERO ===== */
   hero_badge: `<span class="dot"></span> Mainnet live · Base`,
@@ -28,14 +29,7 @@ const I18N_EN = {
   hero_sub: `No broker, no third-party custody: your funds stay in public smart contracts under your own key. Five algorithms take positions on gold (<span class="g-term" data-g="xauusd">XAUUSD</span>) 24 hours a day, directly on-chain via gTrade. Over 4 to 21 years of <span class="g-term" data-g="backtest">historical simulation</span>, annual performance ranges from roughly 4% to 79% depending on the strategy, the kind of management usually reserved for six-figure deposits, here accessible from $10. Mainnet on <span class="g-term" data-g="base">Base</span> live since May 1, 2026.<br><span style="font-size:0.78rem; opacity:0.7;">Historical simulations over 4 to 21 years of XAUUSD data. Live execution via gTrade may produce different results. Risk of partial or total capital loss. Past performance does not guarantee future performance.</span>`,
   hero_btn_primary: `Launch app <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
   hero_btn_secondary: "View strategies",
-
-  /* ===== COUNTDOWN PHASE ALPHA ===== */
-  countdown_label: "Phase Alpha ends in",
-  countdown_days: "days",
-  countdown_hours: "hours",
-  countdown_minutes: "minutes",
-  countdown_seconds: "seconds",
-  countdown_cta: `Join the presale <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  hero_telegram: "Join the community on Telegram",
 
   /* ===== STATS ===== */
   stat_1_label: "Trading robots",
@@ -82,7 +76,7 @@ const I18N_EN = {
   strat_orion_desc: "x10 mission on gold, target reached in 4 years historically",
   strat_orion_tag: "High-Risk",
   strat_orion_meta: "per year · 800 trades",
-  strat_orion_bt: "20 years of data",
+  strat_orion_bt: "20 years of backtest",
 
   /* ===== COMPARISON TABLE ===== */
   th_strategy: "Strategy",
@@ -104,7 +98,7 @@ const I18N_EN = {
   token_f4: `<strong><span class="g-term" data-g="lp">LP</span> rewards</strong>, Liquidity <span class="g-term" data-g="staking">staking</span> with KAL rewards`,
   token_f5: `<strong>Deposit bonus</strong>, Up to +5% in KAL on your deposits`,
   token_f6: `<strong>Governance</strong>, On-chain community votes + dedicated interface`,
-  token_f7: `<strong><span class="g-term" data-g="deflationniste">Deflationary</span></strong>, Supply decreases over time`,
+  token_f7: `<strong><span class="g-term" data-g="offre_plafonnee">Capped supply</span></strong>, 10 million KAL maximum, with no token destruction`,
 
   /* ===== SECURITY ===== */
   sec_label: "Trust & Transparency",
@@ -121,7 +115,7 @@ const I18N_EN = {
   sec_5_h: `<span class="g-term" data-g="hwm">High-Water Mark</span>`,
   sec_5_p: `<span class="g-term" data-g="perf_fee">Performance fees</span> only apply on new gains. Never double-charged`,
   sec_6_h: "Independent audit",
-  sec_6_p: "Three Omniscient Lab audits PASS (4.22 / 4.23 / 4.24), KAL-001 through KAL-008 Codex resolved. Public reports.",
+  sec_6_p: `Three Omniscient Lab audits PASS (4.22 / 4.23 / 4.24), KAL-001 through KAL-008 Codex resolved. <a href="https://docs.kalmydas.com/security" target="_blank" rel="noopener" style="color: var(--gold-light); text-decoration: underline;">Public reports</a>.`,
 
   /* ===== ROADMAP ===== */
   road_label: "Long-term vision",
@@ -134,7 +128,7 @@ const I18N_EN = {
   road_2_p: `22 core Solidity contracts (26 instances including 5 strategy pools), validated in private beta and then deployed on <span class="g-term" data-g="base_l2">Base</span> mainnet on May 1, 2026. veKAL, governance, referral system, auto-compound, performance diversifier, RWA treasury, individual solo mode per strategy, all coded, tested and audited. 3rd consecutive Omniscient PASS (final retest on April 22, 300,000-transition fuzz, KalPool individual pause validated on April 25). Beta testing program active.`,
   road_3_phase: "Phase 3, September 14, 2026",
   road_3_h: "Public opening",
-  road_3_p: `Public opening of the presale on <span class="g-term" data-g="base_l2">Base</span> mainnet (tiers 4 to 9, $2.50 to $8) after the Alpha (OGs) and Beta (community members) phases. Activation of public <span class="g-term" data-g="vekal">veKAL</span> incentives and <span class="g-term" data-g="dao">DAO</span> governance. The platform has been running on Base since May 1, September 14 only triggers public access.`,
+  road_3_p: `Public opening of the presale on <span class="g-term" data-g="base_l2">Base</span> mainnet (tiers 4 to 10, $1.50 to $8) after the Alpha (OGs) and Beta (community members) phases. Activation of public <span class="g-term" data-g="vekal">veKAL</span> incentives and <span class="g-term" data-g="dao">DAO</span> governance. The platform has been running on Base since May 1, September 14 only triggers public access.`,
 
   /* ===== PRESALE SCHEDULE (3 phases, refondu session 319 + 320 conformité V5) ===== */
   presale_label: "Presale schedule",
@@ -165,18 +159,18 @@ const I18N_EN = {
   presale_footnote: "Total presale cap: 500,000 KAL (5% of total supply) = ~$1.51M maximum. If the $100k viability gate is not reached by August 31, the September 14 public opening may be postponed or opened in tranches.",
   presale_disclaimer_box: "<strong>Disclaimer:</strong> the KAL token presale is not an investment. Funds contributed are a participation in an experimental DeFi protocol. The KAL token has no guaranteed value. You may lose all of your participation. Thanks to everyone taking part in this bootstrap phase.",
 
-  /* ===== TRACK RECORD LIVE (added session 298, % version) ===== */
-  track_label: "Real on-chain performance",
-  track_title: "Live track record",
-  track_desc: "Every trade executed by the algorithms, reported on-chain and verifiable. Figures shown as percentage per trade, algorithms operate via a third-party market account (MetaTrader / gTrade), and results are reported transparently on-chain.",
+  /* ===== TRACK RECORD (demo-account algorithm performance, F9 LEGAL 2026-05-25) ===== */
+  track_label: "Algorithm trade journal",
+  track_title: "Demo-account algorithm performance",
+  track_desc: "Every trade executed by the algorithms. Figures shown as percentage per trade, algorithms operate via a third-party market account (MetaTrader / gTrade).",
   track_count_label: "Trades executed",
   track_winrate_label: "Global win rate",
   track_best_label: "Best trade",
   track_topstrat_label: "Top performing strategy",
   track_breakdown_label: "Compounded performance per strategy",
-  track_scope: `Figures measured since the platform's beta opening. The algorithms also ran live for about six months prior, and have been simulated over 11 to 21 years of historical data depending on the strategy, these complementary proofs are verifiable through the <a href="https://kalmydas.ch" target="_blank" rel="noopener" style="color: var(--gold-light); text-decoration: underline;">Telegram</a> community.`,
+  track_scope: `Figures measured since the platform's beta opening. The algorithms also ran live for about six months prior, and have been simulated over 4 to 21 years of historical data depending on the strategy, these complementary proofs are verifiable through the <a href="https://kalmydas.ch" target="_blank" rel="noopener" style="color: var(--gold-light); text-decoration: underline;">Telegram</a> community.`,
   track_cta: "See full history of all trades",
-  track_disclaimer: "Past performance does not guarantee future results. Data from the beta phase on Arbitrum Sepolia, reported on-chain and verifiable.",
+  track_disclaimer: "Figures from the trade journal executed by the KAL algorithms on MT4 demo accounts, in real market conditions and with no capital engaged. Demo execution does not exactly reproduce real execution: price, slippage, funding and leverage may differ. Only trades propagated on-chain via gTrade on Base were executed with real capital and are verifiable on-chain. The protocol has been running on Base mainnet since May 1, 2026. Risk of partial or total capital loss. Past performance does not guarantee future results.",
 
   /* ===== TESTIMONIALS (added session 314, 2026-05-04) ===== */
   test_label: "Feedback from early members",
@@ -209,13 +203,13 @@ const I18N_EN = {
   faq_4_q: "Is future performance guaranteed?",
   faq_4_a: "No. The figures shown are based on historical backtests (up to 21 years of data). Past performance does not guarantee future results. Trading involves risk of capital loss.",
   faq_5_q: "What are the fees?",
-  faq_5_a: "No entry or exit fees. Performance fees of 8% to 20% depending on strategy, charged on new gains thanks to the High-Water Mark system. Annual management fees of 1% to 2.5% depending on the pool.",
+  faq_5_a: "No entry or exit fees. Performance fees of 10% to 20% depending on strategy, charged on new gains thanks to the High-Water Mark system. Annual management fees of 1% to 2.5% depending on the pool.",
   faq_6_q: "Do I need a crypto wallet to use KalMydas?",
   faq_6_a: "No. You can sign in with a simple email or Google account. A wallet is created automatically for you through Privy. Advanced users can also connect their own wallet (MetaMask, etc.).",
   faq_7_q: "Are the contracts audited?",
   faq_7_a: "Yes. Three Omniscient Lab audits PASS (4.22, 4.23, 4.24) on the 22 core protocol contracts. KAL-001 through KAL-008 Codex findings are all resolved. Audit reports are public and accessible from the official documentation.",
   faq_8_q: "Which strategy should I choose as a beginner?",
-  faq_8_a: "HORIZON is the most conservative profile, designed for discovery (modest yield, controlled drawdown on backtest). VALKYRIE offers a balanced profile. The more aggressive strategies (REVOLUTION, TREASURY, ORION) require a clear understanding of volatility. You can pick several and split your capital as you wish.",
+  faq_8_a: "HORIZON is the most conservative profile, designed for discovery (modest simulated performance, controlled drawdown on backtest). VALKYRIE offers a balanced profile. The more aggressive strategies (REVOLUTION, TREASURY, ORION) require a clear understanding of volatility. You can pick several and split your capital as you wish.",
 
   /* ===== BUILT WITH ===== */
   tech_label: "Infrastructure",
@@ -226,6 +220,7 @@ const I18N_EN = {
   cta_p: "Join the early participants of KalMydas. The KAL token price is lower at the start of the valuation curve: the earlier you participate, the lower the price.",
   cta_btn_primary: `Launch app <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
   cta_btn_secondary: "Read the Whitepaper",
+  cta_telegram: "Join the community on Telegram",
 
   /* ===== ABOUT ===== */
   about_label: "Genesis",
@@ -253,7 +248,7 @@ const I18N_EN = {
 
   /* ===== TOKEN DISTRIBUTION CHART (5 lines, aligned with docs/tokenomics, session 298) ===== */
   token_dist_title: "KAL token distribution",
-  token_dist_subtitle: "Total supply: 10,000,000 KAL · 0% reserved for an internal team · productive and deflationary distribution",
+  token_dist_subtitle: "Total supply: 10,000,000 KAL · 0% reserved for an internal team · productive distribution, with no token destruction",
   token_dist_1: "Liquidity provider rewards",
   token_dist_2: "KAL locker rewards (veKAL)",
   token_dist_3: "Presale (500,000 KAL hard cap)",
@@ -266,7 +261,7 @@ const I18N_EN = {
   about_timeline_h3: "Where we are",
   about_tl_1: "<strong>Q1 2026</strong>, Foundations laid, first contracts, connected MVP",
   about_tl_2: "<strong>Q2 2026</strong>, 22 core contracts deployed (26 instances including 5 strategy pools), active beta testing, veKAL + governance",
-  about_tl_3: "<strong>September 14, 2026</strong>: public presale opening on Base mainnet (tiers 4 to 9), conditional on the 100,000 USDC viability gate. The platform has been running on Base since May 1<sup>st</sup>.",
+  about_tl_3: "<strong>September 14, 2026</strong>: public presale opening on Base mainnet (tiers 4 to 10), conditional on the 100,000 USDC viability gate. The platform has been running on Base since May 1<sup>st</sup>.",
   about_tl_4: "<strong>Q4 2026+</strong>, Growth, DEX listing, mobile app, DAO",
   about_tl_link: "View full roadmap →",
 
@@ -280,7 +275,7 @@ const I18N_EN = {
   footer_security: "Security",
   footer_roadmap: "Roadmap",
   footer_col_community: "Community",
-  footer_contact: "Contact",
+  footer_contact: "Contact: kal@kalmydas.ch",
   footer_col_resources: "Resources",
   footer_docs: "Documentation",
   footer_architecture: "Architecture",
@@ -298,6 +293,13 @@ const I18N_EN = {
   footer_risk_title: "Risk disclaimer:",
   footer_risk_text: "KalMydas is an experimental DeFi platform. Algorithmic trading and crypto-assets carry a high risk of total capital loss. Past performance does not guarantee future results. This website does not constitute investment advice, solicitation, or an offer to buy or sell financial instruments. You are solely responsible for your decisions. Check the applicable legislation in your jurisdiction before participating.",
   footer_copy: `&copy; 2026 KalMydas, Decentralized algorithmic gold trading. Non-custodial, your keys, your funds.`,
+  newsletter_title: "Stay informed",
+  newsletter_intro: "Stay informed about the July 15 Beta Phase and upcoming milestones. No spam.",
+  newsletter_submit: "Subscribe",
+  newsletter_legal: `By subscribing, you agree to receive our communications. Double opt-in active, one-click unsubscribe. See the <a href="/privacy.html">privacy policy</a> and the <a href="/terms.html">terms of use</a>.`,
+  newsletter_popup_title: "Follow the Beta Phase",
+  newsletter_popup_text: "Stay informed about the July 15 Beta Phase and upcoming milestones. No spam.",
+  newsletter_popup_legal: `Double opt-in active. See <a href="/privacy.html">privacy</a>.`,
 };
 
 /* ===== ENGLISH GLOSSARY ===== */
@@ -330,7 +332,7 @@ const GLOSSARY_DEFS_EN = {
   layer2: "A secondary network built on top of a main blockchain (like Ethereum) to improve speed and reduce transaction costs.",
   defi: "Decentralized Finance, financial services (trading, lending, savings) operated on blockchain via smart contracts, without banking intermediaries.",
   blockchain: "A distributed, tamper-proof digital ledger. Every transaction is publicly recorded and cannot be retroactively modified.",
-  deflationniste: "An economic model where the circulating supply of tokens decreases progressively over time, creating scarcity (similar to Bitcoin).",
+  offre_plafonnee: "The KAL supply is capped at 10 million tokens, with no token ever destroyed. KAL buybacks are redirected to protocol liquidity (Zero Burn doctrine).",
   forward_test: "Testing a strategy under real market conditions without risking real capital. Validates that backtest results hold up.",
   stress_test: "Evaluating a strategy's behavior during periods of high volatility or crises (2008, 2020). Measures resilience.",
   testnet: "A blockchain test network using worthless tokens. Allows testing applications before official launch.",
@@ -564,7 +566,10 @@ const GLOSSARY_DEFS_EN = {
       }
 
       document.getElementById('langToggle').addEventListener('click', function () {
-        applyLang(currentLang === 'fr' ? 'en' : 'fr');
+        var nextLang = currentLang === 'fr' ? 'en' : 'fr';
+        // Umami event tracking, RGPD compliant, sans cookie tiers
+        try { if (window.umami && typeof window.umami.track === 'function') { window.umami.track('toggle_lang', { from: currentLang, to: nextLang }); } } catch (e) {}
+        applyLang(nextLang);
       });
     }
 
