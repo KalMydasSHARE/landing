@@ -2906,8 +2906,9 @@
             if (!base) return null;
             return (s.sumPnlUsd / base) * 100;
           }
-          // Top strategie par perf MT4 demo
-          var stratList = ['TREASURY', 'ORION', 'REVOLUTION', 'HORIZON', 'VALKYRIE'];
+          // Top strategie par perf MT4 demo. Affichage dans l'ordre canonique
+          // produit HORIZON, VALKYRIE, REVOLUTION, TREASURY, ORION (prudent vers dynamique).
+          var stratList = ['HORIZON', 'VALKYRIE', 'REVOLUTION', 'TREASURY', 'ORION'];
           var topName = null, topPct = -Infinity;
           stratList.forEach(function (name) {
             var p = stratPct(name);
@@ -2923,18 +2924,13 @@
           if (countEl) countEl.textContent = count.toString();
           if (winEl) winEl.textContent = winRate.toFixed(1).replace('.', ',') + ' %';
           if (topEl && topName) topEl.innerHTML = topName + ' <span style="font-size: 1.6rem;">' + fmtPct(topPct, true) + '</span>';
-          // Breakdown strategies trie par perf MT4 demo desc
+          // Breakdown strategies dans l'ordre canonique produit (prudent vers dynamique)
           var stratEl = document.getElementById('track-strategies');
           if (stratEl) {
-            var sorted = stratList.slice().sort(function (a, b) {
-              var aP = stratPct(a);
-              var bP = stratPct(b);
-              return (bP === null ? -999 : bP) - (aP === null ? -999 : aP);
-            });
             var tradesLbl = isLangEn() ? 'trades' : 'trades';
             var noTradeLbl = isLangEn() ? '0 trade' : '0 trade';
             var html = '';
-            sorted.forEach(function (name) {
+            stratList.forEach(function (name) {
               var s = byStrat[name] || { count: 0 };
               var c = s.count || 0;
               var p = stratPct(name);
