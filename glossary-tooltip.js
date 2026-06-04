@@ -35,7 +35,7 @@ const GLOSSARY_DEFS = {
   layer2: "Réseau secondaire construit au-dessus d'une blockchain principale (comme Ethereum) pour améliorer la vitesse et réduire les coûts de transaction.",
   defi: "Finance Décentralisée — services financiers (échange, prêt, épargne) opérés sur blockchain via des smart contracts, sans intermédiaire bancaire.",
   blockchain: "Registre numérique distribué et infalsifiable. Chaque transaction est enregistrée publiquement et ne peut être modifiée rétroactivement.",
-  deflationniste: "Modèle économique où la quantité de jetons en circulation diminue progressivement dans le temps, créant de la rareté (similaire au Bitcoin).",
+  offre_plafonnee: "L'offre de KAL est plafonnée à 10 millions de jetons, sans aucune destruction. Les rachats de KAL sont redirigés vers la liquidité du protocole (doctrine Zero Burn).",
   forward_test: "Test d'une stratégie en conditions réelles de marché, sans risquer de capital réel. Valide que les résultats du backtest se confirment.",
   stress_test: "Évaluation du comportement d'une stratégie lors de périodes de forte volatilité ou de crises (2008, 2020). Mesure la résilience.",
   testnet: "Réseau de test d'une blockchain utilisant des jetons sans valeur réelle. Permet de tester les applications avant le lancement officiel.",

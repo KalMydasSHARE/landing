@@ -297,13 +297,6 @@ const I18N_EN = {
   footer_risk_title: "Risk disclaimer:",
   footer_risk_text: "KalMydas is an experimental DeFi platform. Algorithmic trading and crypto-assets carry a high risk of total capital loss. Past performance does not guarantee future results. This website does not constitute financial advice, solicitation, or an offer to buy or sell financial instruments. You are solely responsible for your decisions. Check the applicable legislation in your jurisdiction before participating.",
   footer_copy: `&copy; 2026 KalMydas, Decentralized algorithmic gold trading. Non-custodial, your keys, your funds.`,
-  newsletter_title: "Stay informed",
-  newsletter_intro: "Stay informed about the July 15 Beta Phase and upcoming milestones. No spam.",
-  newsletter_submit: "Subscribe",
-  newsletter_legal: `By subscribing, you agree to receive our communications. Double opt-in active, one-click unsubscribe. See the <a href="/privacy.html">privacy policy</a> and the <a href="/terms.html">terms of use</a>.`,
-  newsletter_popup_title: "Follow the Beta Phase",
-  newsletter_popup_text: "Stay informed about the July 15 Beta Phase and upcoming milestones. No spam.",
-  newsletter_popup_legal: `Double opt-in active. See <a href="/privacy.html">privacy</a>.`,
 };
 
 /* ===== ENGLISH GLOSSARY ===== */

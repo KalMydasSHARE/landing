@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <script>(function(){try{var m=document.cookie.match(/(?:^|;\s*)km_theme=(light|dark)/);var t=m?m[1]:(localStorage.getItem('km_theme')||'dark');if(t==='light'){document.documentElement.setAttribute('data-theme','light');}}catch(e){}})();</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KalMydas, Trading algorithmique sur l'or, Accessible à tous</title>
@@ -126,50 +125,6 @@
       --radius-xs: 6px;
     }
 
-    /* Palette claire banque privée genevoise, ajoutée 2026-06-02. */
-    [data-theme="light"] {
-      --bg: #FAFAF7;
-      --bg-elevated: #FFFFFF;
-      --bg-card: #FFFFFF;
-      --bg-card-hover: #F4F1E8;
-      --border: #E5E1D6;
-      --border-subtle: #EFEBE0;
-      --border-gold: rgba(190, 165, 110, 0.35);
-      --gold: #BEA56E;
-      --gold-light: #8E7A4C;
-      --gold-dark: #6E5E3A;
-      --gold-glow: rgba(190, 165, 110, 0.15);
-      --text: #0B1220;
-      --text-secondary: #2A3142;
-      --text-muted: #5A6273;
-      --text-faint: #8A92A3;
-      --green: #0F7A4A;
-      --blue: #1E40AF;
-      --orange: #B45309;
-      --yellow: #92400E;
-      --red: #A8392B;
-      --purple: #6D28D9;
-    }
-
-    [data-theme="light"] nav {
-      background: rgba(255, 255, 255, 0.78);
-      border-bottom-color: transparent;
-    }
-    [data-theme="light"] nav.scrolled {
-      background: rgba(255, 255, 255, 0.94);
-      border-bottom-color: var(--border-subtle);
-    }
-    [data-theme="light"] .hero-bg::after {
-      background: linear-gradient(to top, var(--bg), transparent);
-    }
-    [data-theme="light"] .btn-primary,
-    [data-theme="light"] .nav-cta {
-      color: #FAFAF7 !important;
-    }
-    [data-theme="light"] .lang-option.active {
-      color: #FAFAF7;
-    }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -267,54 +222,6 @@
     .lang-option.active {
       background: var(--gradient-gold);
       color: #060A18;
-    }
-
-    /* ===== THEME TOGGLE (soleil/lune, ajouté 2026-06-02) ===== */
-    .theme-toggle-wrap {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .theme-toggle {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 34px;
-      height: 26px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      cursor: pointer;
-      transition: background 0.2s, border-color 0.2s;
-      padding: 0;
-      color: var(--text-secondary);
-    }
-
-    .theme-toggle:hover {
-      border-color: var(--gold);
-      color: var(--gold-light);
-    }
-
-    .theme-toggle svg {
-      width: 14px;
-      height: 14px;
-    }
-
-    .theme-new-badge {
-      position: absolute;
-      top: -6px;
-      right: -10px;
-      background: #C0392B;
-      color: #FFFFFF;
-      font-size: 0.55rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      padding: 1px 5px;
-      border-radius: 999px;
-      pointer-events: none;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-      text-transform: uppercase;
     }
 
     .nav-cta {
@@ -1246,6 +1153,130 @@
       line-height: 1.6;
     }
 
+    /* ===== NEWSLETTER (integre 2026-05-17, capteur email Phase Beta) ===== */
+    .newsletter-block {
+      max-width: 1100px;
+      margin: 2.5rem auto 0;
+      padding: 1.5rem 1.5rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .newsletter-block h4 {
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-light);
+      margin-bottom: 0.6rem;
+    }
+    .newsletter-block p.newsletter-intro {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 640px;
+      margin-bottom: 1rem;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      align-items: stretch;
+      max-width: 520px;
+    }
+    .newsletter-form input[type="email"] {
+      flex: 1 1 220px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.75rem 0.9rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-family: inherit;
+    }
+    .newsletter-form input[type="email"]:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+    .newsletter-form button {
+      background: var(--gradient-gold);
+      color: #060A18;
+      border: none;
+      padding: 0.75rem 1.4rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-family: inherit;
+      transition: opacity 0.2s ease;
+    }
+    .newsletter-form button:hover { opacity: 0.92; }
+    .newsletter-form button:disabled { opacity: 0.6; cursor: wait; }
+    .newsletter-msg {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.6rem;
+      min-height: 1.1rem;
+    }
+    .newsletter-legal {
+      font-size: 0.72rem;
+      color: var(--text-faint);
+      margin-top: 0.6rem;
+      line-height: 1.5;
+    }
+    .newsletter-legal a { color: var(--text-muted); text-decoration: underline; }
+
+    .newsletter-popup {
+      position: fixed;
+      bottom: 1.2rem;
+      right: 1.2rem;
+      max-width: 360px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 12px;
+      padding: 1.4rem 1.3rem 1.2rem;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+      z-index: 9000;
+      transform: translateY(20px);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.35s ease;
+    }
+    .newsletter-popup.open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .newsletter-popup h4 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+    .newsletter-popup p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 0.9rem;
+    }
+    .newsletter-popup-close {
+      position: absolute;
+      top: 0.55rem;
+      right: 0.7rem;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .newsletter-popup-close:hover { color: var(--text); }
+
+    @media (max-width: 480px) {
+      .newsletter-popup { left: 0.8rem; right: 0.8rem; max-width: none; }
+      .newsletter-form { flex-direction: column; }
+      .newsletter-form button { width: 100%; }
+    }
+
     /* ===== ANIMATIONS ===== */
     .fade-in {
       opacity: 0;
@@ -1500,18 +1531,6 @@
       <li><a href="#roadmap" data-i18n="nav_roadmap">Roadmap</a></li>
       <li><a href="#presale-schedule" data-i18n="nav_presale">Prévente</a></li>
       <li><a href="#about" data-i18n="nav_about">À propos</a></li>
-      <li class="theme-toggle-wrap">
-        <button type="button" id="themeToggle" class="theme-toggle" aria-label="Basculer thème clair sombre" title="Basculer thème clair / sombre">
-          <svg id="themeToggleIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="4"></circle>
-            <path d="M12 2v2"></path><path d="M12 20v2"></path>
-            <path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path>
-            <path d="M2 12h2"></path><path d="M20 12h2"></path>
-            <path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path>
-          </svg>
-        </button>
-        <span class="theme-new-badge" id="themeNewBadge" data-i18n="theme_new_badge">Nouveau</span>
-      </li>
       <li><a href="https://app.kalmydas.com" class="nav-cta" data-i18n="nav_cta" data-umami-event="cta_nav_lancer_app" data-umami-event-source="navbar">Lancer l'app</a></li>
     </ul>
     <button class="nav-hamburger" id="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
@@ -1565,7 +1584,7 @@
       <div class="stat-label" data-i18n="stat_2_label"><span class="g-term" data-g="backtest">Simulés</span> sur données réelles</div>
     </div>
     <div class="stat-item">
-      <div class="stat-value">23</div>
+      <div class="stat-value">22</div>
       <div class="stat-label" data-i18n="stat_3_label"><span class="g-term" data-g="smart_contract">Contrats Solidity</span></div>
     </div>
     <div class="stat-item">
@@ -1792,7 +1811,7 @@
           <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--gold-light); margin-bottom: 1rem;" data-i18n="about_arch_h3">Architecture technique</h3>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; margin-bottom: 1.2rem;">
             <div style="text-align: center;">
-              <div style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; color: var(--gold-light);">23</div>
+              <div style="font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; color: var(--gold-light);">22</div>
               <div style="color: var(--text-muted); font-size: 0.85rem;" data-i18n="about_arch_contracts">contrats centraux</div>
             </div>
             <div style="text-align: center;">
@@ -1841,7 +1860,7 @@
             </div>
             <div style="display: flex; align-items: center; gap: 0.8rem;">
               <span style="width: 10px; height: 10px; border-radius: 50%; background: var(--gold-light); flex-shrink: 0; box-shadow: 0 0 8px rgba(201,168,76,0.5);"></span>
-              <span style="color: var(--text); font-size: 0.9rem;" data-i18n="about_tl_2"><strong>Q2 2026</strong>, 23 contrats centraux déployés (27 instances dont 5 pools), bêta-test actif, veKAL + gouvernance</span>
+              <span style="color: var(--text); font-size: 0.9rem;" data-i18n="about_tl_2"><strong>Q2 2026</strong>, 22 contrats centraux déployés (26 instances dont 5 pools), bêta-test actif, veKAL + gouvernance</span>
             </div>
             <div style="display: flex; align-items: center; gap: 0.8rem;">
               <span style="width: 10px; height: 10px; border-radius: 50%; background: var(--border); flex-shrink: 0;"></span>
@@ -1853,15 +1872,6 @@
             </div>
           </div>
           <a href="#roadmap" style="color: var(--gold-light); text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.4rem;" data-i18n="about_tl_link">Voir la feuille de route complète →</a>
-        </div>
-
-        <!-- Team (ajouté 2026-06-03 vague autonome, brief 03_JOURNAL/2026-06-03 brief entrant ajouter sous-bloc equipe) -->
-        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem;">
-          <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--gold-light); margin-bottom: 1rem;" data-i18n="about_team_h3">L'équipe</h3>
-          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem;" data-i18n="about_team_p1">Une équipe restreinte basée en Suisse, organisée en cellules opérationnelles. Cinq personnes au quotidien, plus un cercle élargi de contributeurs OG impliqués depuis les premiers mois.</p>
-          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem;" data-i18n="about_team_p2">Le fondateur signe sous le pseudonyme Kal. Le protocole est conçu, audité, déployé et surveillé par cette équipe, qui choisit de rester à couvert tant que la phase publique élargie n'est pas atteinte.</p>
-          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem;" data-i18n="about_team_p3">Les identités complètes seront dévoilées le 14&nbsp;septembre 2026, à l'ouverture publique élargie, sous condition que le palier de viabilité soit atteint au 31&nbsp;août 2026 (100&nbsp;000 USDC en présale Alpha plus Beta).</p>
-          <p style="color: var(--text-muted); line-height: 1.7;" data-i18n="about_team_p4">Ce que vous pouvez vérifier maintenant&nbsp;: les contrats sont publics et audités, les transactions sont visibles sur <span class="g-term" data-g="basescan">Basescan</span>, la trésorerie repose dans un Gnosis Safe à signatures multiples, et toutes les décisions de gouvernance se prennent on-chain.</p>
         </div>
 
       </div>
@@ -2021,7 +2031,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16.5 9.4l-9-5.19M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
           </div>
           <h3 data-i18n="sec_1_h"><span class="g-term" data-g="smart_contract">Contrats intelligents</span> vérifiables</h3>
-          <p data-i18n="sec_1_p">23 contrats Solidity centraux (déployés en 27 instances dont 5 pools de stratégie), code source public et vérifiable sur <span class="g-term" data-g="basescan">Basescan</span> à tout moment</p>
+          <p data-i18n="sec_1_p">22 contrats Solidity centraux (déployés en 26 instances dont 5 pools de stratégie), code source public et vérifiable sur <span class="g-term" data-g="basescan">Basescan</span> à tout moment</p>
         </div>
         <div class="security-card fade-in fade-in-delay-1">
           <div class="card-icon">
@@ -2299,7 +2309,7 @@
 
       <!-- Bandeau disclaimer dédié prévente (F-006 audit 4 mai 2026) -->
       <div class="fade-in" style="margin-top: 3rem; max-width: 720px; margin-left: auto; margin-right: auto; background: rgba(239,68,68,0.04); border: 1px solid rgba(239,68,68,0.15); border-radius: 12px; padding: 1.8rem 1.6rem; text-align: center;">
-        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; margin: 0;" data-i18n="presale_disclaimer_box"><strong style="color: var(--text);">Avertissement :</strong> la prévente du jeton KAL ne constitue pas un instrument financier au sens du droit applicable. Les fonds versés sont une participation à un protocole DeFi expérimental. Le jeton KAL n'a aucune valeur garantie. Vous pouvez perdre la totalité de votre participation. Merci à toutes les personnes qui participent à cette phase d'amorçage.</p>
+        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; margin: 0;" data-i18n="presale_disclaimer_box"><strong style="color: var(--text);">Avertissement :</strong> la prévente du jeton KAL n'est pas un investissement. Les fonds versés sont une participation à un protocole DeFi expérimental. Le jeton KAL n'a aucune valeur garantie. Vous pouvez perdre la totalité de votre participation. Merci à toutes les personnes qui participent à cette phase d'amorçage.</p>
       </div>
     </div>
   </section>
@@ -2326,7 +2336,7 @@
           <div class="roadmap-dot"></div>
           <div class="roadmap-phase" data-i18n="road_2_phase">Phase 2, Q2 2026 <span class="tag-progress">En cours</span></div>
           <h3 data-i18n="road_2_h">Développement & Beta</h3>
-          <p data-i18n="road_2_p">23 contrats Solidity centraux (27 instances dont 5 pools de stratégie), validés en bêta privée puis déployés sur <span class="g-term" data-g="base_l2">Base</span> mainnet le 1<sup>er</sup> mai 2026. veKAL, gouvernance, système de parrainage, auto-compound, diversificateur de performance, trésorerie RWA, mode solo individuel par stratégie, tout codé, testé et audité. 3ᵉ PASS Omniscient consécutif (retest final le 22 avril, fuzz 300 000 transitions, pause individuelle KalPool validée le 25 avril). Programme bêta-testeurs actif.</p>
+          <p data-i18n="road_2_p">22 contrats Solidity centraux (26 instances dont 5 pools de stratégie), validés en bêta privée puis déployés sur <span class="g-term" data-g="base_l2">Base</span> mainnet le 1<sup>er</sup> mai 2026. veKAL, gouvernance, système de parrainage, auto-compound, diversificateur de performance, trésorerie RWA, mode solo individuel par stratégie, tout codé, testé et audité. 3ᵉ PASS Omniscient consécutif (retest final le 22 avril, fuzz 300 000 transitions, pause individuelle KalPool validée le 25 avril). Programme bêta-testeurs actif.</p>
         </div>
 
         <div class="roadmap-item future fade-in">
@@ -2477,7 +2487,7 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <span data-i18n="faq_5_a">Pas de frais d'entrée ni de sortie. Frais de performance de 10&nbsp;% à 20&nbsp;% selon la stratégie, prélevés sur les nouveaux gains grâce au système de <span class="g-term" data-g="hwm">High-Water Mark</span>. Frais de gestion annuels de 0&nbsp;% à 6&nbsp;% selon le pool (ORION 0&nbsp;%, HORIZON 1,2&nbsp;%, VALKYRIE 2,4&nbsp;%, REVOLUTION 6&nbsp;%, TREASURY 6&nbsp;%).</span>
+              <span data-i18n="faq_5_a">Pas de frais d'entrée ni de sortie. Frais de performance de 10&nbsp;% à 20&nbsp;% selon la stratégie, prélevés sur les nouveaux gains grâce au système de <span class="g-term" data-g="hwm">High-Water Mark</span>. Frais de gestion annuels de 1&nbsp;% à 2,5&nbsp;% selon le pool.</span>
             </div>
           </div>
         </div>
@@ -2499,7 +2509,7 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              <span data-i18n="faq_7_a">Oui. Trois passes Omniscient Lab PASS (4.22, 4.23, 4.24) sur les 23 contrats centraux du protocole. Les findings KAL-001 à KAL-008 du Codex sont tous résolus. Les rapports d'audit sont publics et consultables sur la documentation officielle.</span>
+              <span data-i18n="faq_7_a">Oui. Trois passes Omniscient Lab PASS (4.22, 4.23, 4.24) sur les 22 contrats centraux du protocole. Les findings KAL-001 à KAL-008 du Codex sont tous résolus. Les rapports d'audit sont publics et consultables sur la documentation officielle.</span>
             </div>
           </div>
         </div>
@@ -2571,7 +2581,7 @@
           <a href="https://www.tiktok.com/@kalmydas" target="_blank" rel="noopener" data-umami-event="outbound_social" data-umami-event-network="tiktok">TikTok</a>
           <a href="https://www.instagram.com/kalmydas" target="_blank" rel="noopener" data-umami-event="outbound_social" data-umami-event-network="instagram">Instagram</a>
           <a href="https://basescan.org/" target="_blank" rel="noopener"><span class="g-term" data-g="basescan">Basescan</span></a>
-          <a href="mailto:contact@kalmydas.ch" data-i18n="footer_contact">Contact&nbsp;: contact@kalmydas.ch</a>
+          <a href="mailto:kal@kalmydas.ch" data-i18n="footer_contact">Contact&nbsp;: kal@kalmydas.ch</a>
         </div>
       </div>
 
@@ -2603,16 +2613,43 @@
 
     </div>
 
+    <!-- ===== NEWSLETTER (capteur email, integre 2026-05-17) ===== -->
+    <div class="newsletter-block">
+      <h4 data-i18n="newsletter_title">Restez informé</h4>
+      <p class="newsletter-intro" data-i18n="newsletter_intro">Restez informé de la Phase Beta du 15 juillet et des prochaines étapes. Pas de spam.</p>
+      <form id="newsletter-footer-form" class="newsletter-form" novalidate>
+        <label for="newsletter-email-footer" style="position:absolute;left:-9999px;">Adresse email</label>
+        <input id="newsletter-email-footer" type="email" required autocomplete="email" placeholder="votre@email.com" />
+        <button type="submit" data-i18n="newsletter_submit">S'inscrire</button>
+      </form>
+      <p class="newsletter-msg" role="status" aria-live="polite"></p>
+      <p class="newsletter-legal" data-i18n="newsletter_legal">En vous inscrivant, vous acceptez de recevoir nos communications. Double opt-in actif, désabonnement en un clic. Voir la <a href="/privacy.html">politique de confidentialité</a> et les <a href="/terms.html">conditions d'utilisation</a>.</p>
+    </div>
+
     <div style="border-top: 1px solid var(--border); max-width: 1100px; margin: 2rem auto 0; padding: 1.5rem 1.5rem 0;">
       <p class="footer-copy" data-i18n="footer_copy">
         &copy; 2026 KalMydas, Trading algorithmique sur l'or, fonds non-custodial. Vos clés, vos fonds.
         <br>
         <span style="font-size: 0.72rem; display: block; max-width: 820px; margin: 0.6rem auto 0;">
-          <strong data-i18n="footer_risk_title">Avertissement risques :</strong> <span data-i18n="footer_risk_text">KalMydas est une plateforme DeFi expérimentale. Le trading algorithmique et les crypto-actifs comportent un risque élevé de perte totale du capital. Les performances passées ne préjugent pas des performances futures. Ce site ne constitue ni un conseil financier, ni une sollicitation, ni une offre d'achat ou de vente d'instruments financiers. Vous êtes seul responsable de vos décisions. Renseignez-vous sur la législation applicable dans votre juridiction avant toute participation.</span>
+          <strong data-i18n="footer_risk_title">Avertissement risques :</strong> <span data-i18n="footer_risk_text">KalMydas est une plateforme DeFi expérimentale. Le trading algorithmique et les crypto-actifs comportent un risque élevé de perte totale du capital. Les performances passées ne préjugent pas des performances futures. Ce site ne constitue ni un conseil en investissement, ni une sollicitation, ni une offre d'achat ou de vente d'instruments financiers. Vous êtes seul responsable de vos décisions. Renseignez-vous sur la législation applicable dans votre juridiction avant toute participation.</span>
         </span>
       </p>
     </div>
   </footer>
+
+  <!-- ===== NEWSLETTER POPUP (declenche 30s, integre 2026-05-17) ===== -->
+  <div id="newsletter-popup" class="newsletter-popup" role="dialog" aria-labelledby="nl-popup-title" aria-hidden="true">
+    <button class="newsletter-popup-close" aria-label="Fermer" type="button">&times;</button>
+    <h4 id="nl-popup-title" data-i18n="newsletter_popup_title">Suivez la Phase Beta</h4>
+    <p data-i18n="newsletter_popup_text">Restez informé de la Phase Beta du 15 juillet et des prochaines étapes. Pas de spam.</p>
+    <form class="newsletter-form" novalidate>
+      <label for="newsletter-email-popup" style="position:absolute;left:-9999px;">Adresse email</label>
+      <input id="newsletter-email-popup" type="email" required autocomplete="email" placeholder="votre@email.com" />
+      <button type="submit" data-i18n="newsletter_submit">S'inscrire</button>
+    </form>
+    <p class="newsletter-msg" role="status" aria-live="polite"></p>
+    <p class="newsletter-legal" data-i18n="newsletter_popup_legal">Double opt-in actif. Voir <a href="/privacy.html">confidentialité</a>.</p>
+  </div>
 
   <!-- ===== SCRIPTS ===== -->
   <script>
@@ -2673,6 +2710,7 @@
   </script>
   <script src="i18n.js"></script>
   <script src="glossary-tooltip.js"></script>
+  <script src="newsletter.js"></script>
   <!-- Script Tally retiré session 301 (28/04/2026), collecte OGs désormais via DM Telegram direct -->
 
   <!-- ===== COOKIE CONSENT, RGPD / ePrivacy ===== -->
@@ -2739,7 +2777,7 @@
                   },
                   {
                     title: 'Plus d\'informations',
-                    description: "Pour toute question concernant notre politique cookies, contactez <a href=\"mailto:contact@kalmydas.ch\">contact@kalmydas.ch</a> ou consultez notre <a href=\"/privacy.html\">politique de confidentialité</a>."
+                    description: "Pour toute question concernant notre politique cookies, contactez <a href=\"mailto:kal@kalmydas.ch\">kal@kalmydas.ch</a> ou consultez notre <a href=\"/privacy.html\">politique de confidentialité</a>."
                   }
                 ]
               }
@@ -2810,29 +2848,14 @@
           if (!arr) return;
           // Dédup AVANT filtre, pour rester aligné avec app/docs (cf. session 318)
           arr = dedupTrades(arr);
-          // Filtre aligné strict sur app.kalmydas.com/transparency (cf. session 2026-06-02 voie C arbitree par Kal,
-          // formule MT4 demo identique a /transparency, transparency page lignes 524-552) :
-          //  1. exclus les coquilles fantomes : voided && entry<=0
-          //  2. status === 'closed' && pas de correction
-          //  3. NON propagated on-chain (resolveOnchainDisplay !== 'propagated')
-          // Un trade est considere propagated si onchainStatus === 'propagated' OU si openTxHash ET closeTxHash sont presents.
-          function isPropagated(t) {
-            if (t.status !== 'closed') return false;
-            if (t.onchainStatus === 'propagated') return true;
-            if (t.openTxHash && t.closeTxHash) return true;
-            return false;
-          }
+          // Filtre aligné sur app.kalmydas.com/transparency : trades clos sans correction (cf. session 324, MAITRE DEV BACKEND)
           var trades = arr.filter(function (t) {
-            if (!t || typeof t.pnlPercent !== 'number') return false;
-            if (t.voided && (t.entry || 0) <= 0) return false;
-            if (t.status !== 'closed') return false;
-            if (t.correctionId && t.correctionId > 0) return false;
-            return true;
+            return t && typeof t.pnlPercent === 'number'
+              && t.status === 'closed'
+              && (!t.correctionId || t.correctionId === 0);
           });
-          // mt4Closed = closed filtres ci-dessus, hors trades propagated (formule MT4 demo).
-          var mt4Closed = trades.filter(function (t) { return !isPropagated(t); });
           if (!trades.length) return;
-          // Stats globales (sur tous trades closed, comme avant)
+          // Stats globales
           var wins = 0, losses = 0, best = trades[0];
           trades.forEach(function (t) {
             if (t.pnlPercent > 0) wins++; else if (t.pnlPercent < 0) losses++;
@@ -2840,42 +2863,23 @@
           });
           var count = trades.length;
           var winRate = count ? (wins / count) * 100 : 0;
-          // Base de compte MT4 par strategie (depot initial du compte de backtest MT4 par strategie).
-          // Source : ATELIER/app/frontend/src/app/transparency/page.tsx lignes 391-402, mise en place
-          // par AGENT DEV APP le 24 mai 2026, memoire feedback_base_compte_mt4_par_strategie :
-          //   HORIZON 30 000, VALKYRIE 1 000, REVOLUTION 100 000, TREASURY 100 000, ORION 10 000.
-          var POOL_ACCOUNT_BASE_MT4 = {
-            HORIZON: 30000,
-            VALKYRIE: 1000,
-            REVOLUTION: 100000,
-            TREASURY: 100000,
-            ORION: 10000
-          };
-          // Performance MT4 demo par strategie : somme(pnl USD) / base compte MT4 * 100.
-          // C'est strictement la meme formule que /transparency (panneau MT4 demo, filtre strategie).
+          // Composé par stratégie : produit (1 + r/100) - 1
           var byStrat = {};
-          mt4Closed.forEach(function (t) {
-            if (!t.pool || !POOL_ACCOUNT_BASE_MT4[t.pool]) return;
-            if (!byStrat[t.pool]) byStrat[t.pool] = { count: 0, sumPnlUsd: 0, max: -Infinity };
+          trades.forEach(function (t) {
+            if (!t.pool) return;
+            if (!byStrat[t.pool]) byStrat[t.pool] = { count: 0, compose: 1, max: -Infinity };
             byStrat[t.pool].count++;
-            byStrat[t.pool].sumPnlUsd += (t.pnl || 0);
+            byStrat[t.pool].compose *= (1 + t.pnlPercent / 100);
             if (t.pnlPercent > byStrat[t.pool].max) byStrat[t.pool].max = t.pnlPercent;
           });
-          function stratPct(name) {
-            var s = byStrat[name];
-            if (!s || s.count === 0) return null;
-            var base = POOL_ACCOUNT_BASE_MT4[name];
-            if (!base) return null;
-            return (s.sumPnlUsd / base) * 100;
-          }
-          // Top strategie par perf MT4 demo. Affichage dans l'ordre canonique
-          // produit HORIZON, VALKYRIE, REVOLUTION, TREASURY, ORION (prudent vers dynamique).
-          var stratList = ['HORIZON', 'VALKYRIE', 'REVOLUTION', 'TREASURY', 'ORION'];
+          // Top stratégie par perf composée
+          var stratList = ['TREASURY', 'ORION', 'REVOLUTION', 'HORIZON', 'VALKYRIE'];
           var topName = null, topPct = -Infinity;
           stratList.forEach(function (name) {
-            var p = stratPct(name);
-            if (p === null) return;
-            if (p > topPct) { topPct = p; topName = name; }
+            var s = byStrat[name];
+            if (!s || s.count === 0) return;
+            var pct = (s.compose - 1) * 100;
+            if (pct > topPct) { topPct = pct; topName = name; }
           });
           // Hydration KPI
           var bestEl = document.getElementById('track-best-pct');
@@ -2886,17 +2890,21 @@
           if (countEl) countEl.textContent = count.toString();
           if (winEl) winEl.textContent = winRate.toFixed(1).replace('.', ',') + ' %';
           if (topEl && topName) topEl.innerHTML = topName + ' <span style="font-size: 1.6rem;">' + fmtPct(topPct, true) + '</span>';
-          // Breakdown strategies dans l'ordre canonique produit (prudent vers dynamique)
+          // Breakdown stratégies trié par perf composée desc
           var stratEl = document.getElementById('track-strategies');
           if (stratEl) {
+            var sorted = stratList.slice().sort(function (a, b) {
+              var aP = byStrat[a] && byStrat[a].count ? (byStrat[a].compose - 1) * 100 : -999;
+              var bP = byStrat[b] && byStrat[b].count ? (byStrat[b].compose - 1) * 100 : -999;
+              return bP - aP;
+            });
             var tradesLbl = isLangEn() ? 'trades' : 'trades';
             var noTradeLbl = isLangEn() ? '0 trade' : '0 trade';
             var html = '';
-            stratList.forEach(function (name) {
-              var s = byStrat[name] || { count: 0 };
+            sorted.forEach(function (name) {
+              var s = byStrat[name] || { count: 0, compose: 1 };
               var c = s.count || 0;
-              var p = stratPct(name);
-              var perf = (c > 0 && p !== null) ? ' · ' + fmtPct(p, true) : '';
+              var perf = c > 0 ? ' · ' + fmtPct((s.compose - 1) * 100, true) : '';
               var label = c > 0 ? c + ' ' + tradesLbl : noTradeLbl;
               html += '<span style="background: rgba(201,168,76,0.08); border: 1px solid rgba(190,165,110,0.2); border-radius: 999px; padding: 0.45rem 1rem; font-size: 0.85rem; color: var(--text);"><strong style="color: var(--gold-light);">' + name + '</strong> · ' + label + perf + '</span>';
             });
@@ -2914,81 +2922,6 @@
     })();
   </script>
 
-  <!-- ===== THEME TOGGLE (ajoute 2026-06-02, cookie partage km_theme cross-subdomain) ===== -->
-  <script>
-    (function () {
-      var SUN_SVG = '<svg id="themeToggleIcon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>';
-      var MOON_SVG = '<svg id="themeToggleIcon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
-
-      function isLangEn() {
-        try { return (document.documentElement.getAttribute('lang') || '').toLowerCase().indexOf('en') === 0; } catch (e) { return false; }
-      }
-
-      function readCurrent() {
-        try {
-          var m = document.cookie.match(/(?:^|;\s*)km_theme=(light|dark)/);
-          if (m) return m[1];
-          var ls = localStorage.getItem('km_theme');
-          if (ls === 'light' || ls === 'dark') return ls;
-        } catch (e) {}
-        return 'dark';
-      }
-
-      function applyTheme(theme) {
-        var btn = document.getElementById('themeToggle');
-        try {
-          if (theme === 'light') {
-            document.documentElement.setAttribute('data-theme', 'light');
-          } else {
-            document.documentElement.removeAttribute('data-theme');
-          }
-          document.cookie = 'km_theme=' + theme + '; path=/; domain=.kalmydas.com; max-age=31536000; SameSite=Lax';
-          localStorage.setItem('km_theme', theme);
-        } catch (e) {}
-        if (btn) {
-          btn.innerHTML = (theme === 'light') ? MOON_SVG : SUN_SVG;
-          var labelFR = (theme === 'light') ? 'Passer en thème sombre' : 'Passer en thème clair';
-          var labelEN = (theme === 'light') ? 'Switch to dark theme' : 'Switch to light theme';
-          var lbl = isLangEn() ? labelEN : labelFR;
-          btn.setAttribute('aria-label', lbl);
-          btn.setAttribute('title', lbl);
-        }
-      }
-
-      function refreshBadge() {
-        var b = document.getElementById('themeNewBadge');
-        if (!b) return;
-        b.textContent = isLangEn() ? 'NEW' : 'Nouveau';
-      }
-
-      function init() {
-        applyTheme(readCurrent());
-        refreshBadge();
-        var btn = document.getElementById('themeToggle');
-        if (btn) {
-          btn.addEventListener('click', function () {
-            var current = readCurrent();
-            var next = (current === 'light') ? 'dark' : 'light';
-            applyTheme(next);
-            try { if (window.umami && typeof window.umami.track === 'function') { window.umami.track('toggle_theme', { theme: next }); } } catch (e) {}
-          });
-        }
-        try {
-          var obs = new MutationObserver(function () {
-            refreshBadge();
-            applyTheme(readCurrent());
-          });
-          obs.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
-        } catch (e) {}
-      }
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-      } else {
-        init();
-      }
-    })();
-  </script>
-
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
