@@ -21,7 +21,6 @@ const I18N_EN = {
   nav_presale: "Presale",
   nav_about: "About",
   nav_cta: "Launch app",
-  theme_new_badge: "NEW",
 
   /* ===== HERO ===== */
   hero_badge: `<span class="dot"></span> Mainnet live · Base`,
@@ -34,7 +33,7 @@ const I18N_EN = {
   /* ===== STATS ===== */
   stat_1_label: "Trading robots",
   stat_2_label: `Of <span class="g-term" data-g="backtest">backtested</span> data`,
-  stat_3_label: `<span class="g-term" data-g="smart_contract">Core smart contracts</span> (26 instances)`,
+  stat_3_label: `<span class="g-term" data-g="smart_contract">Core smart contracts</span> (27 instances)`,
   stat_4_label: "Unit tests",
 
   /* ===== HOW IT WORKS ===== */
@@ -105,7 +104,7 @@ const I18N_EN = {
   sec_title: "Security of your funds",
   sec_desc: `Your assets are protected by auditable <span class="g-term" data-g="smart_contract">smart contracts</span>, deployed on the <span class="g-term" data-g="blockchain">blockchain</span>`,
   sec_1_h: `Verifiable <span class="g-term" data-g="smart_contract">smart contracts</span>`,
-  sec_1_p: `22 core <span class="g-term" data-g="solidity">Solidity</span> contracts (deployed across 26 instances including 5 strategy pools), public source code, verifiable on <span class="g-term" data-g="basescan">Basescan</span> at any time`,
+  sec_1_p: `23 core <span class="g-term" data-g="solidity">Solidity</span> contracts (deployed across 27 instances including 5 strategy pools), public source code, verifiable on <span class="g-term" data-g="basescan">Basescan</span> at any time`,
   sec_2_h: "1,100+ unit tests",
   sec_2_p: "Every critical function is automatically tested. Complete scenario coverage",
   sec_3_h: `<span class="g-term" data-g="base_l2">Base</span> by Coinbase`,
@@ -125,7 +124,7 @@ const I18N_EN = {
   road_1_p: `First <span class="g-term" data-g="smart_contract">smart contracts</span> deployed on <span class="g-term" data-g="arbitrum_sepolia">Arbitrum Sepolia</span>. E2E tests validated. MVP frontend connected <span class="g-term" data-g="on_chain">on-chain</span>. Whitepaper published. 5 verified <span class="g-term" data-g="backtest">backtests</span>.`,
   road_2_phase: `Phase 2, Q2 2026 <span class="tag-progress">In progress</span>`,
   road_2_h: "Development & Beta",
-  road_2_p: `22 core Solidity contracts (26 instances including 5 strategy pools), validated in private beta and then deployed on <span class="g-term" data-g="base_l2">Base</span> mainnet on May 1, 2026. veKAL, governance, referral system, auto-compound, performance diversifier, RWA treasury, individual solo mode per strategy, all coded, tested and audited. 3rd consecutive Omniscient PASS (final retest on April 22, 300,000-transition fuzz, KalPool individual pause validated on April 25). Beta testing program active.`,
+  road_2_p: `23 core Solidity contracts (27 instances including 5 strategy pools), validated in private beta and then deployed on <span class="g-term" data-g="base_l2">Base</span> mainnet on May 1, 2026. veKAL, governance, referral system, auto-compound, performance diversifier, RWA treasury, individual solo mode per strategy, all coded, tested and audited. 3rd consecutive Omniscient PASS (final retest on April 22, 300,000-transition fuzz, KalPool individual pause validated on April 25). Beta testing program active.`,
   road_3_phase: "Phase 3, September 14, 2026",
   road_3_h: "Public opening",
   road_3_p: `Public opening of the presale on <span class="g-term" data-g="base_l2">Base</span> mainnet (tiers 4 to 10, $1.50 to $8) after the Alpha (OGs) and Beta (community members) phases. Activation of public <span class="g-term" data-g="vekal">veKAL</span> incentives and <span class="g-term" data-g="dao">DAO</span> governance. The platform has been running on Base since May 1, September 14 only triggers public access.`,
@@ -157,7 +156,7 @@ const I18N_EN = {
   public_meta_l2: "Cap:",
   public_meta_v2: "332,500 KAL = $1.435M",
   presale_footnote: "Total presale cap: 500,000 KAL (5% of total supply) = ~$1.51M maximum. If the $100k viability gate is not reached by August 31, the September 14 public opening may be postponed or opened in tranches.",
-  presale_disclaimer_box: "<strong>Disclaimer:</strong> the KAL token presale is not an investment. Funds contributed are a participation in an experimental DeFi protocol. The KAL token has no guaranteed value. You may lose all of your participation. Thanks to everyone taking part in this bootstrap phase.",
+  presale_disclaimer_box: "<strong>Disclaimer:</strong> the KAL token presale is not a financial instrument under applicable law. Funds contributed are a participation in an experimental DeFi protocol. The KAL token has no guaranteed value. You may lose all of your participation. Thanks to everyone taking part in this bootstrap phase.",
 
   /* ===== TRACK RECORD (demo-account algorithm performance, F9 LEGAL 2026-05-25) ===== */
   track_label: "Algorithm trade journal",
@@ -203,11 +202,11 @@ const I18N_EN = {
   faq_4_q: "Is future performance guaranteed?",
   faq_4_a: "No. The figures shown are based on historical backtests (up to 21 years of data). Past performance does not guarantee future results. Trading involves risk of capital loss.",
   faq_5_q: "What are the fees?",
-  faq_5_a: "No entry or exit fees. Performance fees of 10% to 20% depending on strategy, charged on new gains thanks to the High-Water Mark system. Annual management fees of 1% to 2.5% depending on the pool.",
+  faq_5_a: "No entry or exit fees. Performance fees of 10% to 20% depending on strategy, charged on new gains thanks to the High-Water Mark system. Annual management fees of 0% to 6% depending on the pool (ORION 0%, HORIZON 1.2%, VALKYRIE 2.4%, REVOLUTION 6%, TREASURY 6%).",
   faq_6_q: "Do I need a crypto wallet to use KalMydas?",
   faq_6_a: "No. You can sign in with a simple email or Google account. A wallet is created automatically for you through Privy. Advanced users can also connect their own wallet (MetaMask, etc.).",
   faq_7_q: "Are the contracts audited?",
-  faq_7_a: "Yes. Three Omniscient Lab audits PASS (4.22, 4.23, 4.24) on the 22 core protocol contracts. KAL-001 through KAL-008 Codex findings are all resolved. Audit reports are public and accessible from the official documentation.",
+  faq_7_a: "Yes. Three Omniscient Lab audits PASS (4.22, 4.23, 4.24) on the 23 core protocol contracts. KAL-001 through KAL-008 Codex findings are all resolved. Audit reports are public and accessible from the official documentation.",
   faq_8_q: "Which strategy should I choose as a beginner?",
   faq_8_a: "HORIZON is the most conservative profile, designed for discovery (modest simulated performance, controlled drawdown on backtest). VALKYRIE offers a balanced profile. The more aggressive strategies (REVOLUTION, TREASURY, ORION) require a clear understanding of volatility. You can pick several and split your capital as you wish.",
 
@@ -260,10 +259,15 @@ const I18N_EN = {
   about_status_p: `The platform has been live on Base mainnet since May 1, 2026 after several months of intensive testing. Phase Alpha of the presale opens on May 8, 2026, the Beta Phase on July 15, 2026, and the Public Phase on September 14, 2026.`,
   about_timeline_h3: "Where we are",
   about_tl_1: "<strong>Q1 2026</strong>, Foundations laid, first contracts, connected MVP",
-  about_tl_2: "<strong>Q2 2026</strong>, 22 core contracts deployed (26 instances including 5 strategy pools), active beta testing, veKAL + governance",
+  about_tl_2: "<strong>Q2 2026</strong>, 23 core contracts deployed (27 instances including 5 strategy pools), active beta testing, veKAL + governance",
   about_tl_3: "<strong>September 14, 2026</strong>: public presale opening on Base mainnet (tiers 4 to 10), conditional on the 100,000 USDC viability gate. The platform has been running on Base since May 1<sup>st</sup>.",
   about_tl_4: "<strong>Q4 2026+</strong>, Growth, DEX listing, mobile app, DAO",
   about_tl_link: "View full roadmap →",
+  about_team_h3: "The team",
+  about_team_p1: "A small team based in Switzerland, organised in operational cells. Five people on a daily basis, plus a wider circle of OG contributors involved since the early months.",
+  about_team_p2: "The founder signs under the pseudonym Kal. The protocol is designed, audited, deployed and monitored by this team, which chooses to stay under cover until the wider public opening is reached.",
+  about_team_p3: "Full identities will be unveiled on 14 September 2026, at the wider public opening, conditional on the viability gate being reached on 31 August 2026 (100,000 USDC across Alpha plus Beta presale).",
+  about_team_p4: "What you can verify now: the contracts are public and audited, transactions are visible on <span class=\"g-term\" data-g=\"basescan\">Basescan</span>, the treasury sits in a multi-signature Gnosis Safe, and all governance decisions are taken on-chain.",
 
   /* ===== FOOTER ===== */
   footer_tagline: "Algorithmic gold trading, accessible to all. Non-custodial, your keys, your funds.",
@@ -291,7 +295,7 @@ const I18N_EN = {
   footer_terms: "Terms of use",
   footer_manage_cookies: "Manage cookies",
   footer_risk_title: "Risk disclaimer:",
-  footer_risk_text: "KalMydas is an experimental DeFi platform. Algorithmic trading and crypto-assets carry a high risk of total capital loss. Past performance does not guarantee future results. This website does not constitute investment advice, solicitation, or an offer to buy or sell financial instruments. You are solely responsible for your decisions. Check the applicable legislation in your jurisdiction before participating.",
+  footer_risk_text: "KalMydas is an experimental DeFi platform. Algorithmic trading and crypto-assets carry a high risk of total capital loss. Past performance does not guarantee future results. This website does not constitute financial advice, solicitation, or an offer to buy or sell financial instruments. You are solely responsible for your decisions. Check the applicable legislation in your jurisdiction before participating.",
   footer_copy: `&copy; 2026 KalMydas, Decentralized algorithmic gold trading. Non-custodial, your keys, your funds.`,
   newsletter_title: "Stay informed",
   newsletter_intro: "Stay informed about the July 15 Beta Phase and upcoming milestones. No spam.",
