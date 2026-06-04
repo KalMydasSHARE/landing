@@ -1814,7 +1814,7 @@
         <!-- Token KAL -->
         <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem;">
           <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--gold-light); margin-bottom: 1rem;" data-i18n="about_token_h3">Le jeton KAL</h3>
-          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem;" data-i18n="about_token_desc2">Le jeton KAL (<span class="g-term" data-g="erc20">ERC-20</span>, 10 millions max) fonctionne avec une <span class="g-term" data-g="bonding_curve">courbe de valorisation</span> transparente : le prix monte avec l'adoption. 30% des frais de performance sont utilisés pour le rachat et la recirculation (philosophie Zéro Destruction). Verrouillez vos KAL en <span class="g-term" data-g="vekal">veKAL</span> pour recevoir votre part des frais en <span class="g-term" data-g="usdc">USDC</span> chaque semaine.</p>
+          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem;" data-i18n="about_token_desc2">Le jeton KAL (<span class="g-term" data-g="erc20">ERC-20</span>, 10 millions max) fonctionne avec une <span class="g-term" data-g="bonding_curve">courbe de valorisation</span> transparente : le prix monte avec l'adoption. 30&nbsp;% des frais de performance sont utilisés pour le rachat puis la redirection vers la pool de liquidité KalSwap KAL/USDC du protocole, via le contrat <span class="g-term" data-g="pol">BuybackRecirculator</span> (doctrine Zero Burn, aucune destruction). Verrouillez vos KAL en <span class="g-term" data-g="vekal">veKAL</span> pour recevoir votre part des frais en <span class="g-term" data-g="usdc">USDC</span> chaque semaine.</p>
           <!-- Tags distribution alignés docs/tokenomics, corrigés session 298 (28/04/2026), total 100 % -->
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
             <span style="background: rgba(190,165,110,0.1); border: 1px solid rgba(190,165,110,0.2); border-radius: 8px; padding: 0.3rem 0.8rem; font-size: 0.8rem; color: var(--gold-light);" data-i18n="about_token_lp">60 % Récompenses LP</span>
@@ -1823,6 +1823,8 @@
             <span style="background: rgba(190,165,110,0.1); border: 1px solid rgba(190,165,110,0.2); border-radius: 8px; padding: 0.3rem 0.8rem; font-size: 0.8rem; color: var(--gold-light);" data-i18n="about_token_curve">4,5 % Courbe</span>
             <span style="background: rgba(190,165,110,0.1); border: 1px solid rgba(190,165,110,0.2); border-radius: 8px; padding: 0.3rem 0.8rem; font-size: 0.8rem; color: var(--gold-light);" data-i18n="about_token_community">0,5 % Testeurs</span>
           </div>
+          <!-- Note technique Zero Burn ajoutée 2026-06-04 Correctif A MME Legal -->
+          <p style="margin-top: 1.2rem; padding-top: 1rem; border-top: 1px dashed var(--border); color: var(--text-muted); font-size: 0.82rem; line-height: 1.6; font-style: italic;" data-i18n="about_token_zeroburn_note"><strong style="color: var(--text); font-style: normal;">Note technique pour lecteurs avertis&nbsp;:</strong> le contrat <code style="font-family: ui-monospace, monospace; font-size: 0.95em;">KalToken</code> hérite techniquement de <code style="font-family: ui-monospace, monospace; font-size: 0.95em;">ERC20Burnable</code> d'OpenZeppelin, mais la fonction <code style="font-family: ui-monospace, monospace; font-size: 0.95em;">burn</code> est neutralisée par override. Aucun appel <code style="font-family: ui-monospace, monospace; font-size: 0.95em;">burn</code> ne réduit le <code style="font-family: ui-monospace, monospace; font-size: 0.95em;">totalSupply</code>. Vérifiable sur <span class="g-term" data-g="basescan">Basescan</span>.</p>
         </div>
 
         <!-- Risk -->
@@ -2170,7 +2172,7 @@
             </li>
             <li>
               <svg class="feature-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
-              <span data-i18n="token_f2"><strong><span class="g-term" data-g="pol">Rachat &amp; Recirculation</span></strong>&nbsp;: Une partie des frais de performance rachète du KAL sur le marché et le réinjecte dans la liquidité du protocole (pression acheteuse permanente, sans destruction)</span>
+              <span data-i18n="token_f2"><strong><span class="g-term" data-g="pol">Rachat puis Recirculation</span></strong>&nbsp;: Une partie des frais de performance rachète du KAL sur le marché et le réinjecte dans la pool KalSwap KAL/USDC du protocole, via le contrat <code style="font-family: ui-monospace, monospace; font-size: 0.9em;">BuybackRecirculator</code> (pression acheteuse permanente, doctrine Zero Burn, aucune destruction)</span>
             </li>
             <li>
               <svg class="feature-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
@@ -2271,12 +2273,16 @@
 
         <!-- Phase Beta -->
         <div class="fade-in fade-in-delay-1" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem;">
-          <div style="font-size: 0.75rem; color: var(--gold-light); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.8rem;" data-i18n="beta_label">Phase Beta</div>
+          <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.8rem;">
+            <div style="font-size: 0.75rem; color: var(--gold-light); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700;" data-i18n="beta_label">Phase Beta</div>
+            <!-- Badge géo-blocage UE (Correctif B MME Legal 2026-06-04) -->
+            <span style="font-size: 0.65rem; color: var(--danger, #ef4444); background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.3); border-radius: 6px; padding: 0.15rem 0.55rem; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600;" data-i18n="beta_geo_badge" title="Indisponible aux résidents UE (MiCA)">Hors UE</span>
+          </div>
           <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--text); margin-bottom: 1rem;" data-i18n="beta_h">À partir du 15 juillet 2026</h3>
           <div style="font-size: 2.4rem; font-weight: 700; color: var(--gold-light); margin-bottom: 0.5rem; font-family: var(--font-display);">0,50 → 0,70 $</div>
-          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1rem;" data-i18n="beta_p">Paliers STRATÉGIQUE et COMMUNAUTÉ ouverts à la communauté Telegram élargie. Plafond combiné 100 000 KAL = 60 000 $ levés maximum.</p>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1rem;" data-i18n="beta_p">Paliers STRATÉGIQUE et COMMUNAUTÉ ouverts à la communauté Telegram élargie résidant hors Union européenne. Plafond combiné 100&nbsp;000 KAL = 60&nbsp;000&nbsp;$ levés maximum. <strong style="color: var(--danger, #ef4444);">Indisponible aux résidents UE pour des raisons de conformité MiCA.</strong></p>
           <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.85rem; color: var(--text-muted);">
-            <div><strong style="color: var(--text);" data-i18n="beta_meta_l1">Public :</strong> <span data-i18n="beta_meta_v1">Membres Telegram élargis</span></div>
+            <div><strong style="color: var(--text);" data-i18n="beta_meta_l1">Public :</strong> <span data-i18n="beta_meta_v1">Membres Telegram élargis, hors UE</span></div>
             <div><strong style="color: var(--text);" data-i18n="beta_meta_l2">Plafond :</strong> <span data-i18n="beta_meta_v2">100 000 KAL = 60 k$</span></div>
           </div>
         </div>
@@ -2297,9 +2303,9 @@
 
       <p style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 2.5rem; max-width: 720px; margin-left: auto; margin-right: auto; line-height: 1.6;" data-i18n="presale_footnote">Plafond global de la prévente : 500 000 KAL (5 % de l'offre totale) = ~1,51 M$ maximum. Si le palier de viabilité de 100 k$ n'est pas atteint au 31 août, l'ouverture publique du 14 septembre peut être reportée ou ouverte par tranches.</p>
 
-      <!-- Bandeau disclaimer dédié prévente (F-006 audit 4 mai 2026) -->
+      <!-- Bandeau disclaimer dédié prévente (F-006 audit 4 mai 2026, enrichi 2026-06-04 Correctif B MME Legal MiCA) -->
       <div class="fade-in" style="margin-top: 3rem; max-width: 720px; margin-left: auto; margin-right: auto; background: rgba(239,68,68,0.04); border: 1px solid rgba(239,68,68,0.15); border-radius: 12px; padding: 1.8rem 1.6rem; text-align: center;">
-        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; margin: 0;" data-i18n="presale_disclaimer_box"><strong style="color: var(--text);">Avertissement :</strong> la prévente du jeton KAL ne constitue pas un instrument financier au sens du droit applicable. Les fonds versés sont une participation à un protocole DeFi expérimental. Le jeton KAL n'a aucune valeur garantie. Vous pouvez perdre la totalité de votre participation. Merci à toutes les personnes qui participent à cette phase d'amorçage.</p>
+        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; margin: 0;" data-i18n="presale_disclaimer_box"><strong style="color: var(--text);">Avertissement&nbsp;:</strong> la prévente du jeton KAL ne constitue pas un instrument financier au sens du droit applicable. <strong style="color: var(--text);">Aucune offre publique au public dans l'Union européenne.</strong> Les fonds versés sont une participation à un protocole décentralisé expérimental. Le jeton KAL n'a aucune valeur garantie. Vous pouvez perdre la totalité de votre participation. Voir nos <a href="/terms.html#geoblocage-ue" style="color: var(--gold-light); text-decoration: underline;">conditions générales d'utilisation, section géo-blocage UE</a> pour le cadre régulatoire complet. Merci à toutes les personnes qui participent à cette phase d'amorçage.</p>
       </div>
     </div>
   </section>
@@ -2511,6 +2517,18 @@
           <div class="faq-answer">
             <div class="faq-answer-inner">
               <span data-i18n="faq_8_a">HORIZON est la plus prudente, conçue pour un profil découverte (performance simulée modeste, perte maximale maîtrisée sur tests historiques). VALKYRIE offre un profil équilibré. Les stratégies plus agressives (REVOLUTION, TREASURY, ORION) supposent une compréhension claire de la volatilité. Vous pouvez en sélectionner plusieurs et répartir votre capital comme vous le souhaitez.</span>
+            </div>
+          </div>
+        </div>
+        <!-- FAQ 9 ajoutée 2026-06-04 Correctif A MME Legal, doctrine Zero Burn -->
+        <div class="faq-item fade-in">
+          <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            <span data-i18n="faq_9_q">Le KAL brûle-t-il ?</span>
+            <svg class="faq-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <span data-i18n="faq_9_a">Non, le KAL ne brûle jamais. Tous les flux KAL passent par recirculation via le contrat <code style="font-family: ui-monospace, monospace; font-size: 0.95em;">BuybackRecirculator</code> : les KAL rachetés grâce aux frais de performance sont systématiquement réinjectés dans la pool KalSwap KAL/USDC du protocole, jamais détruits. Cette doctrine, dite Zero Burn, est intangible et vérifiable on-chain sur <span class="g-term" data-g="basescan">Basescan</span>. Le contrat <code style="font-family: ui-monospace, monospace; font-size: 0.95em;">KalToken</code> hérite techniquement de <code style="font-family: ui-monospace, monospace; font-size: 0.95em;">ERC20Burnable</code> d'OpenZeppelin, mais la fonction <code style="font-family: ui-monospace, monospace; font-size: 0.95em;">burn</code> est neutralisée par override&nbsp;: aucun appel ne réduit le <code style="font-family: ui-monospace, monospace; font-size: 0.95em;">totalSupply</code>.</span>
             </div>
           </div>
         </div>
@@ -2980,6 +2998,19 @@
           });
           obs.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
         } catch (e) {}
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+
+</body>
+</html>
+ catch (e) {}
       }
 
       if (document.readyState === 'loading') {

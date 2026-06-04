@@ -78,7 +78,7 @@
     </ul>
 
     <h3 style="color:#fff;margin-top:1.5rem;font-size:1.05rem;" data-en="Audience measurement (conditional)">Mesure d'audience (conditionnel)</h3>
-    <p data-en="Enabled only after your consent. Examples: _ga, _gid (Google Analytics), _pk_id, _pk_ses (Matomo/Plausible).">Activés uniquement après votre consentement. Exemples : _ga, _gid (Google Analytics), _pk_id, _pk_ses (Matomo/Plausible).</p>
+    <p data-en="KalMydas uses Umami Analytics (cloud.umami.is), a privacy-first audience measurement tool that does not set tracking cookies and does not store personal data. Page views and interactions are aggregated anonymously, no cross-site tracking, no profiling. Hosting Umami Cloud in the EU.">KalMydas utilise Umami Analytics (cloud.umami.is), un outil de mesure d'audience respectueux de la vie privée qui ne dépose pas de cookies de pistage et ne stocke aucune donnée personnelle. Les pages vues et interactions sont agrégées de façon anonyme, sans suivi inter-sites ni profilage. Hébergement Umami Cloud en Union européenne.</p>
 
     <h3 style="color:#fff;margin-top:1.5rem;font-size:1.05rem;" data-en="Third-party cookies (social networks)">Cookies tiers (réseaux sociaux)</h3>
     <p data-en="Our site may contain links to X, Telegram, Discord. These platforms can place their own cookies if you click, consult their respective policies.">Notre site peut contenir des liens vers X, Telegram, Discord. Ces plateformes peuvent déposer leurs propres cookies si vous cliquez, consultez leurs politiques respectives.</p>
@@ -116,7 +116,7 @@
     var t=document.getElementById('ltog');if(t)t.querySelectorAll('.lo').forEach(function(o){o.classList.toggle('active',o.getAttribute('data-lang')===l);});
   }
   function init(){cache();
-    var s=document.createElement('style');s.textContent='.ltoggle{position:fixed;top:16px;right:16px;z-index:99999;display:flex;background:rgba(10,10,15,0.92);border:1px solid rgba(201,168,76,0.3);border-radius:20px;padding:2px;cursor:pointer;user-select:none;backdrop-filter:blur(12px);box-shadow:0 4px 20px rgba(0,0,0,0.4);}.lo{padding:4px 12px;border-radius:16px;font-size:0.78rem;font-weight:600;color:rgba(255,255,255,0.45);transition:all 0.3s;font-family:Inter,Arial,sans-serif;}.lo.active{background:linear-gradient(135deg,#c9a84c,#f1da7a);color:#0a0a0f;}';
+    var s=document.createElement('style');s.textContent='.ltoggle{position:fixed;top:16px;right:16px;z-index:99999;display:flex;background:rgba(10,10,15,0.92);border:1px solid rgba(201,168,76,0.3);border-radius:20px;padding:2px;cursor:pointer;user-select:none;backdrop-filter:blur(12px);box-shadow:0 4px 20px rgba(0,0,0,0.4);}.lo{padding:4px 12px;border-radius:16px;font-size:0.78rem;font-weight:600;color:rgba(255,255,255,0.45);transition:all 0.3s;font-family:Inter,Arial,sans-serif;}.lo.active{background:linear-gradient(135deg,#c9a84c,#f1da7a);color:#060A18;}';
     document.head.appendChild(s);
     var d=document.createElement('div');d.id='ltog';d.className='ltoggle';d.setAttribute('role','button');
     d.innerHTML='<span class="lo'+(lang==='fr'?' active':'')+'" data-lang="fr">FR</span><span class="lo'+(lang==='en'?' active':'')+'" data-lang="en">EN</span>';
