@@ -1574,6 +1574,71 @@
     </div>
   </div>
 
+  <!-- ===== PRESALE COUNTER (replacé 2026-06-06 sur demande Kal) ===== -->
+  <section id="presale-counter" aria-label="Compteur prévente KAL" style="padding: 2.5rem 0 0;">
+    <div class="container">
+      <a href="#presale-schedule" class="fade-in" id="km-presale-counter" style="display: block; max-width: 920px; margin: 0 auto; padding: 1.4rem 1.6rem; background: linear-gradient(135deg, rgba(190,165,110,0.08) 0%, rgba(190,165,110,0.04) 100%); border: 1px solid rgba(190,165,110,0.4); border-radius: 16px; text-decoration: none; transition: border-color 0.2s ease, background 0.2s ease;">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1.2rem;">
+          <div style="flex: 1 1 280px; min-width: 0;">
+            <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.4rem;">
+              <span style="font-size: 0.72rem; color: var(--gold-light); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700;" data-i18n="counter_phase">Phase Alpha en cours</span>
+              <span style="display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.68rem; color: #22c55e; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.25); border-radius: 999px; padding: 0.15rem 0.6rem; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600;">
+                <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #22c55e;"></span>
+                <span data-i18n="counter_status">Ouverte</span>
+              </span>
+            </div>
+            <p style="font-size: 1rem; color: var(--text); font-weight: 600; line-height: 1.4; margin: 0 0 0.25rem;" data-i18n="counter_lead">Palier d'amorçage ouvert au cercle proche jusqu'au 15 juillet 2026.</p>
+            <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin: 0;" data-i18n="counter_sub">Outil d'autonomie. Voir le calendrier complet ci-dessous.</p>
+          </div>
+          <div style="flex: 0 0 auto; display: flex; align-items: baseline; gap: 0.5rem;">
+            <div style="text-align: center;">
+              <div id="km-cd-days" style="font-family: var(--font-display); font-size: 2.4rem; font-weight: 800; color: var(--gold-light); line-height: 1; font-variant-numeric: tabular-nums;">--</div>
+              <div style="font-size: 0.65rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.2rem;" data-i18n="counter_unit_days">Jours</div>
+            </div>
+            <div style="text-align: center;">
+              <div id="km-cd-hours" style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--text); line-height: 1; font-variant-numeric: tabular-nums;">--</div>
+              <div style="font-size: 0.65rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.2rem;" data-i18n="counter_unit_hours">Heures</div>
+            </div>
+            <div style="text-align: center;">
+              <div id="km-cd-mins" style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--text); line-height: 1; font-variant-numeric: tabular-nums;">--</div>
+              <div style="font-size: 0.65rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.2rem;" data-i18n="counter_unit_mins">Minutes</div>
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 0.7rem; color: var(--text-muted); margin: 0.9rem 0 0; line-height: 1.5;" data-i18n="counter_foot">Avant ouverture de la Phase Beta. Calendrier indicatif, susceptible d'ajustement selon les conditions de marché. Participation à un protocole décentralisé, valeur non garantie, perte totale possible.</p>
+      </a>
+    </div>
+  </section>
+  <script>
+    (function(){
+      // Cible : ouverture Phase Beta, 15 juillet 2026, 12:00 UTC
+      var target = Date.UTC(2026, 6, 15, 12, 0, 0);
+      var elDays = document.getElementById('km-cd-days');
+      var elHours = document.getElementById('km-cd-hours');
+      var elMins = document.getElementById('km-cd-mins');
+      if (!elDays || !elHours || !elMins) return;
+      function pad(n){ return n < 10 ? '0' + n : String(n); }
+      function tick(){
+        var diff = target - Date.now();
+        if (diff <= 0) {
+          elDays.textContent = '0';
+          elHours.textContent = '00';
+          elMins.textContent = '00';
+          return;
+        }
+        var totalMin = Math.floor(diff / 60000);
+        var days = Math.floor(totalMin / 1440);
+        var hours = Math.floor((totalMin % 1440) / 60);
+        var mins = totalMin % 60;
+        elDays.textContent = String(days);
+        elHours.textContent = pad(hours);
+        elMins.textContent = pad(mins);
+      }
+      tick();
+      setInterval(tick, 30000);
+    })();
+  </script>
+
   <!-- ===== HOW IT WORKS ===== -->
   <section id="how">
     <div class="container">

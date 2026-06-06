@@ -129,6 +129,16 @@ const I18N_EN = {
   road_3_h: "Public opening",
   road_3_p: `Public opening of the presale on <span class="g-term" data-g="base_l2">Base</span> mainnet (tiers 4 to 10, $1.50 to $8) after the Alpha (OGs) and Beta (community members) phases. Activation of public <span class="g-term" data-g="vekal">veKAL</span> incentives and <span class="g-term" data-g="dao">DAO</span> governance. The platform has been running on Base since May 1, September 14 only triggers public access.`,
 
+  /* ===== PRESALE COUNTER (replacé 2026-06-06 sur demande Kal) ===== */
+  counter_phase: "Phase Alpha live",
+  counter_status: "Open",
+  counter_lead: "Bootstrap tier open to the close circle until July 15, 2026.",
+  counter_sub: "An autonomy tool. See the full schedule below.",
+  counter_unit_days: "Days",
+  counter_unit_hours: "Hours",
+  counter_unit_mins: "Minutes",
+  counter_foot: "Until the Phase Beta opening. Indicative schedule, subject to adjustment depending on market conditions. Participation in a decentralised protocol, no guaranteed value, total loss possible.",
+
   /* ===== PRESALE SCHEDULE (3 phases, refondu session 319 + 320 conformité V5) ===== */
   presale_label: "Presale schedule",
   presale_title: "Three progressive phases",
@@ -580,7 +590,6 @@ const GLOSSARY_DEFS_EN = {
     // Ensure the shared cookie reflects the current detected/saved language on every page load,
     // so if the user opened the landing first (auto-detected FR/EN), app.kalmydas.com picks it up.
     writeSharedCookie(currentLang);
-
     // If we arrived with ?lang=XX (came from another subdomain), promote it to cookie and
     // strip the query so it does not pollute copy/paste of the URL.
     cleanLangFromUrl();
