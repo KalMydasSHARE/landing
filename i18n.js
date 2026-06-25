@@ -24,11 +24,16 @@ const I18N_EN = {
 
   /* ===== HERO ===== */
   hero_badge: `<span class="dot"></span> Mainnet live · Base`,
-  hero_h1: `Gold, <span class="gold">algorithmically</span>`,
-  hero_sub: `No broker, no third-party custody: your funds stay in public smart contracts under your own key. Five algorithms take positions on gold (<span class="g-term" data-g="xauusd">XAUUSD</span>) 24 hours a day, directly on-chain via gTrade. Over 4 to 21 years of <span class="g-term" data-g="backtest">historical simulation</span>, annual performance ranges from roughly 4% to 79% depending on the strategy, the kind of management usually reserved for six-figure deposits, here accessible from $10. Mainnet on <span class="g-term" data-g="base">Base</span> live since May 1, 2026.<br><span style="font-size:0.78rem; opacity:0.7;">Historical simulations over 4 to 21 years of XAUUSD data. Live execution via gTrade may produce different results. Risk of partial or total capital loss. Past performance does not guarantee future performance.</span>`,
+  hero_h1: `Don't trust us. <span class="gold">Verify.</span>`,
+  hero_sub: `The rigor of a private bank, without the bank. No broker, no third-party custody, your funds stay in public smart contracts under your own key. Five algorithms take positions on gold (<span class="g-term" data-g="xauusd">XAUUSD</span>) 24 hours a day, directly on-chain via gTrade. Over 4 to 21 years of <span class="g-term" data-g="backtest">historical simulation</span>, annual performance ranges from roughly 4% to 79% depending on the strategy, the kind of management usually reserved for six-figure deposits, here accessible from $10. Mainnet on <span class="g-term" data-g="base">Base</span> live since May 1, 2026.<br><span style="font-size:0.78rem; opacity:0.7;">Historical simulations over 4 to 21 years of XAUUSD data. Live execution via gTrade may produce different results. Risk of partial or total capital loss. Past performance does not guarantee future performance.</span>`,
   hero_btn_primary: `Launch app <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
   hero_btn_secondary: "View strategies",
   hero_telegram: "Join the community on Telegram",
+
+  /* ===== PASTOR P: PROBLEM ===== */
+  probleme_label: "The reality",
+  probleme_title: "You've been asked to trust far too often.",
+  probleme_body: "In crypto, you are constantly asked to trust. To trust teams you never see, figures no one verifies, promises that change the moment things go wrong. And serious gold management, the kind that has run for decades inside institutions, stayed closed, opaque, reserved for those who already had everything. On one side, smart money locked away; on the other, strangers demanding your trust. You deserve better than that choice.",
 
   /* ===== STATS ===== */
   stat_1_label: "Trading robots",
