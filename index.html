@@ -467,6 +467,78 @@
       line-height: 1.8;
     }
 
+    /* === HERO VISUEL 2026 : stat-cards + trust badges === */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.9rem;
+      max-width: 720px;
+      margin: 0 auto 2rem;
+    }
+    .hero-stat {
+      padding: 1.1rem 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: rgba(190, 165, 110, 0.035);
+      backdrop-filter: blur(4px);
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .hero-stat:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-gold);
+    }
+    .hero-stat .hs-value {
+      font-family: var(--font-display);
+      font-size: clamp(1.35rem, 3.2vw, 1.9rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      background: var(--gradient-gold-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-stat .hs-label {
+      margin-top: 0.35rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.55rem;
+      margin: 0 auto 2.2rem;
+      max-width: 640px;
+    }
+    .hero-trust .ht-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.32rem 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.76rem;
+      color: var(--text-secondary);
+      background: rgba(255,255,255,0.02);
+    }
+    .hero-trust .ht-chip svg { flex-shrink: 0; color: var(--gold); }
+    .hero-sub .hero-disclaimer {
+      display: block;
+      margin-top: 1.4rem;
+      font-size: 0.74rem;
+      line-height: 1.6;
+      opacity: 0.62;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (max-width: 640px) {
+      .hero-stats { grid-template-columns: repeat(2, 1fr); max-width: 360px; }
+    }
+
     .hero-buttons {
       display: flex;
       gap: 1rem;
@@ -1532,13 +1604,39 @@
       <h1 class="fade-in fade-in-delay-1" data-i18n="hero_h1">
         Ne nous croyez pas. <span class="gold">Vérifiez.</span>
       </h1>
-      <p class="hero-sub fade-in fade-in-delay-2" data-i18n="hero_sub">
+      <p class="hero-tagline fade-in fade-in-delay-1" style="font-size:1.3rem; color:var(--text); font-weight:600; max-width:580px; margin:0 auto 2rem; line-height:1.5; letter-spacing:-0.01em;" data-i18n="hero_tagline">
         La rigueur d'une banque privée, sans la banque.
+      </p>
+      <div class="hero-stats fade-in fade-in-delay-2">
+        <div class="hero-stat">
+          <div class="hs-value">4 % à 79 %</div>
+          <div class="hs-label" data-i18n="hero_stat_perf">Performance annuelle simulée</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hs-value">dès 10 $</div>
+          <div class="hs-label" data-i18n="hero_stat_acces">Ticket d'accès</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hs-value">24 h / 24</div>
+          <div class="hs-label" data-i18n="hero_stat_horaire">Positions sur l'or</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hs-value">5</div>
+          <div class="hs-label" data-i18n="hero_stat_algos">Algorithmes</div>
+        </div>
+      </div>
+      <div class="hero-trust fade-in fade-in-delay-2">
+        <span class="ht-chip" data-i18n="hero_trust_1"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M8 1.5l5.5 2.2v3.5c0 3.4-2.3 6.2-5.5 7.3-3.2-1.1-5.5-3.9-5.5-7.3V3.7L8 1.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M5.7 8l1.6 1.6L10.5 6.3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Contrats publics, votre clé</span>
+        <span class="ht-chip" data-i18n="hero_trust_2"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="7" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 7V5a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3"/></svg>Multisig 1/1</span>
+        <span class="ht-chip" data-i18n="hero_trust_3"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.3" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 8l1.7 1.7L10.8 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Vérifiable sur Basescan</span>
+        <span class="ht-chip" data-i18n="hero_trust_4"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.3" stroke="currentColor" stroke-width="1.3"/><path d="M8 4.5v3.7l2.4 1.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Base mainnet, 1er mai 2026</span>
+      </div>
+      <p class="hero-sub fade-in fade-in-delay-2" data-i18n="hero_sub">
         Aucun courtier, aucun dépôt chez un tiers, vos fonds restent dans des contrats publics dont vous seul gardez la clé.
         Cinq algorithmes prennent position sur l'or (<span class="g-term" data-g="xauusd">XAUUSD</span>) 24 heures sur 24, directement sur la blockchain via gTrade.
         Sur 4 à 21 ans de <span class="g-term" data-g="backtest">simulation historique</span>, la performance annuelle se situe entre environ 4 % et 79 % selon la stratégie, une gestion habituellement réservée aux dépôts à six chiffres, ici accessible dès 10 $.
         Mainnet sur <span class="g-term" data-g="base">Base</span> depuis le 1er mai 2026.
-        <br><span style="font-size:0.78rem; opacity:0.7;">Simulations historiques sur 4 à 21 ans de données XAUUSD. L'exécution réelle via gTrade peut produire des résultats différents. Risque de perte partielle ou totale du capital. Les performances passées ne garantissent pas les performances futures.</span>
+        <span class="hero-disclaimer">Simulations historiques sur 4 à 21 ans de données XAUUSD. L'exécution réelle via gTrade peut produire des résultats différents. Risque de perte partielle ou totale du capital. Les performances passées ne garantissent pas les performances futures.</span>
       </p>
       <div class="hero-buttons fade-in fade-in-delay-3">
         <a href="https://app.kalmydas.com" class="btn-primary" data-i18n="hero_btn_primary" data-umami-event="cta_hero_lancer_app" data-umami-event-source="hero" data-umami-event-destination="app">
@@ -3059,6 +3157,4 @@
       }
 
       function refreshBadge() {
-        var b = document.getElementById('themeNewBadge');
-        if (!b) return;
-        b.textContent = isLangEn() ? 'N
+        var b = document.getElementById('th

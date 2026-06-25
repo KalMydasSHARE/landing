@@ -25,7 +25,16 @@ const I18N_EN = {
   /* ===== HERO ===== */
   hero_badge: `<span class="dot"></span> Mainnet live · Base`,
   hero_h1: `Don't trust us. <span class="gold">Verify.</span>`,
-  hero_sub: `The rigor of a private bank, without the bank. No broker, no third-party custody, your funds stay in public smart contracts under your own key. Five algorithms take positions on gold (<span class="g-term" data-g="xauusd">XAUUSD</span>) 24 hours a day, directly on-chain via gTrade. Over 4 to 21 years of <span class="g-term" data-g="backtest">historical simulation</span>, annual performance ranges from roughly 4% to 79% depending on the strategy, the kind of management usually reserved for six-figure deposits, here accessible from $10. Mainnet on <span class="g-term" data-g="base">Base</span> live since May 1, 2026.<br><span style="font-size:0.78rem; opacity:0.7;">Historical simulations over 4 to 21 years of XAUUSD data. Live execution via gTrade may produce different results. Risk of partial or total capital loss. Past performance does not guarantee future performance.</span>`,
+  hero_tagline: `The rigor of a private bank, without the bank.`,
+  hero_stat_perf: `Simulated annual performance`,
+  hero_stat_acces: `Entry ticket`,
+  hero_stat_horaire: `Positions on gold`,
+  hero_stat_algos: `Algorithms`,
+  hero_trust_1: `<svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M8 1.5l5.5 2.2v3.5c0 3.4-2.3 6.2-5.5 7.3-3.2-1.1-5.5-3.9-5.5-7.3V3.7L8 1.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M5.7 8l1.6 1.6L10.5 6.3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Public contracts, your key`,
+  hero_trust_2: `<svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="7" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 7V5a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3"/></svg>Multisig 1/1`,
+  hero_trust_3: `<svg width="13" height="13" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.3" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 8l1.7 1.7L10.8 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Verifiable on Basescan`,
+  hero_trust_4: `<svg width="13" height="13" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.3" stroke="currentColor" stroke-width="1.3"/><path d="M8 4.5v3.7l2.4 1.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Base mainnet, May 1, 2026`,
+  hero_sub: `No broker, no third-party custody, your funds stay in public smart contracts under your own key. Five algorithms take positions on gold (<span class="g-term" data-g="xauusd">XAUUSD</span>) 24 hours a day, directly on-chain via gTrade. Over 4 to 21 years of <span class="g-term" data-g="backtest">historical simulation</span>, annual performance ranges from roughly 4% to 79% depending on the strategy, the kind of management usually reserved for six-figure deposits, here accessible from $10. Mainnet on <span class="g-term" data-g="base">Base</span> live since May 1, 2026.<span class="hero-disclaimer">Historical simulations over 4 to 21 years of XAUUSD data. Live execution via gTrade may produce different results. Risk of partial or total capital loss. Past performance does not guarantee future performance.</span>`,
   hero_btn_primary: `Launch app <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
   hero_btn_secondary: "View strategies",
   hero_telegram: "Join the community on Telegram",
@@ -639,24 +648,4 @@ const GLOSSARY_DEFS_EN = {
 
     // Ensure the shared cookie reflects the current detected/saved language on every page load,
     // so if the user opened the landing first (auto-detected FR/EN), app.kalmydas.com picks it up.
-    writeSharedCookie(currentLang);
-    // If we arrived with ?lang=XX (came from another subdomain), promote it to cookie and
-    // strip the query so it does not pollute copy/paste of the URL.
-    cleanLangFromUrl();
-
-    // Decorate outgoing links to sibling subdomains with ?lang=XX so Safari ITP's 7-day cookie
-    // cap cannot desynchronize the user's language choice.
-    installCrossSubdomainClickShim();
-
-    // Apply saved language preference
-    if (currentLang === 'en') {
-      applyLang('en');
-    }
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-})();
+    writeSharedCookie(cur
