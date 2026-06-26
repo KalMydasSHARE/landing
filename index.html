@@ -467,64 +467,6 @@
       line-height: 1.8;
     }
 
-    /* === HERO VISUEL 2026 : stat-cards + trust badges === */
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.9rem;
-      max-width: 720px;
-      margin: 0 auto 2rem;
-    }
-    .hero-stat {
-      padding: 1.1rem 0.8rem;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      background: rgba(190, 165, 110, 0.035);
-      backdrop-filter: blur(4px);
-      transition: transform 0.3s, border-color 0.3s;
-    }
-    .hero-stat:hover {
-      transform: translateY(-3px);
-      border-color: var(--border-gold);
-    }
-    .hero-stat .hs-value {
-      font-family: var(--font-display);
-      font-size: clamp(1.35rem, 3.2vw, 1.9rem);
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      background: var(--gradient-gold-text);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .hero-stat .hs-label {
-      margin-top: 0.35rem;
-      font-size: 0.72rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-    .hero-trust {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.55rem;
-      margin: 0 auto 2.2rem;
-      max-width: 640px;
-    }
-    .hero-trust .ht-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.32rem 0.8rem;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      font-size: 0.76rem;
-      color: var(--text-secondary);
-      background: rgba(255,255,255,0.02);
-    }
-    .hero-trust .ht-chip svg { flex-shrink: 0; color: var(--gold); }
     .hero-sub .hero-disclaimer {
       display: block;
       margin-top: 1.4rem;
@@ -535,8 +477,101 @@
       margin-left: auto;
       margin-right: auto;
     }
+
+    /* === HERO COMPOSITION 2026 (remplace le pavé plat) === */
+    .hero-compo {
+      max-width: 880px;
+      margin: 0 auto 2.4rem;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.85rem;
+      text-align: left;
+    }
+    .hc-cell {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: rgba(190, 165, 110, 0.035);
+      backdrop-filter: blur(4px);
+      padding: 1.15rem 1.2rem;
+      transition: transform 0.3s, border-color 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .hc-cell:hover { transform: translateY(-3px); border-color: var(--border-gold); }
+    .hc-eyebrow {
+      font-size: 0.66rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .hc-eyebrow svg { color: var(--gold); flex-shrink: 0; }
+    .hc-big {
+      font-family: var(--font-display);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      background: var(--gradient-gold-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hc-note { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; }
+    .hc-note strong { color: var(--text); font-weight: 600; }
+
+    /* Bloc performance, vedette, large */
+    .hc-perf { grid-column: span 4; display: flex; flex-direction: column; gap: 0.55rem; }
+    .hc-perf .hc-big { font-size: clamp(2.6rem, 7vw, 4.1rem); }
+    .hc-perf .hc-arrow { color: var(--gold); opacity: 0.7; padding: 0 0.15rem; }
+
+    /* Bloc 5 algorithmes */
+    .hc-algos { grid-column: span 2; display: flex; flex-direction: column; gap: 0.45rem; justify-content: center; }
+    .hc-algos .hc-big { font-size: clamp(2.8rem, 8vw, 4.1rem); }
+
+    /* Bloc non-custodial */
+    .hc-custody { grid-column: span 3; display: flex; flex-direction: column; gap: 0.55rem; }
+    .hc-custody .hc-head { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--text); letter-spacing: -0.01em; }
+
+    /* Bloc accessibilité 10$ vs six chiffres */
+    .hc-access { grid-column: span 3; display: flex; flex-direction: column; gap: 0.5rem; }
+    .hc-access .hc-big { font-size: clamp(2.2rem, 6vw, 3.2rem); }
+    .hc-access .hc-strike {
+      font-size: 0.82rem; color: var(--text-muted);
+      text-decoration: line-through; text-decoration-color: rgba(190,165,110,0.5);
+    }
+
+    /* Bandeau Base mainnet */
+    .hc-base {
+      grid-column: span 6;
+      display: flex; align-items: center; justify-content: center;
+      gap: 0.7rem;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, rgba(190,165,110,0.09), rgba(190,165,110,0.03));
+      font-size: 0.86rem; color: var(--text-secondary); font-weight: 500;
+      flex-wrap: wrap; text-align: center;
+    }
+    .hc-base svg { color: var(--gold); flex-shrink: 0; }
+    .hc-base strong { color: var(--gold-light); font-weight: 700; }
+
+    .hero-compo-disclaimer {
+      max-width: 720px;
+      margin: 0 auto 2.4rem;
+      font-size: 0.74rem;
+      line-height: 1.6;
+      opacity: 0.62;
+      color: var(--text-secondary);
+      text-align: center;
+    }
+
     @media (max-width: 640px) {
-      .hero-stats { grid-template-columns: repeat(2, 1fr); max-width: 360px; }
+      .hero-compo { grid-template-columns: repeat(2, 1fr); gap: 0.65rem; }
+      .hc-perf, .hc-algos, .hc-custody, .hc-access, .hc-base { grid-column: span 2; }
+      .hc-perf .hc-big { font-size: 2.6rem; }
     }
 
     .hero-buttons {
@@ -591,50 +626,99 @@
       background: rgba(201, 168, 76, 0.06);
     }
 
-    /* ===== STATS BAR ===== */
-    .stats-bar {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      max-width: 1000px;
+    /* ===== TRUST GRID (bloc preuves, refait 2026-06-26) ===== */
+    .trust-grid {
+      max-width: 1040px;
       margin: -3rem auto 0;
       position: relative;
       z-index: 3;
-      background: var(--bg-card);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.9rem;
+      padding: 0 2rem;
+    }
+
+    .trust-grid-head {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 0.2rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+    .trust-grid-head .dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--green); flex-shrink: 0;
+      box-shadow: 0 0 0 3px rgba(34,197,94,0.15);
+      animation: blink 2.4s infinite;
+    }
+    .trust-grid-head .gold { color: var(--gold-light); }
+
+    .trust-card {
+      position: relative;
+      padding: 1.55rem 1.4rem 1.4rem;
+      background: linear-gradient(150deg, rgba(190,165,110,0.07), rgba(190,165,110,0.02));
       border: 1px solid var(--border);
       border-radius: var(--radius);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       overflow: hidden;
+      transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), border-color 0.35s, box-shadow 0.35s;
     }
-
-    .stat-item {
-      padding: 1.8rem 1.5rem;
-      text-align: center;
-      position: relative;
-    }
-
-    .stat-item:not(:last-child)::after {
+    .trust-card::before {
       content: '';
       position: absolute;
-      right: 0;
-      top: 20%;
-      height: 60%;
-      width: 1px;
-      background: var(--border);
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--gradient-gold);
+      opacity: 0;
+      transition: opacity 0.35s;
     }
+    .trust-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--border-gold);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+    }
+    .trust-card:hover::before { opacity: 1; }
 
-    .stat-value {
-      font-family: var(--font-display);
-      font-size: 1.8rem;
-      font-weight: 700;
+    .trust-icon {
+      width: 34px; height: 34px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 9px;
+      background: rgba(190,165,110,0.1);
+      border: 1px solid var(--border-gold);
       color: var(--gold);
-      margin-bottom: 0.25rem;
-      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .trust-icon svg { width: 17px; height: 17px; }
+
+    .trust-value {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 2.15rem;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      background: var(--gradient-gold-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.45rem;
+    }
+    .trust-value .unit {
+      font-size: 1.15rem;
+      font-weight: 700;
+      -webkit-text-fill-color: var(--gold);
     }
 
-    .stat-label {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+    .trust-label {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
       font-weight: 500;
     }
 
@@ -1369,14 +1453,11 @@
       .hero { padding: 6rem 1.2rem 3rem; min-height: auto; }
       .hero h1 { font-size: 2.2rem; }
 
-      .stats-bar {
+      .trust-grid {
         grid-template-columns: repeat(2, 1fr);
-        margin: -2rem 1rem 0;
+        margin: -2rem auto 0;
+        padding: 0 1rem;
       }
-
-      .stat-item:nth-child(2)::after { display: none; }
-      .stat-item:nth-child(1)::after,
-      .stat-item:nth-child(3)::after { display: block; }
 
       .steps-grid { grid-template-columns: 1fr; }
       .security-grid { grid-template-columns: 1fr; }
@@ -1405,11 +1486,9 @@
     }
 
     @media (max-width: 480px) {
-      .stats-bar { grid-template-columns: 1fr; margin: -1.5rem 0.8rem 0; }
-      .stat-item::after { display: none !important; }
-      .stat-item { padding: 1rem; }
-      .stat-item:not(:last-child) { border-bottom: 1px solid var(--border); }
-      .stat-value { font-size: 1.5rem; }
+      .trust-grid { grid-template-columns: 1fr 1fr; margin: -1.5rem auto 0; padding: 0 0.8rem; gap: 0.7rem; }
+      .trust-card { padding: 1.2rem 1.1rem; }
+      .trust-value { font-size: 1.8rem; }
       .footer-grid { grid-template-columns: 1fr !important; text-align: center !important; }
       .footer-grid p { max-width: none !important; margin: 0 auto; }
     }
@@ -1607,37 +1686,39 @@
       <p class="hero-tagline fade-in fade-in-delay-1" style="font-size:1.3rem; color:var(--text); font-weight:600; max-width:580px; margin:0 auto 2rem; line-height:1.5; letter-spacing:-0.01em;" data-i18n="hero_tagline">
         La rigueur d'une banque privée, sans la banque.
       </p>
-      <div class="hero-stats fade-in fade-in-delay-2">
-        <div class="hero-stat">
-          <div class="hs-value">4 % à 79 %</div>
-          <div class="hs-label" data-i18n="hero_stat_perf">Performance annuelle simulée</div>
+      <div class="hero-compo fade-in fade-in-delay-2">
+
+        <div class="hc-cell hc-perf">
+          <span class="hc-eyebrow" data-i18n="hc_perf_eyebrow"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M2 11l3.3-3.4 2.4 2.4L14 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 4h4v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Performance annuelle simulée</span>
+          <div class="hc-big">4&thinsp;%<span class="hc-arrow">&rarr;</span>79&thinsp;%</div>
+          <span class="hc-note" data-i18n="hc_perf_note">sur 4 à 21 ans de <span class="g-term" data-g="backtest">simulation historique</span>, selon la stratégie</span>
         </div>
-        <div class="hero-stat">
-          <div class="hs-value">dès 10 $</div>
-          <div class="hs-label" data-i18n="hero_stat_acces">Ticket d'accès</div>
+
+        <div class="hc-cell hc-algos">
+          <span class="hc-eyebrow" data-i18n="hc_algos_eyebrow">Algorithmes</span>
+          <div class="hc-big">5</div>
+          <span class="hc-note" data-i18n="hc_algos_note">sur l'or (<span class="g-term" data-g="xauusd">XAUUSD</span>), on-chain via gTrade</span>
         </div>
-        <div class="hero-stat">
-          <div class="hs-value">24 h / 24</div>
-          <div class="hs-label" data-i18n="hero_stat_horaire">Positions sur l'or</div>
+
+        <div class="hc-cell hc-custody">
+          <span class="hc-eyebrow" data-i18n="hc_custody_eyebrow"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="7" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 7V5a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3"/></svg>Non-custodial</span>
+          <span class="hc-head" data-i18n="hc_custody_head">Aucun courtier, aucun tiers</span>
+          <span class="hc-note" data-i18n="hc_custody_note">Vos fonds restent dans des <strong>contrats publics</strong> dont vous seul gardez la clé.</span>
         </div>
-        <div class="hero-stat">
-          <div class="hs-value">5</div>
-          <div class="hs-label" data-i18n="hero_stat_algos">Algorithmes</div>
+
+        <div class="hc-cell hc-access">
+          <span class="hc-eyebrow" data-i18n="hc_access_eyebrow">Accès</span>
+          <div class="hc-big" data-i18n="hc_access_big">dès 10&thinsp;USDC</div>
+          <span class="hc-strike" data-i18n="hc_access_strike">réservé d'ordinaire aux dépôts à six chiffres</span>
         </div>
+
+        <div class="hc-cell hc-base">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.3" stroke="currentColor" stroke-width="1.3"/><path d="M8 4.5v3.7l2.4 1.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+          <span data-i18n="hc_base_text"><strong>Base mainnet</strong> depuis le 1er mai 2026, vérifiable sur Basescan, multisig 1/1.</span>
+        </div>
+
       </div>
-      <div class="hero-trust fade-in fade-in-delay-2">
-        <span class="ht-chip" data-i18n="hero_trust_1"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M8 1.5l5.5 2.2v3.5c0 3.4-2.3 6.2-5.5 7.3-3.2-1.1-5.5-3.9-5.5-7.3V3.7L8 1.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M5.7 8l1.6 1.6L10.5 6.3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Contrats publics, votre clé</span>
-        <span class="ht-chip" data-i18n="hero_trust_2"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="7" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 7V5a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3"/></svg>Multisig 1/1</span>
-        <span class="ht-chip" data-i18n="hero_trust_3"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.3" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 8l1.7 1.7L10.8 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Vérifiable sur Basescan</span>
-        <span class="ht-chip" data-i18n="hero_trust_4"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.3" stroke="currentColor" stroke-width="1.3"/><path d="M8 4.5v3.7l2.4 1.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Base mainnet, 1er mai 2026</span>
-      </div>
-      <p class="hero-sub fade-in fade-in-delay-2" data-i18n="hero_sub">
-        Aucun courtier, aucun dépôt chez un tiers, vos fonds restent dans des contrats publics dont vous seul gardez la clé.
-        Cinq algorithmes prennent position sur l'or (<span class="g-term" data-g="xauusd">XAUUSD</span>) 24 heures sur 24, directement sur la blockchain via gTrade.
-        Sur 4 à 21 ans de <span class="g-term" data-g="backtest">simulation historique</span>, la performance annuelle se situe entre environ 4 % et 79 % selon la stratégie, une gestion habituellement réservée aux dépôts à six chiffres, ici accessible dès 10 $.
-        Mainnet sur <span class="g-term" data-g="base">Base</span> depuis le 1er mai 2026.
-        <span class="hero-disclaimer">Simulations historiques sur 4 à 21 ans de données XAUUSD. L'exécution réelle via gTrade peut produire des résultats différents. Risque de perte partielle ou totale du capital. Les performances passées ne garantissent pas les performances futures.</span>
-      </p>
+      <p class="hero-compo-disclaimer fade-in fade-in-delay-2" data-i18n="hc_disclaimer">Simulations historiques sur 4 à 21 ans de données XAUUSD. L'exécution réelle via gTrade peut produire des résultats différents. Risque de perte partielle ou totale du capital. Les performances passées ne garantissent pas les performances futures.</p>
       <div class="hero-buttons fade-in fade-in-delay-3">
         <a href="https://app.kalmydas.com" class="btn-primary" data-i18n="hero_btn_primary" data-umami-event="cta_hero_lancer_app" data-umami-event-source="hero" data-umami-event-destination="app">
           Lancer l'app
@@ -1653,23 +1734,32 @@
     </div>
   </section>
 
-  <!-- ===== STATS BAR ===== -->
-  <div class="stats-bar fade-in">
-    <div class="stat-item">
-      <div class="stat-value">5</div>
-      <div class="stat-label" data-i18n="stat_1_label">Robots de trading</div>
+  <!-- ===== TRUST GRID (bloc preuves, refait 2026-06-26) ===== -->
+  <div class="trust-grid fade-in" aria-label="Preuves vérifiables">
+    <div class="trust-grid-head" data-i18n="trust_head"><span class="dot"></span>La preuve, pas la promesse, <span class="gold">tout est vérifiable</span></div>
+
+    <div class="trust-card">
+      <div class="trust-icon"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.3" stroke="currentColor" stroke-width="1.3"/><path d="M5.4 8.3l1.8 1.8 3.4-3.8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="trust-value">5</div>
+      <div class="trust-label" data-i18n="stat_1_label">Robots de trading</div>
     </div>
-    <div class="stat-item">
-      <div class="stat-value">4 à 21 ans</div>
-      <div class="stat-label" data-i18n="stat_2_label"><span class="g-term" data-g="backtest">Simulés</span> sur données réelles</div>
+
+    <div class="trust-card">
+      <div class="trust-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M2 12V4M2 12h12M5 12V8m3 4V5.5M11 12V7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+      <div class="trust-value">4<span class="unit">&thinsp;à&thinsp;</span>21<span class="unit">&thinsp;ans</span></div>
+      <div class="trust-label" data-i18n="stat_2_label"><span class="g-term" data-g="backtest">Simulés</span> sur données réelles</div>
     </div>
-    <div class="stat-item">
-      <div class="stat-value">23</div>
-      <div class="stat-label" data-i18n="stat_3_label"><span class="g-term" data-g="smart_contract">Contrats Solidity</span></div>
+
+    <div class="trust-card">
+      <div class="trust-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 1.6l5 1.9v3.6c0 3.2-2.1 5.4-5 6.3-2.9-.9-5-3.1-5-6.3V3.5L8 1.6z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M6 8l1.4 1.4L10.4 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="trust-value">23</div>
+      <div class="trust-label" data-i18n="stat_3_label"><span class="g-term" data-g="smart_contract">Contrats Solidity</span></div>
     </div>
-    <div class="stat-item">
-      <div class="stat-value">1 100+</div>
-      <div class="stat-label" data-i18n="stat_4_label">Tests unitaires</div>
+
+    <div class="trust-card">
+      <div class="trust-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M6 2H3.5A1.5 1.5 0 002 3.5v9A1.5 1.5 0 003.5 14h9a1.5 1.5 0 001.5-1.5V10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M5 8l2 2 7-7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="trust-value">1&thinsp;100<span class="unit">+</span></div>
+      <div class="trust-label" data-i18n="stat_4_label">Tests unitaires</div>
     </div>
   </div>
 
@@ -3157,4 +3247,52 @@
       }
 
       function refreshBadge() {
-        var b = document.getElementById('th
+        var b = document.getElementById('themeNewBadge');
+        if (!b) return;
+        b.textContent = isLangEn() ? 'NEW' : 'Nouveau';
+      }
+
+      function init() {
+        applyTheme(readCurrent());
+        refreshBadge();
+        var btn = document.getElementById('themeToggle');
+        if (btn) {
+          btn.addEventListener('click', function () {
+            var current = readCurrent();
+            var next = (current === 'light') ? 'dark' : 'light';
+            applyTheme(next);
+            try { if (window.umami && typeof window.umami.track === 'function') { window.umami.track('toggle_theme', { theme: next }); } } catch (e) {}
+          });
+        }
+        try {
+          var obs = new MutationObserver(function () {
+            refreshBadge();
+            applyTheme(readCurrent());
+          });
+          obs.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+        } catch (e) {}
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+
+</body>
+</html>
+ catch (e) {}
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+
+</body>
+</html>

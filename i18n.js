@@ -26,15 +26,18 @@ const I18N_EN = {
   hero_badge: `<span class="dot"></span> Mainnet live · Base`,
   hero_h1: `Don't trust us. <span class="gold">Verify.</span>`,
   hero_tagline: `The rigor of a private bank, without the bank.`,
-  hero_stat_perf: `Simulated annual performance`,
-  hero_stat_acces: `Entry ticket`,
-  hero_stat_horaire: `Positions on gold`,
-  hero_stat_algos: `Algorithms`,
-  hero_trust_1: `<svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M8 1.5l5.5 2.2v3.5c0 3.4-2.3 6.2-5.5 7.3-3.2-1.1-5.5-3.9-5.5-7.3V3.7L8 1.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M5.7 8l1.6 1.6L10.5 6.3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Public contracts, your key`,
-  hero_trust_2: `<svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="7" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 7V5a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3"/></svg>Multisig 1/1`,
-  hero_trust_3: `<svg width="13" height="13" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.3" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 8l1.7 1.7L10.8 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Verifiable on Basescan`,
-  hero_trust_4: `<svg width="13" height="13" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.3" stroke="currentColor" stroke-width="1.3"/><path d="M8 4.5v3.7l2.4 1.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>Base mainnet, May 1, 2026`,
-  hero_sub: `No broker, no third-party custody, your funds stay in public smart contracts under your own key. Five algorithms take positions on gold (<span class="g-term" data-g="xauusd">XAUUSD</span>) 24 hours a day, directly on-chain via gTrade. Over 4 to 21 years of <span class="g-term" data-g="backtest">historical simulation</span>, annual performance ranges from roughly 4% to 79% depending on the strategy, the kind of management usually reserved for six-figure deposits, here accessible from $10. Mainnet on <span class="g-term" data-g="base">Base</span> live since May 1, 2026.<span class="hero-disclaimer">Historical simulations over 4 to 21 years of XAUUSD data. Live execution via gTrade may produce different results. Risk of partial or total capital loss. Past performance does not guarantee future performance.</span>`,
+  hc_perf_eyebrow: `<svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M2 11l3.3-3.4 2.4 2.4L14 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 4h4v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Simulated annual performance`,
+  hc_perf_note: `over 4 to 21 years of <span class="g-term" data-g="backtest">historical simulation</span>, depending on the strategy`,
+  hc_algos_eyebrow: `Algorithms`,
+  hc_algos_note: `on gold (<span class="g-term" data-g="xauusd">XAUUSD</span>), on-chain via gTrade`,
+  hc_custody_eyebrow: `<svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="7" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 7V5a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3"/></svg>Non-custodial`,
+  hc_custody_head: `No broker, no third party`,
+  hc_custody_note: `Your funds stay in <strong>public smart contracts</strong> under your own key.`,
+  hc_access_eyebrow: `Access`,
+  hc_access_big: `from 10 USDC`,
+  hc_access_strike: `usually reserved for six-figure deposits`,
+  hc_base_text: `<strong>Base mainnet</strong> live since May 1, 2026, verifiable on Basescan, multisig 1/1.`,
+  hc_disclaimer: `Historical simulations over 4 to 21 years of XAUUSD data. Live execution via gTrade may produce different results. Risk of partial or total capital loss. Past performance does not guarantee future performance.`,
   hero_btn_primary: `Launch app <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
   hero_btn_secondary: "View strategies",
   hero_telegram: "Join the community on Telegram",
@@ -45,6 +48,7 @@ const I18N_EN = {
   probleme_body: "In crypto, you are constantly asked to trust. To trust teams you never see, figures no one verifies, promises that change the moment things go wrong. And serious gold management, the kind that has run for decades inside institutions, stayed closed, opaque, reserved for those who already had everything. On one side, smart money locked away; on the other, strangers demanding your trust. You deserve better than that choice.",
 
   /* ===== STATS ===== */
+  trust_head: `The proof, not the promise, <span class="gold">all verifiable</span>`,
   stat_1_label: "Trading robots",
   stat_2_label: `Of <span class="g-term" data-g="backtest">backtested</span> data`,
   stat_3_label: `<span class="g-term" data-g="smart_contract">Core smart contracts</span> (27 instances)`,
@@ -648,4 +652,24 @@ const GLOSSARY_DEFS_EN = {
 
     // Ensure the shared cookie reflects the current detected/saved language on every page load,
     // so if the user opened the landing first (auto-detected FR/EN), app.kalmydas.com picks it up.
-    writeSharedCookie(cur
+    writeSharedCookie(currentLang);
+    // If we arrived with ?lang=XX (came from another subdomain), promote it to cookie and
+    // strip the query so it does not pollute copy/paste of the URL.
+    cleanLangFromUrl();
+
+    // Decorate outgoing links to sibling subdomains with ?lang=XX so Safari ITP's 7-day cookie
+    // cap cannot desynchronize the user's language choice.
+    installCrossSubdomainClickShim();
+
+    // Apply saved language preference
+    if (currentLang === 'en') {
+      applyLang('en');
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
