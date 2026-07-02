@@ -373,13 +373,34 @@
     .hero-bg::before {
       content: '';
       position: absolute;
-      top: -30%;
+      top: -28%;
       left: 50%;
       transform: translateX(-50%);
-      width: 900px;
-      height: 900px;
-      background: radial-gradient(circle, rgba(190, 165, 110, 0.08) 0%, rgba(201, 168, 76, 0.03) 40%, transparent 70%);
+      width: 940px;
+      height: 940px;
+      background: radial-gradient(circle, rgba(190, 165, 110, 0.13) 0%, rgba(201, 168, 76, 0.045) 42%, transparent 70%);
+      filter: blur(6px);
       animation: hero-pulse 10s ease-in-out infinite;
+      will-change: transform, opacity;
+    }
+
+    /* Halo d'appoint, teinte bleu nuit, profondeur */
+    .hero-glow-blue {
+      position: absolute;
+      bottom: -12%;
+      right: -8%;
+      width: 640px;
+      height: 640px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.07), transparent 62%);
+      filter: blur(14px);
+      pointer-events: none;
+      animation: hero-drift 16s ease-in-out infinite;
+      will-change: transform;
+    }
+    @keyframes hero-drift {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-28px, -22px); }
     }
 
     .hero-bg::after {
@@ -490,14 +511,20 @@
     .hc-cell {
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
-      background: rgba(190, 165, 110, 0.035);
-      backdrop-filter: blur(4px);
+      background: linear-gradient(160deg, rgba(190,165,110,0.06), rgba(15,15,30,0.35));
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
       padding: 1.15rem 1.2rem;
-      transition: transform 0.3s, border-color 0.3s;
+      transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), border-color 0.35s, box-shadow 0.35s;
+      box-shadow: 0 22px 48px -34px rgba(0,0,0,0.85), inset 0 1px 0 rgba(255,255,255,0.03);
       position: relative;
       overflow: hidden;
     }
-    .hc-cell:hover { transform: translateY(-3px); border-color: var(--border-gold); }
+    .hc-cell:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-gold);
+      box-shadow: 0 30px 60px -30px rgba(190,165,110,0.28), inset 0 1px 0 rgba(255,255,255,0.05);
+    }
     .hc-eyebrow {
       font-size: 0.66rem;
       letter-spacing: 0.14em;
@@ -522,16 +549,40 @@
     .hc-note { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; }
     .hc-note strong { color: var(--text); font-weight: 600; }
 
-    /* Bloc performance, vedette, large */
-    .hc-perf { grid-column: span 4; display: flex; flex-direction: column; gap: 0.55rem; }
-    .hc-perf .hc-big { font-size: clamp(2.6rem, 7vw, 4.1rem); }
+    /* Bloc performance, vedette, large : point focal */
+    .hc-perf {
+      grid-column: span 4;
+      display: flex; flex-direction: column; gap: 0.55rem;
+      background: linear-gradient(160deg, rgba(190,165,110,0.11), rgba(15,15,30,0.4));
+      border-color: var(--border-gold);
+    }
+    .hc-perf::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--gold-light), var(--gold-dark));
+    }
+    /* sweep lumineux qui balaie le point focal */
+    .hc-perf::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -60%;
+      width: 45%; height: 100%;
+      background: linear-gradient(105deg, transparent, rgba(220,199,153,0.10), transparent);
+      transform: skewX(-18deg);
+      animation: hc-sweep 6s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes hc-sweep { 0% { left: -60%; } 55%, 100% { left: 130%; } }
+    .hc-perf .hc-big { font-size: clamp(2.6rem, 7vw, 4.1rem); text-shadow: 0 0 44px rgba(190,165,110,0.18); }
     .hc-perf .hc-arrow { color: var(--gold); opacity: 0.7; padding: 0 0.15rem; }
 
     /* Bloc 5 algorithmes */
     .hc-algos { grid-column: span 2; display: flex; flex-direction: column; gap: 0.45rem; justify-content: center; }
     .hc-algos .hc-big { font-size: clamp(2.8rem, 8vw, 4.1rem); }
 
-    /* Bloc non-custodial */
+    /* Bloc custody : vos cles, vos fonds */
     .hc-custody { grid-column: span 3; display: flex; flex-direction: column; gap: 0.55rem; }
     .hc-custody .hc-head { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--text); letter-spacing: -0.01em; }
 
@@ -1418,6 +1469,17 @@
     .fade-in-delay-2 { transition-delay: 0.2s; }
     .fade-in-delay-3 { transition-delay: 0.3s; }
 
+    /* Accessibilite : respect de prefers-reduced-motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+      .fade-in { opacity: 1 !important; transform: none !important; }
+      .hero-bg::before, .hero-glow-blue, .hc-perf::after, .hero-grid { animation: none !important; }
+    }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 1024px) {
       .token-grid {
@@ -1673,7 +1735,8 @@
   <!-- ===== HERO ===== -->
   <section class="hero">
     <div class="hero-bg">
-      <div class="hero-grid"></div>
+      <div class="hero-grid" data-parallax="0.18"></div>
+      <div class="hero-glow-blue"></div>
     </div>
     <div class="hero-content">
       <div class="hero-badge fade-in" data-i18n="hero_badge">
@@ -1690,13 +1753,13 @@
 
         <div class="hc-cell hc-perf">
           <span class="hc-eyebrow" data-i18n="hc_perf_eyebrow"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M2 11l3.3-3.4 2.4 2.4L14 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 4h4v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Performance annuelle simulée</span>
-          <div class="hc-big">4&thinsp;%<span class="hc-arrow">&rarr;</span>79&thinsp;%</div>
+          <div class="hc-big"><span data-count="4">4</span>&thinsp;%<span class="hc-arrow">&rarr;</span><span data-count="79">79</span>&thinsp;%</div>
           <span class="hc-note" data-i18n="hc_perf_note">sur 4 à 21 ans de <span class="g-term" data-g="backtest">simulation historique</span>, selon la stratégie</span>
         </div>
 
         <div class="hc-cell hc-algos">
           <span class="hc-eyebrow" data-i18n="hc_algos_eyebrow">Algorithmes</span>
-          <div class="hc-big">5</div>
+          <div class="hc-big"><span data-count="5">5</span></div>
           <span class="hc-note" data-i18n="hc_algos_note">sur l'or (<span class="g-term" data-g="xauusd">XAUUSD</span>), on-chain via gTrade</span>
         </div>
 
@@ -1740,25 +1803,25 @@
 
     <div class="trust-card">
       <div class="trust-icon"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.3" stroke="currentColor" stroke-width="1.3"/><path d="M5.4 8.3l1.8 1.8 3.4-3.8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="trust-value">5</div>
+      <div class="trust-value"><span data-count="5">5</span></div>
       <div class="trust-label" data-i18n="stat_1_label">Robots de trading</div>
     </div>
 
     <div class="trust-card">
       <div class="trust-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M2 12V4M2 12h12M5 12V8m3 4V5.5M11 12V7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
-      <div class="trust-value">4<span class="unit">&thinsp;à&thinsp;</span>21<span class="unit">&thinsp;ans</span></div>
+      <div class="trust-value"><span data-count="4">4</span><span class="unit">&thinsp;à&thinsp;</span><span data-count="21">21</span><span class="unit">&thinsp;ans</span></div>
       <div class="trust-label" data-i18n="stat_2_label"><span class="g-term" data-g="backtest">Simulés</span> sur données réelles</div>
     </div>
 
     <div class="trust-card">
       <div class="trust-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 1.6l5 1.9v3.6c0 3.2-2.1 5.4-5 6.3-2.9-.9-5-3.1-5-6.3V3.5L8 1.6z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M6 8l1.4 1.4L10.4 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="trust-value">23</div>
+      <div class="trust-value"><span data-count="23">23</span></div>
       <div class="trust-label" data-i18n="stat_3_label"><span class="g-term" data-g="smart_contract">Contrats Solidity</span></div>
     </div>
 
     <div class="trust-card">
       <div class="trust-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M6 2H3.5A1.5 1.5 0 002 3.5v9A1.5 1.5 0 003.5 14h9a1.5 1.5 0 001.5-1.5V10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M5 8l2 2 7-7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      <div class="trust-value">1&thinsp;100<span class="unit">+</span></div>
+      <div class="trust-value"><span data-count="1100" data-count-sep="1">1&thinsp;100</span><span class="unit">+</span></div>
       <div class="trust-label" data-i18n="stat_4_label">Tests unitaires</div>
     </div>
   </div>
@@ -1852,7 +1915,7 @@
         <p class="section-desc" data-i18n="test_desc">Trois retours publiés tels quels par des membres du canal KalMydas, en réponse à un appel à témoigner sans filtre. Aucun choix éditorial, aucune reformulation. Seuls quelques termes sont visuellement floutés par prudence réglementaire, le mot d'origine reste lisible au survol.</p>
       </div>
 
-      <div class="testimonials-grid">
+      <div class="testimonials-grid stagger">
 
         <!-- Témoignage 1 — Sylvie Marcy -->
         <article class="testimonial-card fade-in">
@@ -2043,7 +2106,7 @@
         <h2 class="section-title" data-i18n="how_title">Comment ça marche ?</h2>
         <p class="section-desc" data-i18n="how_desc">3 étapes pour accéder au trading algorithmique professionnel sur l'or</p>
       </div>
-      <div class="steps-grid">
+      <div class="steps-grid stagger">
         <div class="step-card fade-in">
           <div class="step-number">1</div>
           <h3 data-i18n="step_1_h">Connectez-vous</h3>
@@ -2073,7 +2136,7 @@
         <h2 class="section-title" data-i18n="sec_title">Sécurité de vos fonds</h2>
         <p class="section-desc" data-i18n="sec_desc">Vos actifs sont protégés par des <span class="g-term" data-g="smart_contract">smart contracts</span> auditables, déployés sur la <span class="g-term" data-g="blockchain">blockchain</span></p>
       </div>
-      <div class="security-grid">
+      <div class="security-grid stagger">
         <div class="security-card fade-in">
           <div class="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16.5 9.4l-9-5.19M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
@@ -2130,7 +2193,7 @@
         <h2 class="section-title" data-i18n="strat_title">Nos stratégies de trading</h2>
         <p class="section-desc" data-i18n="strat_desc">Chaque robot exploite l'or (<span class="g-term" data-g="xauusd">XAUUSD</span>) avec une approche unique, <span class="g-term" data-g="backtest">simulée</span> sur des données réelles du courtier</p>
       </div>
-      <div class="strategies-list">
+      <div class="strategies-list stagger">
 
         <!-- HORIZON -->
         <div class="strategy-card fade-in"><div class="strategy-info">
@@ -2918,6 +2981,70 @@
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
+    // ===== Mouvement premium OF112 : compteurs, cascade, parallax discret =====
+    (function(){
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Cascade : delai progressif sur les enfants .fade-in d'un conteneur .stagger
+      document.querySelectorAll('.stagger').forEach(function(group){
+        var kids = group.querySelectorAll('.fade-in');
+        kids.forEach(function(k, i){ k.style.transitionDelay = (0.06 * i) + 's'; });
+      });
+
+      // Compteurs animes sur les chiffres cles
+      function animateCount(el){
+        var target = parseInt(el.getAttribute('data-count'), 10);
+        var sep = el.getAttribute('data-count-sep') === '1';
+        if (reduce || isNaN(target)) { el.textContent = format(target, sep); return; }
+        var dur = 1300, start = null;
+        function format(v, useSep){
+          if (!useSep) return String(v);
+          return String(v).replace(/\B(?=(\d{3})+(?!\d))/g, '\u2009');
+        }
+        function step(now){
+          if (start === null) start = now;
+          var prog = Math.min((now - start) / dur, 1);
+          var eased = 1 - Math.pow(1 - prog, 3);
+          el.textContent = format(Math.round(target * eased), sep);
+          if (prog < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+      function format(v, useSep){
+        if (!useSep) return String(v);
+        return String(v).replace(/\B(?=(\d{3})+(?!\d))/g, '\u2009');
+      }
+      var counters = document.querySelectorAll('[data-count]');
+      if (counters.length){
+        var cio = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){
+            if (e.isIntersecting){ animateCount(e.target); cio.unobserve(e.target); }
+          });
+        }, { threshold: 0.5 });
+        counters.forEach(function(el){ cio.observe(el); });
+      }
+
+      // Parallax tres discret sur les couches marquees data-parallax
+      if (!reduce){
+        var layers = document.querySelectorAll('[data-parallax]');
+        if (layers.length){
+          var ticking = false;
+          window.addEventListener('scroll', function(){
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(function(){
+              var y = window.scrollY;
+              layers.forEach(function(l){
+                var f = parseFloat(l.getAttribute('data-parallax')) || 0.15;
+                l.style.transform = 'translateY(' + (y * f) + 'px)';
+              });
+              ticking = false;
+            });
+          }, { passive: true });
+        }
+      }
+    })();
+
     // Navbar scroll effect
     let lastScroll = 0;
     window.addEventListener('scroll', () => {
@@ -3284,15 +3411,4 @@
 </body>
 </html>
  catch (e) {}
-      }
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-      } else {
-        init();
-      }
-    })();
-  </script>
-
-</body>
-</html>
+  
