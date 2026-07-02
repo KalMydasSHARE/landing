@@ -8,9 +8,9 @@
 const I18N_EN = {
   /* ===== META (handled separately) ===== */
   _title: "KalMydas, Gold, algorithmically",
-  _description: "No broker, no third-party custody: your funds stay in public smart contracts under your own key. Five algorithms take positions on gold (XAUUSD) 24 hours a day, directly on-chain via gTrade. Over 4 to 21 years of historical simulation, annual performance ranges from roughly 4% to 79% depending on the strategy, usually reserved for six-figure deposits, here from $10. Past performance does not guarantee future results.",
+  _description: "No broker, no third party. Your funds stay in public smart contracts and you alone hold the key. Five algorithms take positions on gold (XAUUSD) 24 hours a day, directly on-chain via gTrade. Over 4 to 21 years of historical simulation, annual performance ranges from roughly 4% to 79% depending on the strategy, usually reserved for six-figure deposits, here from $10. Past performance does not guarantee future results.",
   _og_title: "KalMydas, Gold, algorithmically",
-  _og_description: "No broker, no third-party custody. Five algorithms trade gold 24/7 directly on-chain via gTrade. Live on Base mainnet since May 1, 2026. Backtest history available on the platform. Past performance does not guarantee future results. From $10.",
+  _og_description: "No broker, no third party. Your keys, your funds. Five algorithms trade gold 24/7 directly on-chain via gTrade. Live on Base mainnet since May 1, 2026. Backtest history available on the platform. Past performance does not guarantee future results. From $10.",
 
   /* ===== NAV ===== */
   nav_how: "How it works",
@@ -30,7 +30,7 @@ const I18N_EN = {
   hc_perf_note: `over 4 to 21 years of <span class="g-term" data-g="backtest">historical simulation</span>, depending on the strategy`,
   hc_algos_eyebrow: `Algorithms`,
   hc_algos_note: `on gold (<span class="g-term" data-g="xauusd">XAUUSD</span>), on-chain via gTrade`,
-  hc_custody_eyebrow: `<svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="7" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 7V5a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3"/></svg>Non-custodial`,
+  hc_custody_eyebrow: `<svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect x="3" y="7" width="10" height="7" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5.5 7V5a2.5 2.5 0 015 0v2" stroke="currentColor" stroke-width="1.3"/></svg>Your keys, your funds`,
   hc_custody_head: `No broker, no third party`,
   hc_custody_note: `Your funds stay in <strong>public smart contracts</strong> under your own key.`,
   hc_access_eyebrow: `Access`,
@@ -162,13 +162,14 @@ const I18N_EN = {
   presale_title: "Three progressive phases",
   presale_desc: "The presale opens by circles, from the closest to the broadest, until the public opening on September 14.",
   alpha_label: "Alpha phase",
-  alpha_h: "May 8, 2026",
+  alpha_h: "May 8, 2026, live",
   alpha_status: "Private, by invitation",
-  alpha_p: "Bootstrap tier reserved for the close circle, accessible only by direct Telegram invitation. No public registration. The Beta and Public phases open later to the broader community.",
+  alpha_price_bonus: "+ 20% bonus",
+  alpha_p: "Bootstrap tier at $0.30 per KAL, reserved for the close circle, accessible only by direct Telegram invitation. Next tier Strategic at $0.50. The Beta and Public phases open later to the broader community.",
   alpha_meta_l1: "Access:",
   alpha_meta_v1: "Direct Telegram invitation",
-  alpha_meta_l2: "Posture:",
-  alpha_meta_v2: "Private, no public tier price announcement",
+  alpha_meta_l2: "Tier:",
+  alpha_meta_v2: "Bootstrap, $0.30 per KAL, 20% bonus",
   beta_label: "Beta phase",
   beta_h: "Starting July 15, 2026",
   beta_p: `STRATEGIC and COMMUNITY tiers open to the broader Telegram community residing outside the European Union. Combined cap 100,000 KAL = $60,000 maximum raised. <strong style="color: var(--danger, #ef4444);">Not available to EU residents for MiCA compliance reasons.</strong>`,
@@ -305,7 +306,7 @@ const I18N_EN = {
   about_team_p4: "What you can verify now: the contracts are public and audited, transactions are visible on <span class=\"g-term\" data-g=\"basescan\">Basescan</span>, the treasury sits in a multi-signature Gnosis Safe, and all governance decisions are taken on-chain.",
 
   /* ===== FOOTER ===== */
-  footer_tagline: "Algorithmic gold trading, accessible to all. Non-custodial, your keys, your funds.",
+  footer_tagline: "Algorithmic gold trading, accessible to all. Your keys, your funds, no one else holds them.",
   footer_col_platform: "Platform",
   footer_app: "Application",
   footer_wp: "Whitepaper",
@@ -331,7 +332,7 @@ const I18N_EN = {
   footer_manage_cookies: "Manage cookies",
   footer_risk_title: "Risk disclaimer:",
   footer_risk_text: "KalMydas is an experimental DeFi platform. Algorithmic trading and crypto-assets carry a high risk of total capital loss. Past performance does not guarantee future results. This website does not constitute financial advice, solicitation, or an offer to buy or sell financial instruments. You are solely responsible for your decisions. Check the applicable legislation in your jurisdiction before participating.",
-  footer_copy: `&copy; 2026 KalMydas, Decentralized algorithmic gold trading. Non-custodial, your keys, your funds.`,
+  footer_copy: `&copy; 2026 KalMydas, Decentralized algorithmic gold trading. Your keys, your funds.`,
 
   /* ===== COMPARISON (added 2026-06-23, OF 105, EN was missing) ===== */
   comp_label: "Why KalMydas",
@@ -342,8 +343,8 @@ const I18N_EN = {
   comp_th_etf: "Gold ETF (GLD, BAR)",
   comp_th_hodl: "Crypto HODL",
   comp_r1_l: "Custody of funds",
-  comp_r1_kal: "Non-custodial, your keys",
-  comp_r1_man: "Broker (custodial)",
+  comp_r1_kal: "You alone hold the key",
+  comp_r1_man: "The broker holds your funds",
   comp_r1_etf: "Bank / broker",
   comp_r1_hodl: "Platform or wallet",
   comp_r2_l: "Fees",
