@@ -1,5 +1,5 @@
 /**
- * KalMydas, i18n (FR/EN) system
+ * Kal Mydas, i18n (FR/EN) system
  * Adds data-i18n driven language switching.
  * French is the default (content lives in the HTML).
  * English translations are stored here and swapped via JS.
@@ -7,9 +7,9 @@
 
 const I18N_EN = {
   /* ===== META (handled separately) ===== */
-  _title: "KalMydas, Gold, algorithmically",
+  _title: "Kal Mydas, Gold, algorithmically",
   _description: "No broker, no third party. Your funds stay in public smart contracts and you alone hold the key. Five algorithms take positions on gold (XAUUSD) 24 hours a day, directly on-chain via gTrade. Over 4 to 21 years of historical simulation, annual performance ranges from roughly 4% to 79% depending on the strategy, usually reserved for six-figure deposits, here from $10. Past performance does not guarantee future results.",
-  _og_title: "KalMydas, Gold, algorithmically",
+  _og_title: "Kal Mydas, Gold, algorithmically",
   _og_description: "No broker, no third party. Your keys, your funds. Five algorithms trade gold 24/7 directly on-chain via gTrade. Live on Base mainnet since May 1, 2026. Backtest history available on the platform. Past performance does not guarantee future results. From $10.",
 
   /* ===== NAV ===== */
@@ -106,7 +106,7 @@ const I18N_EN = {
   /* ===== TOKEN KAL ===== */
   token_label: "Utility Token",
   token_title: "The KAL token",
-  token_desc: `An <span class="g-term" data-g="erc20">ERC-20</span> token at the heart of the KalMydas ecosystem`,
+  token_desc: `An <span class="g-term" data-g="erc20">ERC-20</span> token at the heart of the Kal Mydas ecosystem`,
   token_h3: "Designed to create value",
   token_p: `The KAL token uses a mathematical <span class="g-term" data-g="bonding_curve">bonding curve</span>: the more demand increases, the more the price rises automatically. Early participants get the best price.`,
   token_f1: `<strong><span class="g-term" data-g="bonding_curve">Bonding curve</span></strong>, Price increases with adoption`,
@@ -205,7 +205,7 @@ const I18N_EN = {
   /* ===== TESTIMONIALS (added session 314, 2026-05-04) ===== */
   test_label: "Feedback from early members",
   test_title: "What they say, unfiltered",
-  test_desc: "Three pieces of feedback published as-is by members of the KalMydas channel, in response to an open call for unfiltered testimonials. No editorial selection, no rewording. A few terms are visually blurred out of regulatory caution, the original word remains readable on hover. Testimonials kept in their original French language for authenticity.",
+  test_desc: "Three pieces of feedback published as-is by members of the Kal Mydas channel, in response to an open call for unfiltered testimonials. No editorial selection, no rewording. A few terms are visually blurred out of regulatory caution, the original word remains readable on hover. Testimonials kept in their original French language for authenticity.",
   test_sylvie_role: "Demo: Jan 21, 2026 → Live: Feb 15, 2026",
   test_sylvie_date: "Testimonial posted May 1, 2026",
   test_henri_role: "Demo: Jan 21, 2026 → Live: Feb 15, 2026",
@@ -213,7 +213,7 @@ const I18N_EN = {
   test_street_role: "Demo since March 19, 2026 (ongoing)",
   test_street_date: "Testimonial posted May 2, 2026",
   test_cta: "Verify on the Telegram channel",
-  test_note: `These three testimonials were published under <a href="https://t.me/KalMydas_OFFICIEL/453" target="_blank" rel="noopener">this post on the KalMydas channel</a>. Anyone can read them, verify them and write directly to their authors. Past performance does not guarantee future results.`,
+  test_note: `These three testimonials were published under <a href="https://t.me/KalMydas_OFFICIEL/453" target="_blank" rel="noopener">this post on the Kal Mydas channel</a>. Anyone can read them, verify them and write directly to their authors. Past performance does not guarantee future results.`,
   road_4_phase: "Phase 4, Q4 2026",
   road_4_h: "Growth",
   road_4_p: `Community rewards program. KAL listing on <span class="g-term" data-g="dex">DEX</span>. Advanced analytics dashboard. New asset exploration.`,
@@ -224,8 +224,8 @@ const I18N_EN = {
   /* ===== FAQ ===== */
   faq_label: "Frequently asked questions",
   faq_title: "FAQ",
-  faq_1_q: "What exactly is KalMydas?",
-  faq_1_a: "KalMydas is a DeFi ecosystem offering 5 algorithmic gold (XAUUSD) trading strategies. Bots execute trades automatically, 24/7. Everything is transparent and verifiable on-chain (Base for mainnet, Arbitrum Sepolia for testnet).",
+  faq_1_q: "What exactly is Kal Mydas?",
+  faq_1_a: "Kal Mydas is a DeFi ecosystem offering 5 algorithmic gold (XAUUSD) trading strategies. Bots execute trades automatically, 24/7. Everything is transparent and verifiable on-chain (Base for mainnet, Arbitrum Sepolia for testnet).",
   faq_2_q: "What is the minimum deposit?",
   faq_2_a: "You can start with as little as $10 (in USDC on Base). There is no maximum amount. Your funds remain under your control in the smart contracts.",
   faq_3_q: "How do withdrawals work?",
@@ -234,7 +234,7 @@ const I18N_EN = {
   faq_4_a: "No. The figures shown are based on historical backtests (up to 21 years of data). Past performance does not guarantee future results. Trading involves risk of capital loss.",
   faq_5_q: "What are the fees?",
   faq_5_a: "No entry or exit fees. Performance fees of 10% to 20% depending on strategy, charged on new gains thanks to the High-Water Mark system. Annual management fees of 0% to 6% depending on the pool (ORION 0%, HORIZON 1.2%, VALKYRIE 2.4%, REVOLUTION 6%, TREASURY 6%).",
-  faq_6_q: "Do I need a crypto wallet to use KalMydas?",
+  faq_6_q: "Do I need a crypto wallet to use Kal Mydas?",
   faq_6_a: "No. You can sign in with a simple email or Google account. A wallet is created automatically for you through Privy. Advanced users can also connect their own wallet (MetaMask, etc.).",
   faq_7_q: "Are the contracts audited?",
   faq_7_a: "Yes. Three Omniscient Lab audits PASS (4.22, 4.23, 4.24) on the 23 core protocol contracts. KAL-001 through KAL-008 Codex findings are all resolved. Audit reports are public and accessible from the official documentation.",
@@ -250,17 +250,17 @@ const I18N_EN = {
 
   /* ===== CTA ===== */
   cta_h2: `Ready to participate in <span style="background: var(--gradient-gold-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">algorithmic gold</span>?`,
-  cta_p: "Join the early participants of KalMydas. The KAL token price is lower at the start of the valuation curve: the earlier you participate, the lower the price.",
+  cta_p: "Join the early participants of Kal Mydas. The KAL token price is lower at the start of the valuation curve: the earlier you participate, the lower the price.",
   cta_btn_primary: `Launch app <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
   cta_btn_secondary: "Read the Whitepaper",
   cta_telegram: "Join the community on Telegram",
 
   /* ===== ABOUT ===== */
   about_label: "Genesis",
-  about_title: "About KalMydas",
+  about_title: "About Kal Mydas",
   about_desc: "Why this project exists and how it works",
-  about_why_h3: "Why KalMydas exists",
-  about_why_p: `KalMydas was born from a simple frustration: why does professional algorithmic trading, which has generated consistent historical performance for decades, remain reserved for banks and large financial structures? Our platform, built on <span class="g-term" data-g="base_l2">Base</span>, gives everyone, starting from $10, access to the same algorithmic strategies as the professionals.`,
+  about_why_h3: "Why Kal Mydas exists",
+  about_why_p: `Kal Mydas was born from a simple frustration: why does professional algorithmic trading, which has generated consistent historical performance for decades, remain reserved for banks and large financial structures? Our platform, built on <span class="g-term" data-g="base_l2">Base</span>, gives everyone, starting from $10, access to the same algorithmic strategies as the professionals.`,
   about_approach_h3: "Our approach",
   about_approach_p: `Our 5 trading robots are developed and optimized on <span class="g-term" data-g="mt4">MetaTrader 4</span>. They have been rigorously backtested on real historical broker data (4 to 21 years depending on the strategy), forward-tested, and stress-tested on the 2008 and 2020 crises. Each strategy operates exclusively on the gold market (<span class="g-term" data-g="xauusd">XAUUSD</span>).`,
   about_part_h3: "How to participate",
@@ -331,12 +331,14 @@ const I18N_EN = {
   footer_terms: "Terms of use",
   footer_manage_cookies: "Manage cookies",
   footer_risk_title: "Risk disclaimer:",
-  footer_risk_text: "KalMydas is an experimental DeFi platform. Algorithmic trading and crypto-assets carry a high risk of total capital loss. Past performance does not guarantee future results. This website does not constitute financial advice, solicitation, or an offer to buy or sell financial instruments. You are solely responsible for your decisions. Check the applicable legislation in your jurisdiction before participating.",
-  footer_copy: `&copy; 2026 KalMydas, Decentralized algorithmic gold trading. Your keys, your funds.`,
+  footer_risk_text: "Kal Mydas is an experimental DeFi platform. Algorithmic trading and crypto-assets carry a high risk of total capital loss. Past performance does not guarantee future results. This website does not constitute financial advice, solicitation, or an offer to buy or sell financial instruments. You are solely responsible for your decisions. Check the applicable legislation in your jurisdiction before participating.",
+  footer_copy: `&copy; 2026 Kal Mydas, Decentralized algorithmic gold trading. Your keys, your funds.`,
 
   /* ===== COMPARISON (added 2026-06-23, OF 105, EN was missing) ===== */
-  comp_label: "Why KalMydas",
-  comp_title: "KalMydas vs the alternatives",
+  comp_label: "Why Kal Mydas",
+  comp_title: "Kal Mydas vs the alternatives",
+  comp_km_badge: "Recommended",
+  comp_km_sub: "Algorithmic gold trading, your keys, your funds.",
   comp_desc: "A comparison across 7 structural criteria for anyone seeking gold-market exposure without handing their funds to a third party.",
   comp_th_criterion: "Criterion",
   comp_th_manual: "Manual trading",
@@ -377,7 +379,7 @@ const I18N_EN = {
   comp_r7_man: "Not applicable",
   comp_r7_etf: "Regulated (AMF, SEC by region)",
   comp_r7_hodl: "Not applicable",
-  comp_note: "Indicative comparison. Each solution meets a different need; KalMydas is designed for gold-market exposure through algorithmic strategies without handing your funds to a third party.",
+  comp_note: "Indicative comparison. Each solution meets a different need; Kal Mydas is designed for gold-market exposure through algorithmic strategies without handing your funds to a third party.",
 };
 
 /* ===== ENGLISH GLOSSARY ===== */
@@ -388,14 +390,14 @@ const GLOSSARY_DEFS_EN = {
   smart_contract: "Autonomous computer program deployed on the blockchain. Executes automatically according to predefined rules, with no intermediary. Code is public and verifiable.",
   erc20: "Standard technical norm for tokens on Ethereum and compatible networks. Ensures interoperability with all wallets and platforms.",
   bonding_curve: "Transparent mathematical mechanism that automatically determines a token's price based on circulating supply. The more demand increases, the higher the price.",
-  buyback_burn: "Automatic mechanism where a portion of performance fees is used to buy back KAL tokens. At KalMydas, bought-back KAL is recirculated as liquidity (Zero Destruction philosophy).",
+  buyback_burn: "Automatic mechanism where a portion of performance fees is used to buy back KAL tokens. At Kal Mydas, bought-back KAL is recirculated as liquidity (Zero Destruction philosophy).",
   staking: "The act of locking tokens in a protocol to provide liquidity or secure the network, in exchange for rewards.",
   lp: "Liquidity Provider, a person who deposits tokens into an exchange pool to facilitate transactions, in exchange for rewards.",
   hwm: "High-Water Mark, protection mechanism: performance fees only apply on gains above the all-time high. Prevents paying twice for the same gains.",
   dex: "Decentralized Exchange, a platform that allows users to trade tokens directly with each other, without a centralized intermediary.",
   dao: "Decentralized Autonomous Organization, community governance where decisions are made by token holder votes, with no central authority.",
   arbiscan: "Blockchain explorer for viewing all transactions and contracts deployed on the Arbitrum network. Ensures complete transparency.",
-  nft: "Non-Fungible Token, a unique, non-interchangeable digital asset on the blockchain. Used at KalMydas for the access pass.",
+  nft: "Non-Fungible Token, a unique, non-interchangeable digital asset on the blockchain. Used at Kal Mydas for the access pass.",
   mainnet: "The main network of a blockchain where transactions have real value (as opposed to testnet which uses worthless tokens).",
   profit_factor: "Gross gains / gross losses ratio. A PF above 1 means the strategy is overall profitable. PF > 1.5 = good, PF > 2 = excellent.",
   win_rate: "Percentage of winning trades out of the total trades executed by a strategy.",
@@ -406,7 +408,7 @@ const GLOSSARY_DEFS_EN = {
   tvl: "Total Value Locked, the total value of assets deposited in a DeFi protocol. An indicator of trust and protocol size.",
   non_custodial: "A model where your funds remain under your full control. No centralized entity holds your private keys or can access your funds.",
   mt4: "MetaTrader 4, professional trading software used since 2005 to create, test, and execute automated strategies on financial markets.",
-  lock_up: "A period during which funds cannot be withdrawn. At KalMydas: no lock-up, withdraw 24/7.",
+  lock_up: "A period during which funds cannot be withdrawn. At Kal Mydas: no lock-up, withdraw 24/7.",
   layer2: "A secondary network built on top of a main blockchain (like Ethereum) to improve speed and reduce transaction costs.",
   defi: "Decentralized Finance, financial services (trading, lending, savings) operated on blockchain via smart contracts, without banking intermediaries.",
   blockchain: "A distributed, tamper-proof digital ledger. Every transaction is publicly recorded and cannot be retroactively modified.",
@@ -416,16 +418,16 @@ const GLOSSARY_DEFS_EN = {
   testnet: "A blockchain test network using worthless tokens. Allows testing applications before official launch.",
   solidity: "Programming language used to write smart contracts on Ethereum and compatible networks.",
   oracle: "A service that transmits real-world data (prices, results) to the blockchain. Enables smart contracts to interact with external information.",
-  epoch: "A defined time period in a protocol. At KalMydas, LP rewards are distributed per epoch with decreasing amounts.",
+  epoch: "A defined time period in a protocol. At Kal Mydas, LP rewards are distributed per epoch with decreasing amounts.",
   flywheel: "Self-reinforcing value loop: gains generate fees, which buy back KAL, increasing the price, attracting more participants.",
   fonds_institutionnels: "Financial structures managing significant capital (banks, pension funds, hedge funds). They have access to advanced trading tools traditionally unavailable to retail participants.",
   arbitrum_sepolia: "Test version of the Arbitrum network. Used during the development phase before the Base mainnet deployment in May 2026.",
-  orderbook: "Order book, a system matching buyers and sellers in a market. At KalMydas, the price is determined by the bonding curve, with no orderbook.",
+  orderbook: "Order book, a system matching buyers and sellers in a market. At Kal Mydas, the price is determined by the bonding curve, with no orderbook.",
   vekal: "Vote-escrowed KAL, mechanism inspired by Curve Finance. By locking KAL, you receive veKAL which grants rights to weekly USDC fee sharing and protocol parameter voting.",
   erc4626: "Technical standard for tokenized vaults on Ethereum. Enables standardized auto-compounding of gains.",
   pol: "Protocol-Owned Liquidity, liquidity owned directly by the protocol (not by users). Guarantees permanent liquidity even if providers withdraw.",
   rwa: "Real World Assets, real-world assets (Treasury bonds, real estate) tokenized on the blockchain. Offer performance uncorrelated to the crypto market.",
-  base_l2: "Layer 2 network on Ethereum, optimized for consumer-facing applications. KalMydas mainnet has been live on Base since May 1, 2026.",
+  base_l2: "Layer 2 network on Ethereum, optimized for consumer-facing applications. Kal Mydas mainnet has been live on Base since May 1, 2026.",
 };
 
 /* ===== i18n ENGINE ===== */
