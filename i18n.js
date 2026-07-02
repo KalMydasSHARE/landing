@@ -8,7 +8,7 @@
 const I18N_EN = {
   /* ===== META (handled separately) ===== */
   _title: "Kal Mydas, Gold, algorithmically",
-  _description: "No broker, no third party. Your funds stay in public smart contracts and you alone hold the key. Five algorithms take positions on gold (XAUUSD) 24 hours a day, directly on-chain via gTrade. Over 4 to 21 years of historical simulation, annual performance ranges from roughly 4% to 79% depending on the strategy, usually reserved for six-figure deposits, here from $10. Past performance does not guarantee future results.",
+  _description: "Algorithmic gold (XAUUSD) trading strategies simulated on real broker data over up to 21 years. No broker, no third party, your funds stay in public smart contracts and you alone hold the key. On Base, from $10. Past performance does not guarantee future results. Risk of partial or total capital loss.",
   _og_title: "Kal Mydas, Gold, algorithmically",
   _og_description: "No broker, no third party. Your keys, your funds. Five algorithms trade gold 24/7 directly on-chain via gTrade. Live on Base mainnet since May 1, 2026. Backtest history available on the platform. Past performance does not guarantee future results. From $10.",
 
@@ -21,6 +21,7 @@ const I18N_EN = {
   nav_presale: "Presale",
   nav_about: "About",
   nav_cta: "Launch app",
+  theme_new_badge: "NEW",
 
   /* ===== HERO ===== */
   hero_badge: `<span class="dot"></span> Mainnet live · Base`,
@@ -95,13 +96,24 @@ const I18N_EN = {
   strat_orion_meta: "per year · 800 trades",
   strat_orion_bt: "20 years of backtest",
 
+  strat_horizon_perf: "4.15%",
+  strat_valkyrie_perf: "12.49%",
+  strat_revolution_perf: "24.43%",
+  strat_treasury_perf: "33.05%",
+  strat_orion_perf: "78.99%",
+  strat_horizon_pf: `<span class="g-term" data-g="profit_factor">PF</span> 1.31`,
+  strat_valkyrie_pf: `<span class="g-term" data-g="profit_factor">PF</span> 2.30`,
+  strat_revolution_pf: `<span class="g-term" data-g="profit_factor">PF</span> 1.11`,
+  strat_treasury_pf: `<span class="g-term" data-g="profit_factor">PF</span> 1.35`,
+  strat_orion_pf: `<span class="g-term" data-g="profit_factor">PF</span> 1.65`,
+
   /* ===== COMPARISON TABLE ===== */
   th_strategy: "Strategy",
   th_return: "Performance",
   th_backtest: "Backtest",
   th_perf_fee: "Perf. fee",
 
-  disclaimer: "Past performance does not guarantee future results. Trading involves risk of capital loss.",
+  disclaimer: "Historical simulations over 4 to 21 years of XAUUSD data. Live execution via gTrade may produce different results. Risk of partial or total capital loss. Past performance does not guarantee future performance.",
 
   /* ===== TOKEN KAL ===== */
   token_label: "Utility Token",
@@ -179,7 +191,7 @@ const I18N_EN = {
   alpha_meta_v2: "Bootstrap, $0.30 per KAL, 20% bonus",
   beta_label: "Beta phase",
   beta_h: "Starting July 15, 2026",
-  beta_p: `STRATEGIC and COMMUNITY tiers open to the broader Telegram community residing outside the European Union. Combined cap 100,000 KAL = $60,000 maximum raised. <strong style="color: var(--danger, #ef4444);">Not available to EU residents for MiCA compliance reasons.</strong>`,
+  beta_p: `STRATEGIC and COMMUNITY tiers open to the broader Telegram community residing outside the European Union. Combined cap 100,000 KAL = $60,000 maximum raised. <strong style="color: var(--red);">Not available to EU residents for MiCA compliance reasons.</strong>`,
   beta_meta_l1: "Audience:",
   beta_meta_v1: "Broader Telegram members, non-EU",
   beta_meta_l2: "Cap:",
@@ -205,7 +217,7 @@ const I18N_EN = {
   track_best_label: "Best trade",
   track_topstrat_label: "Top performing strategy",
   track_breakdown_label: "Compounded performance per strategy",
-  track_scope: `Figures measured since the platform's beta opening. The algorithms also ran live for about six months prior, and have been simulated over 4 to 21 years of historical data depending on the strategy, these complementary proofs are verifiable through the <a href="https://kalmydas.ch" target="_blank" rel="noopener" style="color: var(--gold-light); text-decoration: underline;">Telegram</a> community.`,
+  track_scope: `Figures measured since the platform's beta opening. The algorithms also ran under market conditions on demo accounts for about six months prior, and have been simulated over 4 to 21 years of historical data depending on the strategy, these complementary proofs are verifiable through the <a href="https://kalmydas.ch" target="_blank" rel="noopener" style="color: var(--gold-light); text-decoration: underline;">Telegram</a> community.`,
   track_cta: "See full history of all trades",
   track_disclaimer: "Figures from the trade journal executed by the KAL algorithms on MT4 demo accounts, in real market conditions and with no capital engaged. Demo execution does not exactly reproduce real execution: price, slippage, funding and leverage may differ. Only trades propagated on-chain via gTrade on Base were executed with real capital and are verifiable on-chain. The protocol has been running on Base mainnet since May 1, 2026. Risk of partial or total capital loss. Past performance does not guarantee future results.",
 
@@ -279,7 +291,7 @@ const I18N_EN = {
   about_arch_withdrawals: "Free withdrawals",
   about_arch_desc: `A secure bridge connects the <span class="g-term" data-g="mt4">MT4</span> robots to the blockchain. No private key is centralized, your funds remain under your control. Everything is verifiable in real-time on <span class="g-term" data-g="basescan">Basescan</span>.`,
   about_token_h3: "The KAL token",
-  about_token_desc2: `The KAL token (<span class="g-term" data-g="erc20">ERC-20</span>, 10M max supply) uses a transparent <span class="g-term" data-g="bonding_curve">bonding curve</span>: the price rises with adoption. 30% of performance fees are used for buyback then redirection into the protocol's KalSwap KAL/USDC liquidity pool, through the <span class="g-term" data-g="pol">BuybackRecirculator</span> contract (Zero Burn doctrine, no destruction). Lock your KAL as <span class="g-term" data-g="vekal">veKAL</span> to receive your share of fees in <span class="g-term" data-g="usdc">USDC</span> every week.`,
+  about_token_desc2: `The KAL token (<span class="g-term" data-g="erc20">ERC-20</span>, 10M max supply) uses a transparent <span class="g-term" data-g="bonding_curve">bonding curve</span>, the price moves with adoption. 30% of performance fees are used for buyback then redirection into the protocol's KalSwap KAL/USDC liquidity pool, through the <span class="g-term" data-g="pol">BuybackRecirculator</span> contract (Zero Burn doctrine, no destruction). Lock your KAL as <span class="g-term" data-g="vekal">veKAL</span> to receive your share of fees in <span class="g-term" data-g="usdc">USDC</span> every week.`,
   about_token_lp: "60% LP rewards",
   about_token_vekal: "30% veKAL rewards",
   about_token_presale: "5% Presale",
