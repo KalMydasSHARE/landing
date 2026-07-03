@@ -217,7 +217,7 @@ const I18N_EN = {
   track_best_label: "Best trade",
   track_topstrat_label: "Top performing strategy",
   track_breakdown_label: "Compounded performance per strategy",
-  track_scope: `Figures measured since the platform's beta opening. The algorithms also ran under market conditions on demo accounts for about six months prior, and have been simulated over 4 to 21 years of historical data depending on the strategy, these complementary proofs are verifiable through the <a href="https://kalmydas.ch" target="_blank" rel="noopener" style="color: var(--gold-light); text-decoration: underline;">Telegram</a> community.`,
+  track_scope: `Figures measured since the platform's beta opening. The algorithms also ran under market conditions on demo accounts for about six months prior, and have been simulated over 4 to 21 years of historical data depending on the strategy, these complementary proofs are verifiable through the <a href="https://t.me/KalMydas_OFFICIEL" target="_blank" rel="noopener" style="color: var(--gold-light); text-decoration: underline;">Telegram</a> community.`,
   track_cta: "See full history of all trades",
   track_disclaimer: "Figures from the trade journal executed by the KAL algorithms on MT4 demo accounts, in real market conditions and with no capital engaged. Demo execution does not exactly reproduce real execution: price, slippage, funding and leverage may differ. Only trades propagated on-chain via gTrade on Base were executed with real capital and are verifiable on-chain. The protocol has been running on Base mainnet since May 1, 2026. Risk of partial or total capital loss. Past performance does not guarantee future results.",
 
