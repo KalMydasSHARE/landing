@@ -2130,13 +2130,13 @@
         <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1.2rem;">
           <div style="flex: 1 1 280px; min-width: 0;">
             <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.4rem;">
-              <span style="font-size: 0.72rem; color: var(--gold-light); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700;" data-i18n="counter_phase">Phase Alpha en cours</span>
+              <span style="font-size: 0.72rem; color: var(--gold-light); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700;" data-i18n="counter_phase">Phase Beta en cours</span>
               <span style="display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.68rem; color: var(--green); background: var(--green-soft); border: 1px solid var(--green-soft); border-radius: 999px; padding: 0.15rem 0.6rem; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600;">
                 <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--green);"></span>
                 <span data-i18n="counter_status">Ouverte</span>
               </span>
             </div>
-            <p style="font-size: 1rem; color: var(--text); font-weight: 600; line-height: 1.4; margin: 0 0 0.25rem;" data-i18n="counter_lead">Palier d'amorçage ouvert au cercle proche jusqu'au 15 juillet 2026.</p>
+            <p style="font-size: 1rem; color: var(--text); font-weight: 600; line-height: 1.4; margin: 0 0 0.25rem;" data-i18n="counter_lead">Palier Stratégique ouvert à tout portefeuille jusqu'au 15 août 2026.</p>
             <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin: 0;" data-i18n="counter_sub">Outil d'autonomie. Voir le calendrier complet ci-dessous.</p>
           </div>
           <div style="flex: 0 0 auto; display: flex; align-items: baseline; gap: 0.5rem;">
@@ -2154,14 +2154,14 @@
             </div>
           </div>
         </div>
-        <p style="font-size: 0.7rem; color: var(--text-muted); margin: 0.9rem 0 0; line-height: 1.5;" data-i18n="counter_foot">Avant ouverture de la Phase Beta. Calendrier indicatif, susceptible d'ajustement selon les conditions de marché. Participation à un protocole décentralisé, valeur non garantie, perte totale possible.</p>
+        <p style="font-size: 0.7rem; color: var(--text-muted); margin: 0.9rem 0 0; line-height: 1.5;" data-i18n="counter_foot">Avant la fin du Tier 1 STRATÉGIQUE. Calendrier indicatif, susceptible d'ajustement selon les conditions de marché. Participation à un protocole décentralisé, valeur non garantie, perte totale possible.</p>
       </a>
     </div>
   </section>
   <script>
     (function(){
-      // Cible : ouverture Phase Beta, 15 juillet 2026, 12:00 UTC
-      var target = Date.UTC(2026, 6, 15, 12, 0, 0);
+      // Cible : fermeture du Tier 1 STRATEGIQUE, 15 aout 2026, 18h00 heure suisse (16:00 UTC)
+      var target = Date.UTC(2026, 7, 15, 16, 0, 0);
       var elDays = document.getElementById('km-cd-days');
       var elHours = document.getElementById('km-cd-hours');
       var elMins = document.getElementById('km-cd-mins');
@@ -2871,13 +2871,13 @@
 
         <!-- Phase Alpha -->
         <div class="fade-in" style="background: linear-gradient(180deg, rgba(190,165,110,0.08), var(--bg-card)); border: 2px solid rgba(190, 165, 110, 0.4); border-radius: 16px; padding: 2rem; box-shadow: 0 0 40px rgba(190, 165, 110, 0.08);">
-          <div style="font-size: 0.75rem; color: var(--gold-light); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.8rem;" data-i18n="alpha_label">Phase Alpha</div>
-          <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--text); margin-bottom: 1rem;" data-i18n="alpha_h">8 mai 2026, en cours</h3>
-          <div style="font-size: 2.4rem; font-weight: 700; color: var(--gold-light); margin-bottom: 0.5rem; font-family: var(--font-display);">0,30&nbsp;$ <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);" data-i18n="alpha_price_bonus">+ 20&nbsp;% de bonus</span></div>
-          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1rem;" data-i18n="alpha_p">Palier d'amorçage à 0,30&nbsp;$ par KAL, réservé au cercle proche, accessible uniquement par invitation directe Telegram. Prochain palier Stratégique à 0,50&nbsp;$. Les phases Beta et Publique ouvrent ensuite à la communauté élargie.</p>
+          <div style="font-size: 0.75rem; color: var(--gold-light); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.8rem;" data-i18n="alpha_label">Phase Alpha, clôturée</div>
+          <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--text); margin-bottom: 1rem;" data-i18n="alpha_h">8 mai 2026, clôturée le 15 juillet</h3>
+          <div style="font-size: 2.4rem; font-weight: 700; color: var(--gold-light); margin-bottom: 0.5rem; font-family: var(--font-display);">0,30&nbsp;$ <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);" data-i18n="alpha_price_bonus">+ 20&nbsp;% de bonus, palier clôturé</span></div>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1rem;" data-i18n="alpha_p">Palier d'amorçage à 0,30&nbsp;$ par KAL, clôturé le 15 juillet 2026, il était réservé au cercle proche par invitation directe Telegram. Place au palier Stratégique à 0,50&nbsp;$, en cours. La phase Publique ouvre ensuite à la communauté élargie.</p>
           <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.85rem; color: var(--text-muted);">
             <div><strong style="color: var(--text);" data-i18n="alpha_meta_l1">Accès&nbsp;:</strong> <span data-i18n="alpha_meta_v1">Invitation Telegram directe</span></div>
-            <div><strong style="color: var(--text);" data-i18n="alpha_meta_l2">Palier&nbsp;:</strong> <span data-i18n="alpha_meta_v2">Amorçage, 0,30&nbsp;$ par KAL, bonus 20&nbsp;%</span></div>
+            <div><strong style="color: var(--text);" data-i18n="alpha_meta_l2">Palier&nbsp;:</strong> <span data-i18n="alpha_meta_v2">Amorçage clôturé, 0,30&nbsp;$ par KAL, bonus 20&nbsp;%</span></div>
           </div>
         </div>
 
@@ -2888,7 +2888,7 @@
             <!-- Badge géo-blocage UE (Correctif B MME Legal 2026-06-04) -->
             <span style="font-size: 0.65rem; color: var(--red); background: var(--red-soft); border: 1px solid var(--red-soft); border-radius: 6px; padding: 0.15rem 0.55rem; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600;" data-i18n="beta_geo_badge" title="Indisponible aux résidents UE (MiCA)">Hors UE</span>
           </div>
-          <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--text); margin-bottom: 1rem;" data-i18n="beta_h">À partir du 15 juillet 2026</h3>
+          <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--text); margin-bottom: 1rem;" data-i18n="beta_h">En cours depuis le 15 juillet 2026</h3>
           <div style="font-size: 2.4rem; font-weight: 700; color: var(--gold-light); margin-bottom: 0.5rem; font-family: var(--font-display);">0,50 → 0,70&nbsp;$</div>
           <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1rem;" data-i18n="beta_p">Paliers STRATÉGIQUE et COMMUNAUTÉ ouverts à la communauté Telegram élargie résidant hors Union européenne. Plafond combiné 100&nbsp;000 KAL = 60&nbsp;000&nbsp;$ levés maximum. <strong style="color: var(--red);">Indisponible aux résidents UE pour des raisons de conformité MiCA.</strong></p>
           <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.85rem; color: var(--text-muted);">
