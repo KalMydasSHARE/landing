@@ -807,40 +807,46 @@
 
       <h3 style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1rem; color: var(--gold-light);" data-i18n="about_token_dist_label" data-en="Distribution">Distribution</h3>
 
-      <!-- Distribution alignée KalToken.sol NatSpec + docs/tokenomics, corrigée session 299 (28/04/2026), total 100 %. Aucune allocation équipe / fondateur. -->
+      <!-- Distribution alignée sur DOC/02_TOKENOMICS/00_SOURCE_CANONIQUE_EMISSION_2026-07.md, corrigée OF 202 le 19/07/2026 : émission programmée 2 650 000 KAL plus réserve non allouée 7 350 000 KAL. Aucune allocation équipe / fondateur. -->
       <div class="distribution-chart">
         <div class="dist-item">
-          <div class="dist-label" data-i18n="about_token_dist_1" data-en="Liquidity provider rewards">Récompenses fournisseurs de liquidité</div>
+          <div class="dist-label" data-i18n="about_token_dist_1" data-en="KAL staking rewards (1,500,000 KAL)">Récompenses de mise en jeu du KAL (1 500 000 KAL)</div>
           <div class="dist-bar-container">
-            <div class="dist-bar" style="width: 60%;"><span class="dist-percent">60&nbsp;%</span></div>
+            <div class="dist-bar" style="width: 15%;"><span class="dist-percent">15&nbsp;%</span></div>
           </div>
         </div>
         <div class="dist-item">
-          <div class="dist-label" data-i18n="about_token_dist_2" data-en="KAL lockers rewards (veKAL)">Récompenses verrouilleurs de KAL (veKAL)</div>
-          <div class="dist-bar-container">
-            <div class="dist-bar" style="width: 30%;"><span class="dist-percent">30&nbsp;%</span></div>
-          </div>
-        </div>
-        <div class="dist-item">
-          <div class="dist-label" data-i18n="about_token_dist_3" data-en="Presale (500,000 KAL hard cap)">Prévente (500 000 KAL plafond)</div>
+          <div class="dist-label" data-i18n="about_token_dist_2" data-en="Presale, 10 tiers (500,000 KAL hard cap)">Prévente, 10 paliers (500 000 KAL plafond)</div>
           <div class="dist-bar-container">
             <div class="dist-bar" style="width: 5%;"><span class="dist-percent">5&nbsp;%</span></div>
           </div>
         </div>
         <div class="dist-item">
-          <div class="dist-label" data-i18n="about_token_dist_4" data-en="Initial valuation curve">Courbe de valorisation initiale</div>
+          <div class="dist-label" data-i18n="about_token_dist_3" data-en="Initial valuation curve (450,000 KAL)">Courbe de valorisation initiale (450 000 KAL)</div>
           <div class="dist-bar-container">
             <div class="dist-bar" style="width: 4.5%;"><span class="dist-percent">4,5&nbsp;%</span></div>
           </div>
         </div>
         <div class="dist-item">
-          <div class="dist-label" data-i18n="about_token_dist_5" data-en="Beta tester recognition program">Programme de reconnaissance testeurs</div>
+          <div class="dist-label" data-i18n="about_token_dist_4" data-en="Liquidity provider rewards (150,000 KAL)">Récompenses fournisseurs de liquidité (150 000 KAL)</div>
+          <div class="dist-bar-container">
+            <div class="dist-bar" style="width: 1.5%; min-width: 32px;"><span class="dist-percent">1,5&nbsp;%</span></div>
+          </div>
+        </div>
+        <div class="dist-item">
+          <div class="dist-label" data-i18n="about_token_dist_5" data-en="Beta tester recognition program (50,000 KAL)">Programme de reconnaissance testeurs (50 000 KAL)</div>
           <div class="dist-bar-container">
             <div class="dist-bar" style="width: 0.5%; min-width: 32px;"><span class="dist-percent">0,5&nbsp;%</span></div>
           </div>
         </div>
+        <div class="dist-item">
+          <div class="dist-label" data-i18n="about_token_dist_6" data-en="Unallocated reserve (7,350,000 KAL)">Réserve non allouée (7 350 000 KAL)</div>
+          <div class="dist-bar-container">
+            <div class="dist-bar" style="width: 73.5%;"><span class="dist-percent">73,5&nbsp;%</span></div>
+          </div>
+        </div>
       </div>
-      <p style="text-align: center; color: var(--text-muted); font-size: 0.82rem; margin-top: 1.4rem; font-style: italic;" data-i18n="about_token_dist_footnote" data-en="Total = 100 %. No team allocation: founder compensation depends solely on actual protocol performance, paid in USDC.">Total = 100&nbsp;%. Aucune allocation équipe&nbsp;: la rémunération du fondateur dépend uniquement de la performance réelle du protocole, payée en USDC.</p>
+      <p style="text-align: center; color: var(--text-muted); font-size: 0.82rem; margin-top: 1.4rem; font-style: italic;" data-i18n="about_token_dist_footnote" data-en="Programmed emission of the current contracts, about 2,650,000 KAL. The remainder is a free ceiling, never minted without a multisig decision, no automatic dilution. No team allocation: founder compensation depends solely on actual protocol performance, paid in USDC.">Émission programmée des contrats actuels, environ 2 650 000 KAL. Le solde reste un plafond libre, jamais émis sans décision du multisig, aucune dilution automatique. Aucune allocation équipe&nbsp;: la rémunération du fondateur dépend uniquement de la performance réelle du protocole, payée en USDC.</p>
 
       <p data-i18n="about_token_p2" data-en="30% of performance fees are automatically used for buyback and recirculation (Zero Destruction philosophy), creating permanent buying pressure.">
         30&nbsp;% des frais de performance sont automatiquement utilisés pour du rachat et recirculation (philosophie Zéro Destruction), créant une pression acheteuse permanente.
@@ -1033,12 +1039,13 @@
     about_token_title: "The KAL token",
     about_token_p1: "The KAL token (ERC-20, maximum supply of 10 million) operates with a transparent valuation curve, the price moves with adoption.",
     about_token_dist_label: "Distribution",
-    about_token_dist_1: "Liquidity provider rewards",
-    about_token_dist_2: "KAL lockers rewards (veKAL)",
-    about_token_dist_3: "Presale (500,000 KAL hard cap)",
-    about_token_dist_4: "Initial valuation curve",
-    about_token_dist_5: "Beta tester recognition program",
-    about_token_dist_footnote: "Total = 100 %. No team allocation: founder compensation depends solely on actual protocol performance, paid in USDC.",
+    about_token_dist_1: "KAL staking rewards (1,500,000 KAL)",
+    about_token_dist_2: "Presale, 10 tiers (500,000 KAL hard cap)",
+    about_token_dist_3: "Initial valuation curve (450,000 KAL)",
+    about_token_dist_4: "Liquidity provider rewards (150,000 KAL)",
+    about_token_dist_5: "Beta tester recognition program (50,000 KAL)",
+    about_token_dist_6: "Unallocated reserve (7,350,000 KAL)",
+    about_token_dist_footnote: "Programmed emission of the current contracts, about 2,650,000 KAL. The remainder is a free ceiling, never minted without a multisig decision, no automatic dilution. No team allocation: founder compensation depends solely on actual protocol performance, paid in USDC.",
     about_token_p2: "30% of performance fees are automatically used for buyback and recirculation (Zero Destruction philosophy), creating permanent buying pressure.",
     about_part_label: "Getting started",
     about_part_title: "How to participate",
