@@ -454,6 +454,9 @@ const GLOSSARY_DEFS_EN = {
 /* ===== i18n ENGINE ===== */
 (function () {
   const FR_CACHE = {};
+  // Liens dont l'adresse depend de la langue (compte X francophone ou anglophone).
+  // Cle, l'element ; valeur, l'adresse FR d'origine lue dans le HTML.
+  const HREF_FR_CACHE = new Map();
 
   /**
    * Cross-subdomain language preference, shared between kalmydas.com, app.kalmydas.com, docs.kalmydas.com.
@@ -561,6 +564,10 @@ const GLOSSARY_DEFS_EN = {
     document.querySelectorAll('[data-i18n]').forEach(el => {
       FR_CACHE[el.getAttribute('data-i18n')] = el.innerHTML;
     });
+    // Memorise l'adresse FR des liens porteurs de data-i18n-href-en.
+    document.querySelectorAll('[data-i18n-href-en]').forEach(el => {
+      HREF_FR_CACHE.set(el, el.getAttribute('href'));
+    });
     // Capture FR meta tag initial values once for later restoration.
     const desc = document.querySelector('meta[name="description"]');
     if (desc) META_FR_CACHE._description = desc.content;
@@ -590,6 +597,17 @@ const GLOSSARY_DEFS_EN = {
         if (typeof console !== 'undefined' && console.warn) {
           console.warn('[i18n] EN translation missing for key:', key);
         }
+      }
+    });
+
+    // Meme mecanisme, applique cette fois a l'adresse du lien et non a son contenu.
+    document.querySelectorAll('[data-i18n-href-en]').forEach(el => {
+      const en = el.getAttribute('data-i18n-href-en');
+      const fr = HREF_FR_CACHE.get(el);
+      if (lang === 'en' && en) {
+        el.setAttribute('href', en);
+      } else if (fr) {
+        el.setAttribute('href', fr);
       }
     });
 
