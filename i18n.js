@@ -14,6 +14,7 @@ const I18N_EN = {
 
   /* ===== NAV ===== */
   nav_how: "How it works",
+  nav_group_protocol: "The protocol",
   nav_strategies: "Strategies",
   nav_token: "KAL Token",
   nav_security: "Security",
