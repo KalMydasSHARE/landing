@@ -1539,13 +1539,10 @@
     }
 
     .footer-logo {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      font-weight: 700;
-      background: var(--gradient-gold-text);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      /* Le lockup porte ses propres couleurs. L ancien remplissage en degrade
+         transparent, herite du texte, rendrait le SVG invisible. Retire le
+         2026-07-20 en meme temps que le passage au lockup canonique. */
+      display: block;
     }
 
     .footer-grid a {
@@ -3281,7 +3278,7 @@
 
       <!-- Brand -->
       <div>
-        <div class="footer-logo" style="margin-bottom: 0.8rem;"><img src="/favicon.png" alt="" width="22" height="22" style="display: inline-block; vertical-align: -4px; margin-right: 0.5rem;" />Kal Mydas</div>
+        <div class="footer-logo" style="margin-bottom: 0.8rem;" aria-label="KALmydas"><svg overflow="visible" viewBox="5 47 333.13 71" role="img" aria-label="KALmydas" style="height:24px;width:auto;display:block;overflow:visible;"><g transform="translate(0.223,56.291) scale(0.102381)"><polygon points="99.57,94.57 99.57,417.43 151,220.29 151,46" fill="var(--km-lockup-bleu-fonce)"/><polygon points="99.57,417.43 99.57,94.57 46.71,46 46.71,460.29" fill="var(--km-lockup-bleu)"/><polygon points="151,220.29 99.57,417.43 186.29,267.43" fill="var(--km-lockup-bleu-fonce)"/><polygon points="296.71,51.71 151,220.29 186.29,267.43 299.57,131.29" fill="var(--km-lockup-or-clair)"/><polygon points="465.29,46 296.71,51.71 299.57,131.29" fill="var(--km-lockup-or-tres-clair)"/><polygon points="261.43,266.43 465.29,46 299.57,131.29 186.29,267.43" fill="var(--km-lockup-or-clair)"/><polygon points="465.29,466 261.43,266.43 186.29,267.43 292,365.57" fill="var(--km-lockup-or-mat)"/><polygon points="302.43,463.14 465.29,466 292,365.57" fill="var(--km-lockup-or-profond)"/><polygon points="197.71,350.29 302.43,463.14 292,365.57 186.29,267.43" fill="var(--km-lockup-or-mat)"/><polygon points="151,460.29 151,380.29 99.57,417.43" fill="var(--km-lockup-bleu-fonce)"/><polygon points="46.71,460.29 151,460.29 99.57,417.43" fill="var(--km-lockup-bleu-fonce)"/><polygon points="151,46 46.71,46 99.57,94.57" fill="var(--km-lockup-bleu)"/><polygon points="197.71,350.29 186.29,267.43 99.57,417.43 151,380.29" fill="var(--km-lockup-or-mat)"/></g><text x="50" y="104" font-size="64"><tspan font-family="Cambria,Georgia,serif" font-weight="700" fill="var(--km-lockup-or-vif)">AL</tspan><tspan font-family="Georgia,serif" font-weight="300" font-style="italic" fill="var(--km-lockup-bleu-vif)">mydas</tspan><tspan font-family="Georgia,serif" font-weight="700" fill="var(--km-lockup-or-vif)">.</tspan></text></svg></div>
         <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; max-width: 260px;" data-i18n="footer_tagline">Trading algorithmique sur l'or, accessible à tous. Vos clés, vos fonds, personne d'autre ne les détient.</p>
       </div>
 
