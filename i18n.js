@@ -337,6 +337,7 @@ const I18N_EN = {
   footer_security: "Security",
   footer_roadmap: "Roadmap",
   footer_col_community: "Community",
+  footer_kal_contract: "KAL contract on Base",
   footer_contact: "Contact: contact@kalmydas.ch",
   footer_col_resources: "Resources",
   footer_docs: "Documentation",
