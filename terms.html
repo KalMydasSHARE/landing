@@ -9,7 +9,7 @@
 <link rel="canonical" href="https://kalmydas.com/terms.html" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
-  :root { --bg:#060A18; --fg:#EAEAF2; --muted:#9D9DB8; --gold:#5878A2; --border:#1a1a30; --card:#0f0f1e; --warn:#ef4444; }
+  :root { --bg:#060A18; --fg:#EAEAF2; --muted:#9D9DB8; --gold:#4184CC; --border:#1a1a30; --card:#0f0f1e; --warn:#ef4444; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--bg); color: var(--fg); font-family: 'Inter', system-ui, sans-serif; font-size: 15px; line-height: 1.7; padding: 3rem 1.5rem 5rem; }
   .wrap { max-width: 820px; margin: 0 auto; }
@@ -141,7 +141,7 @@
     document.querySelectorAll('[data-en]').forEach(function(el){if(l==='en'){if(!fc.has(el))fc.set(el,el.innerHTML);el.innerHTML=el.getAttribute('data-en');}else{if(fc.has(el))el.innerHTML=fc.get(el);}});
     var t=document.getElementById('ltog');if(t)t.querySelectorAll('.lo').forEach(function(o){o.classList.toggle('active',o.getAttribute('data-lang')===l);});
   }
-    var s=document.createElement('style');s.textContent='.ltoggle{position:fixed;top:16px;right:16px;z-index:99999;display:flex;background:rgba(10,10,15,0.92);border:1px solid rgba(201,168,76,0.3);border-radius:20px;padding:2px;cursor:pointer;user-select:none;backdrop-filter:blur(12px);box-shadow:0 4px 20px rgba(0,0,0,0.4);}.lo{padding:4px 12px;border-radius:16px;font-size:0.78rem;font-weight:600;color:rgba(255,255,255,0.45);transition:all 0.3s;font-family:Inter,Arial,sans-serif;}.lo.active{background:linear-gradient(135deg,#5878A2,#f1da7a);color:#060A18;}';
+    var s=document.createElement('style');s.textContent='.ltoggle{position:fixed;top:16px;right:16px;z-index:99999;display:flex;background:rgba(10,10,15,0.92);border:1px solid rgba(201,168,76,0.3);border-radius:20px;padding:2px;cursor:pointer;user-select:none;backdrop-filter:blur(12px);box-shadow:0 4px 20px rgba(0,0,0,0.4);}.lo{padding:4px 12px;border-radius:16px;font-size:0.78rem;font-weight:600;color:rgba(255,255,255,0.45);transition:all 0.3s;font-family:Inter,Arial,sans-serif;}.lo.active{background:linear-gradient(135deg,#4184CC,#f1da7a);color:#060A18;}';
     document.head.appendChild(s);
     var d=document.createElement('div');d.id='ltog';d.className='ltoggle';d.setAttribute('role','button');
     d.innerHTML='<span class="lo'+(lang==='fr'?' active':'')+'" data-lang="fr">FR</span><span class="lo'+(lang==='en'?' active':'')+'" data-lang="en">EN</span>';

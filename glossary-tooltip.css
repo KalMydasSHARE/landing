@@ -10,7 +10,7 @@
 }
 
 .g-term:hover {
-  color: var(--gold, #5878A2);
+  color: var(--gold, #4184CC);
 }
 
 .g-term::after {
@@ -46,7 +46,7 @@
 .g-tooltip-title {
   font-size: 0.8rem;
   font-weight: 700;
-  color: #5878A2;
+  color: #4184CC;
   margin-bottom: 6px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -73,7 +73,7 @@
 }
 
 .g-tooltip-close:hover {
-  color: #5878A2;
+  color: #4184CC;
 }
 
 /* Small arrow */
