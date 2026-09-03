@@ -10,7 +10,7 @@ const I18N_EN = {
   _title: "Kal Mydas, Gold, algorithmically",
   _description: "Algorithmic gold (XAUUSD) trading strategies simulated on real broker data over up to 21 years. No broker, no third party, your funds stay in public smart contracts and you alone hold the key. On Base, from $10. Past performance does not guarantee future results. Risk of partial or total capital loss.",
   _og_title: "Kal Mydas, Gold, algorithmically",
-  _og_description: "No broker, no third party. Your keys, your funds. Five algorithms trade gold 24/7 directly on-chain via gTrade. Live on Base mainnet since May 1, 2026. Backtest history available on the platform. Past performance does not guarantee future results. From $10.",
+  _og_description: "No broker, no third party. Your keys, your funds. Five algorithms trade gold 24/7 directly on-chain via gTrade. Live on Base mainnet since May 1, 2026. Backtest history available on the protocol. Past performance does not guarantee future results. From $10.",
 
   /* ===== NAV ===== */
   nav_how: "How it works",
@@ -163,7 +163,7 @@ const I18N_EN = {
   road_2_p: `23 core Solidity contracts (27 instances including 5 strategy pools), validated in private beta and then deployed on <span class="g-term" data-g="base_l2">Base</span> mainnet on May 1, 2026. veKAL, governance, referral system, auto-compound, performance diversifier, RWA treasury, individual solo mode per strategy, all coded and tested. Beta testing program active.`,
   road_3_phase: "Phase 3, September 14, 2026, conditional",
   road_3_h: "Public opening",
-  road_3_p: `Public opening of the presale on <span class="g-term" data-g="base_l2">Base</span> mainnet (tiers 4 to 10, $1.50 to $8) after the Alpha phase, closed on July 15, 2026, then the Beta phase, open since that date. Activation of public <span class="g-term" data-g="vekal">veKAL</span> incentives and <span class="g-term" data-g="dao">DAO</span> governance. The platform has been running on Base since May 1, September 14 only triggers public access, subject to the viability threshold.`,
+  road_3_p: `Public opening of the presale on <span class="g-term" data-g="base_l2">Base</span> mainnet (tiers 4 to 10, $1.50 to $8) after the Alpha phase, closed on July 15, 2026, then the Beta phase, open since that date. Activation of public <span class="g-term" data-g="vekal">veKAL</span> incentives and <span class="g-term" data-g="dao">DAO</span> governance. The protocol has been running on Base since May 1, September 14 only triggers public access, subject to the viability threshold.`,
 
   /* ===== PRESALE COUNTER (replacé 2026-06-06 sur demande Kal) ===== */
   counter_phase: "Phase Beta live",
@@ -216,7 +216,7 @@ const I18N_EN = {
   track_best_label: "Best trade",
   track_topstrat_label: "Top performing strategy",
   track_breakdown_label: "Compounded performance per strategy",
-  track_scope: `Figures measured since the platform's beta opening. The algorithms also ran under market conditions on demo accounts for about six months prior, and have been simulated over 4 to 21 years of historical data depending on the strategy, these complementary proofs are verifiable through the <a href="https://t.me/KalMydas_OFFICIEL" target="_blank" rel="noopener" style="color: var(--gold-light); text-decoration: underline;">Telegram</a> community.`,
+  track_scope: `Figures measured since the protocol's beta opening. The algorithms also ran under market conditions on demo accounts for about six months prior, and have been simulated over 4 to 21 years of historical data depending on the strategy, these complementary proofs are verifiable through the <a href="https://t.me/KalMydas_OFFICIEL" target="_blank" rel="noopener" style="color: var(--gold-light); text-decoration: underline;">Telegram</a> community.`,
   track_cta: "See full history of all trades",
   track_disclaimer: "Figures from the trade journal executed by the KAL algorithms on MT4 demo accounts, in real market conditions and with no capital engaged. Demo execution does not exactly reproduce real execution: price, slippage, funding and leverage may differ. Only trades propagated on-chain via gTrade on Base were executed with real capital and are verifiable on-chain. The protocol has been running on Base mainnet since May 1, 2026. Risk of partial or total capital loss. Past performance does not guarantee future results.",
 
@@ -234,7 +234,7 @@ const I18N_EN = {
   test_note: `These three testimonials were published under <a href="https://t.me/KalMydas_OFFICIEL/453" target="_blank" rel="noopener">this post on the Kal Mydas channel</a>. Anyone can read them, verify them and write directly to their authors. Past performance does not guarantee future results.`,
   road_4_phase: "Phase 4, Q4 2026",
   road_4_h: "Growth",
-  road_4_p: `Community rewards program. KAL listing on <span class="g-term" data-g="dex">DEX</span>. Advanced analytics dashboard. New asset exploration.`,
+  road_4_p: `Community rewards program. KAL listing on a third-party <span class="g-term" data-g="dex">decentralised exchange</span>. Advanced analytics dashboard. New asset exploration.`,
   road_5_phase: "2027 and beyond",
   road_5_h: "Expansion",
   road_5_p: `Native mobile app. New strategies and markets. <span class="g-term" data-g="dao">DAO</span> governance. Multi-chain expansion (Base, Arbitrum, Polygon).`,
@@ -276,7 +276,7 @@ const I18N_EN = {
   about_title: "About Kal Mydas",
   about_desc: "Why this project exists and how it works",
   about_why_h3: "Why Kal Mydas exists",
-  about_why_p: `Kal Mydas was born from a simple frustration: why does professional algorithmic trading, which has generated consistent historical performance for decades, remain reserved for banks and large financial structures? Our platform, built on <span class="g-term" data-g="base_l2">Base</span>, gives everyone, starting from $10, access to the same algorithmic strategies as the professionals.`,
+  about_why_p: `Kal Mydas was born from a simple frustration: why does professional algorithmic trading, which has generated consistent historical performance for decades, remain reserved for banks and large financial structures? Our protocol, built on <span class="g-term" data-g="base_l2">Base</span>, gives everyone, starting from $10, access to the same algorithmic strategies as the professionals.`,
   about_approach_h3: "Our approach",
   about_approach_p: `Our 5 trading robots are developed and optimized on <span class="g-term" data-g="mt4">MetaTrader 4</span>. They have been rigorously backtested on real historical broker data (4 to 21 years depending on the strategy), forward-tested, and stress-tested on the 2008 and 2020 crises. Each strategy operates exclusively on the gold market (<span class="g-term" data-g="xauusd">XAUUSD</span>).`,
   about_part_h3: "How to participate",
@@ -310,12 +310,12 @@ const I18N_EN = {
   token_dist_footnote: "Programmed emission of the current contracts, about 2,650,000 KAL. The remainder is a free ceiling, never minted without a multisig decision, no automatic dilution. No team allocation: founder compensation depends entirely on actual protocol performance, paid in USDC.",
   about_risk_h3: "Risk disclaimer",
   about_risk_p: "We promise nothing magical. Past performance does not guarantee future results. Trading carries risk of capital loss, including temporary drawdowns of up to 70% on some strategies. We fully own that and publish the source code and the test histories.",
-  about_status_p: `The platform has been live on Base mainnet since May 1, 2026 after several months of intensive testing. Phase Alpha of the presale opened on May 8, 2026 then closed on July 15, 2026. The Beta Phase has been open since July 15, 2026. The Public Phase is planned for September 14, 2026, subject to the viability threshold.`,
+  about_status_p: `The protocol has been live on Base mainnet since May 1, 2026 after several months of intensive testing. Phase Alpha of the presale opened on May 8, 2026 then closed on July 15, 2026. The Beta Phase has been open since July 15, 2026. The Public Phase is planned for September 14, 2026, subject to the viability threshold.`,
   about_timeline_h3: "Where we are",
   about_tl_1: "<strong>Q1 2026</strong>, Foundations laid, first contracts, connected MVP",
   about_tl_2: "<strong>Q2 2026</strong>, 23 core contracts deployed (27 instances including 5 strategy pools), active beta testing, veKAL + governance",
-  about_tl_3: "<strong>September 14, 2026</strong>: public presale opening on Base mainnet (tiers 4 to 10), conditional on the 100,000 USDC viability gate. The platform has been running on Base since May 1<sup>st</sup>.",
-  about_tl_4: "<strong>Q4 2026+</strong>, Growth, DEX listing, mobile app, DAO",
+  about_tl_3: "<strong>September 14, 2026</strong>: public presale opening on Base mainnet (tiers 4 to 10), conditional on the 100,000 USDC viability gate. The protocol has been running on Base since May 1<sup>st</sup>.",
+  about_tl_4: "<strong>Q4 2026+</strong>, Growth, listing on a third-party decentralised exchange, mobile app, DAO",
   about_tl_link: "View full roadmap →",
   about_team_h3: "The team",
   about_team_p1: "A small team based in Switzerland, organised in operational cells. Five people on a daily basis, plus a wider circle of OG contributors involved since the early months.",
@@ -325,7 +325,7 @@ const I18N_EN = {
 
   /* ===== FOOTER ===== */
   footer_tagline: "Algorithmic gold trading, accessible to all. Your keys, your funds, no one else holds them.",
-  footer_col_platform: "Platform",
+  footer_col_platform: "The protocol",
   footer_app: "Application",
   footer_wp: "Whitepaper",
   footer_strategies: "Strategies",
@@ -350,7 +350,7 @@ const I18N_EN = {
   footer_terms: "Terms of use",
   footer_manage_cookies: "Manage cookies",
   footer_risk_title: "Risk disclaimer:",
-  footer_risk_text: "Kal Mydas is an experimental DeFi platform. Algorithmic trading and crypto-assets carry a high risk of total capital loss. Past performance does not guarantee future results. This website does not constitute financial advice, solicitation, or an offer to buy or sell financial instruments. You are solely responsible for your decisions. Check the applicable legislation in your jurisdiction before participating.",
+  footer_risk_text: "Kal Mydas is an experimental protocol. Algorithmic trading and crypto-assets carry a high risk of total capital loss. Past performance does not guarantee future results. This website does not constitute financial advice, solicitation, or an offer to buy or sell financial instruments. You are solely responsible for your decisions. Check the applicable legislation in your jurisdiction before participating.",
   footer_copy: `&copy; 2026 Kal Mydas, Decentralized algorithmic gold trading. Your keys, your funds.`,
 
   /* ===== COMPARISON (added 2026-06-23, OF 105, EN was missing) ===== */
@@ -417,7 +417,7 @@ const GLOSSARY_DEFS_EN = {
   win_rate: "Percentage of winning trades out of the total trades executed by a strategy.",
   drawdown: "Maximum loss from a capital peak. Measures the worst temporary decline experienced by a strategy. Indicates maximum historical risk.",
   perf_fee: "Performance fee, charged only on strategy gains, never on initial capital. Applied with the High-Water Mark mechanism.",
-  usdc: "Stablecoin pegged 1:1 to the US dollar, issued by Circle. Used as the exchange and deposit currency on the platform.",
+  usdc: "Stablecoin pegged 1:1 to the US dollar, issued by Circle. Used as the deposit and settlement currency of the protocol.",
   on_chain: "Directly on the blockchain, all transactions are public, immutable, and verifiable by anyone.",
   tvl: "Total Value Locked, the total value of assets deposited in a DeFi protocol. An indicator of trust and protocol size.",
   non_custodial: "A model where your funds remain under your full control. No centralized entity holds your private keys or can access your funds.",

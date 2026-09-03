@@ -26,7 +26,7 @@ const GLOSSARY_DEFS = {
   win_rate: "Pourcentage de trades gagnants sur le total des trades exécutés par une stratégie.",
   drawdown: "Perte maximale depuis un pic de capital. Mesure le pire recul temporaire subi par une stratégie. Indique le risque maximal historique.",
   perf_fee: "Frais de performance — prélevés uniquement sur les gains de la stratégie, jamais sur le capital initial. Appliqués avec le mécanisme High-Water Mark.",
-  usdc: "Stablecoin indexé 1:1 sur le dollar américain, émis par Circle. Utilisé comme monnaie d'échange et de dépôt sur la plateforme.",
+  usdc: "Stablecoin indexé 1:1 sur le dollar américain, émis par Circle. Utilisé comme monnaie de dépôt et de règlement du protocole.",
   on_chain: "Directement sur la blockchain — toutes les transactions sont publiques, immuables et vérifiables par n'importe qui.",
   tvl: "Total Value Locked — valeur totale des actifs déposés dans un protocole DeFi. Indicateur de confiance et de taille du protocole.",
   non_custodial: "Modèle où vos fonds restent sous votre contrôle total. Aucune entité centralisée ne détient vos clés privées ni ne peut accéder à vos fonds.",
