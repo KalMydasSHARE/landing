@@ -151,8 +151,6 @@ const I18N_EN = {
   sec_4_p: `Your funds stay in the <span class="g-term" data-g="smart_contract">smart contracts</span>. No centralized private key. Withdraw whenever you want`,
   sec_5_h: `<span class="g-term" data-g="hwm">High-Water Mark</span>`,
   sec_5_p: `<span class="g-term" data-g="perf_fee">Performance fees</span> only apply on new gains. Never double-charged`,
-  sec_6_h: "Independent audit",
-  sec_6_p: `Three Omniscient Lab audits PASS (4.22 / 4.23 / 4.24), KAL-001 through KAL-008 Codex resolved. <a href="https://docs.kalmydas.com/security" target="_blank" rel="noopener" style="color: var(--gold-light); text-decoration: underline;">Public reports</a>.`,
 
   /* ===== ROADMAP ===== */
   road_label: "Long-term vision",
@@ -162,7 +160,7 @@ const I18N_EN = {
   road_1_p: `First <span class="g-term" data-g="smart_contract">smart contracts</span> deployed on <span class="g-term" data-g="arbitrum_sepolia">Arbitrum Sepolia</span>. E2E tests validated. MVP frontend connected <span class="g-term" data-g="on_chain">on-chain</span>. Whitepaper published. 5 verified <span class="g-term" data-g="backtest">backtests</span>.`,
   road_2_phase: `Phase 2, Q2 2026 <span class="tag-done">Completed</span>`,
   road_2_h: "Development & Beta",
-  road_2_p: `23 core Solidity contracts (27 instances including 5 strategy pools), validated in private beta and then deployed on <span class="g-term" data-g="base_l2">Base</span> mainnet on May 1, 2026. veKAL, governance, referral system, auto-compound, performance diversifier, RWA treasury, individual solo mode per strategy, all coded, tested and audited. 3rd consecutive Omniscient PASS (final retest on April 22, 300,000-transition fuzz, KalPool individual pause validated on April 25). Beta testing program active.`,
+  road_2_p: `23 core Solidity contracts (27 instances including 5 strategy pools), validated in private beta and then deployed on <span class="g-term" data-g="base_l2">Base</span> mainnet on May 1, 2026. veKAL, governance, referral system, auto-compound, performance diversifier, RWA treasury, individual solo mode per strategy, all coded and tested. Beta testing program active.`,
   road_3_phase: "Phase 3, September 14, 2026, conditional",
   road_3_h: "Public opening",
   road_3_p: `Public opening of the presale on <span class="g-term" data-g="base_l2">Base</span> mainnet (tiers 4 to 10, $1.50 to $8) after the Alpha phase, closed on July 15, 2026, then the Beta phase, open since that date. Activation of public <span class="g-term" data-g="vekal">veKAL</span> incentives and <span class="g-term" data-g="dao">DAO</span> governance. The platform has been running on Base since May 1, September 14 only triggers public access, subject to the viability threshold.`,
@@ -256,8 +254,6 @@ const I18N_EN = {
   faq_5_a: "No entry or exit fees. Performance fees of 10% to 20% depending on strategy, charged on new gains thanks to the High-Water Mark system. Annual management fees of 0% to 6% depending on the pool (ORION 0%, HORIZON 1.2%, VALKYRIE 2.4%, REVOLUTION 6%, TREASURY 6%).",
   faq_6_q: "Do I need a crypto wallet to use Kal Mydas?",
   faq_6_a: "No. You can sign in with a simple email or Google account. A wallet is created automatically for you through Privy. Advanced users can also connect their own wallet (MetaMask, etc.).",
-  faq_7_q: "Are the contracts audited?",
-  faq_7_a: "Yes. Three Omniscient Lab audits PASS (4.22, 4.23, 4.24) on the 23 core protocol contracts. KAL-001 through KAL-008 Codex findings are all resolved. Audit reports are public and accessible from the official documentation.",
   faq_8_q: "Which strategy should I choose as a beginner?",
   faq_8_a: "HORIZON is the most conservative profile, designed for discovery (modest simulated performance, controlled drawdown on backtest). VALKYRIE offers a balanced profile. The more aggressive strategies (REVOLUTION, TREASURY, ORION) require a clear understanding of volatility. You can pick several and split your capital as you wish.",
   /* FAQ 9 ajoutée 2026-06-04 Correctif A MME Legal, doctrine Zero Burn */
@@ -313,7 +309,7 @@ const I18N_EN = {
   token_dist_6: "Unallocated reserve (7,350,000 KAL)",
   token_dist_footnote: "Programmed emission of the current contracts, about 2,650,000 KAL. The remainder is a free ceiling, never minted without a multisig decision, no automatic dilution. No team allocation: founder compensation depends entirely on actual protocol performance, paid in USDC.",
   about_risk_h3: "Risk disclaimer",
-  about_risk_p: "We promise nothing magical. Past performance does not guarantee future results. Trading carries risk of capital loss, including temporary drawdowns of up to 70% on some strategies. We fully own that and publish everything: source code, test histories, audits.",
+  about_risk_p: "We promise nothing magical. Past performance does not guarantee future results. Trading carries risk of capital loss, including temporary drawdowns of up to 70% on some strategies. We fully own that and publish the source code and the test histories.",
   about_status_p: `The platform has been live on Base mainnet since May 1, 2026 after several months of intensive testing. Phase Alpha of the presale opened on May 8, 2026 then closed on July 15, 2026. The Beta Phase has been open since July 15, 2026. The Public Phase is planned for September 14, 2026, subject to the viability threshold.`,
   about_timeline_h3: "Where we are",
   about_tl_1: "<strong>Q1 2026</strong>, Foundations laid, first contracts, connected MVP",
@@ -323,9 +319,9 @@ const I18N_EN = {
   about_tl_link: "View full roadmap →",
   about_team_h3: "The team",
   about_team_p1: "A small team based in Switzerland, organised in operational cells. Five people on a daily basis, plus a wider circle of OG contributors involved since the early months.",
-  about_team_p2: "The founder signs under the pseudonym Kal. The protocol is designed, audited, deployed and monitored by this team, which chooses to stay under cover until the wider public opening is reached.",
+  about_team_p2: "The founder signs under the pseudonym Kal. The protocol is designed, developed, deployed and monitored by this team, which chooses to stay under cover until the wider public opening is reached.",
   about_team_p3: "Full identities will be unveiled on 14 September 2026, at the wider public opening, conditional on the viability gate being reached on 31 August 2026 (100,000 USDC across Alpha plus Beta presale).",
-  about_team_p4: "What you can verify now: the contracts are public and audited, transactions are visible on <span class=\"g-term\" data-g=\"basescan\">Basescan</span>, the treasury sits in a multi-signature Gnosis Safe, and all governance decisions are taken on-chain.",
+  about_team_p4: "What you can verify now: the contract code is public and verifiable, transactions are visible on <span class=\"g-term\" data-g=\"basescan\">Basescan</span>, the treasury sits in a Gnosis Safe with a single signer today, and all governance decisions are taken on-chain.",
 
   /* ===== FOOTER ===== */
   footer_tagline: "Algorithmic gold trading, accessible to all. Your keys, your funds, no one else holds them.",
@@ -397,11 +393,6 @@ const I18N_EN = {
   comp_r6_man: "Broker account opening \u00b7 1 to 5 days",
   comp_r6_etf: "Securities account opening \u00b7 1 to 7 days",
   comp_r6_hodl: "Wallet + crypto onboarding",
-  comp_r7_l: "Independent audits",
-  comp_r7_kal: "3 Omniscient Lab passes, all PASS",
-  comp_r7_man: "Not applicable",
-  comp_r7_etf: "Regulated (AMF, SEC by region)",
-  comp_r7_hodl: "Not applicable",
   comp_note: "Indicative comparison. Each solution meets a different need; Kal Mydas is designed for gold-market exposure through algorithmic strategies without handing your funds to a third party.",
 };
 
