@@ -1,5 +1,5 @@
 /**
- * KalMydas — Glossary Tooltip System
+ * KalMydas, Glossary Tooltip System
  * Shared across all kalmydas.com pages
  *
  * Usage: <span class="g-term" data-g="key">Visible Text</span>
@@ -15,25 +15,25 @@ const GLOSSARY_DEFS = {
   bonding_curve: "Mécanisme mathématique transparent qui détermine automatiquement le prix d'un jeton en fonction de la quantité en circulation. Plus la demande augmente, plus le prix monte.",
   buyback_burn: "Mécanisme automatique où une partie des frais de performance est utilisée pour racheter des jetons KAL sur le marché. Chez KalMydas, les KAL rachetés sont recirculés en liquidité (philosophie Zéro Destruction).",
   staking: "Action de bloquer des jetons dans un protocole pour fournir de la liquidité ou sécuriser le réseau, en échange de récompenses.",
-  lp: "Fournisseur de liquidité (Liquidity Provider) — personne qui dépose des jetons dans un pool d'échange pour faciliter les transactions, en échange de récompenses.",
-  hwm: "High-Water Mark — mécanisme de protection : les frais de performance ne s'appliquent que sur les gains au-dessus du plus-haut historique. Empêche de payer deux fois pour les mêmes gains.",
-  dex: "Plateforme d'échange décentralisée (Decentralized Exchange) — permet d'échanger des jetons directement entre utilisateurs, sans intermédiaire centralisé.",
-  dao: "Organisation Autonome Décentralisée — gouvernance communautaire où les décisions sont prises par vote des détenteurs de jetons, sans autorité centrale.",
+  lp: "Fournisseur de liquidité (Liquidity Provider), personne qui dépose des jetons dans un pool d’échange pour faciliter les transactions, en échange de récompenses.",
+  hwm: "High-Water Mark, mécanisme de protection. Les frais de performance ne s’appliquent que sur les gains au-dessus du plus-haut historique. Empêche de payer deux fois pour les mêmes gains.",
+  dex: "Plateforme d’échange décentralisée (Decentralized Exchange), permet d’échanger des jetons directement entre utilisateurs, sans intermédiaire centralisé.",
+  dao: "Organisation Autonome Décentralisée, gouvernance communautaire où les décisions sont prises par vote des détenteurs de jetons, sans autorité centrale.",
   arbiscan: "Explorateur blockchain permettant de consulter toutes les transactions et contrats déployés sur le réseau Arbitrum. Assure une transparence totale.",
-  nft: "Jeton Non Fongible (Non-Fungible Token) — actif numérique unique et non interchangeable sur la blockchain. Utilisé chez KalMydas pour le Pass d'accès.",
+  nft: "Jeton Non Fongible (Non-Fungible Token), actif numérique unique et non interchangeable sur la blockchain. Utilisé chez KalMydas pour le Pass d’accès.",
   mainnet: "Réseau principal d'une blockchain, où les transactions ont une valeur réelle (par opposition au testnet qui utilise des jetons sans valeur).",
   profit_factor: "Ratio gains bruts / pertes brutes. Un PF supérieur à 1 signifie que la stratégie est globalement profitable. PF > 1.5 = bon, PF > 2 = excellent.",
   win_rate: "Pourcentage de trades gagnants sur le total des trades exécutés par une stratégie.",
   drawdown: "Perte maximale depuis un pic de capital. Mesure le pire recul temporaire subi par une stratégie. Indique le risque maximal historique.",
-  perf_fee: "Frais de performance — prélevés uniquement sur les gains de la stratégie, jamais sur le capital initial. Appliqués avec le mécanisme High-Water Mark.",
+  perf_fee: "Frais de performance, prélevés uniquement sur les gains de la stratégie, jamais sur le capital initial. Appliqués avec le mécanisme High-Water Mark.",
   usdc: "Stablecoin indexé 1:1 sur le dollar américain, émis par Circle. Utilisé comme monnaie de dépôt et de règlement du protocole.",
-  on_chain: "Directement sur la blockchain — toutes les transactions sont publiques, immuables et vérifiables par n'importe qui.",
-  tvl: "Total Value Locked — valeur totale des actifs déposés dans un protocole DeFi. Indicateur de confiance et de taille du protocole.",
+  on_chain: "Directement sur la blockchain, toutes les transactions sont publiques, immuables et vérifiables par n’importe qui.",
+  tvl: "Total Value Locked, valeur totale des actifs déposés dans un protocole DeFi. Indicateur de confiance et de taille du protocole.",
   non_custodial: "Modèle où vos fonds restent sous votre contrôle total. Aucune entité centralisée ne détient vos clés privées ni ne peut accéder à vos fonds.",
-  mt4: "MetaTrader 4 — logiciel professionnel de trading utilisé depuis 2005 pour créer, tester et exécuter des stratégies automatisées sur les marchés financiers.",
+  mt4: "MetaTrader 4, logiciel professionnel de trading utilisé depuis 2005 pour créer, tester et exécuter des stratégies automatisées sur les marchés financiers.",
   lock_up: "Période de blocage pendant laquelle les fonds ne peuvent pas être retirés. Chez KalMydas : aucun lock-up, retrait 24/7.",
   layer2: "Réseau secondaire construit au-dessus d'une blockchain principale (comme Ethereum) pour améliorer la vitesse et réduire les coûts de transaction.",
-  defi: "Finance Décentralisée — services financiers (échange, prêt, épargne) opérés sur blockchain via des smart contracts, sans intermédiaire bancaire.",
+  defi: "Finance Décentralisée, services financiers (échange, prêt, épargne) opérés sur blockchain via des smart contracts, sans intermédiaire bancaire.",
   blockchain: "Registre numérique distribué et infalsifiable. Chaque transaction est enregistrée publiquement et ne peut être modifiée rétroactivement.",
   offre_plafonnee: "L'offre de KAL est plafonnée à 10 millions de jetons, sans aucune destruction. Les rachats de KAL sont redirigés vers la liquidité du protocole (doctrine Zero Burn).",
   forward_test: "Test d'une stratégie en conditions réelles de marché, sans risquer de capital réel. Valide que les résultats du backtest se confirment.",
@@ -45,11 +45,11 @@ const GLOSSARY_DEFS = {
   flywheel: "Boucle de valeur auto-renforçante : les gains génèrent des frais, qui rachètent du KAL, ce qui augmente le prix, attirant plus de participants.",
   fonds_institutionnels: "Structures financières gérant des capitaux importants (banques, fonds de pension, hedge funds). Disposent d'outils de trading avancés auxquels les particuliers n'ont traditionnellement pas accès.",
   arbitrum_sepolia: "Version de test du réseau Arbitrum. Permet de tester les contrats et l'application sans utiliser de fonds réels avant le lancement officiel.",
-  orderbook: "Carnet d'ordres — système qui met en relation acheteurs et vendeurs sur un marché. Chez KalMydas, le prix est déterminé par la courbe de valorisation, sans orderbook.",
-  vekal: "KAL verrouillé pour la gouvernance (vote-escrowed) — mécanisme inspiré de Curve Finance. En bloquant des KAL, vous recevez des veKAL qui donnent droit au partage des frais en USDC et au vote sur les paramètres du protocole.",
+  orderbook: "Carnet d’ordres, système qui met en relation acheteurs et vendeurs sur un marché. Chez KalMydas, le prix vient de la courbe de valorisation et non d’un orderbook.",
+  vekal: "KAL verrouillé pour la gouvernance (vote-escrowed), mécanisme inspiré de Curve Finance. Bloquez vos KAL en veKAL. Le protocole verse chaque semaine une part de ses frais en USDC. C’est l’indemnité du service technique qui rétribue la sécurisation et la gouvernance. Elle ne suit pas les résultats des stratégies. Les veKAL donnent aussi le vote sur les paramètres du protocole.",
   erc4626: "Norme technique pour les coffres-forts tokenisés sur Ethereum. Permet la composition automatique des gains (auto-compound) de manière standardisée.",
-  pol: "Protocol-Owned Liquidity — liquidité détenue directement par le protocole (pas par des utilisateurs). Garantit une liquidité permanente même si les fournisseurs se retirent.",
-  rwa: "Real World Assets — actifs du monde réel (bons du Trésor, immobilier) tokenisés sur la blockchain. Offrent une performance décorrélée du marché crypto.",
+  pol: "Protocol-Owned Liquidity, liquidité détenue directement par le protocole (pas par des utilisateurs). Garantit une liquidité permanente même si les fournisseurs se retirent.",
+  rwa: "Real World Assets, actifs du monde réel (bons du Trésor, immobilier) tokenisés sur la blockchain. Offrent une performance décorrélée du marché crypto.",
   base_l2: "Réseau Layer 2 sur Ethereum, optimisé pour les applications grand public. Mainnet KalMydas prévu sur Base.",
 };
 
