@@ -65,7 +65,7 @@ const I18N_EN = {
   step_2_h: "Choose your strategy",
   step_2_p: "From conservative to high-risk, 5 risk profiles tailored to your goals. From $10",
   step_3_h: "Withdraw your results",
-  step_3_p: "The bots trade automatically 24/7. The withdrawal is called by you, no commitment period.",
+  step_3_p: "The bots trade automatically 24/7. Withdraw whenever you want, no lock-up.",
 
   /* ===== STRATEGIES ===== */
   strat_label: "5 approaches, 5 profiles",
@@ -280,7 +280,7 @@ const I18N_EN = {
   about_approach_h3: "Our approach",
   about_approach_p: `Our 5 trading robots are developed and optimized on <span class="g-term" data-g="mt4">MetaTrader 4</span>. They have been rigorously backtested on real historical broker data (4 to 21 years depending on the strategy), forward-tested, and stress-tested on the 2008 and 2020 crises. Each strategy operates exclusively on the gold market (<span class="g-term" data-g="xauusd">XAUUSD</span>).`,
   about_part_h3: "How to participate",
-  about_part_p: `A single Access Pass is enough, a subscription verifiable on the <span class="g-term" data-g="blockchain">blockchain</span> ($1/day). Choose your strategy and deposit your funds. The withdrawal is called by you, with no commitment period. We earn only when you earn: performance fees apply only on new gains thanks to the <span class="g-term" data-g="hwm">High-Water Mark</span>.`,
+  about_part_p: `A single Access Pass is enough, a subscription verifiable on the <span class="g-term" data-g="blockchain">blockchain</span> ($1/day). Choose your strategy, deposit your funds, and withdraw 24/7 with no delays. We earn only when you earn: performance fees apply only on new gains thanks to the <span class="g-term" data-g="hwm">High-Water Mark</span>.`,
   about_arch_h3: "Technical architecture",
   about_arch_contracts: "Core contracts",
   about_arch_tests: "Unit tests",
