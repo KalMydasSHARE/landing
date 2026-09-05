@@ -1932,7 +1932,7 @@
     [data-theme="light"] { --band: rgba(88, 120, 162, 0.06); }
 
     /* Bandes de fond alternees */
-    #probleme, #security, #comparison, #track-record, #presale-schedule, #tech {
+    #probleme, #security, #comparison, #track-record, #tech {
       background: linear-gradient(180deg, transparent, var(--band), transparent);
     }
 
@@ -2213,7 +2213,6 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#strategies" data-i18n="nav_strategies">Stratégies</a></li>
       <li><a href="#token" data-i18n="nav_token">Jeton KAL</a></li>
-      <li><a href="#presale-schedule" data-i18n="nav_presale">Prévente</a></li>
       <li class="nav-group">
         <button type="button" class="nav-group-btn" id="navGroupBtn" aria-expanded="false" aria-controls="navGroupMenu">
           <span data-i18n="nav_group_protocol">Le protocole</span>
@@ -2338,71 +2337,6 @@
       <div class="trust-label" data-i18n="stat_4_label">Tests unitaires</div>
     </div>
   </div>
-
-  <!-- ===== PRESALE COUNTER (replacé 2026-06-06 sur demande Kal) ===== -->
-  <section id="presale-counter" aria-label="Compteur prévente KAL" style="padding: 2.5rem 0 0;">
-    <div class="container">
-      <a href="#presale-schedule" class="fade-in" id="km-presale-counter" style="display: block; max-width: 920px; margin: 0 auto; padding: 1.4rem 1.6rem; background: linear-gradient(135deg, rgba(190,165,110,0.08) 0%, rgba(190,165,110,0.04) 100%); border: 1px solid rgba(190,165,110,0.4); border-radius: 16px; text-decoration: none; transition: border-color 0.2s ease, background 0.2s ease;">
-        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1.2rem;">
-          <div style="flex: 1 1 280px; min-width: 0;">
-            <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.4rem;">
-              <span style="font-size: 0.72rem; color: var(--gold-light); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700;" data-i18n="counter_phase">Phase Beta en cours</span>
-              <span style="display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.68rem; color: var(--green); background: var(--green-soft); border: 1px solid var(--green-soft); border-radius: 999px; padding: 0.15rem 0.6rem; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600;">
-                <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--green);"></span>
-                <span data-i18n="counter_status">Ouverte</span>
-              </span>
-            </div>
-            <p style="font-size: 1rem; color: var(--text); font-weight: 600; line-height: 1.4; margin: 0 0 0.25rem;" data-i18n="counter_lead">Niveau 2 Communauté ouvert jusqu’au 16 septembre 2026 à 18&nbsp;h&nbsp;00 heure suisse, à 0,70&nbsp;$ par KAL, plafond de 500&nbsp;$ par portefeuille, hors Union européenne.</p>
-            <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5; margin: 0;" data-i18n="counter_sub">Outil d'autonomie. Voir le calendrier complet ci-dessous.</p>
-          </div>
-          <div style="flex: 0 0 auto; display: flex; align-items: baseline; gap: 0.5rem;">
-            <div style="text-align: center;">
-              <div id="km-cd-days" style="font-family: var(--font-display); font-size: 2.4rem; font-weight: 800; color: var(--gold-light); line-height: 1; font-variant-numeric: tabular-nums;">--</div>
-              <div style="font-size: 0.65rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.2rem;" data-i18n="counter_unit_days">Jours</div>
-            </div>
-            <div style="text-align: center;">
-              <div id="km-cd-hours" style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--text); line-height: 1; font-variant-numeric: tabular-nums;">--</div>
-              <div style="font-size: 0.65rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.2rem;" data-i18n="counter_unit_hours">Heures</div>
-            </div>
-            <div style="text-align: center;">
-              <div id="km-cd-mins" style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--text); line-height: 1; font-variant-numeric: tabular-nums;">--</div>
-              <div style="font-size: 0.65rem; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.2rem;" data-i18n="counter_unit_mins">Minutes</div>
-            </div>
-          </div>
-        </div>
-        <p style="font-size: 0.7rem; color: var(--text-muted); margin: 0.9rem 0 0; line-height: 1.5;" data-i18n="counter_foot">Avant la fermeture du Niveau 2 Communauté, borne inscrite dans le contrat au 16 septembre 2026 à 16&nbsp;h&nbsp;00 UTC. Participation à un protocole décentralisé, valeur non garantie, perte totale possible.</p>
-      </a>
-    </div>
-  </section>
-  <script>
-    (function(){
-      // Cible : fermeture du Tier 1 STRATEGIQUE, 15 aout 2026, 18h00 heure suisse (16:00 UTC)
-      var target = Date.UTC(2026, 8, 16, 16, 0, 0);
-      var elDays = document.getElementById('km-cd-days');
-      var elHours = document.getElementById('km-cd-hours');
-      var elMins = document.getElementById('km-cd-mins');
-      if (!elDays || !elHours || !elMins) return;
-      function pad(n){ return n < 10 ? '0' + n : String(n); }
-      function tick(){
-        var diff = target - Date.now();
-        if (diff <= 0) {
-          elDays.textContent = '0';
-          elHours.textContent = '00';
-          elMins.textContent = '00';
-          return;
-        }
-        var totalMin = Math.floor(diff / 60000);
-        var days = Math.floor(totalMin / 1440);
-        var hours = Math.floor((totalMin % 1440) / 60);
-        var mins = totalMin % 60;
-        elDays.textContent = String(days);
-        elHours.textContent = pad(hours);
-        elMins.textContent = pad(mins);
-      }
-      tick();
-      setInterval(tick, 30000);
-    })();
-  </script>
 
   <!-- ===== PASTOR P : PROBLEME (ajouté vague 4, 2026-06-25) ===== -->
   <section id="probleme">
@@ -2587,7 +2521,7 @@
             </div>
             <div style="display: flex; align-items: center; gap: 0.8rem;">
               <span style="width: 10px; height: 10px; border-radius: 50%; background: var(--border); flex-shrink: 0;"></span>
-              <span style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="about_tl_3"><strong>14 septembre 2026</strong> : ouverture publique de la prévente sur Base mainnet (paliers 4 à 10), sous condition du palier de viabilité de 100 000 USDC. Le protocole tourne déjà sur Base depuis le 1<sup>er</sup> mai.</span>
+              <span style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="about_tl_3"><strong>Depuis le 1<sup>er</sup> mai 2026</strong> : le protocole tourne sur Base mainnet. Chaque opération y est inscrite et lisible par tout le monde.</span>
             </div>
             <div style="display: flex; align-items: center; gap: 0.8rem;">
               <span style="width: 10px; height: 10px; border-radius: 50%; background: var(--border); flex-shrink: 0;"></span>
@@ -2602,7 +2536,7 @@
           <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--gold-light); margin-bottom: 1rem;" data-i18n="about_team_h3">L'équipe</h3>
           <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem;" data-i18n="about_team_p1">Une équipe restreinte basée en Suisse, organisée en cellules opérationnelles. Cinq personnes au quotidien, plus un cercle élargi de contributeurs OG impliqués depuis les premiers mois.</p>
           <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem;" data-i18n="about_team_p2">Le fondateur signe sous le pseudonyme Kal. Le protocole est conçu, développé, déployé et surveillé par cette équipe, qui choisit de rester à couvert tant que la phase publique élargie n'est pas atteinte.</p>
-          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem;" data-i18n="about_team_p3">Les identités complètes seront dévoilées le 14&nbsp;septembre 2026, à l'ouverture publique élargie, sous condition que le palier de viabilité soit atteint au 31&nbsp;août 2026 (100&nbsp;000 USDC en présale Alpha plus Beta).</p>
+          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem;" data-i18n="about_team_p3">Les identités complètes seront dévoilées à l’ouverture publique élargie.</p>
           <p style="color: var(--text-muted); line-height: 1.7;" data-i18n="about_team_p4">Ce que vous pouvez vérifier maintenant&nbsp;: le code des contrats est public et vérifiable, les transactions sont visibles sur <span class="g-term" data-g="basescan">Basescan</span>, la trésorerie repose dans un Gnosis Safe à un seul signataire aujourd’hui, et toutes les décisions de gouvernance se prennent on-chain.</p>
         </div>
 
@@ -2878,7 +2812,7 @@
           <h4 data-i18n="token_dist_title">Distribution du jeton KAL</h4>
           <p class="dist-sub" data-i18n="token_dist_subtitle">Offre totale&nbsp;: 10 000 000 KAL · 0&nbsp;% réservé à une équipe interne · distribution productive, sans destruction de jetons</p>
           <div class="distrow"><div class="dtop"><span data-i18n="token_dist_1">Récompenses de mise en jeu du KAL (1 500 000 KAL)</span><b>15&nbsp;%</b></div><div class="bar"><i style="width:15%"></i></div></div>
-          <div class="distrow"><div class="dtop"><span data-i18n="token_dist_2">Prévente, 10 paliers (500 000 KAL plafond)</span><b>5&nbsp;%</b></div><div class="bar"><i style="width:5%"></i></div></div>
+          <div class="distrow"><div class="dtop"><span data-i18n="token_dist_2">Prévente (500 000 KAL plafond)</span><b>5&nbsp;%</b></div><div class="bar"><i style="width:5%"></i></div></div>
           <div class="distrow"><div class="dtop"><span data-i18n="token_dist_3">Courbe de valorisation initiale (450 000 KAL)</span><b>4,5&nbsp;%</b></div><div class="bar"><i style="width:4.5%"></i></div></div>
           <div class="distrow"><div class="dtop"><span data-i18n="token_dist_4">Récompenses fournisseurs de liquidité (150 000 KAL)</span><b>1,5&nbsp;%</b></div><div class="bar"><i style="min-width:4px;width:1.5%"></i></div></div>
           <div class="distrow"><div class="dtop"><span data-i18n="token_dist_5">Programme de reconnaissance testeurs (50 000 KAL)</span><b>0,5&nbsp;%</b></div><div class="bar"><i style="min-width:4px;width:0.5%"></i></div></div>
@@ -3055,67 +2989,6 @@
   <div class="section-divider"></div>
 
   <!-- ===== PRESALE SCHEDULE, ajouté session 298 (28/04/2026) ===== -->
-  <section id="presale-schedule">
-    <div class="container">
-      <div class="section-header fade-in">
-        <p class="section-label" data-i18n="presale_label">Calendrier de la prévente</p>
-        <h2 class="section-title" data-i18n="presale_title">Trois phases progressives</h2>
-        <p class="section-desc" data-i18n="presale_desc">La prévente s'ouvre par cercles, des plus proches aux plus larges. L'ouverture publique du 14 septembre reste conditionnée au palier de viabilité.</p>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3rem;">
-
-        <!-- Phase Alpha -->
-        <div class="fade-in" style="background: linear-gradient(180deg, rgba(190,165,110,0.08), var(--bg-card)); border: 2px solid rgba(88, 120, 162, 0.4); border-radius: 16px; padding: 2rem; box-shadow: 0 0 40px rgba(88, 120, 162, 0.08);">
-          <div style="font-size: 0.75rem; color: var(--gold-light); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.8rem;" data-i18n="alpha_label">Phase Alpha, clôturée</div>
-          <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--text); margin-bottom: 1rem;" data-i18n="alpha_h">8 mai 2026, clôturée le 15 juillet</h3>
-          <div style="font-size: 2.4rem; font-weight: 700; color: var(--gold-light); margin-bottom: 0.5rem; font-family: var(--font-display);">0,30&nbsp;$ <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);" data-i18n="alpha_price_bonus">+ 20&nbsp;% de bonus, palier clôturé</span></div>
-          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1rem;" data-i18n="alpha_p">Palier d’amorçage à 0,30&nbsp;$ par KAL, clôturé le 15 juillet 2026, il était réservé au cercle proche par invitation directe Telegram. Le Niveau 1 Stratégique a suivi. Le Niveau 2 Communauté est en cours. La phase Publique ouvre ensuite à la communauté élargie.</p>
-          <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.85rem; color: var(--text-muted);">
-            <div><strong style="color: var(--text);" data-i18n="alpha_meta_l1">Accès&nbsp;:</strong> <span data-i18n="alpha_meta_v1">Invitation Telegram directe</span></div>
-            <div><strong style="color: var(--text);" data-i18n="alpha_meta_l2">Palier&nbsp;:</strong> <span data-i18n="alpha_meta_v2">Amorçage clôturé, 0,30&nbsp;$ par KAL, bonus 20&nbsp;%</span></div>
-          </div>
-        </div>
-
-        <!-- Phase Beta -->
-        <div class="fade-in fade-in-delay-1" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem;">
-          <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 0.8rem;">
-            <div style="font-size: 0.75rem; color: var(--gold-light); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700;" data-i18n="beta_label">Phase Beta</div>
-            <!-- Badge géo-blocage UE (Correctif B MME Legal 2026-06-04) -->
-            <span style="font-size: 0.65rem; color: var(--red); background: var(--red-soft); border: 1px solid var(--red-soft); border-radius: 6px; padding: 0.15rem 0.55rem; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600;" data-i18n="beta_geo_badge" title="Indisponible aux résidents UE (MiCA)">Hors UE</span>
-          </div>
-          <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--text); margin-bottom: 1rem;" data-i18n="beta_h">En cours depuis le 15 juillet 2026</h3>
-          <div style="font-size: 2.4rem; font-weight: 700; color: var(--gold-light); margin-bottom: 0.5rem; font-family: var(--font-display);">0,50 → 0,70&nbsp;$</div>
-          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1rem;" data-i18n="beta_p">Le Niveau 1 Stratégique a fermé le 15 août 2026 à 18&nbsp;h&nbsp;00 heure suisse. Le Niveau 2 Communauté est ouvert depuis le 16 août 2026 à 0,70&nbsp;$ par KAL, jusqu’au 16 septembre 2026 à 18&nbsp;h&nbsp;00 heure suisse. L’accès vise la communauté Telegram élargie résidant hors Union européenne. Plafond combiné 100&nbsp;000 KAL = 60&nbsp;000&nbsp;$ levés maximum. <strong style="color: var(--red);">Indisponible aux résidents UE pour des raisons de conformité MiCA.</strong></p>
-          <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.85rem; color: var(--text-muted);">
-            <div><strong style="color: var(--text);" data-i18n="beta_meta_l1">Public&nbsp;:</strong> <span data-i18n="beta_meta_v1">Membres Telegram élargis, hors UE</span></div>
-            <div><strong style="color: var(--text);" data-i18n="beta_meta_l2">Plafond&nbsp;:</strong> <span data-i18n="beta_meta_v2">100 000 KAL = 60 k$</span></div>
-          </div>
-        </div>
-
-        <!-- Phase Publique -->
-        <div class="fade-in fade-in-delay-2" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem;">
-          <div style="font-size: 0.75rem; color: var(--gold-light); letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.8rem;" data-i18n="public_label">Phase Publique</div>
-          <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--text); margin-bottom: 1rem;" data-i18n="public_h">14 septembre 2026, sous condition</h3>
-          <div style="font-size: 2.4rem; font-weight: 700; color: var(--gold-light); margin-bottom: 0.5rem; font-family: var(--font-display);">1,50 → 8&nbsp;$</div>
-          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1rem;" data-i18n="public_p">7 paliers ouverts à tous, sans whitelist. Plafond combiné 332 500 KAL = 1 435 000&nbsp;$ levés maximum. Conditionné à la levée minimum de 100 k$ sur Alpha + Beta au 31 août.</p>
-          <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.85rem; color: var(--text-muted);">
-            <div><strong style="color: var(--text);" data-i18n="public_meta_l1">Public&nbsp;:</strong> <span data-i18n="public_meta_v1">Tout participant</span></div>
-            <div><strong style="color: var(--text);" data-i18n="public_meta_l2">Plafond&nbsp;:</strong> <span data-i18n="public_meta_v2">332 500 KAL = 1,435 M$</span></div>
-          </div>
-        </div>
-
-      </div>
-
-      <p style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 2.5rem; max-width: 720px; margin-left: auto; margin-right: auto; line-height: 1.6;" data-i18n="presale_footnote">Plafond global de la prévente&nbsp;: 500 000 KAL (5&nbsp;% de l'offre totale) = ~1,51 M$ maximum. Si le palier de viabilité de 100 k$ n'est pas atteint au 31 août, l'ouverture publique du 14 septembre peut être reportée ou ouverte par tranches.</p>
-
-      <!-- Bandeau disclaimer dédié prévente (F-006 audit 4 mai 2026, enrichi 2026-06-04 Correctif B MME Legal MiCA) -->
-      <div class="fade-in" style="margin-top: 3rem; max-width: 720px; margin-left: auto; margin-right: auto; background: rgba(239,68,68,0.04); border: 1px solid rgba(239,68,68,0.15); border-radius: 12px; padding: 1.8rem 1.6rem; text-align: center;">
-        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; margin: 0;" data-i18n="presale_disclaimer_box"><strong style="color: var(--text);">Avertissement&nbsp;:</strong> la prévente du jeton KAL ne constitue pas un instrument financier au sens du droit applicable. <strong style="color: var(--text);">Aucune offre publique au public dans l'Union européenne.</strong> Les fonds versés sont une participation à un protocole décentralisé expérimental. Le jeton KAL n'a aucune valeur garantie. Vous pouvez perdre la totalité de votre participation. Voir nos <a href="/terms.html#geoblocage-ue" style="color: var(--gold-light); text-decoration: underline;">conditions générales d'utilisation, section géo-blocage UE</a> pour le cadre régulatoire complet. Merci à toutes les personnes qui participent à cette phase d'amorçage.</p>
-      </div>
-    </div>
-  </section>
-
   <div class="section-divider"></div>
 
   <!-- ===== ROADMAP ===== -->
@@ -3143,9 +3016,9 @@
 
         <div class="roadmap-item future fade-in">
           <div class="roadmap-dot"></div>
-          <div class="roadmap-phase" data-i18n="road_3_phase">Phase 3, 14 septembre 2026, sous condition</div>
+          <div class="roadmap-phase" data-i18n="road_3_phase">Phase 3, accès grand public</div>
           <h3 data-i18n="road_3_h">Ouverture publique</h3>
-          <p data-i18n="road_3_p">Ouverture grand public de la prévente sur <span class="g-term" data-g="base_l2">Base</span> mainnet (paliers 4 à 10, prix de 1,50&nbsp;$ à 8&nbsp;$) après la phase Alpha, close le 15 juillet 2026, puis la phase Beta, ouverte depuis cette date. Activation des incitations <span class="g-term" data-g="vekal">veKAL</span> publiques et de la gouvernance <span class="g-term" data-g="dao">DAO</span>. Le protocole tourne déjà sur Base depuis le 1<sup>er</sup> mai, le 14 septembre acte uniquement l'accès grand public, sous condition du palier de viabilité.</p>
+          <p data-i18n="road_3_p">Activation des incitations <span class="g-term" data-g="vekal">veKAL</span> publiques et de la gouvernance <span class="g-term" data-g="dao">DAO</span>. Le protocole tourne déjà sur Base depuis le 1<sup>er</sup> mai 2026.</p>
         </div>
 
         <div class="roadmap-item future fade-in">
@@ -3234,7 +3107,7 @@
   <section id="start" class="cta-section">
     <div class="cta-content fade-in">
       <h2 data-i18n="cta_h2">Prêt à participer à <span style="background: var(--gradient-gold-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">l'or algorithmique</span> ?</h2>
-      <p data-i18n="cta_p">Rejoignez les premiers participants de Kal Mydas. Le prix du jeton KAL est plus bas en début de courbe de valorisation. Plus tôt vous participez, plus le prix est bas.</p>
+      <p data-i18n="cta_p">Rejoignez les premiers participants de Kal Mydas. La documentation dit ce que le KAL ouvre et comment il circule.</p>
       <div class="hero-buttons">
         <a href="https://app.kalmydas.com" class="btn-primary" style="font-size: 1.05rem; padding: 1rem 2.5rem;" data-i18n="cta_btn_primary" data-umami-event="cta_final_lancer_app" data-umami-event-source="cta_section" data-umami-event-destination="app">
           Lancer l'app

@@ -161,9 +161,9 @@ const I18N_EN = {
   road_2_phase: `Phase 2, Q2 2026 <span class="tag-done">Completed</span>`,
   road_2_h: "Development & Beta",
   road_2_p: `23 core Solidity contracts (27 instances including 5 strategy pools), validated in private beta and then deployed on <span class="g-term" data-g="base_l2">Base</span> mainnet on May 1, 2026. veKAL, governance, referral system, auto-compound, performance diversifier, RWA treasury, individual solo mode per strategy, all coded and tested. Beta testing program active.`,
-  road_3_phase: "Phase 3, September 14, 2026, conditional",
+  road_3_phase: "Phase 3, public access",
   road_3_h: "Public opening",
-  road_3_p: `Public opening of the presale on <span class="g-term" data-g="base_l2">Base</span> mainnet (tiers 4 to 10, $1.50 to $8) after the Alpha phase, closed on July 15, 2026, then the Beta phase, open since that date. Activation of public <span class="g-term" data-g="vekal">veKAL</span> incentives and <span class="g-term" data-g="dao">DAO</span> governance. The protocol has been running on Base since May 1, September 14 only triggers public access, subject to the viability threshold.`,
+  road_3_p: `Activation of public <span class="g-term" data-g="vekal">veKAL</span> incentives and <span class="g-term" data-g="dao">DAO</span> governance. The protocol has been running on Base since 1 May 2026.`,
 
   /* ===== PRESALE COUNTER (replacé 2026-06-06 sur demande Kal) ===== */
   counter_phase: "Phase Beta live",
@@ -266,7 +266,7 @@ const I18N_EN = {
 
   /* ===== CTA ===== */
   cta_h2: `Ready to participate in <span style="background: var(--gradient-gold-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">algorithmic gold</span>?`,
-  cta_p: "Join the early participants of Kal Mydas. The KAL token price is lower at the start of the valuation curve: the earlier you participate, the lower the price.",
+  cta_p: "Join the early participants of Kal Mydas. The documentation states what KAL opens and how it circulates.",
   cta_btn_primary: `Launch app <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
   cta_btn_secondary: "Read the Whitepaper",
   cta_telegram: "Join the community on Telegram",
@@ -302,7 +302,7 @@ const I18N_EN = {
   token_dist_title: "KAL token distribution",
   token_dist_subtitle: "Total supply: 10,000,000 KAL · 0% reserved for an internal team · productive distribution, with no token destruction",
   token_dist_1: "KAL staking rewards (1,500,000 KAL)",
-  token_dist_2: "Presale, 10 tiers (500,000 KAL hard cap)",
+  token_dist_2: "Presale (500,000 KAL hard cap)",
   token_dist_3: "Initial bonding curve (450,000 KAL)",
   token_dist_4: "Liquidity provider rewards (150,000 KAL)",
   token_dist_5: "Tester recognition program (50,000 KAL)",
@@ -314,13 +314,13 @@ const I18N_EN = {
   about_timeline_h3: "Where we are",
   about_tl_1: "<strong>Q1 2026</strong>, Foundations laid, first contracts, connected MVP",
   about_tl_2: "<strong>Q2 2026</strong>, 23 core contracts deployed (27 instances including 5 strategy pools), active beta testing, veKAL + governance",
-  about_tl_3: "<strong>September 14, 2026</strong>: public presale opening on Base mainnet (tiers 4 to 10), conditional on the 100,000 USDC viability gate. The protocol has been running on Base since May 1<sup>st</sup>.",
+  about_tl_3: "<strong>Since 1 May 2026</strong>: the protocol has been running on Base mainnet. Every operation is written there and readable by anyone.",
   about_tl_4: "<strong>Q4 2026+</strong>, Growth, listing on a third-party decentralised exchange, mobile app, DAO",
   about_tl_link: "View full roadmap →",
   about_team_h3: "The team",
   about_team_p1: "A small team based in Switzerland, organised in operational cells. Five people on a daily basis, plus a wider circle of OG contributors involved since the early months.",
   about_team_p2: "The founder signs under the pseudonym Kal. The protocol is designed, developed, deployed and monitored by this team, which chooses to stay under cover until the wider public opening is reached.",
-  about_team_p3: "Full identities will be unveiled on 14 September 2026, at the wider public opening, conditional on the viability gate being reached on 31 August 2026 (100,000 USDC across Alpha plus Beta presale).",
+  about_team_p3: "Full identities will be unveiled at the wider public opening.",
   about_team_p4: "What you can verify now: the contract code is public and verifiable, transactions are visible on <span class=\"g-term\" data-g=\"basescan\">Basescan</span>, the treasury sits in a Gnosis Safe with a single signer today, and all governance decisions are taken on-chain.",
 
   /* ===== FOOTER ===== */
