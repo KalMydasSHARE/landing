@@ -195,7 +195,7 @@ const I18N_EN = {
   beta_meta_v1: "Broader Telegram members, non-EU",
   beta_meta_l2: "Cap:",
   beta_meta_v2: "100,000 KAL = $60k",
-  /* Badge géo-blocage UE ajouté 2026-06-04 Correctif B MME Legal MiCA */
+  /* Badge géo-blocage UE ajouté 2026-06-04, correctif B, revue externe indépendante, MiCA */
   beta_geo_badge: "Non-EU",
   public_label: "Public phase",
   public_h: "September 14, 2026, conditional",
@@ -256,7 +256,7 @@ const I18N_EN = {
   faq_6_a: "No. You can sign in with a simple email or Google account. A wallet is created automatically for you through Privy. Advanced users can also connect their own wallet (MetaMask, etc.).",
   faq_8_q: "Which strategy should I choose as a beginner?",
   faq_8_a: "HORIZON is the most conservative profile, designed for discovery (modest simulated performance, controlled drawdown on backtest). VALKYRIE offers a balanced profile. The more aggressive strategies (REVOLUTION, TREASURY, ORION) require a clear understanding of volatility. You can pick several and split your capital as you wish.",
-  /* FAQ 9 ajoutée 2026-06-04 Correctif A MME Legal, doctrine Zero Burn */
+  /* FAQ 9 ajoutée 2026-06-04, correctif A, revue externe indépendante, doctrine Zero Burn */
   faq_9_q: "Does KAL burn?",
   faq_9_a: `No, KAL is never burned. All KAL flows go through recirculation via the <code style="font-family: ui-monospace, monospace; font-size: 0.95em;">BuybackRecirculator</code> contract: KAL bought back through performance fees is systematically reinjected into the protocol's KalSwap KAL/USDC liquidity pool, never destroyed. This doctrine, called Zero Burn, is intangible and verifiable on-chain on <span class="g-term" data-g="basescan">Basescan</span>. The <code style="font-family: ui-monospace, monospace; font-size: 0.95em;">KalToken</code> contract technically inherits from OpenZeppelin's <code style="font-family: ui-monospace, monospace; font-size: 0.95em;">ERC20Burnable</code>, but the <code style="font-family: ui-monospace, monospace; font-size: 0.95em;">burn</code> function is neutralised through an override: no call reduces <code style="font-family: ui-monospace, monospace; font-size: 0.95em;">totalSupply</code>.`,
 
@@ -295,7 +295,7 @@ const I18N_EN = {
   about_token_lp: "1.5% LP rewards",
   about_token_community: "0.5% Testers",
   about_token_reserve: "73.5% Unallocated reserve",
-  /* Note technique Zero Burn ajoutée 2026-06-04 Correctif A MME Legal */
+  /* Note technique Zero Burn ajoutée 2026-06-04, correctif A, revue externe indépendante */
   about_token_zeroburn_note: `<strong style="color: var(--text); font-style: normal;">Technical note for advanced readers:</strong> the <code style="font-family: ui-monospace, monospace; font-size: 0.95em;">KalToken</code> contract technically inherits from OpenZeppelin's <code style="font-family: ui-monospace, monospace; font-size: 0.95em;">ERC20Burnable</code>, but the <code style="font-family: ui-monospace, monospace; font-size: 0.95em;">burn</code> function is neutralised through an override. No <code style="font-family: ui-monospace, monospace; font-size: 0.95em;">burn</code> call reduces <code style="font-family: ui-monospace, monospace; font-size: 0.95em;">totalSupply</code>. Verifiable on <span class="g-term" data-g="basescan">Basescan</span>.`,
 
   /* ===== TOKEN DISTRIBUTION CHART (6 lines, aligned with DOC/02_TOKENOMICS canonical source, OF 202, 2026-07-19) ===== */
