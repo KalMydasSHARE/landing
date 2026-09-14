@@ -25,7 +25,7 @@ const I18N_EN = {
   theme_new_badge: "NEW",
 
   /* ===== HERO ===== */
-  hero_badge: `<span class="dot"></span> Mainnet live · Base`,
+  hero_badge: `<span class="dot"></span> Mainnet live · Base · Public phase on 15 September 2026`,
   hero_h1: `Don't trust us. <span class="gold">Verify.</span>`,
   hero_tagline: `The rigor of a private bank, without the bank.`,
   hc_perf_eyebrow: `<svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M2 11l3.3-3.4 2.4 2.4L14 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 4h4v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Simulated annual performance`,
@@ -161,9 +161,9 @@ const I18N_EN = {
   road_2_phase: `Phase 2, Q2 2026 <span class="tag-done">Completed</span>`,
   road_2_h: "Development & Beta",
   road_2_p: `23 core Solidity contracts (27 instances including 5 strategy pools), validated in private beta and then deployed on <span class="g-term" data-g="base_l2">Base</span> mainnet on May 1, 2026. veKAL, governance, referral system, auto-compound, performance diversifier, RWA treasury, individual solo mode per strategy, all coded and tested. Beta testing program active.`,
-  road_3_phase: "Phase 3, public access",
+  road_3_phase: "Phase 3, public access, 15 September 2026",
   road_3_h: "Public opening",
-  road_3_p: `Activation of public <span class="g-term" data-g="vekal">veKAL</span> incentives and <span class="g-term" data-g="dao">DAO</span> governance. The protocol has been running on Base since 1 May 2026.`,
+  road_3_p: `The public phase opens on 15 September 2026. Activation of public <span class="g-term" data-g="vekal">veKAL</span> incentives and <span class="g-term" data-g="dao">DAO</span> governance. The protocol has been running on Base since 1 May 2026.`,
 
   /* ===== PRESALE COUNTER (replacé 2026-06-06 sur demande Kal) ===== */
   counter_phase: "Phase Beta live",
