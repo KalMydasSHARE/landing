@@ -12,7 +12,7 @@ const GLOSSARY_DEFS = {
   arbitrum_l2: "Réseau de deuxième couche (Layer 2) construit au-dessus d'Ethereum par Offchain Labs. Transactions rapides et peu coûteuses, sécurité héritée d'Ethereum.",
   smart_contract: "Programme informatique autonome déployé sur la blockchain. S'exécute automatiquement selon des règles prédéfinies, sans intermédiaire. Le code est public et vérifiable.",
   erc20: "Norme technique standard pour les jetons sur Ethereum et ses réseaux compatibles (comme Arbitrum). Garantit l'interopérabilité avec tous les portefeuilles et plateformes.",
-  bonding_curve: "Mécanisme mathématique transparent qui détermine automatiquement le prix d'un jeton en fonction de la quantité en circulation. Plus la demande augmente, plus le prix monte.",
+  bonding_curve: "Mécanisme mathématique transparent qui détermine automatiquement le prix d'un jeton en fonction de la quantité en circulation. La formule est publique et inscrite dans le contrat.",
   buyback_burn: "Mécanisme automatique où une partie des frais de performance est utilisée pour racheter des jetons KAL sur le marché. Chez KalMydas, les KAL rachetés sont recirculés en liquidité (philosophie Zéro Destruction).",
   staking: "Action de bloquer des jetons dans un protocole pour fournir de la liquidité ou sécuriser le réseau, en échange de récompenses.",
   lp: "Fournisseur de liquidité (Liquidity Provider), personne qui dépose des jetons dans un pool d’échange pour faciliter les transactions, en échange de récompenses.",

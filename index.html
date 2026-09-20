@@ -2251,10 +2251,6 @@
       <div class="hero-glow-blue"></div>
     </div>
     <div class="hero-content">
-      <div class="hero-badge fade-in" data-i18n="hero_badge">
-        <span class="dot"></span>
-        Mainnet en ligne · Base · Phase publique le 15 septembre 2026
-      </div>
       <h1 class="fade-in fade-in-delay-1" data-i18n="hero_h1">
         Ne nous croyez pas. <span class="gold">Vérifiez.</span>
       </h1>
@@ -2487,11 +2483,10 @@
         <!-- Token KAL -->
         <div class="km-card">
           <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--gold-light); margin-bottom: 1rem;" data-i18n="about_token_h3">Le jeton KAL</h3>
-          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem;" data-i18n="about_token_desc2">Le jeton KAL (<span class="g-term" data-g="erc20">ERC-20</span>, 10 millions max) fonctionne avec une <span class="g-term" data-g="bonding_curve">courbe de valorisation</span> transparente, le prix évolue avec l’adoption. 20&nbsp;% des frais de performance sont utilisés pour le rachat puis la redirection vers la réserve de liquidité KalSwap KAL/USDC du protocole, via le contrat <span class="g-term" data-g="pol">BuybackRecirculator</span> (doctrine Zero Burn, aucune destruction). Bloquez vos KAL en <span class="g-term" data-g="vekal">veKAL</span>. Le protocole verse chaque semaine une part de ses frais en <span class="g-term" data-g="usdc">USDC</span>. C’est l’indemnité du service technique qui rétribue la sécurisation et la gouvernance. Elle ne suit pas les résultats des stratégies.</p>
+          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem;" data-i18n="about_token_desc2">Le jeton KAL (<span class="g-term" data-g="erc20">ERC-20</span>, 10 millions max) fonctionne avec une <span class="g-term" data-g="bonding_curve">courbe de valorisation</span> publique, inscrite dans le contrat. 20&nbsp;% des frais de performance sont utilisés pour le rachat puis la redirection vers la réserve de liquidité KalSwap KAL/USDC du protocole, via le contrat <span class="g-term" data-g="pol">BuybackRecirculator</span> (doctrine Zero Burn, aucune destruction). Bloquez vos KAL en <span class="g-term" data-g="vekal">veKAL</span>. Le protocole verse chaque semaine une part de ses frais en <span class="g-term" data-g="usdc">USDC</span>. C’est l’indemnité du service technique qui rétribue la sécurisation et la gouvernance. Elle ne suit pas les résultats des stratégies.</p>
           <!-- Tags distribution alignés sur DOC/02_TOKENOMICS/00_SOURCE_CANONIQUE_EMISSION_2026-07.md, corrigés OF 202 le 19/07/2026 : émission programmée 2 650 000 KAL plus réserve non allouée 7 350 000 KAL -->
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
             <span style="background: rgba(190,165,110,0.1); border: 1px solid rgba(190,165,110,0.2); border-radius: 8px; padding: 0.3rem 0.8rem; font-size: 0.8rem; color: var(--gold-light);" data-i18n="about_token_staking">15&nbsp;% Mise en jeu du KAL</span>
-            <span style="background: rgba(190,165,110,0.1); border: 1px solid rgba(190,165,110,0.2); border-radius: 8px; padding: 0.3rem 0.8rem; font-size: 0.8rem; color: var(--gold-light);" data-i18n="about_token_presale">5&nbsp;% Prévente</span>
             <span style="background: rgba(190,165,110,0.1); border: 1px solid rgba(190,165,110,0.2); border-radius: 8px; padding: 0.3rem 0.8rem; font-size: 0.8rem; color: var(--gold-light);" data-i18n="about_token_curve">4,5&nbsp;% Courbe</span>
             <span style="background: rgba(190,165,110,0.1); border: 1px solid rgba(190,165,110,0.2); border-radius: 8px; padding: 0.3rem 0.8rem; font-size: 0.8rem; color: var(--gold-light);" data-i18n="about_token_lp">1,5&nbsp;% Récompenses LP</span>
             <span style="background: rgba(190,165,110,0.1); border: 1px solid rgba(190,165,110,0.2); border-radius: 8px; padding: 0.3rem 0.8rem; font-size: 0.8rem; color: var(--gold-light);" data-i18n="about_token_community">0,5&nbsp;% Testeurs</span>
@@ -2798,8 +2793,8 @@
       <div class="token-grid">
         <!-- Liste des utilités, design maquette : cartes titre + description, sans icône -->
         <ul class="token-list fade-in">
-          <li><div><b data-i18n="token_ft1"><span class="g-term" data-g="bonding_curve">Courbe de valorisation</span></b><span data-i18n="token_f1">Prix qui augmente avec l'adoption</span></div></li>
-          <li><div><b data-i18n="token_ft2">Rachat puis Recirculation</b><span data-i18n="token_f2">Une partie des frais de performance rachète du KAL sur le marché et le réinjecte dans la réserve de liquidité KalSwap KAL/USDC du protocole, via le contrat <code style="font-family: ui-monospace, monospace; font-size: 0.9em;">BuybackRecirculator</code> (pression acheteuse permanente, doctrine Zero Burn, aucune destruction)</span></div></li>
+          <li><div><b data-i18n="token_ft1"><span class="g-term" data-g="bonding_curve">Courbe de valorisation</span></b><span data-i18n="token_f1">Prix fixé par une formule publique inscrite dans le contrat</span></div></li>
+          <li><div><b data-i18n="token_ft2">Rachat puis Recirculation</b><span data-i18n="token_f2">Une partie des frais de performance rachète du KAL sur le marché et le réinjecte dans la réserve de liquidité KalSwap KAL/USDC du protocole, via le contrat <code style="font-family: ui-monospace, monospace; font-size: 0.9em;">BuybackRecirculator</code> (doctrine Zero Burn, aucune destruction)</span></div></li>
           <li><div><b data-i18n="token_ft3">Indemnité de service</b><span data-i18n="token_f3">Bloquez vos KAL en <span class="g-term" data-g="vekal">veKAL</span>. Le protocole verse chaque semaine une part de ses frais en <span class="g-term" data-g="usdc">USDC</span>. C’est l’indemnité du service technique qui rétribue la sécurisation et la gouvernance. Elle ne suit pas les résultats des stratégies.</span></div></li>
           <li><div><b data-i18n="token_ft4">Récompenses <span class="g-term" data-g="lp">LP</span></b><span data-i18n="token_f4"><span class="g-term" data-g="staking">Mise en jeu</span> de liquidité avec récompenses en KAL</span></div></li>
           <li><div><b data-i18n="token_ft5">Bonus dépôt</b><span data-i18n="token_f5">Jusqu'à +5&nbsp;% en KAL sur vos dépôts</span></div></li>
@@ -2812,7 +2807,6 @@
           <h4 data-i18n="token_dist_title">Distribution du jeton KAL</h4>
           <p class="dist-sub" data-i18n="token_dist_subtitle">Offre totale&nbsp;: 10 000 000 KAL · 0&nbsp;% réservé à une équipe interne · distribution productive, sans destruction de jetons</p>
           <div class="distrow"><div class="dtop"><span data-i18n="token_dist_1">Récompenses de mise en jeu du KAL (1 500 000 KAL)</span><b>15&nbsp;%</b></div><div class="bar"><i style="width:15%"></i></div></div>
-          <div class="distrow"><div class="dtop"><span data-i18n="token_dist_2">Prévente (500 000 KAL plafond)</span><b>5&nbsp;%</b></div><div class="bar"><i style="width:5%"></i></div></div>
           <div class="distrow"><div class="dtop"><span data-i18n="token_dist_3">Courbe de valorisation initiale (450 000 KAL)</span><b>4,5&nbsp;%</b></div><div class="bar"><i style="width:4.5%"></i></div></div>
           <div class="distrow"><div class="dtop"><span data-i18n="token_dist_4">Récompenses fournisseurs de liquidité (150 000 KAL)</span><b>1,5&nbsp;%</b></div><div class="bar"><i style="min-width:4px;width:1.5%"></i></div></div>
           <div class="distrow"><div class="dtop"><span data-i18n="token_dist_5">Programme de reconnaissance testeurs (50 000 KAL)</span><b>0,5&nbsp;%</b></div><div class="bar"><i style="min-width:4px;width:0.5%"></i></div></div>
@@ -2988,7 +2982,6 @@
 
   <div class="section-divider"></div>
 
-  <!-- ===== PRESALE SCHEDULE, ajouté session 298 (28/04/2026) ===== -->
   <div class="section-divider"></div>
 
   <!-- ===== ROADMAP ===== -->
