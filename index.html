@@ -2284,6 +2284,80 @@
       color: #F7E38F !important;
       text-shadow: 0 0 14px rgba(224, 190, 69, 0.3) !important;
     }
+
+    /* 6. Conciergerie Telegram Flottante & Bandeau Onboarding Humain */
+    .floating-conciergerie {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 99;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.65rem 1.15rem;
+      background: rgba(13, 18, 34, 0.88);
+      border: 1px solid rgba(224, 190, 69, 0.4);
+      border-radius: 999px;
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .floating-conciergerie:hover {
+      transform: translateY(-3px) scale(1.02);
+      border-color: rgba(224, 190, 69, 0.75);
+      background: rgba(18, 25, 48, 0.95);
+      box-shadow: 0 16px 40px rgba(224, 190, 69, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+      color: #F7E38F;
+    }
+    .floating-conciergerie .conc-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 8px rgba(34, 197, 94, 0.8);
+      flex-shrink: 0;
+    }
+    .floating-conciergerie svg {
+      color: #4184CC;
+      flex-shrink: 0;
+    }
+    @media (max-width: 640px) {
+      .floating-conciergerie {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.55rem 0.9rem;
+        font-size: 0.75rem;
+      }
+      .floating-conciergerie span.conc-text-desktop {
+        display: none;
+      }
+    }
+
+    /* Bandeau accompagnement humain sous How it works */
+    .human-nurture-card {
+      margin-top: 2.5rem;
+      background: linear-gradient(180deg, #13192f 0%, #0c0f1e 100%);
+      border: 1px solid rgba(224, 190, 69, 0.35);
+      border-radius: var(--radius);
+      padding: 1.6rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 16px 40px -10px rgba(0, 0, 0, 0.7);
+    }
+    @media (max-width: 768px) {
+      .human-nurture-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.4rem;
+      }
+    }
   </style>
 <!-- Umami analytics -->
 <script defer src="https://cloud.umami.is/script.js" data-website-id="5613819f-c081-4f1f-a3a8-2257fbcf3b73"></script>
@@ -2405,8 +2479,10 @@
           Voir les stratégies
         </a>
       </div>
-      <p class="hero-telegram fade-in fade-in-delay-3" style="margin-top: 1.2rem; font-size: 0.9rem; color: var(--text-muted);">
+      <p class="hero-telegram fade-in fade-in-delay-3" style="margin-top: 1.2rem; font-size: 0.9rem; color: var(--text-muted); display: flex; align-items: center; justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
         <a href="https://t.me/KalMydas_OFFICIEL" target="_blank" rel="noopener" data-i18n="hero_telegram" data-umami-event="cta_hero_telegram" data-umami-event-source="hero" data-umami-event-destination="telegram" style="color: var(--gold-light); text-decoration: none; font-weight: 500;">Rejoindre la communauté sur Telegram</a>
+        <span style="opacity: 0.4;">·</span>
+        <a href="https://t.me/kal_mydas" target="_blank" rel="noopener" data-i18n="hero_support_link" data-umami-event="cta_hero_support" data-umami-event-source="hero" data-umami-event-destination="telegram_support" style="color: #4184CC; text-decoration: none; font-weight: 500;">Support direct @kal_mydas</a>
       </p>
     </div>
   </section>
@@ -2671,6 +2747,17 @@
           <h3 data-i18n="step_3_h">Récoltez vos résultats</h3>
           <p data-i18n="step_3_p">Les robots tradent pour vous 24h/24. Retirez quand vous voulez, sans blocage</p>
         </div>
+      </div>
+
+      <div class="human-nurture-card fade-in">
+        <div>
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.35rem;" data-i18n="nurture_title">Besoin d'aide pour débuter&nbsp;?</h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="nurture_desc">Échangez en direct avec le support Kal Mydas sur Telegram. Pas de bot générique, un accompagnement humain direct pour répondre à vos questions.</p>
+        </div>
+        <a href="https://t.me/kal_mydas" target="_blank" rel="noopener" class="btn-secondary" style="white-space: nowrap; flex-shrink: 0;" data-i18n="nurture_btn" data-umami-event="cta_nurture_telegram">
+          Parler au support
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="margin-left: 0.4rem; vertical-align: -2px;"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.643.135-.953l11.566-4.458c.538-.196 1.006.128.832.938z"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -3216,8 +3303,10 @@
           Lire le Livre blanc
         </a>
       </div>
-      <p style="margin-top: 1.2rem; font-size: 0.9rem; color: var(--text-muted);">
+      <p style="margin-top: 1.2rem; font-size: 0.9rem; color: var(--text-muted); display: flex; align-items: center; justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
         <a href="https://t.me/KalMydas_OFFICIEL" target="_blank" rel="noopener" data-i18n="cta_telegram" data-umami-event="cta_final_telegram" data-umami-event-source="cta_section" data-umami-event-destination="telegram" style="color: var(--gold-light); text-decoration: none; font-weight: 500;">Rejoindre la communauté sur Telegram</a>
+        <span style="opacity: 0.4;">·</span>
+        <a href="https://t.me/kal_mydas" target="_blank" rel="noopener" data-i18n="cta_support_link" data-umami-event="cta_final_support" data-umami-event-source="cta_section" data-umami-event-destination="telegram_support" style="color: #4184CC; text-decoration: none; font-weight: 500;">Contacter le support @kal_mydas</a>
       </p>
     </div>
   </section>
@@ -3250,7 +3339,8 @@
         <h4 style="font-family: var(--font-display); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-light); margin-bottom: 1rem;" data-i18n="footer_col_community">Communauté</h4>
         <div style="display: flex; flex-direction: column; gap: 0.5rem;">
           <a href="https://discord.gg/gCD2zunaBy" target="_blank" rel="noopener" data-umami-event="outbound_social" data-umami-event-network="discord">Discord</a>
-          <a href="https://t.me/KalMydas_OFFICIEL" target="_blank" rel="noopener" data-umami-event="outbound_social" data-umami-event-network="telegram">Telegram</a>
+          <a href="https://t.me/KalMydas_OFFICIEL" target="_blank" rel="noopener" data-umami-event="outbound_social" data-umami-event-network="telegram">Telegram (Canal officiel)</a>
+          <a href="https://t.me/kal_mydas" target="_blank" rel="noopener" data-i18n="footer_support" data-umami-event="outbound_support" data-umami-event-network="telegram_support">Support direct (@kal_mydas)</a>
           <a href="https://x.com/KalMydas_FR" data-i18n-href-en="https://x.com/KalMydas" target="_blank" rel="noopener" data-umami-event="outbound_social" data-umami-event-network="x">X</a>
           <a href="https://www.tiktok.com/@kalmydas" target="_blank" rel="noopener" data-umami-event="outbound_social" data-umami-event-network="tiktok">TikTok</a>
           <a href="https://www.instagram.com/kalmydas" target="_blank" rel="noopener" data-umami-event="outbound_social" data-umami-event-network="instagram">Instagram</a>
@@ -3819,6 +3909,13 @@
       }
     })();
   </script>
+
+  <!-- Conciergerie Telegram Flottante (Accompagnement direct Kal Mydas) -->
+  <a href="https://t.me/kal_mydas" target="_blank" rel="noopener" class="floating-conciergerie" data-umami-event="cta_conciergerie_telegram" aria-label="Support direct sur Telegram">
+    <span class="conc-dot"></span>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.643.135-.953l11.566-4.458c.538-.196 1.006.128.832.938z"/></svg>
+    <span data-i18n="conciergerie_text">Support direct <span class="conc-text-desktop">· Poser une question</span></span>
+  </a>
 
 </body>
 </html>

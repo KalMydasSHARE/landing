@@ -41,6 +41,7 @@ const I18N_EN = {
   hero_btn_primary: `Launch app <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
   hero_btn_secondary: "View strategies",
   hero_telegram: "Join the community on Telegram",
+  hero_support_link: "Direct support @kal_mydas",
 
   /* ===== PASTOR P: PROBLEM ===== */
   probleme_label: "The reality",
@@ -64,6 +65,9 @@ const I18N_EN = {
   step_2_p: "From conservative to high-risk, 5 risk profiles tailored to your goals. From $10",
   step_3_h: "Withdraw your results",
   step_3_p: "The bots trade automatically 24/7. Withdraw whenever you want, no lock-up.",
+  nurture_title: "Need guidance getting started?",
+  nurture_desc: "Chat directly with Kal Mydas support on Telegram. No automated bot, real human assistance to answer your questions.",
+  nurture_btn: `Chat with support <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="margin-left: 0.4rem; vertical-align: -2px;"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.643.135-.953l11.566-4.458c.538-.196 1.006.128.832.938z"/></svg>`,
 
   /* ===== STRATEGIES ===== */
   strat_label: "5 approaches, 5 profiles",
@@ -224,6 +228,7 @@ const I18N_EN = {
   cta_btn_primary: `Launch app <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33 8h9.34M8.67 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
   cta_btn_secondary: "Read the Whitepaper",
   cta_telegram: "Join the community on Telegram",
+  cta_support_link: "Contact support @kal_mydas",
 
   /* ===== ABOUT ===== */
   about_label: "Genesis",
@@ -284,6 +289,7 @@ const I18N_EN = {
   footer_security: "Security",
   footer_roadmap: "Roadmap",
   footer_col_community: "Community",
+  footer_support: "Direct support (@kal_mydas)",
   footer_kal_contract: "KAL contract on Base",
   footer_contact: "Contact: contact@kalmydas.ch",
   footer_col_resources: "Resources",
@@ -393,6 +399,7 @@ const GLOSSARY_DEFS_EN = {
   pol: "Protocol-Owned Liquidity, liquidity owned directly by the protocol (not by users). Guarantees permanent liquidity even if providers withdraw.",
   rwa: "Real World Assets, real-world assets (Treasury bonds, real estate) tokenized on the blockchain. Offer performance uncorrelated to the crypto market.",
   base_l2: "Layer 2 network on Ethereum, optimized for consumer-facing applications. Kal Mydas mainnet has been live on Base since May 1, 2026.",
+  conciergerie_text: `Direct support <span class="conc-text-desktop">· Ask a question</span>`,
 };
 
 /* ===== i18n ENGINE ===== */
