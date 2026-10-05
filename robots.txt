@@ -1,4 +1,4 @@
-# robots.txt — kalmydas.com
+# robots.txt, kalmydas.com
 # Permettre l'indexation complete par les moteurs de recherche
 
 User-agent: *
