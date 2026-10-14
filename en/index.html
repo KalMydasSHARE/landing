@@ -1,0 +1,1955 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kal Mydas, the KAL ecosystem on Base: gold, bitcoin, wallet and messaging</title>
+<meta name="description" content="Kal Mydas brings four applications on Base together around a single token, KAL: automated strategies on gold and bitcoin, a twelve-word wallet, physical activity and encrypted messaging. Public contracts, every operation verifiable.">
+<link rel="canonical" href="https://kalmydas.com/en/">
+<link rel="alternate" hreflang="fr" href="https://kalmydas.com/">
+<link rel="alternate" hreflang="en" href="https://kalmydas.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://kalmydas.com/">
+<meta name="theme-color" content="#07070a">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="5613819f-c081-4f1f-a3a8-2257fbcf3b73" data-domains="kalmydas.com"></script>
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Kal Mydas">
+<meta property="og:title" content="Kal Mydas. Don’t take our word. Verify.">
+<meta property="og:description" content="Four applications on Base, a single token. Strategies on gold and bitcoin, a twelve-word wallet, encrypted messaging.">
+<meta property="og:url" content="https://kalmydas.com/en/">
+<meta property="og:image" content="https://kalmydas.com/og-image-v3.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kal Mydas. Don’t take our word. Verify.">
+<meta name="twitter:description" content="Four applications on Base, a single token: KAL.">
+<meta name="twitter:image" content="https://kalmydas.com/og-image-v3.jpg">
+<meta name="twitter:site" content="@KalMydas_FR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Kal Mydas","url":"https://kalmydas.com/","logo":"https://kalmydas.com/apple-touch-icon.png","description":"Decentralised protocol on Base built around gold and bitcoin, designed as a tool for autonomy.","sameAs":["https://t.me/KalMydas_OFFICIEL","https://x.com/KalMydas_FR","https://docs.kalmydas.com"]}]}
+</script>
+<style>
+:root{
+  --noir:#07070a; --noir-2:#0d0d12; --ligne:rgba(255,255,255,.09);
+  --or:#E0BE45; --or-clair:#ffe6a3; --or-sombre:#8a6a1c; --bleu:#6BA3DE;
+  --texte:#f3efe6; --texte-2:rgba(243,239,230,.66); --texte-3:rgba(243,239,230,.42);
+  --serif:'Instrument Serif',Georgia,serif; --sans:'Inter Tight',system-ui,sans-serif;
+  --gouttiere:clamp(16px,4vw,56px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--noir);color:var(--texte);-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--noir);font-family:var(--sans);font-weight:400;line-height:1.55;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--or);color:#000}
+#scene{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;display:block}
+.voile{position:fixed;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(130% 100% at 50% 50%,rgba(7,7,10,0) 55%,rgba(7,7,10,.65) 100%)}
+.eclair{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:0;
+  background:radial-gradient(circle at 50% 50%,rgba(255,230,163,.95),rgba(224,190,69,.35) 30%,transparent 65%);mix-blend-mode:screen}
+.grain{position:fixed;inset:-50%;z-index:3;pointer-events:none;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 1.2s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+main,header,footer{position:relative;z-index:4}
+
+/* En-tête */
+.entete{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;
+  padding:14px var(--gouttiere);transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent}
+.entete.plein{background:rgba(7,7,10,.6);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--ligne)}
+.marque{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:.01em;font-size:17px}
+.marque img{width:30px;height:30px}
+.marque b{color:var(--or);font-weight:600}
+.nav{display:flex;gap:28px;font-size:14px;color:var(--texte-2)}
+.nav a:hover{color:var(--texte)}
+.bouton{position:relative;display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;font-weight:600;font-size:15px;
+  background:linear-gradient(180deg,#f3d570,#c99a2a);color:#1a1205;box-shadow:0 0 0 1px rgba(255,230,163,.4) inset,0 10px 40px -10px rgba(224,190,69,.7);
+  transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s;will-change:transform;white-space:nowrap}
+.bouton:hover{box-shadow:0 0 0 1px rgba(255,230,163,.7) inset,0 14px 60px -8px rgba(224,190,69,.95)}
+.bouton.fantome{background:rgba(255,255,255,.04);color:var(--texte);box-shadow:0 0 0 1px var(--ligne) inset}
+.bouton.fantome:hover{box-shadow:0 0 0 1px rgba(255,255,255,.3) inset}
+.bouton.petit{padding:10px 18px;font-size:14px}
+.fleche{transition:transform .3s}
+.bouton:hover .fleche{transform:translateX(4px)}
+
+/* Communs */
+.section{position:relative;padding:clamp(90px,14vh,170px) var(--gouttiere)}
+.surtitre{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--or);font-weight:600;display:inline-flex;align-items:center;gap:12px}
+.surtitre::before{content:"";width:28px;height:1px;background:var(--or)}
+h1,h2{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:.98}
+h2{font-size:clamp(42px,6.4vw,104px)}
+h2 em,h1 em{font-style:italic;color:var(--or-clair)}
+h3{font-weight:600;font-size:20px;letter-spacing:-.005em}
+.chapo{font-size:clamp(17px,1.5vw,21px);color:var(--texte-2);max-width:620px}
+.or{color:var(--or)}
+.mot{display:inline-block;opacity:.12;transition:none}
+.monte{opacity:0;transform:translateY(40px)}
+
+/* Héros */
+.heros{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:110px;padding-bottom:130px}
+.heros .surtitre{margin-bottom:28px}
+.heros h1{font-size:clamp(58px,10.5vw,184px);max-width:9.5ch}
+.heros h1 .ligne{display:block;overflow:hidden;padding-bottom:.06em}
+.heros h1 .ligne span{display:inline-block;transform:translateY(110%)}
+.heros .chapo{margin-top:30px;max-width:540px}
+.heros .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+.heros h1,.heros .chapo{text-shadow:0 2px 30px rgba(7,7,10,.85)}
+.heros .note{margin-top:26px;font-size:12.5px;color:var(--texte-3);max-width:520px}
+.indice{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--texte-3);display:flex;flex-direction:column;align-items:center;gap:12px}
+.indice i{width:1px;height:46px;background:linear-gradient(var(--or),transparent);animation:goutte 2s ease-in-out infinite}
+@keyframes goutte{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.bandeau{display:flex;gap:44px;margin-top:64px;flex-wrap:wrap}
+.bandeau div{font-size:13px;color:var(--texte-3)}
+.bandeau b{display:block;font-family:var(--serif);font-weight:400;font-size:34px;color:var(--texte);line-height:1.1}
+
+/* Constat */
+.constat{min-height:120vh;display:flex;flex-direction:column;justify-content:center}
+.constat .grand{font-family:var(--serif);font-size:clamp(38px,5.6vw,92px);line-height:1.04;max-width:16ch;margin-top:26px}
+.constat .chapo{margin-top:40px}
+
+/* Applications : scène épinglée */
+.epingle{position:relative}
+.colle{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+#apps{height:340vh}
+#apps .colle{display:flex;flex-direction:column;justify-content:center;padding:90px var(--gouttiere) 40px}
+#apps .tete{position:absolute;top:clamp(90px,14vh,140px);left:var(--gouttiere);right:var(--gouttiere);text-align:center}
+#apps .tete h2{font-size:clamp(40px,5.6vw,88px)}
+.grille-apps{display:grid;grid-template-columns:1fr 1fr;gap:clamp(140px,22vw,380px);row-gap:clamp(40px,8vh,90px);max-width:1180px;width:100%;margin:clamp(110px,16vh,160px) auto 0}
+.app{position:relative;padding:26px 26px 22px;border-radius:22px;background:linear-gradient(160deg,rgba(14,13,10,.72),rgba(8,8,11,.55));
+  border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);opacity:0;transform:translateY(30px) scale(.96);box-shadow:0 30px 80px -30px rgba(0,0,0,.8)}
+.app .etiq{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--or);font-weight:600}
+.app h3{font-family:var(--serif);font-weight:400;font-size:clamp(28px,2.6vw,40px);margin:8px 0 8px}
+.app p{color:var(--texte-2);font-size:15px}
+.app .pied{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:12.5px;color:var(--texte-3);gap:10px}
+.app .pied a{color:var(--texte);font-weight:600;white-space:nowrap}
+.app .pied a:hover{color:var(--or)}
+.app.bleu .etiq{color:var(--bleu)}
+.jeton-central{position:absolute;left:50%;top:58%;transform:translate(-50%,-50%);text-align:center;opacity:0;pointer-events:none}
+.jeton-central b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(46px,5vw,80px);color:var(--or-clair);line-height:1}
+.jeton-central span{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--texte-3)}
+
+/* Couleur de chaque application */
+.app{--c:#6BA3DE}
+.app .etiq{color:var(--c)!important}
+.app::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;
+  background:linear-gradient(150deg,var(--c),transparent 50%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;opacity:.85}
+.app::after{content:"";position:absolute;left:26px;top:0;width:44px;height:2px;background:var(--c);box-shadow:0 0 18px var(--c);border-radius:2px}
+.app .pied a:hover{color:var(--c)}
+.pastilles{display:flex;gap:8px;justify-content:center;margin-top:16px}
+.pastilles i{width:9px;height:9px;border-radius:50%;background:var(--c);box-shadow:0 0 12px var(--c)}
+
+/* Mydas en entier */
+.bento{display:grid;grid-auto-flow:dense;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(200px,auto);gap:14px;margin-top:64px}
+.bloc{--mx:50%;--my:50%;position:relative;border-radius:22px;padding:26px;background:rgba(11,11,15,.8);border:1px solid var(--ligne);overflow:hidden;
+  display:flex;flex-direction:column;justify-content:space-between;transition:border-color .4s}
+.bloc::before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx) var(--my),rgba(224,190,69,.16),transparent 45%);opacity:0;transition:opacity .4s;pointer-events:none}
+.bloc:hover{border-color:rgba(224,190,69,.35)}
+.bloc:hover::before{opacity:1}
+.bloc.l2{grid-column:span 2}.bloc.h2{grid-row:span 2}
+.bloc .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(224,190,69,.1);border:1px solid rgba(224,190,69,.3);color:var(--or);font-size:19px}
+.bloc h3{font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.2vw,32px);margin-top:18px;line-height:1.05}
+.bloc p{color:var(--texte-2);font-size:14.5px;margin-top:8px}
+.bloc .gros{font-family:var(--serif);font-size:clamp(60px,6vw,96px);color:var(--or-clair);line-height:.9}
+.bloc .gros small{font-size:.32em;color:var(--texte-3);font-family:var(--sans);margin-left:8px;letter-spacing:.02em}
+.bloc .lignes{list-style:none;margin-top:18px;font-size:13.5px;color:var(--texte-2)}
+.bloc .lignes li{display:flex;justify-content:space-between;padding:8px 0;border-top:1px solid var(--ligne)}
+.bloc .lignes li b{color:var(--or);font-weight:500}
+.bloc.vedette{background:linear-gradient(160deg,rgba(224,190,69,.14),rgba(11,11,15,.85) 55%);border-color:rgba(224,190,69,.3)}
+
+/* Comparatif */
+.compare{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:60px}
+.option{border-radius:22px;padding:26px;background:rgba(11,11,15,.82);border:1px solid var(--ligne)}
+.option.nous{border-color:rgba(224,190,69,.55);background:linear-gradient(170deg,rgba(224,190,69,.13),rgba(11,11,15,.88) 50%);box-shadow:0 30px 90px -40px rgba(224,190,69,.6)}
+.option .tag{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--texte-3);font-weight:600}
+.option.nous .tag{color:var(--or)}
+.option h3{font-family:var(--serif);font-weight:400;font-size:30px;margin:8px 0 14px}
+.option dl{font-size:13.5px}
+.option dt{color:var(--texte-3);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;margin-top:14px}
+.option dd{color:var(--texte);margin-top:3px}
+.option.nous dd{color:var(--or-clair)}
+.note-compare{margin-top:22px;font-size:12.5px;color:var(--texte-3);max-width:860px}
+
+/* Téléphone */
+#telephone{height:560vh}
+#telephone .colle{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:clamp(20px,5vw,80px);padding:80px var(--gouttiere) 30px}
+.recits{position:relative;height:280px}
+.recit{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;opacity:0;transform:translateY(30px)}
+.recit .num{font-family:var(--serif);font-style:italic;color:var(--or);font-size:22px}
+.recit h3{font-family:var(--serif);font-weight:400;font-size:clamp(34px,3.6vw,58px);line-height:1.02;margin:8px 0 14px}
+.recit p{color:var(--texte-2);max-width:380px}
+.droite .recits{text-align:right}.droite .recit{align-items:flex-end}.droite .recit p{margin-left:auto}
+.scene-tel{perspective:1600px}
+.tel{position:relative;width:min(330px,72vw,calc((100svh - 130px) * .466));aspect-ratio:9/19.3;border-radius:52px;padding:12px;
+  background:linear-gradient(145deg,#3a3326,#0c0b09 40%,#2a251b);box-shadow:0 0 0 1.5px #5a4c2c inset,0 60px 120px -30px rgba(0,0,0,.9),0 0 120px -20px rgba(224,190,69,.35);
+  transform-style:preserve-3d;will-change:transform}
+.ecran{position:relative;width:100%;height:100%;border-radius:41px;overflow:hidden;background:#0b0b10}
+.ilot{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:96px;height:28px;background:#000;border-radius:20px;z-index:5}
+.barre-etat{display:flex;justify-content:space-between;padding:14px 26px 0;font-size:12px;font-weight:600}
+.app-tel{padding:22px 16px 0}
+.app-tel .haut{display:flex;align-items:center;justify-content:space-between}
+.app-tel .logo{font-weight:700;font-size:15px;letter-spacing:-.01em}
+.app-tel .logo i{color:var(--or);font-style:italic;font-family:var(--serif);font-weight:400;font-size:17px}
+.app-tel .pastille{font-size:10px;padding:4px 9px;border-radius:99px;background:rgba(224,190,69,.12);color:var(--or);border:1px solid rgba(224,190,69,.3)}
+.app-tel .solde{margin:20px 0 4px;font-size:11px;color:var(--texte-3)}
+.app-tel .solde b{display:block;font-family:var(--serif);font-weight:400;font-size:34px;color:var(--texte)}
+.raccourcis{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:14px 0 14px}
+.raccourcis div{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:9.5px;color:var(--texte-2)}
+.raccourcis div i{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);display:grid;place-items:center;font-style:normal;color:var(--or)}
+.raccourcis div:first-child i{background:rgba(224,190,69,.18);border-color:rgba(224,190,69,.45)}
+.lignes-tel div{display:flex;justify-content:space-between;align-items:center;padding:11px 2px;border-top:1px solid rgba(255,255,255,.06);font-size:11.5px}
+.lignes-tel small{display:block;color:var(--texte-3);font-size:9.5px}
+.lignes-tel span{font-weight:600;font-size:11px}
+.dock{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);width:46px;height:46px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#ffe6a3,#c99a2a 55%,#6b4f12);box-shadow:0 0 30px rgba(224,190,69,.6);display:grid;place-items:center;color:#1a1205;font-weight:800;font-family:var(--serif);font-size:24px}
+.legende-tel{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-size:11px;color:var(--texte-3)}
+
+/* Moteur */
+#moteur{height:260vh}
+#moteur .colle{display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:40px;padding:90px var(--gouttiere) 40px}
+#moteur h2{font-size:clamp(40px,5.2vw,86px)}
+#moteur .chapo{margin-top:22px}
+.parts{list-style:none;margin-top:34px;max-width:560px}
+.parts li{display:grid;grid-template-columns:1fr auto;gap:4px 14px;padding:7px 0;border-top:1px solid var(--ligne);font-size:14.5px}
+.parts li b{font-family:var(--serif);font-weight:400;font-size:22px;color:var(--or-clair);text-align:right}
+.parts li .jauge{grid-column:1/-1;height:3px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden}
+.parts li .jauge i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--or-sombre),var(--or),var(--or-clair))}
+.parts li.fort{color:var(--texte)}
+.parts li.fort .jauge i{box-shadow:0 0 18px var(--or)}
+.zero{margin-top:22px;font-size:13px;color:var(--texte-3);max-width:560px}
+
+/* Preuves */
+.preuves h2{max-width:12ch}
+.tuiles{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:70px;background:var(--ligne);border:1px solid var(--ligne);border-radius:24px;overflow:hidden}
+.tuile{background:rgba(9,9,13,.86);padding:34px 30px 30px;min-height:230px;display:flex;flex-direction:column;justify-content:space-between;transition:background .4s}
+.tuile:hover{background:rgba(20,18,12,.9)}
+.tuile b{font-family:var(--serif);font-weight:400;font-size:clamp(44px,4.4vw,68px);line-height:1;color:var(--or-clair)}
+.tuile h3{margin-top:18px}
+.tuile p{color:var(--texte-2);font-size:14.5px;margin-top:8px}
+.propriete{margin-top:28px;font-size:13px;color:var(--texte-3);max-width:860px}
+
+/* Stratégies : défilement horizontal */
+#strategies{height:420vh}
+#strategies .colle{display:flex;flex-direction:column;justify-content:center;padding:80px 0 30px}
+#strategies .tete{padding:0 var(--gouttiere);display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+#strategies h2{font-size:clamp(40px,5.2vw,86px)}
+.piste{display:flex;gap:22px;padding:50px var(--gouttiere) 10px;will-change:transform}
+.strat{flex:0 0 min(400px,78vw);min-height:340px;border-radius:26px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;
+  background:linear-gradient(170deg,rgba(255,255,255,.065),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.1);position:relative;overflow:hidden}
+.strat::after{content:"";position:absolute;right:-30%;top:-30%;width:80%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(224,190,69,.22),transparent 65%)}
+.strat .n{font-family:var(--serif);font-style:italic;font-size:64px;color:var(--or);line-height:1}
+.strat h3{font-family:var(--serif);font-weight:400;font-size:32px;line-height:1.05;margin-top:16px}
+.strat p{color:var(--texte-2);font-size:14.5px;margin-top:10px}
+.risque{display:flex;gap:5px;margin-top:22px;align-items:center;font-size:11px;color:var(--texte-3);letter-spacing:.1em;text-transform:uppercase}
+.risque i{width:22px;height:5px;border-radius:3px;background:rgba(255,255,255,.1)}
+.risque i.on{background:var(--or)}
+.strat.btc::after{background:radial-gradient(circle,rgba(247,147,26,.28),transparent 65%)}
+.strat.btc .n{color:#f7a540}
+.strat.note{background:transparent;border-style:dashed}
+.strat.note p{font-size:13px}
+.avert-strat{padding:0 var(--gouttiere);margin-top:18px;font-size:12px;color:var(--texte-3);max-width:900px}
+
+/* Étapes */
+.etapes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,44px);margin-top:70px;position:relative}
+.etapes::before{content:"";position:absolute;top:31px;left:0;right:0;height:1px;background:var(--ligne)}
+.etapes .trait{position:absolute;top:31px;left:0;height:1px;width:0;background:linear-gradient(90deg,var(--or),var(--or-clair));box-shadow:0 0 14px var(--or)}
+.etape{position:relative}
+.etape .rond{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:var(--noir);border:1px solid rgba(224,190,69,.5);font-family:var(--serif);font-size:26px;color:var(--or);position:relative;z-index:1}
+.etape h3{margin-top:26px;font-family:var(--serif);font-weight:400;font-size:clamp(28px,2.4vw,38px)}
+.etape p{color:var(--texte-2);margin-top:10px;max-width:340px}
+
+/* FAQ */
+.faq{max-width:900px}
+.faq details{border-top:1px solid var(--ligne)}
+.faq details:last-child{border-bottom:1px solid var(--ligne)}
+.faq summary{list-style:none;cursor:pointer;padding:24px 0;display:flex;justify-content:space-between;gap:20px;font-size:clamp(18px,1.6vw,22px);font-weight:500}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--serif);font-size:30px;line-height:.8;color:var(--or);transition:transform .3s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 24px;color:var(--texte-2);max-width:760px}
+
+/* Final */
+.final{min-height:120vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:18vh;text-align:center}
+.final h2,.final .chapo{text-shadow:0 4px 40px rgba(7,7,10,.9)}
+.final h2{font-size:clamp(56px,9vw,160px);max-width:10ch}
+.final .chapo{margin:26px auto 0;text-align:center}
+.final .actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:40px}
+
+/* Pied */
+.pied-page{padding:60px var(--gouttiere) 120px;border-top:1px solid var(--ligne);background:rgba(7,7,10,.92)}
+.pied-page .col{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.pied-page nav{display:flex;gap:22px;flex-wrap:wrap;font-size:14px;color:var(--texte-2)}
+.pied-page nav a:hover{color:var(--or)}
+.avert{margin-top:34px;font-size:12px;line-height:1.65;color:var(--texte-3);max-width:980px}
+.avert p+p{margin-top:10px}
+
+/* Barre d'appel mobile */
+.appel-mobile{position:fixed;left:12px;right:12px;bottom:12px;z-index:30;display:none;transform:translateY(130%);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.appel-mobile.vue{transform:none}
+.appel-mobile .bouton{width:100%;justify-content:center}
+
+/* Curseur */
+.halo{position:fixed;left:0;top:0;width:340px;height:340px;margin:-170px 0 0 -170px;border-radius:50%;pointer-events:none;z-index:2;
+  background:radial-gradient(circle,rgba(224,190,69,.12),transparent 60%);mix-blend-mode:screen}
+
+@media (max-width:980px){
+  .bento{grid-template-columns:1fr 1fr}
+  .compare{grid-template-columns:repeat(4,82vw);overflow-x:auto;scroll-snap-type:x mandatory;margin-left:calc(-1 * var(--gouttiere));margin-right:calc(-1 * var(--gouttiere));padding:0 var(--gouttiere) 8px}
+  .option{scroll-snap-align:center}
+  .nav{display:none}
+  #telephone .colle{grid-template-columns:1fr;grid-template-rows:auto 1fr;justify-items:center;padding-top:70px}
+  #telephone .gauche{display:none}
+  .droite{width:100%;order:-1}
+  .droite .recits{height:150px;text-align:center}
+  .droite .recit{align-items:center}
+  .droite .recit p{margin:0 auto;font-size:14px}
+  .droite .recit h3{font-size:30px;margin:4px 0 8px}
+  .tel{width:min(250px,62vw,calc((100svh - 250px) * .466))}
+  #moteur .colle{grid-template-columns:1fr;align-content:center;gap:0}
+  #moteur .vide{display:none}
+  .tuiles{grid-template-columns:1fr 1fr}
+  .etapes{grid-template-columns:1fr;gap:40px}
+  .etapes::before,.etapes .trait{display:none}
+  .appel-mobile{display:block}
+  .halo{display:none}
+}
+@media (max-width:640px){
+  .bento{grid-template-columns:1fr}
+  .bloc.l2{grid-column:auto}.bloc.h2{grid-row:auto}
+  .entete .bouton{display:none}
+  .grille-apps{grid-template-columns:1fr 1fr;gap:10px;margin-top:150px}
+  .app{padding:14px 13px 12px;border-radius:16px}
+  .app h3{font-size:22px;margin:4px 0}
+  .app p{font-size:12px;line-height:1.4}
+  .app .pied{flex-direction:column;align-items:flex-start;gap:6px;font-size:10.5px;margin-top:8px}
+  .jeton-central{top:auto;bottom:6vh}
+  .tuiles{grid-template-columns:1fr}
+  .tuile{min-height:0}
+  .bandeau{gap:26px}
+  .parts li{font-size:13px;padding:7px 0}
+  .parts li b{font-size:18px}
+  .parts{margin-top:20px}
+  #moteur .chapo{font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){
+  .grain,.indice i{animation:none}
+}
+
+/* ===== Version 4 ===== */
+.k-mini{display:inline-block;width:30px;height:30px}
+.k-mini svg,[data-k] svg{width:100%;height:100%;display:block}
+.nav a{display:inline-flex;align-items:center;gap:7px}
+.nav a i{width:7px;height:7px;border-radius:50%;background:var(--c);box-shadow:0 0 10px var(--c)}
+
+/* Héros : les quatre chiffres du site */
+.chiffres-heros{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin-top:54px;max-width:1080px;background:var(--ligne);border:1px solid var(--ligne);border-radius:20px;overflow:hidden}
+.chiffres-heros>div{background:rgba(7,7,10,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:20px 20px 18px}
+.petit-titre{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--or);font-weight:600}
+.chiffres-heros b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.4vw,36px);margin:8px 0 6px;line-height:1.05}
+.chiffres-heros small{font-size:12.5px;color:var(--texte-2);line-height:1.45;display:block}
+.heros .note{margin-top:18px;max-width:820px}
+
+/* Bande de preuve */
+.bande-preuve{position:relative;padding:60px var(--gouttiere);border-top:1px solid var(--ligne);border-bottom:1px solid var(--ligne);background:rgba(7,7,10,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.bande-chiffres{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:26px}
+.bande-chiffres b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(40px,4.4vw,70px);color:var(--or-clair);line-height:1}
+.bande-chiffres>div>span{font-size:14px;color:var(--texte-2)}
+
+/* Titres d'application */
+.app-titre{color:var(--c)!important}
+.app-titre::before{background:var(--c)!important}
+.k-titre{display:inline-block;width:26px;height:26px}
+
+/* Pay, Move, Chat */
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-top:40px}
+.volet{position:relative;border-radius:26px;padding:34px 30px 30px;background:linear-gradient(170deg,color-mix(in srgb,var(--c) 16%,transparent),rgba(10,10,14,.9) 55%);border:1px solid color-mix(in srgb,var(--c) 40%,transparent);overflow:hidden;scroll-margin-top:90px}
+.volet::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--c) 40%,transparent),transparent 65%);pointer-events:none}
+.k-volet{display:block;width:62px;height:62px;margin-bottom:22px;filter:drop-shadow(0 8px 24px color-mix(in srgb,var(--c) 60%,transparent))}
+.volet .etiq{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--c);font-weight:700}
+.volet h2{font-size:clamp(40px,3.6vw,58px);margin:6px 0 12px}
+.volet .chapo{font-size:16px}
+.puces{list-style:none;margin-top:20px}
+.puces li{position:relative;padding:10px 0 10px 22px;border-top:1px solid var(--ligne);font-size:14.5px;color:var(--texte)}
+.puces li::before{content:"";position:absolute;left:2px;top:17px;width:8px;height:8px;border-radius:50%;background:var(--c);box-shadow:0 0 10px var(--c)}
+.lien-volet{display:inline-block;margin-top:22px;font-weight:600;color:var(--c)}
+
+/* Stratégies avec leurs chiffres */
+.strat .profil{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--or);font-weight:700}
+.strat h3{font-size:40px;margin-top:10px}
+.perf{font-family:var(--serif);font-size:54px;line-height:1;color:var(--or-clair);margin-top:20px}
+.perf small{display:block;font-family:var(--sans);font-size:12px;color:var(--texte-3);margin-top:6px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.stats dt{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--texte-3)}
+.stats dd{font-size:16px;font-weight:600;margin-top:2px}
+.strat.btc .profil{color:#f7a540}
+.btc-avert{font-size:12.5px;color:var(--texte-3);margin-top:18px}
+
+/* Jeton */
+.jeton-grille{display:grid;grid-template-columns:minmax(260px,420px) 1fr;gap:clamp(30px,6vw,90px);align-items:center;margin-top:60px}
+.repartition{position:relative;aspect-ratio:1}
+.anneau-svg{width:100%;height:100%;transform:rotate(-90deg)}
+.anneau-svg circle{fill:none;stroke-width:18}
+.anneau-centre{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.anneau-centre b{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3vw,44px);color:var(--or-clair)}
+.anneau-centre span{font-size:12px;color:var(--texte-3);letter-spacing:.14em;text-transform:uppercase}
+.legende-jeton{list-style:none}
+.legende-jeton li{display:grid;grid-template-columns:14px 1fr auto;gap:14px;align-items:center;padding:14px 0;border-top:1px solid var(--ligne)}
+.legende-jeton li i{width:12px;height:12px;border-radius:3px;background:var(--c)}
+.legende-jeton li span{font-size:15px}
+.legende-jeton li small{display:block;font-size:12px;color:var(--texte-3)}
+.legende-jeton li b{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--or-clair)}
+.jeton-traits{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:50px}
+.jeton-traits>div{border-radius:18px;padding:22px;background:rgba(11,11,15,.8);border:1px solid var(--ligne)}
+.jeton-traits h3{font-family:var(--serif);font-weight:400;font-size:24px}
+.jeton-traits p{color:var(--texte-2);font-size:14px;margin-top:8px}
+.note-jeton{margin-top:18px;font-size:13px;color:var(--texte-3);max-width:900px}
+.note-jeton a,.lien-or{color:var(--or)}
+
+/* Comparatif : sous-titre */
+.o-sous{font-size:13px;color:var(--texte-2);margin:-6px 0 6px}
+
+/* Témoignages */
+.temoins{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:50px}
+.temoin{border-radius:22px;padding:28px;background:rgba(11,11,15,.82);border:1px solid var(--ligne);display:flex;flex-direction:column;justify-content:space-between;position:relative}
+.temoin::before{content:"“";position:absolute;top:6px;right:22px;font-family:var(--serif);font-size:90px;color:rgba(224,190,69,.25);line-height:1}
+.temoin blockquote p{font-size:14.5px;color:var(--texte-2);margin-top:12px}
+.temoin blockquote p:first-child{margin-top:0;color:var(--texte)}
+.temoin figcaption{margin-top:22px;padding-top:16px;border-top:1px solid var(--ligne);display:flex;flex-direction:column;gap:2px;font-size:12px;color:var(--texte-3)}
+.temoin figcaption b{font-size:15px;color:var(--texte)}
+.flou{filter:blur(4px);transition:filter .3s;cursor:help}
+.flou:hover{filter:none}
+
+/* À propos */
+.apropos{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:50px}
+.apropos>div{border-radius:22px;padding:28px;background:rgba(11,11,15,.82);border:1px solid var(--ligne)}
+.apropos h3{font-family:var(--serif);font-weight:400;font-size:30px}
+.apropos p{color:var(--texte-2);margin-top:10px;font-size:15px}
+.risque-bloc{border-color:rgba(224,120,69,.35)!important}
+
+/* Aide */
+.aide{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-top:60px;padding:28px;border-radius:22px;border:1px solid var(--ligne);background:rgba(11,11,15,.82)}
+.aide h3{font-family:var(--serif);font-weight:400;font-size:30px}
+.aide p{color:var(--texte-2);margin-top:6px;max-width:620px}
+
+/* Feuille de route */
+.route{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:56px;position:relative}
+.route li{position:relative;border-radius:20px;padding:24px 20px;background:rgba(11,11,15,.82);border:1px solid var(--ligne)}
+.route li.fait{border-color:rgba(224,190,69,.35)}
+.route .etat{display:inline-block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:4px 10px;border-radius:99px;border:1px solid var(--ligne);color:var(--texte-3)}
+.route .fait .etat{color:#1a1205;background:var(--or);border-color:var(--or)}
+.route small{display:block;margin-top:14px;font-size:12px;color:var(--texte-3)}
+.route h3{font-family:var(--serif);font-weight:400;font-size:26px;margin-top:4px}
+.route p{font-size:13.5px;color:var(--texte-2);margin-top:8px}
+.infra{margin-top:60px}
+.infra ul{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:22px}
+.infra li{padding:18px;border-radius:16px;border:1px solid var(--ligne);background:rgba(11,11,15,.7);font-size:12.5px;color:var(--texte-3)}
+.infra li b{display:block;font-size:17px;color:var(--texte);margin-bottom:4px}
+
+/* Final */
+.final-liens{margin-top:26px;font-size:14px;color:var(--texte-3)}
+.final-liens a{color:var(--texte-2)}
+.final-liens a:hover{color:var(--or)}
+
+/* Pied */
+.pied-grille{display:grid;grid-template-columns:1.6fr repeat(4,1fr);gap:30px}
+.pied-marque p{font-size:13.5px;color:var(--texte-2);margin-top:14px;max-width:340px}
+.pied-marque .adresse{font-size:12px;word-break:break-all;color:var(--texte-3)}
+.pied-marque a{color:var(--or)}
+.pied-grille nav{display:flex;flex-direction:column;gap:9px;font-size:14px;color:var(--texte-2)}
+.pied-grille nav b{color:var(--texte);font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.pied-grille nav a:hover{color:var(--or)}
+.avert{border-top:1px solid var(--ligne);padding-top:26px}
+
+/* ===== Le téléphone, copie de home ===== */
+.ecran{font-family:var(--sans);background:#070a14;color:#f2f2f2}
+.ecran-vue{position:absolute;inset:0;opacity:0;transition:opacity .5s ease;pointer-events:none}
+.ecran-vue.on{opacity:1}
+.ecran .barre-etat{position:relative;z-index:2}
+/* écran d'accueil du téléphone */
+.vue-ios{background:radial-gradient(120% 70% at 30% 10%,#2a2147,#0b0d1c 60%,#05060c)}
+.ios-grille{display:grid;grid-template-columns:repeat(4,1fr);gap:18px 0;padding:34px 16px 0;justify-items:center}
+.ios-grille>i{width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.06)}
+.ios-app{display:flex;flex-direction:column;align-items:center;gap:5px;transform-origin:center}
+.ios-icone{position:relative;width:46px;height:46px;border-radius:12px;background:#0b1020;border:1px solid rgba(224,190,69,.35);display:grid;place-items:center;box-shadow:0 0 22px rgba(224,190,69,.35)}
+.ios-icone>span{width:30px;height:30px}
+.badge{position:absolute;top:-6px;right:-6px;min-width:19px;height:19px;border-radius:10px;background:#ff3b30;color:#fff;font-style:normal;font-size:11px;font-weight:700;display:grid;place-items:center;padding:0 5px;transform:scale(0);transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.badge.on{transform:scale(1)}
+.ios-app small{font-size:10px;color:#fff}
+.ios-dock{position:absolute;left:10px;right:10px;bottom:14px;height:66px;border-radius:24px;background:rgba(255,255,255,.12);backdrop-filter:blur(12px);display:flex;justify-content:space-around;align-items:center}
+.ios-dock i{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.1)}
+/* bureau home */
+.vue-home{background:#070a14}
+.h-haut{display:flex;align-items:center;gap:6px;padding:38px 12px 0}
+.h-logo{display:flex;align-items:center;font-family:var(--serif);font-size:22px;color:#e8c54a;margin-right:auto;letter-spacing:-.02em}
+.h-logo>span{width:20px;height:20px;margin-right:-2px}
+.h-prix{display:flex;align-items:center;gap:4px;height:24px;padding:0 8px;border-radius:99px;border:1px solid rgba(224,190,69,.45);background:rgba(224,190,69,.08);font-size:10px;font-weight:700;color:#e8c54a}
+.h-prix>span{width:13px;height:13px}
+.h-rond{width:26px;height:26px;border-radius:50%;background:#121624;display:grid;place-items:center;font-size:9px;font-weight:700}
+.h-or{border:1px solid rgba(255,255,255,.25);color:#e8c54a}
+.h-nom{font-size:30px;font-weight:800;padding:18px 16px 0;letter-spacing:-.02em}
+.h-nom span{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#121624;color:#e8c54a;font-size:13px;vertical-align:middle;margin-left:6px}
+.h-actions{display:grid;grid-template-columns:repeat(4,1fr);padding:16px 6px 6px}
+.h-actions div{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:9.5px;color:#c9ccd6}
+.h-actions i{width:40px;height:40px;border-radius:50%;background:#141826;display:grid;place-items:center;font-style:normal;font-size:16px;color:#fff}
+.h-actions i.actif{background:#3d7ad6;box-shadow:0 0 18px rgba(61,122,214,.7)}
+.h-lignes{padding:4px 14px}
+.h-l{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;padding:10px 4px;border-bottom:1px solid rgba(255,255,255,.07);border-radius:12px;transition:background .4s,box-shadow .4s}
+.h-l i{width:34px;height:34px;border-radius:50%;background:#1a1e2b;display:grid;place-items:center;font-style:normal;font-size:13px}
+.h-l i.v{background:#0f2a1c;color:#3fbf77;font-size:11px;letter-spacing:-2px}
+.h-l p{font-size:11.5px;font-weight:700;min-width:0}
+.h-l small{display:block;font-size:9px;font-weight:400;color:#8b90a0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.h-l b{font-size:10.5px}
+.h-l b.o{color:#e8c54a}
+.h-l.vise{background:rgba(224,190,69,.1);box-shadow:0 0 0 1px rgba(224,190,69,.5) inset}
+.h-sep{display:flex;justify-content:flex-end;padding:12px 4px 6px}
+.h-sep span{font-size:8px;font-weight:700;padding:3px 8px;border-radius:99px;border:1px solid rgba(255,255,255,.3)}
+.h-dock{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);width:52px;height:52px;border-radius:50%;border:2px solid #c99a2a;background:#070a14;display:grid;place-items:center;box-shadow:0 0 20px rgba(224,190,69,.45)}
+.h-dock::before{content:"";position:absolute;top:-7px;width:18px;height:2px;background:#e8c54a;border-radius:2px}
+.h-dock span{width:30px;height:30px}
+/* feuille de connexion */
+.feuille{position:absolute;left:6px;right:6px;bottom:6px;border-radius:22px;background:#111522;border:1px solid rgba(255,255,255,.08);padding:14px 12px 12px;transform:translateY(105%);transition:transform .6s cubic-bezier(.2,.9,.2,1);z-index:5;box-shadow:0 -20px 60px rgba(0,0,0,.6)}
+.feuille.on{transform:none}
+.vue-home.flou-fond .h-haut,.vue-home.flou-fond .h-nom,.vue-home.flou-fond .h-actions,.vue-home.flou-fond .h-lignes,.vue-home.flou-fond .h-dock{filter:blur(5px) brightness(.5);transition:filter .5s}
+.f-tete{display:flex;justify-content:space-between;align-items:center;padding-bottom:9px;border-bottom:1px solid rgba(255,255,255,.07)}
+.f-tete b{font-size:12.5px}
+.f-tete span{font-size:9.5px;padding:4px 9px;border-radius:99px;background:#1b2030;color:#9aa0b0}
+.f-intro{font-size:9px;color:#8b90a0;margin:9px 0}
+.f-porte{display:flex;gap:9px;padding:9px;border-radius:13px;background:#171b28;margin-top:7px;border:1px solid transparent}
+.f-reco{border-color:rgba(255,255,255,.35)}
+.f-porte>i{flex:0 0 28px;height:28px;border-radius:50%;background:#262b3a;display:grid;place-items:center;font-style:normal;font-weight:700;font-size:11px}
+.f-porte b{font-size:11px;display:flex;align-items:center;gap:6px}
+.f-porte b em{font-style:normal;font-size:7px;padding:2px 6px;border-radius:99px;border:1px solid rgba(255,255,255,.4);letter-spacing:.06em}
+.f-porte p{font-size:9px;color:#8b90a0;margin-top:2px}
+.f-porte ul{margin:5px 0 0 12px;font-size:8.5px;color:#8b90a0}
+.f-pied{font-size:8.5px;color:#8b90a0;margin-top:9px}
+.f-pied u{color:#fff}
+/* carte de stratégie */
+.vue-strat{background:rgba(3,4,8,.92);display:flex;flex-direction:column;justify-content:center;padding:0 8px}
+.s-carte{border-radius:18px;background:#0d111d;border:1px solid rgba(255,255,255,.08);padding:12px}
+.s-tete{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.s-logo{display:flex;align-items:center;font-family:var(--serif);font-size:15px;color:#e8c54a}
+.s-logo>span{width:15px;height:15px}
+.s-logo em{color:#6BA3DE}
+.s-nom{font-size:11px;font-weight:700;display:flex;align-items:center;gap:5px}
+.s-nom i{width:7px;height:7px;border-radius:50%;background:#3fbf77;box-shadow:0 0 8px #3fbf77}
+.s-v{font-size:9px;padding:3px 7px;border-radius:99px;border:1px solid rgba(255,255,255,.25)}
+.s-bloc{margin-top:10px;padding:12px;border-radius:12px;background:#151a28}
+.s-bloc small{display:block;font-size:9px;color:#8b90a0}
+.s-bloc b{font-size:22px;font-weight:800}
+.flou-chiffre{filter:blur(6px)}
+.s-montant{margin-top:9px;padding:10px;border-radius:12px;background:#151a28}
+.s-montant>small{font-size:8.5px;color:#8b90a0;letter-spacing:.06em}
+.s-puces{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:3px;margin-top:6px;border-radius:10px;background:#0b0e18}
+.s-puces span{font-size:10px;font-weight:700;text-align:center;padding:7px 0;border-radius:8px;color:#c9ccd6}
+.s-puces span.on{background:#fff;color:#0b0e18}
+.s-bouton{margin-top:8px;text-align:center;padding:10px;border-radius:12px;background:#3d7ad6;font-size:11px;font-weight:700;transition:transform .2s,box-shadow .3s}
+.s-bouton.presse{transform:scale(.95);box-shadow:0 0 0 4px rgba(61,122,214,.35)}
+.s-sim{display:grid;grid-template-columns:1fr 1fr;margin-top:9px;padding:9px;border-radius:12px;background:#151a28;text-align:center}
+.s-sim small{display:block;font-size:8.5px;color:#8b90a0}
+.s-sim b{font-size:11px}
+.s-sim b.o{color:#e8c54a}
+.s-avert{font-size:8px;color:#8b90a0;text-align:center;margin-top:8px}
+.s-pied{display:grid;grid-template-columns:repeat(3,1fr);margin-top:10px}
+.s-pied div{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:8.5px;color:#c9ccd6}
+.s-pied i{width:28px;height:28px;border-radius:50%;background:#151a28;display:grid;place-items:center;font-style:normal;font-size:11px}
+.s-points{display:flex;justify-content:center;gap:7px;margin-top:12px}
+.s-points i{width:6px;height:6px;border-radius:3px;background:#3a3f50}
+.s-points i.on{width:18px;background:#e8c54a}
+/* annonces */
+.vue-chat{background:#070a14}
+.c-corps{display:grid;grid-template-columns:44px 1fr;gap:6px;padding:16px 10px 0}
+.c-rail{display:flex;flex-direction:column;gap:10px;align-items:center;border-right:1px solid rgba(255,255,255,.07);padding-right:6px}
+.c-rail i{width:32px;height:32px;border-radius:50%;background:#141826;display:grid;place-items:center;font-style:normal;font-size:12px}
+.c-rail i.on{background:#2a2410;box-shadow:0 0 0 1px rgba(224,190,69,.5)}
+.c-tete{display:flex;align-items:center;gap:8px}
+.c-tete>span{color:#8b90a0;font-size:16px}
+.c-tete>i{width:32px;height:32px;border-radius:50%;background:#2a2410;display:grid;place-items:center;font-style:normal;font-size:12px}
+.c-tete b{display:block;font-size:12px}
+.c-tete small{font-size:9px;color:#8b90a0}
+.c-msg{margin-top:12px;padding:12px;border-radius:12px;background:#121624}
+.c-msg small{display:block;font-size:8.5px;color:#8b90a0;margin-bottom:8px}
+.c-msg span,.bulle span{display:block;height:7px;border-radius:4px;background:rgba(255,255,255,.14);margin-top:7px}
+.c-msg span.court,.bulle span.court{width:62%}
+.c-prec{margin-top:12px;font-size:9.5px;font-weight:700;color:#c9ccd6;display:flex;justify-content:space-between}
+.bulle{position:absolute;right:8px;bottom:84px;width:62%;padding:10px 12px;border-radius:12px;background:#121624;border:1px solid rgba(255,255,255,.12);box-shadow:0 14px 40px rgba(0,0,0,.6);transform:translateY(30px);opacity:0;transition:transform .6s cubic-bezier(.2,1.3,.4,1),opacity .4s}
+.bulle.on{transform:none;opacity:1}
+.bulle small{font-size:8.5px;font-weight:700;letter-spacing:.08em;color:#8b90a0}
+.bulle em{position:absolute;top:6px;right:9px;font-style:normal;color:#8b90a0;font-size:12px}
+
+@media (max-width:1100px){
+  .route{grid-template-columns:repeat(3,1fr)}
+  .jeton-traits{grid-template-columns:1fr 1fr}
+  .pied-grille{grid-template-columns:1fr 1fr 1fr}
+  .pied-marque{grid-column:1/-1}
+}
+@media (max-width:980px){
+  .chiffres-heros{grid-template-columns:1fr 1fr}
+  .bande-chiffres{grid-template-columns:1fr 1fr}
+  .trio{grid-template-columns:1fr}
+  .temoins{grid-template-columns:1fr}
+  .apropos{grid-template-columns:1fr}
+  .jeton-grille{grid-template-columns:1fr}
+  .repartition{max-width:320px;margin:0 auto;width:100%}
+  .infra ul{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .chiffres-heros{grid-template-columns:1fr}
+  .route{grid-template-columns:1fr}
+  .jeton-traits{grid-template-columns:1fr}
+  .pied-grille{grid-template-columns:1fr 1fr}
+  .strat h3{font-size:34px}
+  .perf{font-size:44px}
+}
+
+.legende-tel{position:static!important;margin-top:16px;max-width:300px;margin-left:auto;margin-right:auto}
+.scene-tel{display:flex;flex-direction:column;align-items:center}
+.net *{transition:none!important}
+@media (max-width:640px){.jeton-central{display:none}.s-logo{font-size:12px}.s-nom{font-size:9.5px}.s-v{font-size:8px;padding:2px 5px}}
+
+/* ===== Mise en place v5 ===== */
+.indice{position:relative;left:auto;bottom:auto;transform:none;align-self:flex-start;margin-top:44px}
+.heros{padding-bottom:70px}
+#apps .colle{justify-content:center;padding-top:80px;padding-bottom:30px}
+#apps .tete{position:relative;top:auto;left:auto;right:auto}
+.grille-apps{margin-top:clamp(24px,5vh,64px)!important}
+@media (max-height:860px){
+  #moteur .colle{padding-top:76px;padding-bottom:18px}
+  #moteur h2{font-size:clamp(34px,4.2vw,60px)}
+  #moteur .chapo{font-size:15px;margin-top:12px}
+  .parts{margin-top:14px}
+  .parts li{padding:4px 0;font-size:13px}
+  .parts li b{font-size:17px}
+  .zero{margin-top:10px;font-size:12px}
+  #apps .tete h2{font-size:clamp(34px,4.4vw,64px)}
+  .app{padding:18px 20px 16px}
+  .app p{font-size:14px}
+}
+
+@media (max-width:980px){
+  .colle{padding-bottom:96px!important}
+  #telephone .colle{padding-top:64px}
+  .tel{width:min(250px,62vw,calc((100svh - 360px) * .466))!important}
+  .legende-tel{font-size:10px;margin-top:8px}
+}
+@media (max-width:640px){
+  #apps .colle{padding-top:70px}
+  #apps .tete h2{font-size:32px}
+  .grille-apps{row-gap:10px!important}
+  .app{padding:12px 12px 10px}
+  .app .etiq{font-size:9.5px;letter-spacing:.1em}
+  .app h3{font-size:21px;margin:3px 0}
+  .app p{font-size:11.5px;line-height:1.35}
+  .app .pied span{display:none}
+  .app .pied{margin-top:6px}
+  .app::after{left:12px}
+  #moteur .colle{padding-top:70px}
+  #moteur h2{font-size:34px}
+  #moteur .chapo{font-size:14px;margin-top:10px}
+  .parts li{padding:4px 0;font-size:12.5px}
+  .parts li b{font-size:16px}
+  .zero{font-size:11.5px;margin-top:8px}
+  #strategies .colle{padding-top:70px}
+  .strat{min-height:0;padding:22px}
+  .avert-strat{font-size:11px}
+}
+
+@media (max-width:980px){
+  .droite .recits{height:176px!important}
+  .droite .recit p{font-size:13px!important;line-height:1.4}
+  .tel{width:min(240px,60vw,calc((100svh - 420px) * .466))!important}
+  #telephone .colle{gap:10px;align-content:start}
+}
+
+/* Téléphone dessiné à taille fixe, mis à l'échelle d'un bloc */
+.scene-tel{position:relative;width:calc(330px * var(--e,1));height:calc(708px * var(--e,1));flex:none}
+.tel{position:absolute!important;left:50%;top:50%;width:330px!important;height:708px;aspect-ratio:auto!important;margin:-354px 0 0 -165px;transform-origin:50% 50%}
+.legende-tel{position:absolute!important;top:calc(100% + 10px);left:50%;transform:translateX(-50%);width:300px;margin:0!important}
+.bloc .gros small{display:block;margin:8px 0 0;font-size:13px!important}
+.jeton-central{display:none!important}
+
+/* ===== Lisibilité v6 ===== */
+main p,main h1,main h2,main h3,main li,main dd{text-shadow:0 1px 3px rgba(7,7,10,.9),0 0 26px rgba(7,7,10,.85)}
+.bande-preuve{background:#07070a}
+.pied-page{background:#07070a}
+.recit{padding:18px 20px;border-radius:20px;background:radial-gradient(120% 120% at 50% 50%,rgba(7,7,10,.82),rgba(7,7,10,.55) 70%,transparent);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+#apps .tete{padding:10px 20px;border-radius:24px;background:radial-gradient(80% 100% at 50% 50%,rgba(7,7,10,.75),transparent 75%)}
+.parts,#moteur .chapo,#moteur h2,.zero{position:relative}
+/* K de chaque application dans sa carte */
+.k-carte{position:absolute;top:16px;right:16px;width:46px;height:46px;filter:drop-shadow(0 6px 18px color-mix(in srgb,var(--c) 70%,transparent))}
+.app h3,.app .etiq{padding-right:56px}
+@media (max-width:640px){.k-carte{width:30px;height:30px;top:10px;right:10px}.app .etiq,.app h3{padding-right:34px}}
+/* Le K se referme : le dernier écran reprend la mise en place du premier */
+.final{align-items:flex-start;text-align:left;justify-content:center;padding-top:110px;min-height:100svh}
+.final h2{max-width:9ch}
+.final .chapo{margin:26px 0 0;text-align:left}
+.final .actions{justify-content:flex-start}
+@media (max-width:980px){.final{justify-content:flex-start;padding-top:44svh}}
+@media (max-width:980px) and (orientation:portrait){.heros{padding-top:max(300px,40svh)}.final{padding-top:max(300px,42svh)}}
+
+/* ===== Logos officiels v7 ===== */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.lockup{display:block}
+.lockup svg{display:block;height:100%;width:auto;overflow:visible}
+.app .titre-logo{margin:12px 0 10px;padding-right:0!important}
+.app .lockup{height:40px}
+.volet .titre-logo{margin:4px 0 16px}
+.volet .lockup{height:58px}
+.logo-section{display:block}
+.logo-section .lockup{height:34px}
+.k-carte{display:none}
+@media (max-width:640px){.app .lockup{height:27px}.app .titre-logo{margin:8px 0 6px}.volet .lockup{height:46px}}
+.titre-logo{position:relative}
+.app .titre-logo::before,.volet .titre-logo::before{content:"";position:absolute;left:-14px;top:50%;width:76px;height:76px;transform:translateY(-50%);border-radius:50%;
+  background:radial-gradient(circle,color-mix(in srgb,var(--c) 55%,transparent),transparent 68%);filter:blur(4px);pointer-events:none;z-index:-1;animation:souffle 4s ease-in-out infinite}
+.volet .titre-logo::before{width:110px;height:110px;left:-24px}
+.app .titre-logo,.volet .titre-logo{isolation:isolate}
+@keyframes souffle{0%,100%{opacity:.75;transform:translateY(-50%) scale(1)}50%{opacity:1;transform:translateY(-50%) scale(1.12)}}
+@media (prefers-reduced-motion:reduce){.titre-logo::before{animation:none}}
+
+/* ===== V1.1 ===== */
+.heros h1{font-size:clamp(52px,7.4vw,128px)}
+@media (min-width:1100px){.chiffres-heros{grid-template-columns:1fr 1fr;max-width:720px}}
+.grille-apps{grid-template-columns:repeat(2,minmax(0,440px))!important;justify-content:center;gap:20px!important;max-width:none!important}
+.app{padding:26px 28px 22px}
+.app .titre-logo::before,.volet .titre-logo::before{width:110px;height:110px;left:-28px;background:radial-gradient(circle,color-mix(in srgb,var(--c) 70%,transparent),transparent 66%)}
+.volet .titre-logo::before{width:150px;height:150px;left:-40px}
+.recit{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:radial-gradient(closest-side,rgba(7,7,10,.85),rgba(7,7,10,.6) 60%,transparent)!important}
+@media (max-width:640px){.grille-apps{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:10px!important}}
+.volet::after{display:none}
+@media (max-width:640px){
+  .app .titre-logo::before{width:58px;height:58px;left:-14px}
+  .volet .titre-logo::before{width:96px;height:96px;left:-24px}
+  .app .etiq{font-size:8.5px!important;letter-spacing:.06em!important;white-space:nowrap;overflow:hidden;text-overflow:clip}
+}
+
+/* ===== V1.2 ===== */
+.marque-eco .lockup{height:26px}
+@media (max-width:640px){.marque-eco .lockup{height:22px}}
+/* Comparatif : jamais de glissement de côté */
+@media (max-width:980px){
+  .compare{grid-template-columns:repeat(2,minmax(0,1fr))!important;overflow:visible!important;margin-left:0!important;margin-right:0!important;padding:0!important}
+}
+@media (max-width:640px){.compare{grid-template-columns:1fr!important}}
+/* Pied de page */
+.pied-page{padding:80px var(--gouttiere) 40px}
+.pied-haut{display:grid;grid-template-columns:1.4fr 1fr;gap:50px;padding-bottom:50px;border-bottom:1px solid var(--ligne)}
+.pied-marque .lockup{height:44px}
+.pied-marque p{font-size:15px;color:var(--texte-2);margin:18px 0 22px;max-width:440px}
+.pied-titre{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--or);font-weight:600;margin-bottom:14px}
+.contact-ligne{display:flex;gap:14px;align-items:center;padding:12px 0;border-top:1px solid var(--ligne);color:var(--texte)}
+.contact-ligne:hover{color:var(--or)}
+.contact-ligne i{flex:0 0 38px;height:38px;border-radius:50%;display:grid;place-items:center;font-style:normal;color:var(--or);background:rgba(224,190,69,.08);border:1px solid rgba(224,190,69,.25)}
+.contact-ligne small{display:block;font-size:12px;color:var(--texte-3)}
+.pied-grille{display:grid!important;grid-template-columns:repeat(4,1fr)!important;gap:30px;padding:46px 0;border-bottom:1px solid var(--ligne)}
+.pied-grille nav{display:flex;flex-direction:column;gap:10px;font-size:14px;color:var(--texte-2)}
+.pied-grille nav a:hover{color:var(--or)}
+.pied-reseaux{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;padding:24px 0;border-bottom:1px solid var(--ligne);font-size:14px;color:var(--texte-2)}
+.pied-reseaux .pied-titre{margin:0}
+.pied-reseaux a:hover{color:var(--or)}
+.pied-contrat{margin-left:auto;font-size:12.5px;color:var(--texte-3)}
+.pied-contrat a{color:var(--or)}
+.pied-page .avert{border-top:0;padding-top:26px}
+.pied-signature{display:flex;flex-direction:column;align-items:center;text-align:center;padding:70px 0 20px}
+.pied-signature .lockup{height:clamp(54px,8vw,96px)}
+.pied-devise{margin-top:18px;font-family:var(--serif);font-style:italic;font-size:clamp(20px,2vw,28px);color:var(--texte-2)}
+.pied-copy{margin-top:10px;font-size:12.5px;color:var(--texte-3)}
+@media (max-width:980px){.pied-haut{grid-template-columns:1fr}.pied-grille{grid-template-columns:1fr 1fr!important}.pied-contrat{margin-left:0;width:100%}}
+@media (max-width:980px){.pied-page{padding-bottom:110px}}
+.pied-marque .bouton{color:#1a1205}
+.pied-grille nav b.pied-titre{color:var(--or);font-size:12px;letter-spacing:.16em;margin-bottom:6px}
+@media (max-width:640px){.pied-signature .lockup{height:44px}.pied-marque .lockup{height:38px}}
+
+/* ===== V1.3 pied de page, modèle de home ===== */
+.pied-tete{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-bottom:40px;border-bottom:1px solid var(--ligne)}
+.bloc-identite{display:inline-flex;flex-direction:column;align-items:flex-start}
+.bloc-identite .lockup{height:30px}
+.bloc-identite .signature{display:block;margin-top:6px;white-space:nowrap;text-transform:uppercase;font-weight:600;letter-spacing:0;font-size:9px;color:rgba(224,190,69,.7)}
+.pied-reseaux-icones{display:flex;flex-wrap:wrap;color:var(--texte-3)}
+.pied-reseaux-icones a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;transition:color .2s}
+.pied-reseaux-icones a:hover{color:var(--texte)}
+.pied-reseaux-icones svg{width:18px;height:18px}
+.pied-page .pied-grille{grid-template-columns:repeat(5,1fr)!important}
+.pied-bas{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px 30px;padding-top:24px;margin-top:10px;border-top:1px solid var(--ligne);font-size:12.5px;color:var(--texte-3)}
+.pied-bas a{color:var(--or)}
+@media (max-width:980px){.pied-page .pied-grille{grid-template-columns:1fr 1fr!important}.pied-tete{flex-direction:column;align-items:flex-start}}
+
+/* ===== V1.4 : le bas de page en relief ===== */
+.mots{perspective:900px}
+.mot{transform:translateY(.45em) rotateX(-70deg);transform-origin:50% 100%;filter:blur(6px)}
+.monte{filter:blur(10px)}
+.temoin{opacity:.15}
+.relief{transform-style:preserve-3d;will-change:transform}
+.relief:hover{box-shadow:0 30px 80px -30px rgba(0,0,0,.9),0 0 0 1px rgba(224,190,69,.25)}
+.temoin.relief::after,.tuile.relief::after,.option.relief::after,.route li.relief::after,.jeton-traits > div.relief::after,.apropos > div.relief::after,.aide.relief::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .4s;
+  background:radial-gradient(380px circle at var(--gx,50%) var(--gy,50%),rgba(255,230,163,.10),transparent 45%)}
+.relief:hover::after{opacity:1}
+.tuile,.option,.route li,.jeton-traits > div,.apropos > div,.aide{position:relative}
+.piste{perspective:1400px}
+.strat{transition:opacity .2s linear;will-change:transform}
+/* Sécurité : une lumière balaie les preuves */
+.tuiles{position:relative}
+.tuiles::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(105deg,transparent 35%,rgba(255,230,163,.09) 50%,transparent 65%);transform:translateX(-100%);animation:balayage 7s ease-in-out infinite}
+@keyframes balayage{0%,15%{transform:translateX(-100%)}60%,100%{transform:translateX(100%)}}
+/* Comparatif : la colonne Kal Mydas brille */
+.option.nous{overflow:hidden}
+.option.nous::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;pointer-events:none;
+  background:conic-gradient(from var(--angle,0deg),transparent 0 70%,rgba(255,230,163,.9) 80%,transparent 90%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:tour 5s linear infinite}
+@property --angle{syntax:'<angle>';inherits:false;initial-value:0deg}
+@keyframes tour{to{--angle:360deg}}
+/* Feuille de route : un fil lumineux */
+.route{margin-top:84px}
+.route::before{content:"";position:absolute;left:0;right:0;top:-30px;height:2px;background:var(--ligne);border-radius:2px}
+.route::after{content:"";position:absolute;left:0;top:-30px;height:2px;width:calc(var(--p,0) * 100%);background:linear-gradient(90deg,var(--or-sombre),var(--or),var(--or-clair));box-shadow:0 0 18px var(--or);border-radius:2px}
+.route li::before{content:"";position:absolute;top:-36px;left:22px;width:14px;height:14px;border-radius:50%;background:#14130f;border:1px solid rgba(224,190,69,.5);transition:background .4s,box-shadow .4s}
+.route li.allume::before{background:var(--or);box-shadow:0 0 0 4px rgba(224,190,69,.15),0 0 22px var(--or)}
+.route li.allume{border-color:rgba(224,190,69,.45)}
+@media (max-width:640px){.route::before,.route::after,.route li::before{display:none}.route{margin-top:50px}}
+/* Questions : la réponse se déplie */
+.faq details[open] p{animation:deplie .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes deplie{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.repartition{perspective:1000px}
+@media (prefers-reduced-motion:reduce){.mot,.monte,.temoin{transform:none!important;filter:none!important;opacity:1!important}.tuiles::after,.option.nous::before{animation:none}}
+.entete-droite{display:flex;align-items:center;gap:14px}
+.langue{font-size:13px;font-weight:600;letter-spacing:.08em;color:var(--texte-2);padding:8px 10px;border-radius:99px;border:1px solid var(--ligne)}
+.langue:hover{color:var(--or);border-color:rgba(224,190,69,.4)}
+</style>
+</head>
+<body>
+<canvas id="scene" aria-hidden="true"></canvas>
+<div class="voile"></div>
+<div class="eclair" id="eclair"></div>
+<div class="grain"></div>
+<div class="halo" id="halo"></div>
+
+<header class="entete" id="entete">
+  <a class="marque marque-eco" href="#haut" aria-label="Kal Mydas, KAL ecosystem, back to top">
+    <span class="lockup" data-lockup="ecosystem" aria-hidden="true"></span>
+  </a>
+  <nav class="nav" aria-label="Sections">
+    <a href="#mydas"><i style="--c:#6BA3DE"></i>Mydas</a>
+    <a href="#pay"><i style="--c:#B24A4A"></i>Pay</a>
+    <a href="#move"><i style="--c:#449F6A"></i>Move</a>
+    <a href="#chat"><i style="--c:#7A6CD9"></i>Chat</a>
+    <a href="#jeton">KAL token</a>
+    <a href="#preuves">Security</a>
+    <a href="#faq">Questions</a>
+  </nav>
+  <div class="entete-droite"><a class="langue" href="../" hreflang="fr" title="Version française">EN</a><a class="bouton petit aimant" href="https://home.kalmydas.com/v2.1/">Open the app <span class="fleche">→</span></a></div>
+</header>
+
+<main id="haut">
+
+  <!-- 1. Héros -->
+  <section class="section heros" id="heros">
+    <span class="surtitre monte">KAL ecosystem · The ecosystem of autonomy</span>
+    <h1>
+      <span class="ligne"><span>Don’t take</span></span>
+      <span class="ligne"><span>our word.</span></span>
+      <span class="ligne"><span><em>Verify.</em></span></span>
+    </h1>
+    <p class="chapo monte">The rigour of a private bank, without the bank. Automated strategies on gold and bitcoin, a twelve-word wallet, a movement app and an encrypted messenger. Four apps on Base and a single token, the KAL.</p>
+    <div class="actions monte">
+      <a class="bouton aimant" href="https://home.kalmydas.com/v2.1/">Open the app <span class="fleche">→</span></a>
+      <a class="bouton fantome aimant" href="#strategies">See the strategies</a>
+    </div>
+    <div class="chiffres-heros monte">
+      <div><span class="petit-titre">Simulated annual performance of the robots</span><b>4% → 79%</b><small>over 4 to 21&nbsp;years of historical simulation, depending on the strategy. This is not the result of a deposit.</small></div>
+      <div><span class="petit-titre">Algorithms</span><b>6</b><small>5 on gold (XAUUSD), 1 on bitcoin, executed on-chain via gTrade.</small></div>
+      <div><span class="petit-titre">Your wallet</span><b>Public contract</b><small>Your deposit lives in a public contract on Base. Only you sign, from your wallet.</small></div>
+      <div><span class="petit-titre">Access</span><b>1 Pass</b><small>An access Pass opens the strategies. The minimum is shown when you deposit.</small></div>
+    </div>
+    <p class="note monte">Historical simulations over 4 to 21&nbsp;years of XAUUSD data. Real execution via gTrade may produce different results. Risk of partial or total loss of capital. Past performance does not guarantee future performance.</p>
+  </section>
+
+  <!-- 2. La preuve en quatre chiffres -->
+  <section class="bande-preuve" aria-label="Proof rather than promises">
+    <p class="surtitre">Proof rather than promises</p>
+    <div class="bande-chiffres">
+      <div class="monte"><b>6</b><span>trading robots</span></div>
+      <div class="monte"><b>4 to 21</b><span>years simulated on real data</span></div>
+      <div class="monte"><b>Base</b><span>public contracts, verifiable on Basescan</span></div>
+      <div class="monte"><b><span class="compte" data-v="1100">0</span>+</b><span>unit tests</span></div>
+    </div>
+  </section>
+
+  <!-- 3. Constat -->
+  <section class="section constat" id="constat">
+    <span class="surtitre">The problem</span>
+    <p class="grand mots">Too often, you have been asked to believe.</p>
+    <p class="chapo monte">In crypto, you are always asked to trust. Trust teams you never see, figures no one checks, promises that change as soon as things go wrong. Serious gold management, the kind that has run inside institutions for decades, stayed closed, opaque, kept for those who already had everything. On one side, smart money locked away. On the other, strangers asking for your trust. You deserve better than that choice.</p>
+  </section>
+
+  <!-- 4. Les quatre applications -->
+  <section class="epingle" id="apps" aria-labelledby="titre-apps">
+    <div class="colle">
+      <div class="tete">
+        <span class="surtitre">The K opens</span>
+        <h2 id="titre-apps">Four apps. <em>One token.</em></h2>
+      </div>
+      <div class="grille-apps">
+        <article class="app" style="--c:#6BA3DE">
+          <span class="etiq">Gold and bitcoin · Base</span>
+          <h3 class="titre-logo"><span class="lockup" data-lockup="mydas" aria-hidden="true"></span><span class="sr">KALmydas</span></h3>
+          <p>Automated strategies on gold and bitcoin, opened by an access Pass.</p>
+          <div class="pied"><span>Withdraw without notice</span><a href="#mydas">Discover →</a></div>
+        </article>
+        <article class="app" style="--c:#B24A4A">
+          <span class="etiq">Wallet</span>
+          <h3 class="titre-logo"><span class="lockup" data-lockup="pay" aria-hidden="true"></span><span class="sr">KALpay</span></h3>
+          <p>Twelve words generated on your device, with no account and no email. No server holds your keys.</p>
+          <div class="pied"><span>Keys on your device</span><a href="#pay">Discover →</a></div>
+        </article>
+        <article class="app" style="--c:#449F6A">
+          <span class="etiq">Movement</span>
+          <h3 class="titre-logo"><span class="lockup" data-lockup="move" aria-hidden="true"></span><span class="sr">KALmove</span></h3>
+          <p>The app that links physical activity to the protocol. It opens with 300&nbsp;KAL locked as veKAL.</p>
+          <div class="pied"><span>Health and autonomy</span><a href="#move">Discover →</a></div>
+        </article>
+        <article class="app" style="--c:#7A6CD9">
+          <span class="etiq">Messenger</span>
+          <h3 class="titre-logo"><span class="lockup" data-lockup="chat" aria-hidden="true"></span><span class="sr">KALchat</span></h3>
+          <p>Wallet to wallet, end-to-end encrypted. Protocol announcements arrive there too.</p>
+          <div class="pied"><span>End-to-end encryption</span><a href="#chat">Discover →</a></div>
+        </article>
+      </div>
+      <div class="jeton-central" id="jeton-central"><b>KAL</b><span>links all four</span><div class="pastilles"><i style="--c:#6BA3DE"></i><i style="--c:#B24A4A"></i><i style="--c:#449F6A"></i><i style="--c:#7A6CD9"></i></div></div>
+    </div>
+  </section>
+
+  <!-- 5. Le téléphone: les vrais écrans de home -->
+  <section class="epingle" id="telephone" aria-label="The app in hand">
+    <div class="colle">
+      <div class="gauche">
+        <div class="recits" id="recits-g">
+          <div class="recit"><span class="num">01</span><h3>A vault, at home.</h3><p>KALpay creates your wallet on this device. Your twelve words never leave it. MetaMask and WalletConnect work too.</p></div>
+          <div class="recit"><span class="num">02</span><h3>Everything on one desk.</h3><p>Liquidity, staking, veKAL, strategies and KALmove. Each with its balance, on one screen.</p></div>
+          <div class="recit"><span class="num">03</span><h3>You choose. You sign.</h3><p>A strategy, an amount, a signature. The deposit is recorded on Base and can be read on Basescan.</p></div>
+          <div class="recit"><span class="num">04</span><h3>veKAL votes.</h3><p>Lock your KAL as veKAL. Each week, the protocol pays a technical service allowance in USDC.</p></div>
+          <div class="recit"><span class="num">05</span><h3>We talk.</h3><p>Protocol announcements arrive in the app. Messages go from wallet to wallet, encrypted.</p></div>
+        </div>
+      </div>
+      <div class="scene-tel">
+        <div class="tel" id="tel">
+          <div class="ecran">
+            <div class="ilot"></div>
+
+            <!-- Écran d'accueil du téléphone, l'application installée -->
+            <div class="ecran-vue vue-ios on" data-vue="0">
+              <div class="barre-etat"><span>9:41</span><span>●●● ▮</span></div>
+              <div class="ios-grille">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                <div class="ios-app" id="ios-kal"><span class="ios-icone"><span data-k="mydas"></span><em class="badge">1</em></span><small>KAL</small></div>
+                <i></i><i></i><i></i>
+              </div>
+              <div class="ios-dock"><i></i><i></i><i></i><i></i></div>
+            </div>
+
+            <!-- Bureau de home, copie de home.kalmydas.com/v2.1 -->
+            <div class="ecran-vue vue-home" data-vue="1">
+              <div class="h-haut"><span class="h-logo"><span data-k="mydas"></span>AL.</span><span class="h-prix"><span data-k="mydas"></span>KAL</span><span class="h-rond">EN</span><span class="h-rond h-or">▭</span></div>
+              <div class="h-nom">n/a <span>⌄</span></div>
+              <div class="h-actions"><div><i class="actif">⊕</i>Buy</div><div><i>⇄</i>Convert</div><div><i>⤓</i>Transparency</div><div><i>ⓘ</i>Info</div></div>
+              <div class="h-lignes">
+                <div class="h-l" data-l="liq"><i>⦾</i><p>Provide liquidity<small>Active liquidity provision</small></p><b>0.00 USDC</b></div>
+                <div class="h-l" data-l="mise"><i>☰</i><p>KAL staking<small>Flexible staking</small></p><b class="o">0 KAL</b></div>
+                <div class="h-l" data-l="vekal"><i>🔒︎</i><p>veKAL<small>Vote and share of fees</small></p><b class="o">0 veKAL</b></div>
+                <div class="h-l" data-l="strat"><i class="v">▮▮</i><p>Mydas strategies<small>Automated strategies on gold and…</small></p><b>0.00 USDC</b></div>
+                <div class="h-sep"><span>300&nbsp;KAL AS VEKAL</span></div>
+                <div class="h-l" data-l="move"><i class="v">🏃︎</i><p>KALmove<small>Connect your account, 300&nbsp;KAL lock…</small></p><b class="o">0 KAL</b></div>
+              </div>
+              <div class="h-dock"><span data-k="mydas"></span></div>
+              <!-- Feuille de connexion, copie de l'écran réel -->
+              <div class="feuille" id="feuille">
+                <div class="f-tete"><b>Connect a wallet</b><span>Close</span></div>
+                <p class="f-intro">Your keys stay with you. The protocol holds no key and cannot sign for you.</p>
+                <div class="f-porte f-reco"><i>K</i><div><b>kal pay <em>RECOMMENDED</em></b><p>Our wallet. Everything is signed here, with nothing else to open.</p><ul><li>Your twelve words stay on this device</li><li>No external window, no third party</li><li>Every signature is shown to you first</li></ul></div></div>
+                <div class="f-porte"><i>M</i><div><b>MetaMask</b><p>Confirm in the MetaMask app, then come back here.</p></div></div>
+                <div class="f-porte"><i>◇</i><div><b>WalletConnect</b><p>A phone wallet, through a secure link.</p></div></div>
+                <p class="f-pied">No wallet yet? kal pay creates one on this device, with its twelve words, no account and no email. <u>Create a vault here</u></p>
+              </div>
+            </div>
+
+            <!-- Carte de stratégie, copie de la fenêtre réelle -->
+            <div class="ecran-vue vue-strat" data-vue="2">
+              <div class="s-carte">
+                <div class="s-tete"><span class="s-logo"><span data-k="mydas"></span>AL<em>mydas.</em></span><span class="s-nom">Revolution <i></i></span><span class="s-v">V5.2.2</span></div>
+                <div class="s-bloc"><small>Pool reserve</small><b class="flou-chiffre">000.00</b> <b>USDC</b></div>
+                <div class="s-montant"><small>AMOUNT IN USDC</small><div class="s-puces"><span>100</span><span class="on">1,000</span><span>5,000</span><span>Other</span></div><div class="s-bouton">＋ Deposit 1,000 USDC</div></div>
+                <div class="s-sim"><div><small>MT4 simulation</small><b>21&nbsp;years</b> <small>(2,166 trades)</small></div><div><small>Per year</small><b class="o">24.43%</b></div></div>
+                <p class="s-avert">Not a guaranteed result. Risk of capital loss.</p>
+                <div class="s-pied"><div><i>▭</i>Pass</div><div><i>⊕</i>Stake</div><div><i>⤓</i>Provide</div></div>
+              </div>
+              <div class="s-points"><i class="on"></i><i></i><i></i><i></i></div>
+            </div>
+
+            <!-- Annonces du chat, copie de l'écran réel -->
+            <div class="ecran-vue vue-chat" data-vue="3">
+              <div class="h-haut"><span class="h-logo"><span data-k="mydas"></span>AL.</span><span class="h-prix"><span data-k="mydas"></span>KAL</span><span class="h-rond">EN</span><span class="h-rond h-or">▭</span></div>
+              <div class="c-corps">
+                <div class="c-rail"><i class="on">📢︎</i><i>💬︎</i><i>☆</i></div>
+                <div class="c-fil">
+                  <div class="c-tete"><span>‹</span><i>📢︎</i><div><b>Announcements</b><small>Read only</small></div></div>
+                  <div class="c-msg"><small>Protocol announcement</small><span></span><span></span><span class="court"></span><span></span><span class="court"></span></div>
+                  <div class="c-prec">Earlier announcements <span>▾</span></div>
+                </div>
+              </div>
+              <div class="bulle" id="bulle"><small>ANNOUNCEMENT</small><span></span><span class="court"></span><em>×</em></div>
+              <div class="h-dock"><span data-k="mydas"></span></div>
+            </div>
+
+          </div>
+        </div>
+        <p class="legende-tel">Screens captured on home.kalmydas.com. Balances and announcement texts are hidden.</p>
+      </div>
+      <div class="droite">
+        <div class="recits" id="recits-d">
+          <div class="recit"><span class="num">01</span><h3>A vault, at home.</h3><p>KALpay creates your wallet on this device. Your twelve words never leave it. MetaMask and WalletConnect work too.</p></div>
+          <div class="recit"><span class="num">02</span><h3>Everything on one desk.</h3><p>Liquidity, staking, veKAL, strategies and KALmove. Each with its balance, on one screen.</p></div>
+          <div class="recit"><span class="num">03</span><h3>You choose. You sign.</h3><p>A strategy, an amount, a signature. The deposit is recorded on Base and can be read on Basescan.</p></div>
+          <div class="recit"><span class="num">04</span><h3>veKAL votes.</h3><p>Lock your KAL as veKAL. Each week, the protocol pays a technical service allowance in USDC.</p></div>
+          <div class="recit"><span class="num">05</span><h3>We talk.</h3><p>Protocol announcements arrive in the app. Messages go from wallet to wallet, encrypted.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Mydas en entier -->
+  <section class="section" id="mydas" aria-labelledby="titre-mydas" style="--c:#6BA3DE">
+    <span class="titre-logo logo-section"><span class="lockup" data-lockup="mydas" aria-hidden="true"></span><span class="sr">KALmydas</span></span>
+    <h2 id="titre-mydas" class="mots">All of Mydas, <em>in a single app.</em></h2>
+    <div class="bento">
+      <div class="bloc l2 vedette monte"><div><span class="ic">◈</span><h3>The access Pass</h3><p>A single Pass opens every strategy. It is a subscription you can verify on-chain, priced by its tier.</p></div><div class="gros">1&nbsp;USDC<small>per day, first tier</small></div></div>
+      <div class="bloc h2 monte"><div><span class="ic">◎</span><h3>Six strategies</h3><p>Five robots on gold, GENESIS on bitcoin. You choose, from the most cautious to the riskiest. You can take several.</p></div><ul class="lignes"><li>Horizon<b>cautious</b></li><li>Valkyrie<b>balanced</b></li><li>Revolution<b>dynamic</b></li><li>Treasury<b>aggressive</b></li><li>Orion<b>high risk</b></li><li>GENESIS<b>bitcoin</b></li></ul></div>
+      <div class="bloc monte"><div><span class="ic">⇄</span><h3>Buy and convert</h3><p>Buy KAL and convert your tokens without leaving home.</p></div></div>
+      <div class="bloc l2 monte"><div><span class="ic">≋</span><h3>Provide liquidity</h3><p>Add liquidity to the KalSwap KAL/USDC reserve. Liquidity staking receives rewards in KAL.</p></div></div>
+      <div class="bloc monte"><div><span class="ic">◇</span><h3>KAL staking</h3><p>Flexible staking of your KAL, from home.</p></div></div>
+      <div class="bloc l2 monte"><div><span class="ic">✦</span><h3>veKAL</h3><p>Lock your KAL as veKAL to vote. Each week, the protocol pays a technical service allowance in USDC. It does not follow the results of the strategies.</p></div></div>
+      <div class="bloc monte"><div><span class="ic">⚖</span><h3>Governance</h3><p>Community votes take place on-chain, through a dedicated interface.</p></div></div>
+      <div class="bloc monte"><div class="gros">5%</div><div><h3>Pool bonus</h3><p>Part of the performance fees is paid in KAL to strategy depositors, pro rata. No amount is guaranteed.</p></div></div>
+      <div class="bloc l2 monte"><div class="gros">0</div><div><h3>Entry or exit fees</h3><p>No management fees. The access Pass is paid separately.</p></div></div>
+      <div class="bloc l2 monte"><div><span class="ic">◉</span><h3>Transparency</h3><p>Every robot trade is published, gains and losses. The MT4 demo accounts and real execution on Base via gTrade are kept separate. Nothing is filtered.</p></div><a class="bouton fantome petit aimant" style="align-self:flex-start;margin-top:18px" href="https://home.kalmydas.com/v2.1/transparency/">See the full log <span class="fleche">→</span></a></div>
+    </div>
+  </section>
+
+  <!-- 7. Pay, Move, Chat -->
+  <section class="section trio" aria-label="The three other apps">
+    <article class="volet monte" id="pay" style="--c:#B24A4A">
+      
+      <span class="etiq">Wallet</span>
+      <h2 class="titre-logo"><span class="lockup" data-lockup="pay" aria-hidden="true"></span><span class="sr">KALpay</span></h2>
+      <p class="chapo">The ecosystem’s wallet. It is created on home, on your device, with no account and no email.</p>
+      <ul class="puces">
+        <li>Twelve words generated and encrypted on your device</li>
+        <li>No server holds your keys</li>
+        <li>Every signature is shown to you first</li>
+        <li>MetaMask and WalletConnect remain available</li>
+      </ul>
+      <a class="lien-volet" href="https://docs.kalmydas.com/kal-pay">Learn more →</a>
+    </article>
+    <article class="volet monte" id="move" style="--c:#449F6A">
+      
+      <span class="etiq">Movement</span>
+      <h2 class="titre-logo"><span class="lockup" data-lockup="move" aria-hidden="true"></span><span class="sr">KALmove</span></h2>
+      <p class="chapo">The app that links physical activity to the protocol.</p>
+      <ul class="puces">
+        <li>Your steps credit KAL, up to a daily cap</li>
+        <li>It opens with 300&nbsp;KAL locked as veKAL</li>
+        <li>Activity and quests, from home</li>
+      </ul>
+      <a class="lien-volet" href="https://docs.kalmydas.com/kal-move">Learn more →</a>
+    </article>
+    <article class="volet monte" id="chat" style="--c:#7A6CD9">
+      
+      <span class="etiq">Messenger</span>
+      <h2 class="titre-logo"><span class="lockup" data-lockup="chat" aria-hidden="true"></span><span class="sr">KALchat</span></h2>
+      <p class="chapo">Wallet to wallet, end-to-end encrypted.</p>
+      <ul class="puces">
+        <li>XMTP messaging, end-to-end encrypted</li>
+        <li>Protocol announcements, read only</li>
+        <li>Direct support, a human who answers</li>
+      </ul>
+      <a class="lien-volet" href="https://home.kalmydas.com/v2.1/chat/">Open KALchat →</a>
+    </article>
+  </section>
+
+  <!-- 8. Stratégies -->
+  <section class="epingle" id="strategies" aria-labelledby="titre-strat">
+    <div class="colle">
+      <div class="tete">
+        <div>
+          <span class="surtitre">6 strategies, 5 on gold</span>
+          <h2 id="titre-strat">Our trading <em>strategies.</em></h2>
+        </div>
+        <a class="bouton fantome aimant" href="https://home.kalmydas.com/v2.1/transparency/">See every trade <span class="fleche">→</span></a>
+      </div>
+      <div class="piste" id="piste">
+        <article class="strat"><div><span class="profil">Cautious</span><h3>Horizon</h3><p>Trend following on gold, cautious profile.</p></div><div><div class="perf">4.15%<small>per year in simulation</small></div><dl class="stats"><div><dt>Trades</dt><dd>1,098</dd></div><div><dt>Simulation</dt><dd>11 years</dd></div><div><dt>PF</dt><dd>1.31</dd></div></dl><div class="risque">Risk <i class="on"></i><i></i><i></i><i></i><i></i></div></div></article>
+        <article class="strat"><div><span class="profil">Balanced</span><h3>Valkyrie</h3><p>Breakout and pyramiding on gold, balanced profile.</p></div><div><div class="perf">12.49%<small>per year in simulation</small></div><dl class="stats"><div><dt>Trades</dt><dd>329</dd></div><div><dt>Simulation</dt><dd>16 years</dd></div><div><dt>PF</dt><dd>2.30</dd></div></dl><div class="risque">Risk <i class="on"></i><i class="on"></i><i></i><i></i><i></i></div></div></article>
+        <article class="strat"><div><span class="profil">Dynamic</span><h3>Revolution</h3><p>Trend breakout with a triple filter, dynamic profile.</p></div><div><div class="perf">24.43%<small>per year in simulation</small></div><dl class="stats"><div><dt>Trades</dt><dd>2,166</dd></div><div><dt>Simulation</dt><dd>21&nbsp;years</dd></div><div><dt>PF</dt><dd>1.11</dd></div></dl><div class="risque">Risk <i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div></div></article>
+        <article class="strat"><div><span class="profil">Aggressive</span><h3>Treasury</h3><p>Phoenix engine, adaptive trailing stop.</p></div><div><div class="perf">33.05%<small>per year in simulation</small></div><dl class="stats"><div><dt>Trades</dt><dd>1,815</dd></div><div><dt>Simulation</dt><dd>21&nbsp;years</dd></div><div><dt>PF</dt><dd>1.35</dd></div></dl><div class="risque">Risk <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></div></article>
+        <article class="strat"><div><span class="profil">High risk</span><h3>Orion</h3><p>Intraday momentum on gold, high target and high risk.</p></div><div><div class="perf">78.99%<small>per year in simulation</small></div><dl class="stats"><div><dt>Trades</dt><dd>800</dd></div><div><dt>Simulation</dt><dd>20 years</dd></div><div><dt>PF</dt><dd>1.65</dd></div></dl><div class="risque">Risk <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div></article>
+        <article class="strat btc"><div><span class="profil">Bitcoin</span><h3>GENESIS</h3><p>The sixth strategy trades bitcoin (BTC/USD) and runs on gTrade, with USDC collateral. Its status is shown in the app.</p></div><p class="btc-avert">The warning on XAUUSD simulations does not apply to it. Bitcoin is highly volatile. Risk of total loss of capital.</p></article>
+        <article class="strat note"><div><h3>Tested before opening</h3><p>Developed and optimised on MetaTrader 4. Simulated on the broker’s real historical data, over 4 to 21&nbsp;years depending on the strategy. Stress-tested on the 2008 and 2020 crises. Then about six&nbsp;months on demo accounts before the protocol opened.</p></div></article>
+      </div>
+      <p class="avert-strat">These figures are robot simulations. They are not deposit results. Your deposit carries its share of the gains and losses of the protocol reserve and can fall to zero. Historical simulations over 4 to 21&nbsp;years of XAUUSD data. Real execution via gTrade may produce different results. Risk of partial or total loss of capital. Past performance does not guarantee future performance.</p>
+    </div>
+  </section>
+
+  <!-- 9. Le moteur du KAL -->
+  <section class="epingle" id="moteur" aria-labelledby="titre-moteur">
+    <div class="colle">
+      <div>
+        <span class="surtitre">The engine</span>
+        <h2 id="titre-moteur">Gold feeds <em>the KAL.</em></h2>
+        <p class="chapo">Mydas robots work on gold and bitcoin. The contract takes fees on new gains only. It splits them this way, every time, without exception.</p>
+        <ul class="parts" id="parts">
+          <li><span>Protocol reserve</span><b data-v="35">0%</b><span class="jauge"><i></i></span></li>
+          <li class="fort"><span>KAL buyback and return to liquidity</span><b data-v="20">0%</b><span class="jauge"><i></i></span></li>
+          <li><span>Liquidity</span><b data-v="15">0%</b><span class="jauge"><i></i></span></li>
+          <li><span>Share for veKAL holders</span><b data-v="10">0%</b><span class="jauge"><i></i></span></li>
+          <li><span>Founder</span><b data-v="10">0%</b><span class="jauge"><i></i></span></li>
+          <li><span>Pool bonus, in KAL</span><b data-v="5">0%</b><span class="jauge"><i></i></span></li>
+          <li><span>RWA reserve</span><b data-v="5">0%</b><span class="jauge"><i></i></span></li>
+        </ul>
+        <p class="zero">KAL never burns. Bought-back KAL goes through the BuybackRecirculator contract and returns to the KalSwap KAL/USDC liquidity reserve. No path in the protocol destroys a token.</p>
+      </div>
+      <div class="vide"></div>
+    </div>
+  </section>
+
+  <!-- 10. Le jeton KAL -->
+  <section class="section" id="jeton" aria-labelledby="titre-jeton">
+    <span class="surtitre">Utility token</span>
+    <h2 id="titre-jeton" class="mots">The KAL <em>token.</em></h2>
+    <p class="chapo monte" style="margin-top:22px">An ERC-20 token at the heart of the ecosystem. Supply capped at 10&nbsp;million, with no token destruction at all.</p>
+    <div class="jeton-grille">
+      <div class="repartition monte">
+        <svg viewBox="0 0 200 200" class="anneau-svg" id="anneau-svg" aria-hidden="true"></svg>
+        <div class="anneau-centre"><b>10,000,000</b><span>KAL at most</span></div>
+      </div>
+      <ul class="legende-jeton monte" id="legende-jeton">
+        <li style="--c:#F0D878"><i></i><span>KAL staking rewards<small>1,500,000 KAL</small></span><b>15%</b></li>
+        <li style="--c:#D4AF37"><i></i><span>Initial valuation curve<small>450,000 KAL</small></span><b>4.5%</b></li>
+        <li style="--c:#6BA3DE"><i></i><span>Liquidity provider rewards<small>150,000 KAL</small></span><b>1.5%</b></li>
+        <li style="--c:#7A6CD9"><i></i><span>Tester recognition<small>50,000 KAL</small></span><b>0.5%</b></li>
+        <li style="--c:#3a3a44"><i></i><span>Unallocated reserve<small>7,350,000 KAL</small></span><b>73.5%</b></li>
+      </ul>
+    </div>
+    <div class="jeton-traits">
+      <div class="monte"><h3>Valuation curve</h3><p>Price set by a public formula written into the contract.</p></div>
+      <div class="monte"><h3>Buyback then recirculation</h3><p>Part of the performance fees buys back KAL and puts it back into the KalSwap KAL/USDC reserve.</p></div>
+      <div class="monte"><h3>Service allowance</h3><p>Paid each week in USDC to veKAL holders. It does not follow the results of the strategies.</p></div>
+      <div class="monte"><h3>No team allocation</h3><p>0% reserved for an internal team. The founder’s pay depends on the protocol’s real performance, paid in USDC.</p></div>
+    </div>
+    <p class="note-jeton">Scheduled issuance from the current contracts, about 2,650,000 KAL. The rest remains an open cap, never issued without a multisig decision. No automatic dilution. KAL contract on Base: <a href="https://basescan.org/token/0xe99556D5594faf533fcB346A8a9B11259D29afA8">0xe995…afA8</a>.</p>
+    <p class="note-jeton">Technical note for informed readers. The KalToken contract inherits ERC20Burnable from OpenZeppelin. So the function exists in the token. Any holder can destroy their own KAL if they choose. No path in the protocol calls it. This can be checked on Basescan.</p>
+  </section>
+
+  <!-- 11. Preuves et sécurité -->
+  <section class="section preuves" id="preuves" aria-labelledby="titre-preuves">
+    <span class="surtitre">Trust and transparency</span>
+    <h2 id="titre-preuves" class="mots">Everything we claim <em>can be verified.</em></h2>
+    <div class="tuiles">
+      <div class="tuile monte"><b>100%</b><div><h3>Public contracts</h3><p>Source code verifiable contract by contract on Basescan.</p></div></div>
+      <div class="tuile monte"><b><span class="compte" data-v="1100">0</span>+</b><div><h3>Unit tests</h3><p>The critical functions of the contracts are covered by automated tests.</p></div></div>
+      <div class="tuile monte"><b>0</b><div><h3>Withdrawal delay</h3><p>No Pass and no delay, within the USDC present in the pool, except during an emergency pause decided by the contract owner.</p></div></div>
+      <div class="tuile monte"><b>HWM</b><div><h3>High-Water Mark</h3><p>Performance fees apply only to new gains. Nothing is taken on a loss.</p></div></div>
+      <div class="tuile monte"><b>L2</b><div><h3>Base, by Coinbase</h3><p>The Ethereum layer 2 backed by Coinbase. Low network fees.</p></div></div>
+      <div class="tuile monte"><b>24/7</b><div><h3>Every trade published</h3><p>A bridge links the MT4 robots to the chain. Every trade is recorded on Base.</p></div></div>
+    </div>
+    <p class="propriete">Only you sign your deposits and withdrawals. During their running-in period, the contracts of the current generation belong to the protocol’s deployment key. Ownership will then pass to the multisig. The treasury sits in a Gnosis Safe with a single signer today.</p>
+  </section>
+
+  <!-- 12. Comparatif -->
+  <section class="section" id="comparatif" aria-labelledby="titre-comp">
+    <span class="surtitre">Why Kal Mydas</span>
+    <h2 id="titre-comp" class="mots">Against the <em>alternatives.</em></h2>
+    <p class="chapo monte" style="margin-top:22px">Six criteria for anyone who wants exposure to the gold market without going through a broker.</p>
+    <div class="compare">
+      <div class="option nous monte"><span class="tag">Recommended</span><h3>Kal Mydas</h3><p class="o-sous">Algorithmic trading on gold, on public contracts.</p><dl><dt>Custody of funds</dt><dd>Public contract on Base</dd><dt>Fees</dt><dd>20% of new gains, 10% for a deposit in KAL</dd><dt>Availability</dt><dd>24 hours a day, 7 days a week</dd><dt>Historical test</dt><dd>4 to 21&nbsp;years depending on the strategy</dd><dt>Decorrelation from the crypto market</dt><dd>Yes, XAUUSD underlying</dd><dt>Setup</dt><dd>KALpay, MetaMask or WalletConnect</dd></dl></div>
+      <div class="option monte"><span class="tag">Manual trading</span><h3>With a broker</h3><p class="o-sous">You place the orders yourself.</p><dl><dt>Custody of funds</dt><dd>The broker holds your funds</dd><dt>Fees</dt><dd>Spread and commissions on every trade</dd><dt>Availability</dt><dd>XAUUSD market hours</dd><dt>Historical test</dt><dd>Up to you</dd><dt>Decorrelation from the crypto market</dt><dd>Yes, XAUUSD underlying</dd><dt>Setup</dt><dd>Broker account, 1 to 5 days</dd></dl></div>
+      <div class="option monte"><span class="tag">Gold ETF</span><h3>GLD, BAR</h3><p class="o-sous">A listed fund that tracks gold.</p><dl><dt>Custody of funds</dt><dd>Bank or broker</dd><dt>Fees</dt><dd>0.17 to 0.40% per year, plus the broker</dd><dt>Availability</dt><dd>Stock market hours</dd><dt>Historical test</dt><dd>Tracks the gold price</dd><dt>Decorrelation from the crypto market</dt><dd>Yes</dd><dt>Setup</dt><dd>Securities account, 1 to 7 days</dd></dl></div>
+      <div class="option monte"><span class="tag">Holding crypto</span><h3>Tokens</h3><p class="o-sous">You hold tokens.</p><dl><dt>Custody of funds</dt><dd>Platform or wallet</dd><dt>Fees</dt><dd>Purchase fees and network fees</dd><dt>Availability</dt><dd>24 hours a day, 7 days a week</dd><dt>Historical test</dt><dd>Not applicable</dd><dt>Decorrelation from the crypto market</dt><dd>No, tracks BTC and ETH</dd><dt>Setup</dt><dd>Wallet and learning curve</dd></dl></div>
+    </div>
+    <p class="note-compare">Indicative comparison. Each solution meets a different need. Kal Mydas is designed for exposure to the gold market through algorithmic strategies, without going through a broker.</p>
+  </section>
+
+  <!-- 13. Témoignages -->
+  <section class="section" id="temoignages" aria-labelledby="titre-temoins">
+    <span class="surtitre">Feedback from early members</span>
+    <h2 id="titre-temoins" class="mots">What they say, <em>unfiltered.</em></h2>
+    <p class="chapo monte" style="margin-top:22px">Three pieces of feedback published as is by members of the Kal Mydas channel, in answer to a call for unfiltered testimonials. No editorial choice, no rewording. Only a few terms are blurred out of regulatory caution, and the original word stays readable on hover. They are shown in their original French.</p>
+    <div class="temoins">
+      <figure class="temoin monte" data-brut><blockquote><p>Mon avis sera positif et pour plusieurs raisons. Avant tout je peux me décrire comme une personne qui ne s’y connaît pas beaucoup en crypto, trading etc. J’ai beaucoup fait confiance et je me suis faite régulièrement avoir par des gens malhonnêtes.</p><p>Chez Kal c’est différent. On a une personne à notre écoute et qui répond à nos questions rapidement. Ça tourne toujours depuis quelques mois. Je compte bien <span class="flou" title="investir">investir</span> de plus en plus dans les prochains mois avec Kal car la confiance est installée.</p><p>J’ai encore beaucoup de choses à apprendre dans ce domaine mais je sais que j’ai une personne de confiance à mes côtés.</p></blockquote><figcaption><b>Sylvie M.</b><span>Demo Jan 21, 2026, live Feb 15, 2026</span><span>Published May 1, 2026</span></figcaption></figure>
+      <figure class="temoin monte" data-brut><blockquote><p>Je voulais partager mon expérience pour que les nouveaux comprennent pourquoi je respecte le travail de Kal.</p><p>Au début, je pensais que c’était un débutant comme beaucoup… mais plus j’ai observé, plus j’ai vu qu’il y avait du sérieux dans ce qu’il fait. Avant Kal, j’étais dans un autre groupe. Les personnes n’étaient même pas développeurs. Et en une seule journée, tout a été cramé.</p><p>C’est pour ça que je me suis tourné vers Kal. Parce que lui, il développe ses robots. Il met son propre argent dedans. Il fait les mises à jour. Il suit ses stratégies. Il ne promet pas des <span class="flou" title="rendements">rendements</span> irréalistes. Il travaille proprement, sérieusement, et il écoute les gens.</p><p>Voilà pourquoi je respecte Kal et son travail. Il a passé des milliers d’heures sur son projet, et ça se voit.</p></blockquote><figcaption><b>Henri Sport</b><span>Demo Jan 21, 2026, live Feb 15, 2026</span><span>Published May 1, 2026</span></figcaption></figure>
+      <figure class="temoin monte" data-brut><blockquote><p>Je connais Kal et son travail depuis quelques mois. Je ne suis certes pas passé en réel encore car j’observe, je n’ai pas réellement d’expérience dans tout ce qui est robot trading et tout ce qui tourne autour de ce sujet.</p><p>Il nous guide, nous apprend, toujours dans la transparence et à l’écoute. Pas de promesse en l’air ni irréaliste.</p><p>Il me tarde d’en apprendre de plus en plus, de commencer à faire mes vrais sous tout en acquérant des connaissances et en suivant quelqu’un qui sait ce qu’il fait, et qui ne vous volera pas.</p></blockquote><figcaption><b>Streetwolf69</b><span>Demo since Mar 19, 2026, ongoing</span><span>Published May 2, 2026</span></figcaption></figure>
+    </div>
+    <p class="note-compare">All three are published under <a class="lien-or" href="https://t.me/KalMydas_OFFICIEL/453">this post in the Kal Mydas channel</a>. Anyone can read them, check them and write directly to their authors. Past performance is not indicative of future performance.</p>
+  </section>
+
+  <!-- 14. À propos -->
+  <section class="section" id="apropos" aria-labelledby="titre-apropos">
+    <span class="surtitre">Origins</span>
+    <h2 id="titre-apropos" class="mots">About <em>Kal Mydas.</em></h2>
+    <div class="apropos">
+      <div class="monte"><h3>Why Kal Mydas exists</h3><p>Kal Mydas is not just a set of algorithms. It is a decentralised protocol built around gold and bitcoin, designed for the autonomy of those who take part in it. The algorithms are its first piece, not its last. The project was born from a simple question. Why does algorithmic trading, a common tool at banks, stay out of reach of the public?</p></div>
+      <div class="monte"><h3>Our approach</h3><p>Our 5 gold robots (XAUUSD) are developed and optimised on MetaTrader 4. They were simulated on the broker’s real historical data, tested in live conditions, then stress-tested on the 2008 and 2020 crises. A sixth strategy, GENESIS, trades bitcoin.</p></div>
+      <div class="monte"><h3>The team</h3><p>Kal Mydas is designed, coded and signed by its founder, based in Switzerland. He signs under the pseudonym Kal. He develops, deploys and monitors the protocol himself. A circle of contributors has been with him since the first months.</p></div>
+      <div class="monte risque-bloc"><h3>Risk warning</h3><p>We promise nothing. Past performance does not guarantee future results. Your deposit carries its share of the gains and losses of the protocol reserve and can fall to zero. In simulation, some strategies went through temporary losses of up to 70%. We publish the source code and the test histories.</p></div>
+    </div>
+  </section>
+
+  <!-- 15. Trois étapes -->
+  <section class="section" id="etapes" aria-labelledby="titre-etapes">
+    <span class="surtitre">Simple and fast</span>
+    <h2 id="titre-etapes" class="mots">How it <em>works?</em></h2>
+    <div class="etapes" id="liste-etapes">
+      <span class="trait" id="trait"></span>
+      <div class="etape monte"><span class="rond">1</span><h3>Connect a wallet</h3><p>Create a KALpay wallet on your device, with no account and no email. You can also connect MetaMask or WalletConnect.</p></div>
+      <div class="etape monte"><span class="rond">2</span><h3>Choose your strategy</h3><p>Get an access Pass. Then choose your strategy, from the most cautious to the riskiest. The minimum is shown when you deposit.</p></div>
+      <div class="etape monte"><span class="rond">3</span><h3>Follow your share</h3><p>Your deposit carries its share of the gains and losses of the reserve. You withdraw with no Pass and no delay, except during an emergency pause.</p></div>
+    </div>
+    <div class="aide monte"><div><h3>Need help getting started?</h3><p>Talk live with Kal Mydas support on Telegram. No answering bot, a person who answers your questions.</p></div><a class="bouton fantome aimant" href="https://t.me/kal_mydas">Talk to support <span class="fleche">→</span></a></div>
+  </section>
+
+  <!-- 16. Feuille de route -->
+  <section class="section" id="route" aria-labelledby="titre-route">
+    <span class="surtitre">Long-term vision</span>
+    <h2 id="titre-route" class="mots">The <em>roadmap.</em></h2>
+    <ol class="route">
+      <li class="fait monte"><span class="etat">Done</span><small>Phase 1, Q1 2026</small><h3>Foundations</h3><p>First contracts deployed and validated in private beta. End-to-end tests validated. First version of the app connected to the chain. White paper published. 5 simulations verified.</p></li>
+      <li class="fait monte"><span class="etat">Done</span><small>Phase 2, Q2 2026</small><h3>Development and beta</h3><p>Contracts deployed on Base mainnet on May 1, 2026. veKAL, governance, referral, auto-compounding, performance diversifier, RWA treasury, solo mode per strategy. Beta tester programme active.</p></li>
+      <li class="fait monte"><span class="etat">Done</span><small>Phase 3, public access</small><h3>Public opening</h3><p>Access to the protocol is open to everyone. The protocol has been running on Base since May 1, 2026.</p></li>
+      <li class="monte"><span class="etat">Phase 4</span><small>Growth</small><h3>Growth</h3><p>Community rewards programme. Public veKAL incentives and DAO governance. Advanced analytics dashboard. Exploring new assets.</p></li>
+      <li class="monte"><span class="etat">Phase 5</span><small>Expansion</small><h3>Expansion</h3><p>New strategies and new markets. Expansion to other chains, Arbitrum and Polygon.</p></li>
+    </ol>
+    <div class="infra">
+      <span class="surtitre">Built with</span>
+      <ul><li><b>Base</b>L2 mainnet blockchain</li><li><b>Solidity</b>Smart contracts</li><li><b>KALpay</b>The ecosystem’s wallet</li><li><b>MetaTrader 4</b>XAUUSD algorithmic engine</li><li><b>gTrade</b>On-chain execution</li></ul>
+    </div>
+  </section>
+
+  <!-- 17. Questions -->
+  <section class="section" id="faq" aria-labelledby="titre-faq">
+    <span class="surtitre">Frequently asked questions</span>
+    <h2 id="titre-faq" style="margin-bottom:50px">Our answers.</h2>
+    <div class="faq">
+      <details><summary>What exactly is Kal Mydas?</summary><p>Kal Mydas is a protocol on Base that offers algorithmic trading strategies, 5 on gold (XAUUSD) and GENESIS on bitcoin. The robots execute trades automatically. The status of each strategy can be read live in the app. Every trade can be verified on the Base chain.</p></details>
+      <details><summary>What is the minimum deposit?</summary><p>The minimum amount depends on the strategy. It is read from the contract and shown when you deposit, in USDC on Base. There is no maximum amount.</p></details>
+      <details><summary>How do withdrawals work?</summary><p>You withdraw with no Pass and no delay, at the current share price, within the USDC present in the pool. Withdrawals are suspended only during an emergency pause decided by the contract owner. No withdrawal fees. You deal directly with the contract.</p></details>
+      <details><summary>Is future performance guaranteed?</summary><p>No. The figures shown are historical simulations of the robots, run on the broker’s real data, over up to 21&nbsp;years. They are not deposit results. Your deposit carries its share of the gains and losses of the protocol reserve and can fall to zero.</p></details>
+      <details><summary>What are the fees?</summary><p>No entry or exit fees. A performance fee of 20% on each strategy, 10% for a deposit in KAL, taken on new gains thanks to the High-Water Mark. Nothing is taken on a loss. No management fees. The access Pass is paid separately.</p></details>
+      <details><summary>Do I need a crypto wallet to use Kal Mydas?</summary><p>No. KALpay, the ecosystem’s wallet, is created on home.kalmydas.com, on your device, with no account and no email. You can also connect MetaMask or a wallet through WalletConnect.</p></details>
+      <details><summary>Which strategy should I choose as a beginner?</summary><p>HORIZON is the most cautious, designed for a first-step profile. VALKYRIE offers a balanced profile. The more aggressive strategies, REVOLUTION, TREASURY and ORION, require a clear understanding of volatility. You can take several and spread your capital as you wish.</p></details>
+      <details><summary>Does KAL burn?</summary><p>The protocol never burns KAL, by choice. KAL bought back with performance fees goes through the BuybackRecirculator contract and returns to the KalSwap KAL/USDC reserve. This rule can be checked on Basescan. It holds through the protocol’s practice, not through the token’s code.</p></details>
+    </div>
+  </section>
+
+  <!-- 18. Final -->
+  <section class="section final" id="final">
+    <span class="surtitre">The K closes again</span>
+    <h2 style="margin-top:22px">Start by <em>verifying.</em></h2>
+    <p class="chapo">Open home, read the contracts, look at every trade. Then decide.</p>
+    <div class="actions">
+      <a class="bouton aimant" href="https://home.kalmydas.com/v2.1/">Open the app <span class="fleche">→</span></a>
+      <a class="bouton fantome aimant" href="https://docs.kalmydas.com/whitepaper">Read the White paper</a>
+    </div>
+    <p class="final-liens"><a href="https://t.me/KalMydas_OFFICIEL">Join the community on Telegram</a> · <a href="https://t.me/kal_mydas">Direct support @kal_mydas</a></p>
+  </section>
+</main>
+
+<footer class="pied-page">
+  <div class="pied-tete">
+    <span class="bloc-identite"><span class="lockup" data-lockup="ecosystem" aria-hidden="true"></span><span class="signature">The ecosystem of autonomy</span><span class="sr">KAL ecosystem</span></span>
+    <nav class="pied-reseaux-icones" aria-label="Social networks"><a href="https://x.com/KalMydas_FR" aria-label="X" title="X"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z"/></svg></a><a href="https://t.me/KalMydas_OFFICIEL" aria-label="Telegram" title="Telegram"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M228.88,26.19a9,9,0,0,0-9.16-1.57L17.06,103.93a14.22,14.22,0,0,0,2.43,27.21L72,141.45V200a15.92,15.92,0,0,0,10,14.83,15.91,15.91,0,0,0,17.51-3.73l25.32-26.26L165,220a15.88,15.88,0,0,0,10.51,4,16.3,16.3,0,0,0,5-.79,15.85,15.85,0,0,0,10.67-11.63L231.77,35A9,9,0,0,0,228.88,26.19Zm-61.14,36L78.15,126.35l-49.6-9.73ZM88,200V152.52l24.79,21.74Zm87.53,8L92.85,135.5l119-85.29Z"/></svg></a><a href="https://discord.gg/gCD2zunaBy" aria-label="Discord" title="Discord"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M104,140a12,12,0,1,1-12-12A12,12,0,0,1,104,140Zm60-12a12,12,0,1,0,12,12A12,12,0,0,0,164,128Zm74.45,64.9-67,29.71a16.17,16.17,0,0,1-21.710-9.1l-8.11-22q-6.72.45-13.630.46t-13.63-.46l-8.11,22a16.18,16.18,0,0,1-21.71,9.1l-67-29.71a15.930,15.930,0,0,1-9.060-18.510L38,58A16.070,16.070,0,0,1,51,46.14l36.06-5.93a16.22,16.22,0,0,1,18.26,11.88l3.26,12.84Q118.11,64,128,64t19.4.93l3.26-12.84a16.21,16.21,0,0,1,18.26-11.88L205,46.14A16.07,16.07,0,0,1,218,58l29.53,116.38A15.93,15.93,0,0,1,238.45,192.9ZM232,178.28,202.47,62s0,0-.08,0L166.33,56a.17.17,0,0,0-.17,0l-2.83,11.14c5,.94,10,2.06,14.83,3.42A8,8,0,0,1,176,86.31a8.09,8.09,0,0,1-2.16-.3A172.25,172.25,0,0,0,128,80a172.25,172.25,0,0,0-45.840,6,8,8,0,1,1-4.320-15.4c4.82-1.36,9.78-2.48,14.82-3.42L89.83,56s0,0-.12,0h0L53.61,61.93a.17.17,0,0,0-.09,0L24,178.33,91,208a.23.23,0,0,0,.22,0L98,189.72a173.2,173.2,0,0,1-20.14-4.32A8,8,0,0,1,82.16,170,171.85,171.85,0,0,0,128,176a171.85,171.85,0,0,0,45.84-6,8,8,0,0,1,4.32,15.41A173.2,173.2,0,0,1,158,189.72L164.75,208a.22.22,0,0,0,.21,0Z"/></svg></a><a href="https://www.tiktok.com/@kalmydas" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,72a48.05,48.05,0,0,1-48-48,8,8,0,0,0-8-8H128a8,8,0,0,0-8,8V156a20,20,0,1,1-28.57-18.08A8,8,0,0,0,96,130.69V88a8,8,0,0,0-9.4-7.88C50.91,86.48,24,119.1,24,156a76,76,0,0,0,152,0V116.29A103.25,103.25,0,0,0,224,128a8,8,0,0,0,8-8V80A8,8,0,0,0,224,72Zm-8,39.64a87.19,87.19,0,0,1-43.33-16.15A8,8,0,0,0,160,102v54a60,60,0,0,1-120,0c0-25.9,16.64-49.13,40-57.6v27.67A36,36,0,1,0,136,156V32h24.5A64.14,64.14,0,0,0,216,87.5Z"/></svg></a><a href="https://www.instagram.com/kalmydas" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"/></svg></a></nav>
+  </div>
+  <div class="pied-grille">
+    <nav aria-label="Apps"><b class="pied-titre">Apps</b><a href="https://home.kalmydas.com/v2.1/#mydas">KALmydas</a><a href="https://home.kalmydas.com/v2.1/pay">KALpay</a><a href="#move">KALmove</a><a href="https://home.kalmydas.com/v2.1/chat">KALchat</a></nav>
+    <nav aria-label="The protocol"><b class="pied-titre">The protocol</b><a href="https://docs.kalmydas.com/whitepaper">White paper</a><a href="#strategies">Strategies</a><a href="#jeton">KAL token</a><a href="#preuves">Security</a><a href="#route">Roadmap</a></nav>
+    <nav aria-label="Resources"><b class="pied-titre">Resources</b><a href="https://docs.kalmydas.com">Documentation</a><a href="https://docs.kalmydas.com/architecture">Architecture</a><a href="https://docs.kalmydas.com/tokenomics">Tokenomics</a><a href="https://docs.kalmydas.com/gouvernance">Governance</a><a href="https://docs.kalmydas.com/ressources">On-chain addresses</a><a href="https://docs.kalmydas.com/audits">Audits</a></nav>
+    <nav aria-label="Legal"><b class="pied-titre">Legal</b><a href="#apropos">About</a><a href="#faq">Questions</a><a href="https://kalmydas.com/privacy.html">Privacy</a><a href="https://kalmydas.com/cookies.html">Cookies</a><a href="https://kalmydas.com/terms.html">Terms of use</a></nav>
+    <nav aria-label="Contact"><b class="pied-titre">Contact</b><a href="mailto:kal@kalmydas.ch">kal@kalmydas.ch</a><a href="https://t.me/kal_mydas">Direct support @kal_mydas</a></nav>
+  </div>
+  <div class="avert">
+    <p>Risk warning. Kal Mydas is an experimental protocol. Algorithmic trading and crypto-assets carry a high risk of total loss of capital. The performance figures cited are historical simulations over 4 to 21&nbsp;years of XAUUSD data. Real execution via gTrade may produce different results. Past performance does not guarantee future performance.</p>
+    <p>The KAL ecosystem brings together several apps deployed on Base mainnet, an Ethereum layer 2. Non-custodial interface, your keys stay yours. The value of KAL can vary sharply and fall to zero. The allowance paid to veKAL holders rewards securing and governing the protocol. No amount is guaranteed.</p>
+    <p>This site is not financial advice. It is neither a solicitation nor an offer to buy or sell financial instruments. You alone are responsible for your decisions. Check the laws that apply in your jurisdiction before any participation.</p>
+  </div>
+  <div class="pied-bas"><span>© 2026 Kal Mydas · Designed, coded and signed in Switzerland</span><span>KAL contract on Base <a href="https://basescan.org/token/0xe99556D5594faf533fcB346A8a9B11259D29afA8">0xe995…afA8</a></span></div>
+</footer>
+
+<div class="appel-mobile" id="appel-mobile"><a class="bouton" href="https://home.kalmydas.com/v2.1/">Open the app <span class="fleche">→</span></a></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three'
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js'
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js'
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js'
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js'
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js'
+
+const NET = location.search.includes('net')
+if (NET) document.documentElement.classList.add('net')
+const reduit = matchMedia('(prefers-reduced-motion: reduce)').matches
+const mobile = matchMedia('(max-width: 980px)').matches
+gsap.registerPlugin(ScrollTrigger)
+
+/* ---------- Défilement doux ---------- */
+let lenis = null
+if (!reduit && !NET) {
+  lenis = new Lenis({ duration: 1.15, smoothWheel: true })
+  lenis.on('scroll', ScrollTrigger.update)
+  gsap.ticker.add(t => lenis.raf(t * 1000))
+  gsap.ticker.lagSmoothing(0)
+  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+    const cible = document.querySelector(a.getAttribute('href'))
+    if (cible) { e.preventDefault(); lenis.scrollTo(cible, { offset: 0 }) }
+  }))
+}
+
+/* ---------- Scène 3D : le K de Kal Mydas ----------
+ * Le récit : le K tient tout. Il s'ouvre en quatre applications, qui vivent
+ * sur Base. Le marché de l'or nourrit le KAL, et le K se referme à la fin.
+ */
+const canvas = document.getElementById('scene')
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' })
+renderer.setPixelRatio(Math.min(devicePixelRatio, mobile ? 1.5 : 1.75))
+renderer.setClearColor(0x07070a, 1)
+renderer.toneMapping = THREE.ACESFilmicToneMapping
+renderer.toneMappingExposure = 1.15
+const scene = new THREE.Scene()
+scene.background = new THREE.Color(0x050507)
+const pmrem = new THREE.PMREMGenerator(renderer)
+scene.environment = pmrem.fromScene(new RoomEnvironment(renderer), .04).texture
+const camera = new THREE.PerspectiveCamera(40, innerWidth / innerHeight, 0.1, 100)
+camera.position.set(0, 0, 6)
+const groupe = new THREE.Group()
+scene.add(groupe)
+
+const cle = new THREE.DirectionalLight(0xffe2a8, 2.2); cle.position.set(-3, 4, 5); scene.add(cle)
+const contre = new THREE.DirectionalLight(0x6ba3de, 1.6); contre.position.set(4, -2, -3); scene.add(contre)
+
+/* Les treize facettes du K, relevées dans LogoKFacettes.tsx (viewBox 512) */
+const OR_TC = 0xF7E38F, OR_C = 0xF0D878, OR_M = 0xD4AF37, OR_F = 0xC9A227, BL_F = 0x233B5C, BL_M = 0x38557E
+const FACETTES = [
+  ['99.57,94.57 99.57,417.43 151,220.29 151,46', BL_F, .16],
+  ['99.57,417.43 99.57,94.57 46.71,46 46.71,460.29', BL_M, .2],
+  ['151,220.29 99.57,417.43 186.29,267.43', BL_F, .16],
+  ['296.71,51.71 151,220.29 186.29,267.43 299.57,131.29', OR_C, .26],
+  ['465.29,46 296.71,51.71 299.57,131.29', OR_TC, .3],
+  ['261.43,266.43 465.29,46 299.57,131.29 186.29,267.43', OR_C, .26],
+  ['465.29,466 261.43,266.43 186.29,267.43 292,365.57', OR_M, .24],
+  ['302.43,463.14 465.29,466 292,365.57', OR_F, .28],
+  ['197.71,350.29 302.43,463.14 292,365.57 186.29,267.43', OR_M, .24],
+  ['151,460.29 151,380.29 99.57,417.43', BL_F, .16],
+  ['46.71,460.29 151,460.29 99.57,417.43', BL_F, .18],
+  ['151,46 46.71,46 99.57,94.57', BL_M, .18],
+  ['197.71,350.29 186.29,267.43 99.57,417.43 151,380.29', OR_M, .22],
+]
+const ECH_K = 2.7 / 512
+const versMonde = (x, y) => [(x - 256) * ECH_K, -(y - 256) * ECH_K]
+const kGroupe = new THREE.Group()
+groupe.add(kGroupe)
+const facettes = []
+const polys = []
+const geos = []
+const matsOr = {}
+FACETTES.forEach(([txt, couleur, prof], i) => {
+  const pts = txt.split(' ').map(p => versMonde(...p.split(',').map(Number)))
+  polys.push({ pts, prof })
+  const forme = new THREE.Shape(pts.map(([x, y]) => new THREE.Vector2(x, y)))
+  const g = new THREE.ExtrudeGeometry(forme, { depth: prof, bevelEnabled: true, bevelThickness: .03, bevelSize: .018, bevelSegments: 3 })
+  g.translate(0, 0, -prof / 2)
+  g.computeBoundingBox()
+  const c = new THREE.Vector3(); g.boundingBox.getCenter(c)
+  g.translate(-c.x, -c.y, 0)
+  const or = couleur !== BL_F && couleur !== BL_M
+  const mat = or ? (matsOr[couleur] ||= new THREE.MeshStandardMaterial({ color: couleur, metalness: 1, roughness: .2, envMapIntensity: 1.35 }))
+                 : new THREE.MeshStandardMaterial({ color: couleur, metalness: 1, roughness: .32, envMapIntensity: 1.1 })
+  geos.push({ g, c: c.clone(), cote: or ? 0 : (couleur === BL_F ? 1 : 2) })
+  const m = new THREE.Mesh(g, mat)
+  m.position.copy(c)
+  const dir = new THREE.Vector3(c.x * 1.4 + (Math.random() - .5) * .6, c.y * 1.4 + (Math.random() - .5) * .6, (Math.random() - .3) * 2.2).normalize()
+  m.userData = { base: c.clone(), dir, force: 2.6 + Math.random() * 2.4, axe: new THREE.Vector3(Math.random() - .5, Math.random() - .5, Math.random() - .5).normalize(), tour: (Math.random() * 2 + 1.5) * (Math.random() < .5 ? -1 : 1) }
+  kGroupe.add(m); facettes.push(m)
+})
+
+/* Les quatre K des applications : même or, couleur propre à gauche (LogosProduits.tsx) */
+const TEINTES_APPS = [[0x233B5C, 0x38557E], [0x7E1A1A, 0xA02828], [0x1E6A40, 0x37A063], [0x433B77, 0x5F54A9]]
+const LUEURS_APPS = [new THREE.Color(0x6BA3DE), new THREE.Color(0xB24A4A), new THREE.Color(0x449F6A), new THREE.Color(0x7A6CD9)]
+const petitsK = TEINTES_APPS.map(([fonce, moyen]) => {
+  const grp = new THREE.Group()
+  const mf = new THREE.MeshStandardMaterial({ color: fonce, metalness: .9, roughness: .3, envMapIntensity: 1.2, emissive: fonce, emissiveIntensity: .25 })
+  const mm = new THREE.MeshStandardMaterial({ color: moyen, metalness: .9, roughness: .3, envMapIntensity: 1.2, emissive: moyen, emissiveIntensity: .25 })
+  geos.forEach(({ g, c, cote }, i) => {
+    const m = new THREE.Mesh(g, cote === 0 ? facettes[i].material : cote === 1 ? mf : mm)
+    m.position.copy(c); grp.add(m)
+  })
+  grp.visible = false
+  scene.add(grp)
+  return grp
+})
+let centresApps = [[0, 0, .3], [0, 0, .3], [0, 0, .3], [0, 0, .3]]
+
+/* Les particules : une seule nuée qui change de forme */
+const N = mobile ? 7000 : 16000
+const geo = new THREE.BufferGeometry()
+const pos = new Float32Array(N * 3), expl = new Float32Array(N * 3), amas = new Float32Array(N * 3),
+      sol = new Float32Array(N * 3), anneau = new Float32Array(N * 3), rnd = new Float32Array(N), taille = new Float32Array(N), teinte = new Float32Array(N)
+const v = new THREE.Vector3()
+function dansPoly(x, y, pts) {
+  let dedans = false
+  for (let i = 0, j = pts.length - 1; i < pts.length; j = i++) {
+    const [xi, yi] = pts[i], [xj, yj] = pts[j]
+    if (((yi > y) !== (yj > y)) && (x < (xj - xi) * (y - yi) / (yj - yi) + xi)) dedans = !dedans
+  }
+  return dedans
+}
+const COLS = Math.ceil(Math.sqrt(N * 1.6)), RANGS = Math.ceil(N / COLS)
+for (let i = 0; i < N; i++) {
+  /* sur le K */
+  const p = polys[i % polys.length]
+  let x, y, garde = 0
+  const xs = p.pts.map(q => q[0]), ys = p.pts.map(q => q[1])
+  do { x = Math.min(...xs) + Math.random() * (Math.max(...xs) - Math.min(...xs)); y = Math.min(...ys) + Math.random() * (Math.max(...ys) - Math.min(...ys)) }
+  while (!dansPoly(x, y, p.pts) && ++garde < 40)
+  const z = (Math.random() < .5 ? 1 : -1) * (p.prof / 2 + .03)
+  pos.set([x, y, z], i * 3)
+  /* éclatement */
+  v.set(x, y, z * 3).normalize()
+  v.x += (Math.random() - .5) * 1.2; v.y += (Math.random() - .5) * 1.2; v.z += (Math.random() - .2) * 1.6
+  v.normalize()
+  const f = 2 + Math.pow(Math.random(), 1.5) * 7
+  expl.set([x + v.x * f, y + v.y * f, z + v.z * f], i * 3)
+  /* le sol de Base : une grille qui fuit vers l'horizon */
+  const c = i % COLS, r = Math.floor(i / COLS)
+  sol.set([(c / COLS - .5) * 26, -1.7 + (Math.random() - .5) * .02, 3.5 - (r / RANGS) * 30], i * 3)
+  /* l'anneau de la pièce KAL */
+  const a = Math.random() * Math.PI * 2
+  const rr = Math.random() < .78 ? 1.75 + (Math.random() - .5) * .12 : 1.55 + Math.random() * .1
+  anneau.set([Math.cos(a) * rr, Math.sin(a) * rr, (Math.random() - .5) * .16], i * 3)
+  rnd[i] = Math.random(); taille[i] = .6 + Math.pow(Math.random(), 3) * 2.4; teinte[i] = Math.random()
+}
+geo.setAttribute('position', new THREE.BufferAttribute(pos, 3))
+geo.setAttribute('aExpl', new THREE.BufferAttribute(expl, 3))
+geo.setAttribute('aAmas', new THREE.BufferAttribute(amas, 3))
+geo.setAttribute('aSol', new THREE.BufferAttribute(sol, 3))
+geo.setAttribute('aAnneau', new THREE.BufferAttribute(anneau, 3))
+geo.setAttribute('aRnd', new THREE.BufferAttribute(rnd, 1))
+geo.setAttribute('aTaille', new THREE.BufferAttribute(taille, 1))
+geo.setAttribute('aTeinte', new THREE.BufferAttribute(teinte, 1))
+const appli = new Float32Array(N); for (let i = 0; i < N; i++) appli[i] = i % 4
+geo.setAttribute('aApp', new THREE.BufferAttribute(appli, 1))
+geo.boundingSphere = new THREE.Sphere(new THREE.Vector3(), 40)
+
+const matPoints = new THREE.ShaderMaterial({
+  transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+  uniforms: { uEtape: { value: 0 }, uTime: { value: 0 }, uPix: { value: renderer.getPixelRatio() }, uRot: { value: 0 }, uFonce: { value: 1 }, uApps: { value: LUEURS_APPS } },
+  vertexShader: `
+    attribute vec3 aExpl,aAmas,aSol,aAnneau; attribute float aRnd,aTaille,aTeinte,aApp;
+    uniform float uEtape,uTime,uPix,uRot,uFonce; uniform vec3 uApps[4];
+    varying float vAlpha; varying vec3 vCol;
+    float pas(float k){ float x=clamp((uEtape-k)*1.35-aRnd*.35,0.,1.); return x*x*(3.-2.*x); }
+    void main(){
+      float c=cos(uRot), s=sin(uRot);
+      vec3 an=vec3(aAnneau.x*c-aAnneau.y*s, aAnneau.x*s+aAnneau.y*c, aAnneau.z);
+      vec3 so=aSol; so.y+=sin(so.x*.6+uTime*.8)*.06+sin(so.z*.5+uTime*.6)*.06; so.z=mod(so.z+uTime*.6+26.5,30.)-26.5;
+      vec3 p=position;
+      p=mix(p,aExpl,pas(0.));
+      p=mix(p,aAmas,pas(1.));
+      p=mix(p,so,pas(2.));
+      p=mix(p,an,pas(3.));
+      p=mix(p,position,pas(4.));
+      p+=.03*vec3(sin(uTime*.9+aRnd*40.),cos(uTime*1.1+aRnd*27.),sin(uTime*.7+aRnd*13.))*(1.-pas(2.)*(1.-pas(3.)));
+      vec4 mv=modelViewMatrix*vec4(p,1.);
+      gl_Position=projectionMatrix*mv;
+      gl_PointSize=aTaille*uPix*(24./-mv.z);
+      float surface=1.-clamp(uEtape*3.,0.,1.);
+      float enSol=pas(2.)*(1.-pas(3.));
+      vAlpha=mix(.85,.0,surface)*mix(1.,.25,pas(4.))*(1.-clamp((uEtape-1.45)/.4,0.,1.)*(1.-pas(2.)))*mix(1.,.75,enSol)*uFonce;
+      vec3 or=mix(vec3(1.,.74,.28),vec3(1.,.93,.72),aTeinte);
+      vec3 bleu=mix(vec3(.25,.5,.9),vec3(.55,.75,1.),aTeinte);
+      vec3 cApp=aApp<.5?uApps[0]:aApp<1.5?uApps[1]:aApp<2.5?uApps[2]:uApps[3];
+      vCol=mix(or,bleu,enSol*step(.35,aTeinte));
+      vCol=mix(vCol,cApp*1.3,pas(1.)*(1.-pas(2.))*step(.3,aTeinte));
+    }`,
+  fragmentShader: `
+    varying float vAlpha; varying vec3 vCol;
+    void main(){ float d=length(gl_PointCoord-.5); float a=smoothstep(.5,0.,d); a*=a; gl_FragColor=vec4(vCol,a*vAlpha); }`
+})
+const nuee = new THREE.Points(geo, matPoints)
+groupe.add(nuee)
+
+/* Lueur : les ors brillent */
+const composeur = new EffectComposer(renderer)
+composeur.addPass(new RenderPass(scene, camera))
+const lueur = new UnrealBloomPass(new THREE.Vector2(innerWidth, innerHeight), mobile ? .45 : .6, .55, .78)
+composeur.addPass(lueur)
+composeur.addPass(new OutputPass())
+
+/* Les quatre pièces se posent à côté des cartes des applications */
+function echelleGroupe() { return innerWidth < innerHeight ? .6 : .8 }
+function echelleK() { return innerWidth < innerHeight ? .45 / .6 : 1 }
+function placerAmas() {
+  const icones = [...document.querySelectorAll('.app .lockup')]
+  const colle = document.querySelector('#apps .colle')
+  if (!icones.length || !colle) return
+  const base = colle.getBoundingClientRect()
+  const demiH = Math.tan(THREE.MathUtils.degToRad(20)) * 6, demiL = demiH * (innerWidth / innerHeight)
+  const cartes = [...document.querySelectorAll('.app')]
+  const anciens = cartes.map(c => c.style.transform)
+  cartes.forEach(c => { c.style.transform = 'none' })
+  const centres = icones.map(k => {
+    const r = k.getBoundingClientRect(), largeur = LOGOS[k.dataset.lockup][2]
+    const cx = r.left + r.width * (21 / largeur), cy = (r.top - base.top) + r.height * .5
+    return [(cx / innerWidth * 2 - 1) * demiL, -(cy / innerHeight * 2 - 1) * demiH, (r.width * (21 / largeur)) / innerHeight * demiH * 2]
+  })
+  cartes.forEach((c, i) => { c.style.transform = anciens[i] })
+  centresApps = centres
+  const e = echelleGroupe()
+  for (let i = 0; i < N; i++) {
+    const [x, y, ray] = centres[i % 4]
+    const a = Math.random() * Math.PI * 2
+    const rr = ray * Math.sqrt(Math.random()) * .9
+    amas.set([(x + Math.cos(a) * rr) / e, (y + Math.sin(a) * rr) / e, ((Math.random() - .5) * ray * .4 - .2) / e], i * 3)
+  }
+  geo.attributes.aAmas.needsUpdate = true
+}
+
+/* ---------- Lecture du défilement ---------- */
+const etat = { etape: 0, cible: 0, sourisX: 0, sourisY: 0, mx: 0, my: 0 }
+let anneauCalc = 1.5, anneauTrop = false, finalHaut = 1e9
+let reperes = [], bornesFonce = [0, 1, 2, 3], bornesSol = [0, 1, 2, 3], constatHaut = 0, constatH = 1; window.__etat = etat; window.__rep = () => reperes
+function haut(sel) { const e = document.querySelector(sel); return e ? e.getBoundingClientRect().top + scrollY : 0 }
+function hauteur(sel) { const e = document.querySelector(sel); return e ? e.offsetHeight : 0 }
+function calculerReperes() {
+  const vh = innerHeight
+  const a = haut('#apps'), ah = hauteur('#apps') - vh
+  const t = haut('#telephone'), th = hauteur('#telephone') - vh
+  const m = haut('#moteur'), mh = hauteur('#moteur') - vh
+  const f = haut('#final')
+  constatHaut = haut('#constat'); constatH = hauteur('#constat')
+  finalHaut = f
+  {
+    const liste = document.getElementById('parts')
+    const demiL = Math.tan(THREE.MathUtils.degToRad(20)) * 6 * (innerWidth / innerHeight)
+    const ech = echelleGroupe(), rayon = 1.85 * ech
+    const bordDroit = Math.max(...['#parts', '#moteur .chapo', '#moteur h2', '#moteur .zero'].map(q => { const e = document.querySelector(q); return e ? e.getBoundingClientRect().right : 0 }))
+    const droite = liste ? (bordDroit / innerWidth * 2 - 1) * demiL : 0
+    anneauCalc = Math.max(droite + rayon + .2, 0)
+    anneauTrop = innerWidth < innerHeight || anneauCalc + rayon > demiL + .1
+    if (anneauTrop) anneauCalc = innerWidth < innerHeight ? 0 : Math.min(anneauCalc, demiL - rayon * .6)
+  }
+  reperes = [
+    [0, 0], [a - vh * .1, 0], [a + ah * .3, 1], [a + ah * .62, 2], [t - vh * .3, 2], [t + th * .08, 3],
+    [m - vh * .6, 3], [m + mh * .3, 4], [f - vh * .75, 4], [f - vh * .05, 5]
+  ]
+  bornesFonce = [m + mh, m + mh + vh * .5, f - vh * .6, f - vh * .15]
+  bornesSol = [t + th + vh * .05, t + th + vh * .7, m - vh * 1.2, m - vh * .5]
+}
+function etapeVoulue(y) {
+  if (!reperes.length) return 0
+  if (y <= reperes[0][0]) return reperes[0][1]
+  for (let i = 1; i < reperes.length; i++) {
+    const [y0, s0] = reperes[i - 1], [y1, s1] = reperes[i]
+    if (y <= y1) return s0 + (s1 - s0) * ((y - y0) / Math.max(1, y1 - y0))
+  }
+  return reperes[reperes.length - 1][1]
+}
+
+function redimensionner() {
+  renderer.setSize(innerWidth, innerHeight, false)
+  composeur.setSize(innerWidth, innerHeight)
+  composeur.setPixelRatio(renderer.getPixelRatio())
+  camera.aspect = innerWidth / innerHeight
+  camera.updateProjectionMatrix()
+  matPoints.uniforms.uPix.value = renderer.getPixelRatio()
+  placerAmas(); calculerReperes()
+}
+addEventListener('resize', () => { redimensionner(); ScrollTrigger.refresh() })
+addEventListener('pointermove', e => {
+  etat.sourisX = e.clientX / innerWidth * 2 - 1
+  etat.sourisY = e.clientY / innerHeight * 2 - 1
+})
+
+const eclair = document.getElementById('eclair')
+const horloge = new THREE.Clock()
+const lisse = (a, b, k) => a + (b - a) * k
+const borne = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x))
+const q = new THREE.Quaternion()
+let dernier = 0, cumul = 0, images = 0, allege = false, saut = 0
+function alleger() {
+  allege = true
+  lueur.enabled = false
+  renderer.setPixelRatio(1); composeur.setPixelRatio(1)
+  matPoints.uniforms.uPix.value = 1
+  geo.setDrawRange(0, Math.floor(N * .55))
+  renderer.setSize(innerWidth, innerHeight, false); composeur.setSize(innerWidth, innerHeight)
+}
+function boucle() {
+  const t = horloge.getElapsedTime()
+  etat.cible = etapeVoulue(scrollY)
+  etat.etape = lisse(etat.etape, etat.cible, reduit || NET ? 1 : .085)
+  etat.mx = lisse(etat.mx, etat.sourisX, .05); etat.my = lisse(etat.my, etat.sourisY, .05)
+  const s = etat.etape
+  const portrait = innerWidth < innerHeight
+  /* Où se tient le K */
+  const demiL = Math.tan(THREE.MathUtils.degToRad(20)) * 6 * camera.aspect
+  const decal = portrait ? 0 : Math.min(1.8, Math.max(.6, demiL - 1.25))
+  groupe.position.x = decal * (1 - borne(s)) + anneauCalc * borne(s - 3) * (1 - borne(s - 4)) + decal * borne(s - 4)
+  groupe.position.y = portrait ? 1.2 * (1 - borne(s)) - .6 * borne(s - 3) * (1 - borne(s - 4)) + 1.2 * borne(s - 4) : 0
+  const ech = echelleGroupe()
+  groupe.scale.setScalar(ech)
+  /* au-delà du dernier écran, le K suit la page vers le haut : le pied de page ne le recouvre pas */
+  groupe.position.y += Math.max(0, scrollY - finalHaut) / innerHeight * 2 * Math.tan(THREE.MathUtils.degToRad(20)) * 6 * borne(s - 4.5)
+  /* Le K respire, suit la souris, montre son épaisseur pendant le constat */
+  const pc = borne(1 - (constatHaut - scrollY + constatH * .5) / innerHeight)
+  kGroupe.rotation.y = Math.sin(t * .35) * .22 + etat.mx * .45 + Math.sin(pc * Math.PI) * .35
+  kGroupe.rotation.x = Math.sin(t * .27) * .08 + etat.my * .25
+  const hs = borne(scrollY / innerHeight) * (1 - borne(s - 4))
+  kGroupe.position.set(portrait ? 0 : hs * 1.3, Math.sin(t * .8) * .05 + hs * (portrait ? 3.2 : -.45), portrait ? 0 : -hs * 1.5)
+  kGroupe.scale.setScalar(echelleK() * (1 - (portrait ? 0 : .35) * hs))
+  /* Le K s'ouvre, disparaît, puis se referme à la fin */
+  const e = s < 3 ? borne(s) : 1 - borne((s - 4.35) / .6)
+  const visible = 1 - borne((s - 1) / .35) + borne((s - 4.1) / .3)
+  facettes.forEach(m => {
+    const u = m.userData, ee = e * e * (3 - 2 * e)
+    m.position.copy(u.base).addScaledVector(u.dir, ee * u.force)
+    q.setFromAxisAngle(u.axe, ee * u.tour)
+    m.quaternion.copy(q)
+    m.scale.setScalar(Math.max(.0001, borne(visible)))
+    m.visible = visible > .01
+  })
+  matPoints.uniforms.uEtape.value = s
+  matPoints.uniforms.uTime.value = t
+  matPoints.uniforms.uRot.value = t * .3
+  const [f0, f1, f2, f3] = bornesFonce
+  const [g0, g1, g2, g3] = bornesSol
+  const sol = 1 - .88 * borne((scrollY - g0) / (g1 - g0)) + .88 * borne((scrollY - g2) / (g3 - g2))
+  matPoints.uniforms.uFonce.value = sol * (1 - borne((scrollY - f0) / (f1 - f0)) + borne((scrollY - f2) / (f3 - f2))) * (anneauTrop ? 1 - .97 * borne(s - 3) * (1 - borne(s - 4.3)) : 1)
+  /* L'éclair de l'ouverture */
+  eclair.style.opacity = (reduit ? 0 : borne(1 - Math.abs(s - .12) / .12) * .5).toFixed(3)
+  camera.position.x = lisse(camera.position.x, etat.mx * .35, .05)
+  camera.position.y = lisse(camera.position.y, -etat.my * .25 + .9 * borne(s - 2) * (1 - borne(s - 3)), .05)
+  camera.position.z = 6 - .5 * Math.sin(borne(s / 2) * Math.PI)
+  camera.lookAt(0, -.5 * borne(s - 2) * (1 - borne(s - 3)), 0)
+  /* Les quatre K des applications naissent des éclats */
+  const naissance = 0
+  petitsK.forEach((k, i) => {
+    k.visible = naissance > .01
+    if (!k.visible) return
+    const [x, y, ray] = centresApps[i]
+    const ee = naissance * naissance * (3 - 2 * naissance)
+    k.position.set(x, y + (1 - ee) * .6, .1)
+    k.scale.setScalar(Math.max(.0001, ee * ray * 1.55 / 2.7))
+    k.rotation.set(Math.sin(t * .7 + i) * .15, (1 - ee) * 4 + Math.sin(t * .6 + i * 1.7) * .5, 0)
+  })
+  /* Qualité qui s'adapte à la machine */
+  const dt = t - dernier; dernier = t
+  if (!allege && t > 3) { cumul += dt; images++
+    if (images >= 90) { if (cumul / images > .024) alleger(); cumul = 0; images = 0 } }
+  /* Rien ne bouge : on dessine moins souvent */
+  const calme = Math.abs(etat.cible - etat.etape) < .001 && !facettes[0].visible && !petitsK.some(k => k.visible) && matPoints.uniforms.uFonce.value < .2
+  if (!calme || (++saut % 3 === 0)) composeur.render()
+  requestAnimationFrame(boucle)
+}
+
+/* ---------- Le K de chaque application, dessiné depuis les mêmes facettes ---------- */
+const TEINTES_SVG = { ecosystem: ['#101422', '#1C2334'], mydas: ['#233B5C', '#38557E'], pay: ['#5C1E1E', '#852A2A'], move: ['#1E6A40', '#37A063'], chat: ['#382F6A', '#54469E'] }
+function kSVG(app) {
+  const [f, m] = TEINTES_SVG[app] || TEINTES_SVG.mydas
+  const hex = n => '#' + n.toString(16).padStart(6, '0')
+  return '<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' + FACETTES.map(([pts, c]) =>
+    `<polygon points="${pts}" fill="${c === BL_F ? f : c === BL_M ? m : hex(c)}"/>`).join('') + '</svg>'
+}
+document.querySelectorAll('[data-k]').forEach(e => { e.innerHTML = kSVG(e.dataset.k) })
+const LOGOS = { ecosystem: ['ecosystem', '#FFFFFF', 385], mydas: ['mydas', '#6BA3DE', 333.13], pay: ['pay', '#B24A4A', 249.44], move: ['move', '#449F6A', 295.25], chat: ['chat', '#7A6CD9', 263.88] }
+function lockupSVG(app) {
+  const [mot, couleur, largeur] = LOGOS[app]
+  const [f, m] = TEINTES_SVG[app]
+  const hex = n => '#' + n.toString(16).padStart(6, '0')
+  const k = FACETTES.map(([pts, c]) => `<polygon points="${pts}" fill="${c === BL_F ? f : c === BL_M ? m : hex(c)}"/>`).join('')
+  return `<svg viewBox="5 47 ${largeur} 71" overflow="visible" xmlns="http://www.w3.org/2000/svg"><g transform="translate(0.223,56.291) scale(0.102381)">${k}</g>` +
+    `<text x="50" y="104" font-size="64"><tspan font-family="Cambria,Georgia,serif" font-weight="700" fill="#E0BE45">AL</tspan>` +
+    `<tspan font-family="Georgia,serif" font-weight="300" font-style="italic" fill="${couleur}"${app === 'ecosystem' ? ' dx="6"' : ''}>${mot}</tspan>` +
+    `<tspan font-family="Georgia,serif" font-weight="700" fill="#E0BE45">.</tspan></text></svg>`
+}
+document.querySelectorAll('[data-lockup]').forEach(e => { e.innerHTML = lockupSVG(e.dataset.lockup) })
+/* Même règle que BlocIdentite (PiedLegal.tsx) : la signature épouse la largeur du tracé, sans la chasse morte du point */
+function ajusterSignatures() {
+  document.querySelectorAll('.bloc-identite').forEach(bloc => {
+    const svg = bloc.querySelector('svg'), sig = bloc.querySelector('.signature')
+    if (!svg || !sig) return
+    const vb = svg.viewBox.baseVal, bb = svg.getBBox(), ech = svg.getBoundingClientRect().width / vb.width
+    const ctx = document.createElement('canvas').getContext('2d')
+    ctx.font = '700 64px Georgia,serif'
+    const m = ctx.measureText('.')
+    const morte = m.actualBoundingBoxRight ? Math.max(0, m.width - m.actualBoundingBoxRight) : 0
+    const cible = (bb.width - morte) * ech
+    sig.style.marginLeft = Math.max(0, (bb.x - vb.x) * ech) + 'px'
+    for (let i = 0; i < 6; i++) {
+      const large = sig.getBoundingClientRect().width, taille = parseFloat(getComputedStyle(sig).fontSize)
+      if (!large || !cible) break
+      const voulue = Math.min(20, Math.max(6, taille * cible / large))
+      if (Math.abs(voulue - taille) < .05) break
+      sig.style.fontSize = voulue + 'px'
+    }
+  })
+}
+ajusterSignatures()
+document.fonts && document.fonts.ready.then(ajusterSignatures)
+addEventListener('resize', ajusterSignatures)
+
+/* L'anneau de répartition du KAL */
+;(() => {
+  const svg = document.getElementById('anneau-svg')
+  if (!svg) return
+  const parts = [[15, '#F0D878'], [4.5, '#D4AF37'], [1.5, '#6BA3DE'], [.5, '#7A6CD9'], [73.5, '#3a3a44']]
+  const r = 80, C = 2 * Math.PI * r
+  let debut = 0
+  const arcs = parts.map(([v, c]) => {
+    const l = C * v / 100
+    const el = document.createElementNS('http://www.w3.org/2000/svg', 'circle')
+    el.setAttribute('cx', 100); el.setAttribute('cy', 100); el.setAttribute('r', r)
+    el.setAttribute('stroke', c); el.setAttribute('stroke-dasharray', `0 ${C}`); el.setAttribute('stroke-dashoffset', -debut)
+    svg.appendChild(el)
+    const a = { el, l, debut }; debut += l; return a
+  })
+  const o = { k: 0 }
+  gsap.to(o, { k: 1, duration: 2.2, ease: 'power2.inOut', scrollTrigger: { trigger: svg, start: 'top 80%' },
+    onUpdate: () => arcs.forEach(({ el, l, debut: d }) => {
+      const fin = o.k * C
+      const vis = Math.max(0, Math.min(l, fin - d))
+      el.setAttribute('stroke-dasharray', `${Math.max(0, vis - (vis > 2 ? 1.5 : 0))} ${C}`)
+    }) })
+})()
+
+/* ---------- Animations des textes ---------- */
+document.querySelectorAll('.mots').forEach(el => {
+  const morceaux = []
+  el.childNodes.forEach(n => {
+    if (n.nodeType === 3) n.textContent.split(/(\s+)/).forEach(m => morceaux.push(m.trim() ? `<span class="mot">${m}</span>` : m))
+    else { n.innerHTML = n.textContent.split(/(\s+)/).map(m => m.trim() ? `<span class="mot">${m}</span>` : m).join(''); morceaux.push(n.outerHTML) }
+  })
+  el.innerHTML = morceaux.join('')
+  gsap.to(el.querySelectorAll('.mot'), { opacity: 1, y: 0, rotateX: 0, filter: 'blur(0px)', stagger: .08, ease: 'none',
+    scrollTrigger: { trigger: el, start: 'top 85%', end: 'bottom 45%', scrub: true } })
+})
+
+/* Ouverture */
+const intro = gsap.timeline({ delay: .15 })
+intro.to('.heros h1 .ligne span', { y: 0, duration: 1.3, ease: 'expo.out', stagger: .12 })
+     .to('.heros .monte', { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1, ease: 'power3.out', stagger: .08 }, '-=.9')
+
+document.querySelectorAll('section:not(.heros) .monte:not(.temoin)').forEach(el => {
+  gsap.to(el, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%' } })
+})
+
+/* Applications */
+ScrollTrigger.create({
+  trigger: '#apps', start: 'top top', end: 'bottom bottom',
+  onUpdate: self => {
+    const p = self.progress
+    document.querySelectorAll('.app').forEach((c, i) => {
+      const q = borne((p - .5 - i * .05) / .12)
+      const sortie = borne((p - .93) / .07)
+      c.style.opacity = (q * (1 - sortie)).toFixed(3)
+      c.style.transform = `translateY(${(1 - q) * 30 - sortie * 40}px) scale(${.96 + q * .04})`
+    })
+    const j = borne((p - .78) / .1) * (1 - borne((p - .94) / .06))
+    const jc = document.getElementById('jeton-central')
+    jc.style.opacity = j.toFixed(3)
+    document.querySelector('#apps .tete').style.opacity = (1 - borne((p - .9) / .1)).toFixed(3)
+  }
+})
+
+/* Téléphone : les vrais écrans de home */
+const vues = [...document.querySelectorAll('.ecran-vue')]
+const recitsG = [...document.querySelectorAll('#recits-g .recit')], recitsD = [...document.querySelectorAll('#recits-d .recit')]
+const tel = document.getElementById('tel')
+const vueHome = document.querySelector('.vue-home'), feuille = document.getElementById('feuille')
+const badgeKal = document.querySelector('.badge'), iconeKal = document.getElementById('ios-kal')
+const boutonDepot = document.querySelector('.s-bouton'), bulle = document.getElementById('bulle')
+const lignesHome = Object.fromEntries([...document.querySelectorAll('.h-l')].map(l => [l.dataset.l, l]))
+let dernierRecit = -1
+let echelleTel = 1
+function mesurerTel() {
+  const etroit = innerWidth <= 980
+  const h = innerHeight - (etroit ? 400 : 150), w = etroit ? innerWidth * .62 : 330
+  echelleTel = Math.max(.4, Math.min(1, h / 708, w / 330))
+  document.querySelector('.scene-tel').style.setProperty('--e', echelleTel)
+}
+mesurerTel(); addEventListener('resize', () => { mesurerTel(); poserTel() })
+let entreeTel = 0, progresTel = 0
+function poserTel() {
+  const e = entreeTel * entreeTel * (3 - 2 * entreeTel)
+  tel.style.transform = `scale(${echelleTel}) translateY(${(1 - e) * 120}px) rotateY(${(1 - e) * -24 + Math.sin(progresTel * Math.PI * 2) * 6}deg) rotateX(${(1 - e) * 10 + 3}deg)`
+}
+poserTel()
+ScrollTrigger.create({ trigger: '#telephone', start: 'top bottom', end: 'top top', onUpdate: self => { entreeTel = self.progress; poserTel() } })
+ScrollTrigger.create({
+  trigger: '#telephone', start: 'top top', end: 'bottom bottom',
+  onUpdate: self => {
+    const p = self.progress
+    entreeTel = 1; progresTel = p; poserTel()
+    const v = p < .17 ? 0 : p < .47 ? 1 : p < .63 ? 2 : p < .78 ? 1 : 3
+    vues.forEach(el => el.classList.toggle('on', +el.dataset.vue === v))
+    badgeKal.classList.toggle('on', p > .07)
+    iconeKal.style.transform = `scale(${1 + borne((p - .12) / .05) * .3})`
+    const connexion = p >= .17 && p < .31
+    feuille.classList.toggle('on', connexion)
+    vueHome.classList.toggle('flou-fond', connexion)
+    lignesHome.strat.classList.toggle('vise', p >= .34 && p < .47)
+    lignesHome.vekal.classList.toggle('vise', p >= .65 && p < .78)
+    boutonDepot.classList.toggle('presse', p > .55 && p < .6)
+    bulle.classList.toggle('on', p > .85)
+    const actif = p < .31 ? 0 : p < .47 ? 1 : p < .63 ? 2 : p < .78 ? 3 : 4
+    const cleActif = actif + (p > .06 ? 10 : 0)
+    if (cleActif === dernierRecit) return
+    dernierRecit = cleActif
+    ;[recitsG, recitsD].forEach((liste, cote) => liste.forEach((r, i) => {
+      const montre = (cote === 0 ? (i === actif && i % 2 === 0) : (i === actif && (i % 2 === 1 || mobile))) && p > .06
+      gsap.to(r, { opacity: montre ? 1 : 0, y: montre ? 0 : (i < actif ? -30 : 30), duration: .6, overwrite: true, ease: 'power3.out' })
+    }))
+  }
+})
+
+/* Moteur */
+const parts = [...document.querySelectorAll('#parts li')]
+ScrollTrigger.create({
+  trigger: '#moteur', start: 'top top', end: 'bottom bottom',
+  onUpdate: self => {
+    const p = self.progress
+    parts.forEach((li, i) => {
+      const q = borne((p - .12 - i * .06) / .18)
+      const val = +li.querySelector('b').dataset.v
+      li.querySelector('b').textContent = Math.round(val * q) + ' %'
+      li.querySelector('.jauge i').style.width = (val / 35 * 100 * q) + '%'
+      li.style.opacity = (.35 + .65 * q).toFixed(3)
+    })
+  }
+})
+
+/* Compteurs */
+document.querySelectorAll('.compte').forEach(el => {
+  const o = { n: 0 }
+  gsap.to(o, { n: +el.dataset.v, duration: 2.2, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 85%' },
+    onUpdate: () => { el.textContent = Math.round(o.n).toLocaleString('fr-CH').replace(/\s/g, ' ') } })
+})
+
+/* Stratégies, défilement horizontal */
+const piste = document.getElementById('piste')
+ScrollTrigger.create({
+  trigger: '#strategies', start: 'top top', end: 'bottom bottom',
+  onUpdate: self => {
+    const max = piste.scrollWidth - innerWidth
+    piste.style.transform = `translateX(${-max * borne((self.progress - .05) / .9)}px)`
+    carrousel()
+  }
+})
+function carrousel() {
+  if (reduit) return
+  const centre = innerWidth / 2
+  piste.querySelectorAll('.strat').forEach(c => {
+    const r = c.getBoundingClientRect()
+    const d = Math.max(-1.6, Math.min(1.6, (r.left + r.width / 2 - centre) / centre))
+    c.style.transform = `perspective(1400px) rotateY(${-d * 16}deg) translateZ(${-Math.abs(d) * 70}px) scale(${1 - Math.abs(d) * .06})`
+    c.style.opacity = (1 - Math.min(1, Math.abs(d)) * .35).toFixed(3)
+  })
+}
+carrousel()
+
+/* Lueur qui suit la souris sur les blocs Mydas */
+document.querySelectorAll('.bloc').forEach(b => b.addEventListener('pointermove', e => {
+  const r = b.getBoundingClientRect()
+  b.style.setProperty('--mx', (e.clientX - r.left) + 'px'); b.style.setProperty('--my', (e.clientY - r.top) + 'px')
+}))
+
+/* ---------- Mesure d'audience : mêmes événements Umami que kalmydas.com ---------- */
+;[['.entete .bouton', 'cta_nav_lancer_app'], ['.appel-mobile .bouton', 'cta_nav_lancer_app'], ['.heros .actions .bouton:not(.fantome)', 'cta_hero_lancer_app'],
+  ['.heros .actions .bouton.fantome', 'cta_hero_voir_strategies'], ['.final .actions .bouton:not(.fantome)', 'cta_final_lancer_app'],
+  ['.final .actions .bouton.fantome', 'cta_final_livre_blanc'], ['.final-liens a[href*="OFFICIEL"]', 'cta_final_telegram'], ['.final-liens a[href*="kal_mydas"]', 'cta_final_support'],
+  ['.aide .bouton', 'cta_conciergerie_telegram'], ['#temoignages a[href*="t.me"]', 'cta_temoignages_telegram'], ['a[href*="transparency"]', 'cta_transparence'],
+  ['.pied-reseaux-icones a', 'outbound_social'], ['.pied-page a[href*="kal_mydas"]', 'outbound_support']
+].forEach(([q, nom]) => document.querySelectorAll(q).forEach(a => { a.setAttribute('data-umami-event', nom); a.setAttribute('data-umami-event-page', 'landing-ecosysteme') }))
+
+/* ---------- Le bas de page en relief ---------- */
+const tactile = matchMedia('(hover: none)').matches
+/* Relief au survol : la carte suit la souris */
+if (!reduit && !tactile) {
+  document.querySelectorAll('.bloc, .option, .temoin, .tuile, .volet, .route li, .jeton-traits > div, .apropos > div, .aide').forEach(c => {
+    c.classList.add('relief')
+    c.addEventListener('pointermove', e => {
+      const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5
+      gsap.to(c, { rotateY: x * 9, rotateX: -y * 9, transformPerspective: 900, duration: .5, ease: 'power3.out', overwrite: 'auto' })
+      c.style.setProperty('--gx', (x + .5) * 100 + '%'); c.style.setProperty('--gy', (y + .5) * 100 + '%')
+    })
+    c.addEventListener('pointerleave', () => gsap.to(c, { rotateY: 0, rotateX: 0, duration: .8, ease: 'elastic.out(1,.5)', overwrite: 'auto' }))
+  })
+}
+/* Témoignages : ils s'ouvrent en éventail */
+{
+  const t = [...document.querySelectorAll('.temoin')]
+  const large = innerWidth > 980
+  gsap.fromTo(t, { opacity: .15, y: 90, x: i => large ? (1 - i) * 300 : 0, rotate: i => large ? (i - 1) * 9 : 0, filter: 'blur(6px)' },
+    { opacity: 1, y: 0, x: 0, rotate: 0, filter: 'blur(0px)', ease: 'power2.out', stagger: .05,
+      scrollTrigger: { trigger: '.temoins', start: 'top 92%', end: 'top 35%', scrub: true } })
+}
+/* Feuille de route : le fil s'allume étape par étape */
+{
+  const route = document.querySelector('.route'), etapesRoute = [...document.querySelectorAll('.route li')]
+  ScrollTrigger.create({ trigger: route, start: 'top 80%', end: 'bottom 55%', scrub: true,
+    onUpdate: self => {
+      route.style.setProperty('--p', self.progress.toFixed(3))
+      etapesRoute.forEach((li, i) => li.classList.toggle('allume', self.progress >= i / Math.max(1, etapesRoute.length - 1) - .02))
+    } })
+}
+/* Le jeton : l'anneau se relève en entrant */
+gsap.fromTo('#anneau-svg', { rotateX: 62, rotation: -90, scale: .82, transformPerspective: 1000 },
+  { rotateX: 0, rotation: -90, scale: 1, ease: 'none', scrollTrigger: { trigger: '.repartition', start: 'top 95%', end: 'center 55%', scrub: true } })
+/* Mydas : les blocs basculent en place */
+gsap.utils.toArray('.bento .bloc').forEach((b, i) => gsap.fromTo(b, { rotateX: 18, transformPerspective: 900, transformOrigin: '50% 100%' },
+  { rotateX: 0, ease: 'none', scrollTrigger: { trigger: b, start: 'top 98%', end: 'top 65%', scrub: true } }))
+
+/* Étapes */
+gsap.to('#trait', { width: '100%', ease: 'none', scrollTrigger: { trigger: '#liste-etapes', start: 'top 75%', end: 'bottom 60%', scrub: true } })
+
+/* En-tête et appel mobile */
+const entete = document.getElementById('entete'), appel = document.getElementById('appel-mobile')
+const plein = () => entete.classList.toggle('plein', scrollY > 80)
+addEventListener('scroll', plein, { passive: true }); plein()
+ScrollTrigger.create({ trigger: '#constat', start: 'top 60%', endTrigger: '#final', end: 'top 40%', onToggle: s => appel.classList.toggle('vue', s.isActive) })
+
+/* Boutons aimantés et halo */
+if (!mobile && !reduit) {
+  const halo = document.getElementById('halo')
+  addEventListener('pointermove', e => gsap.to(halo, { x: e.clientX, y: e.clientY, duration: .6, ease: 'power3.out' }))
+  document.querySelectorAll('.aimant').forEach(b => {
+    b.addEventListener('pointermove', e => {
+      const r = b.getBoundingClientRect()
+      gsap.to(b, { x: (e.clientX - r.left - r.width / 2) * .25, y: (e.clientY - r.top - r.height / 2) * .35, duration: .4, ease: 'power3.out' })
+    })
+    b.addEventListener('pointerleave', () => gsap.to(b, { x: 0, y: 0, duration: .7, ease: 'elastic.out(1,.4)' }))
+  })
+}
+
+redimensionner()
+requestAnimationFrame(boucle)
+new ResizeObserver(() => { calculerReperes(); ScrollTrigger.refresh() }).observe(document.querySelector('main'))
+addEventListener('load', () => { redimensionner(); ScrollTrigger.refresh() })
+document.fonts && document.fonts.ready.then(() => { redimensionner(); ScrollTrigger.refresh() })
+</script>
+</body>
+</html>
