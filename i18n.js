@@ -267,7 +267,7 @@ const I18N_EN = {
   token_dist_4: "Liquidity provider rewards (150,000 KAL)",
   token_dist_5: "Tester recognition program (50,000 KAL)",
   token_dist_6: "Unallocated reserve (7,350,000 KAL)",
-  token_dist_footnote: "Programmed emission of the current contracts, about 2,650,000 KAL. The remainder is a free ceiling, never minted without a multisig decision, no automatic dilution. No team allocation: founder compensation depends entirely on actual protocol performance, paid in USDC.",
+  token_dist_footnote: "The KAL cap is 10,000,000 KAL, written into the token contract. As of 22 October 2026, three contracts can issue KAL without a new signature, each within its own limits. Liquidity rewards issue at most 1,650,000 KAL over 50 years. The application allocation plan issues at most 7,106,719 KAL over 50 years, with a daily cap. The purchase curve issues at most 450,000 KAL and is paused on that date. Any new contract allowed to issue KAL requires a signature from the project multisig. No team allocation: founder compensation depends entirely on actual protocol performance, paid in USDC.",
   about_risk_h3: "Risk disclaimer",
   about_risk_p: `We promise nothing. Past performance does not guarantee future results. Your deposit carries its share of the gains and losses of the protocol reserve and can fall to zero. In simulation, some strategies went through temporary drawdowns of up to 70%. We publish the source code and the test histories.`,
   about_timeline_h3: "Where we are",
