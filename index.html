@@ -898,7 +898,7 @@ main p,main h1,main h2,main h3,main li,main dd{text-shadow:0 1px 3px rgba(7,7,10
       <div class="monte"><b>6</b><span>robots de trading</span></div>
       <div class="monte"><b>4 à 21</b><span>ans simulés sur données réelles</span></div>
       <div class="monte"><b>Base</b><span>contrats publics, vérifiables sur Basescan</span></div>
-      <div class="monte"><b><span class="compte" data-v="1100">0</span>+</b><span>tests unitaires</span></div>
+      <div class="monte"><b><span class="compte" data-v="1100">1 100</span>+</b><span>tests unitaires</span></div>
     </div>
   </section>
 
@@ -1117,13 +1117,13 @@ main p,main h1,main h2,main h3,main li,main dd{text-shadow:0 1px 3px rgba(7,7,10
         <h2 id="titre-moteur">L’or nourrit <em>le KAL.</em></h2>
         <p class="chapo">Sur les nouveaux gains seulement, le contrat prend des frais. Il les partage ainsi.</p>
         <ul class="parts" id="parts">
-          <li><span>Réserve du protocole</span><b data-v="35">0 %</b><span class="jauge"><i></i></span></li>
-          <li class="fort"><span>Rachat de KAL et retour à la liquidité</span><b data-v="20">0 %</b><span class="jauge"><i></i></span></li>
-          <li><span>Liquidité</span><b data-v="15">0 %</b><span class="jauge"><i></i></span></li>
-          <li><span>Partage aux détenteurs de veKAL</span><b data-v="10">0 %</b><span class="jauge"><i></i></span></li>
-          <li><span>Fondateur</span><b data-v="10">0 %</b><span class="jauge"><i></i></span></li>
-          <li><span>Bonus des pools, en KAL</span><b data-v="5">0 %</b><span class="jauge"><i></i></span></li>
-          <li><span>Réserve RWA</span><b data-v="5">0 %</b><span class="jauge"><i></i></span></li>
+          <li><span>Réserve du protocole</span><b data-v="35">35 %</b><span class="jauge"><i></i></span></li>
+          <li class="fort"><span>Rachat de KAL et retour à la liquidité</span><b data-v="20">20 %</b><span class="jauge"><i></i></span></li>
+          <li><span>Liquidité</span><b data-v="15">15 %</b><span class="jauge"><i></i></span></li>
+          <li><span>Partage aux détenteurs de veKAL</span><b data-v="10">10 %</b><span class="jauge"><i></i></span></li>
+          <li><span>Fondateur</span><b data-v="10">10 %</b><span class="jauge"><i></i></span></li>
+          <li><span>Bonus des pools, en KAL</span><b data-v="5">5 %</b><span class="jauge"><i></i></span></li>
+          <li><span>Réserve RWA</span><b data-v="5">5 %</b><span class="jauge"><i></i></span></li>
         </ul>
         <p class="zero">Le KAL racheté retourne à la liquidité. Il n’est jamais détruit.</p>
       </div>
@@ -1165,7 +1165,7 @@ main p,main h1,main h2,main h3,main li,main dd{text-shadow:0 1px 3px rgba(7,7,10
     <h2 id="titre-preuves" class="mots">Tout ce qu’on avance <em>se vérifie.</em></h2>
     <div class="tuiles">
       <div class="tuile monte"><b>100&nbsp;%</b><div><h3>Contrats publics</h3><p>Code source vérifiable contrat par contrat sur Basescan.</p></div></div>
-      <div class="tuile monte"><b><span class="compte" data-v="1100">0</span>+</b><div><h3>Tests unitaires</h3><p>Les fonctions critiques des contrats sont couvertes par des tests automatiques.</p></div></div>
+      <div class="tuile monte"><b><span class="compte" data-v="1100">1 100</span>+</b><div><h3>Tests unitaires</h3><p>Les fonctions critiques des contrats sont couvertes par des tests automatiques.</p></div></div>
       <div class="tuile monte"><b>0</b><div><h3>Délai de retrait</h3><p>Sans Pass, sans délai, sauf pause d’urgence.</p></div></div>
       <div class="tuile monte"><b>▲</b><div><h3>Plus haut atteint</h3><p>Les frais ne portent que sur ce qui le dépasse. Rien n’est pris sur une perte.</p></div></div>
       <div class="tuile monte"><b>L2</b><div><h3>Base, par Coinbase</h3><p>La couche 2 d’Ethereum soutenue par Coinbase. Frais de réseau faibles.</p></div></div>
@@ -1831,6 +1831,7 @@ ScrollTrigger.create({
 
 /* Moteur */
 const parts = [...document.querySelectorAll('#parts li')]
+parts.forEach(li => { li.querySelector('b').textContent = '0 %' })
 ScrollTrigger.create({
   trigger: '#moteur', start: 'top top', end: 'bottom bottom',
   onUpdate: self => {
@@ -1848,6 +1849,7 @@ ScrollTrigger.create({
 /* Compteurs */
 document.querySelectorAll('.compte').forEach(el => {
   const o = { n: 0 }
+  el.textContent = '0'
   gsap.to(o, { n: +el.dataset.v, duration: 2.2, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 85%' },
     onUpdate: () => { el.textContent = Math.round(o.n).toLocaleString('fr-CH').replace(/\s/g, ' ') } })
 })

@@ -876,7 +876,7 @@ main p,main h1,main h2,main h3,main li,main dd{text-shadow:0 1px 3px rgba(7,7,10
       <div class="monte"><b>6</b><span>trading robots</span></div>
       <div class="monte"><b>4 to 21</b><span>years simulated on real data</span></div>
       <div class="monte"><b>Base</b><span>public contracts, verifiable on Basescan</span></div>
-      <div class="monte"><b><span class="compte" data-v="1100">0</span>+</b><span>unit tests</span></div>
+      <div class="monte"><b><span class="compte" data-v="1100">1,100</span>+</b><span>unit tests</span></div>
     </div>
   </section>
 
@@ -1111,13 +1111,13 @@ main p,main h1,main h2,main h3,main li,main dd{text-shadow:0 1px 3px rgba(7,7,10
         <h2 id="titre-moteur">Gold feeds <em>the KAL.</em></h2>
         <p class="chapo">Mydas robots work on gold and bitcoin. The contract takes fees on new gains only. It splits them this way, every time, without exception.</p>
         <ul class="parts" id="parts">
-          <li><span>Protocol reserve</span><b data-v="35">0%</b><span class="jauge"><i></i></span></li>
-          <li class="fort"><span>KAL buyback and return to liquidity</span><b data-v="20">0%</b><span class="jauge"><i></i></span></li>
-          <li><span>Liquidity</span><b data-v="15">0%</b><span class="jauge"><i></i></span></li>
-          <li><span>Share for veKAL holders</span><b data-v="10">0%</b><span class="jauge"><i></i></span></li>
-          <li><span>Founder</span><b data-v="10">0%</b><span class="jauge"><i></i></span></li>
-          <li><span>Pool bonus, in KAL</span><b data-v="5">0%</b><span class="jauge"><i></i></span></li>
-          <li><span>RWA reserve</span><b data-v="5">0%</b><span class="jauge"><i></i></span></li>
+          <li><span>Protocol reserve</span><b data-v="35">35%</b><span class="jauge"><i></i></span></li>
+          <li class="fort"><span>KAL buyback and return to liquidity</span><b data-v="20">20%</b><span class="jauge"><i></i></span></li>
+          <li><span>Liquidity</span><b data-v="15">15%</b><span class="jauge"><i></i></span></li>
+          <li><span>Share for veKAL holders</span><b data-v="10">10%</b><span class="jauge"><i></i></span></li>
+          <li><span>Founder</span><b data-v="10">10%</b><span class="jauge"><i></i></span></li>
+          <li><span>Pool bonus, in KAL</span><b data-v="5">5%</b><span class="jauge"><i></i></span></li>
+          <li><span>RWA reserve</span><b data-v="5">5%</b><span class="jauge"><i></i></span></li>
         </ul>
         <p class="zero">KAL never burns. Bought-back KAL goes through the BuybackRecirculator contract and returns to the KalSwap KAL/USDC liquidity reserve. No path in the protocol destroys a token.</p>
       </div>
@@ -1159,7 +1159,7 @@ main p,main h1,main h2,main h3,main li,main dd{text-shadow:0 1px 3px rgba(7,7,10
     <h2 id="titre-preuves" class="mots">Everything we claim <em>can be verified.</em></h2>
     <div class="tuiles">
       <div class="tuile monte"><b>100%</b><div><h3>Public contracts</h3><p>Source code verifiable contract by contract on Basescan.</p></div></div>
-      <div class="tuile monte"><b><span class="compte" data-v="1100">0</span>+</b><div><h3>Unit tests</h3><p>The critical functions of the contracts are covered by automated tests.</p></div></div>
+      <div class="tuile monte"><b><span class="compte" data-v="1100">1,100</span>+</b><div><h3>Unit tests</h3><p>The critical functions of the contracts are covered by automated tests.</p></div></div>
       <div class="tuile monte"><b>0</b><div><h3>Withdrawal delay</h3><p>No Pass and no delay, within the USDC present in the pool, except during an emergency pause decided by the contract owner.</p></div></div>
       <div class="tuile monte"><b>HWM</b><div><h3>High-Water Mark</h3><p>Performance fees apply only to new gains. Nothing is taken on a loss.</p></div></div>
       <div class="tuile monte"><b>L2</b><div><h3>Base, by Coinbase</h3><p>The Ethereum layer 2 backed by Coinbase. Low network fees.</p></div></div>
@@ -1828,6 +1828,7 @@ ScrollTrigger.create({
 
 /* Moteur */
 const parts = [...document.querySelectorAll('#parts li')]
+parts.forEach(li => { li.querySelector('b').textContent = '0%' })
 ScrollTrigger.create({
   trigger: '#moteur', start: 'top top', end: 'bottom bottom',
   onUpdate: self => {
@@ -1835,7 +1836,7 @@ ScrollTrigger.create({
     parts.forEach((li, i) => {
       const q = borne((p - .12 - i * .06) / .18)
       const val = +li.querySelector('b').dataset.v
-      li.querySelector('b').textContent = Math.round(val * q) + ' %'
+      li.querySelector('b').textContent = Math.round(val * q) + '%'
       li.querySelector('.jauge i').style.width = (val / 35 * 100 * q) + '%'
       li.style.opacity = (.35 + .65 * q).toFixed(3)
     })
@@ -1845,8 +1846,9 @@ ScrollTrigger.create({
 /* Compteurs */
 document.querySelectorAll('.compte').forEach(el => {
   const o = { n: 0 }
+  el.textContent = '0'
   gsap.to(o, { n: +el.dataset.v, duration: 2.2, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 85%' },
-    onUpdate: () => { el.textContent = Math.round(o.n).toLocaleString('fr-CH').replace(/\s/g, ' ') } })
+    onUpdate: () => { el.textContent = Math.round(o.n).toLocaleString('en-US') } })
 })
 
 /* Stratégies, défilement horizontal */
