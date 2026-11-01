@@ -1353,8 +1353,19 @@ const mobile = matchMedia('(max-width: 980px)').matches
 gsap.registerPlugin(ScrollTrigger)
 
 /* ---------- Défilement doux ---------- */
+/* OF 5059 : au doigt, le défilement reste celui du téléphone. Lenis ne sert
+ * qu'à la molette ; sur écran tactile il posait des écouteurs touchmove non
+ * passifs sur toute la page, qui font attendre chaque geste derrière la 3D. */
+const toucher = matchMedia('(pointer: coarse)').matches && !matchMedia('(pointer: fine)').matches
+ScrollTrigger.config({ ignoreMobileResize: true })
 let lenis = null
-if (!reduit && !NET) {
+if (toucher && !NET) {
+  document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+    const cible = document.querySelector(a.getAttribute('href'))
+    if (cible) { e.preventDefault(); cible.scrollIntoView({ behavior: reduit ? 'auto' : 'smooth', block: 'start' }) }
+  }))
+}
+if (!reduit && !NET && !toucher) {
   lenis = new Lenis({ duration: 1.15, smoothWheel: true })
   lenis.on('scroll', ScrollTrigger.update)
   gsap.ticker.add(t => lenis.raf(t * 1000))
@@ -1624,7 +1635,15 @@ function redimensionner() {
   matPoints.uniforms.uPix.value = renderer.getPixelRatio()
   placerAmas(); calculerReperes()
 }
-addEventListener('resize', () => { redimensionner(); ScrollTrigger.refresh() })
+/* OF 5059 : au téléphone, la barre d'adresse qui sort ou rentre change seulement
+ * la hauteur. Recalculer à ce moment réécrivait la position de défilement et
+ * cassait le geste en cours. On ne recalcule que si la largeur change. */
+let largeurVue = innerWidth
+addEventListener('resize', () => {
+  if (toucher && innerWidth === largeurVue) return
+  largeurVue = innerWidth
+  redimensionner(); ScrollTrigger.refresh()
+})
 addEventListener('pointermove', e => {
   etat.sourisX = e.clientX / innerWidth * 2 - 1
   etat.sourisY = e.clientY / innerHeight * 2 - 1
