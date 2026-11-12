@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Kal Mydas, the KAL ecosystem on Base: gold, bitcoin, wallet and messaging</title>
-<meta name="description" content="Kal Mydas brings four applications on Base together around a single token, KAL: automated strategies on gold and bitcoin, a twelve-word wallet, physical activity and encrypted messaging. Public contracts, every operation verifiable.">
+<title>KAL ecosystem | KALmydas trading robots, wallet and messaging on Base</title>
+<meta name="description" content="KAL ecosystem, four applications on Base and a single token, KAL: trading robots on gold and bitcoin, wallet, messaging and activity. Every operation verifiable.">
 <link rel="canonical" href="https://kalmydas.com/en/">
 <link rel="alternate" hreflang="fr" href="https://kalmydas.com/">
 <link rel="alternate" hreflang="en" href="https://kalmydas.com/en/">
@@ -17,14 +17,14 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Kal Mydas">
-<meta property="og:title" content="Kal Mydas. Don’t take our word. Verify.">
+<meta property="og:title" content="KAL ecosystem. Don’t take our word. Verify.">
 <meta property="og:description" content="Four applications on Base, a single token. Strategies on gold and bitcoin, a twelve-word wallet, encrypted messaging.">
 <meta property="og:url" content="https://kalmydas.com/en/">
 <meta property="og:image" content="https://kalmydas.com/og-image-v4.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Kal Mydas. Don’t take our word. Verify.">
+<meta name="twitter:title" content="KAL ecosystem. Don’t take our word. Verify.">
 <meta name="twitter:description" content="Four applications on Base, a single token: KAL.">
 <meta name="twitter:image" content="https://kalmydas.com/og-image-v4.jpg">
 <meta name="twitter:site" content="@KalMydas_FR">
@@ -121,12 +121,15 @@ h3{font-weight:600;font-size:20px;letter-spacing:-.005em}
 /* Héros */
 .heros{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:110px;padding-bottom:130px}
 .heros .surtitre{margin-bottom:28px}
-.heros h1{font-size:clamp(58px,10.5vw,184px);max-width:9.5ch}
-.heros h1 .ligne{display:block;overflow:hidden;padding-bottom:.06em}
-.heros h1 .ligne span{display:inline-block;transform:translateY(110%)}
+h1.surtitre{font-family:inherit;line-height:inherit;margin:0}
+.heros .accroche{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:.98;margin:0}
+.heros .accroche em{font-style:italic;color:var(--or-clair)}
+.heros .accroche{font-size:clamp(58px,10.5vw,184px);max-width:9.5ch}
+.heros .accroche .ligne{display:block;overflow:hidden;padding-bottom:.06em}
+.heros .accroche .ligne span{display:inline-block;transform:translateY(110%)}
 .heros .chapo{margin-top:30px;max-width:540px}
 .heros .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
-.heros h1,.heros .chapo{text-shadow:0 2px 30px rgba(7,7,10,.85)}
+.heros .accroche,.heros .chapo{text-shadow:0 2px 30px rgba(7,7,10,.85)}
 .heros .note{margin-top:26px;font-size:12.5px;color:var(--texte-3);max-width:520px}
 .indice{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--texte-3);display:flex;flex-direction:column;align-items:center;gap:12px}
 .indice i{width:1px;height:46px;background:linear-gradient(var(--or),transparent);animation:goutte 2s ease-in-out infinite}
@@ -740,7 +743,7 @@ main p,main h1,main h2,main h3,main li,main dd{text-shadow:0 1px 3px rgba(7,7,10
 @media (prefers-reduced-motion:reduce){.titre-logo::before{animation:none}}
 
 /* ===== V1.1 ===== */
-.heros h1{font-size:clamp(52px,7.4vw,128px)}
+.heros .accroche{font-size:clamp(52px,7.4vw,128px)}
 @media (min-width:1100px){.chiffres-heros{grid-template-columns:1fr 1fr;max-width:720px}}
 .grille-apps{grid-template-columns:repeat(2,minmax(0,440px))!important;justify-content:center;gap:20px!important;max-width:none!important}
 .app{padding:26px 28px 22px}
@@ -875,12 +878,12 @@ main p,main h1,main h2,main h3,main li,main dd{text-shadow:0 1px 3px rgba(7,7,10
 
   <!-- 1. Héros -->
   <section class="section heros" id="heros">
-    <span class="surtitre monte">KAL ecosystem · The ecosystem of autonomy</span>
-    <h1>
+    <h1 class="surtitre monte">KAL ecosystem · Trading robots on gold and bitcoin, wallet and messaging</h1>
+    <p class="accroche">
       <span class="ligne"><span>Don’t take</span></span>
       <span class="ligne"><span>our word.</span></span>
       <span class="ligne"><span><em>Verify.</em></span></span>
-    </h1>
+    </p>
     <p class="chapo monte">The rigour of a private bank, without the bank. Four apps on Base, a single token.</p>
     <div class="actions monte">
       <a class="bouton aimant" href="https://home.kalmydas.com/v2.1/">Open the app <span class="fleche">→</span></a>
@@ -1776,7 +1779,7 @@ document.querySelectorAll('.mots').forEach(el => {
 
 /* Ouverture */
 const intro = gsap.timeline({ delay: .15 })
-intro.to('.heros h1 .ligne span', { y: 0, duration: 1.3, ease: 'expo.out', stagger: .12 })
+intro.to('.heros .accroche .ligne span', { y: 0, duration: 1.3, ease: 'expo.out', stagger: .12 })
      .to('.heros .monte', { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1, ease: 'power3.out', stagger: .08 }, '-=.9')
 
 document.querySelectorAll('section:not(.heros) .monte:not(.temoin)').forEach(el => {
