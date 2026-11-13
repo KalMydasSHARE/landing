@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portefeuille non dépositaire, garder ses clés, ça veut dire quoi ? | KAL ecosystem</title>
+  <meta name="description" content="Portefeuille dépositaire ou non dépositaire, phrase de douze mots, pièges à éviter. Ce que veut dire garder ses clés crypto. Le guide de KAL ecosystem." />
+  <meta name="author" content="Kal Mydas" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="theme-color" content="#4184CC" />
+  <link rel="canonical" href="https://kalmydas.com/guides/portefeuille-non-depositaire/" />
+  <meta property="og:title" content="Portefeuille non dépositaire, garder ses clés, ça veut dire quoi ? | KAL ecosystem" />
+  <meta property="og:description" content="Portefeuille dépositaire ou non dépositaire, phrase de douze mots, pièges à éviter. Ce que veut dire garder ses clés crypto. Le guide de KAL ecosystem." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://kalmydas.com/guides/portefeuille-non-depositaire/" />
+  <meta property="og:image" content="https://kalmydas.com/og-image-v4.jpg" />
+  <meta property="og:site_name" content="KAL ecosystem" />
+  <meta property="og:locale" content="fr_CH" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@KalMydas_FR" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Garder ses clés, ça veut dire quoi ?",
+      "description": "Portefeuille dépositaire ou non dépositaire, phrase de douze mots, pièges à éviter. Ce que veut dire garder ses clés crypto. Le guide de KAL ecosystem.",
+      "url": "https://kalmydas.com/guides/portefeuille-non-depositaire/",
+      "inLanguage": "fr",
+      "datePublished": "2026-11-13",
+      "dateModified": "2026-11-13",
+      "author": {
+        "@type": "Person",
+        "name": "Kal Mydas"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "KAL ecosystem",
+        "alternateName": [
+          "KalMydas",
+          "Kal Mydas",
+          "kalmydas"
+        ],
+        "url": "https://kalmydas.com/",
+        "logo": "https://kalmydas.com/logo.png"
+      },
+      "image": "https://kalmydas.com/og-image-v4.jpg",
+      "mainEntityOfPage": "https://kalmydas.com/guides/portefeuille-non-depositaire/"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Qu’est-ce qu’un portefeuille non dépositaire ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un portefeuille dont vous gardez seul la clé. Vos fonds ne dépendent d’aucune plateforme."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "À quoi servent les douze mots ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "C’est la phrase de récupération. Elle permet de retrouver le portefeuille. Qui a les douze mots a le portefeuille, il ne faut jamais les donner."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Que se passe-t-il si je perds mes douze mots ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Personne ne peut vous les rendre. Si l’appareil est perdu aussi, les fonds sont perdus."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "KAL ecosystem",
+          "item": "https://kalmydas.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Guides",
+          "item": "https://kalmydas.com/guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Garder ses clés, ça veut dire quoi ?",
+          "item": "https://kalmydas.com/guides/portefeuille-non-depositaire/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      /* Charte de marque Kal Mydas (alignement V5 acté 4 mai 2026, F-015 / L-025 option 1A) */
+      --bg: #060A18;
+      --bg-elevated: #0c0c1a;
+      --bg-card: #0f0f1e;
+      --bg-card-hover: #141428;
+      --border: #1a1a30;
+      --border-subtle: #14142a;
+      --border-gold: rgba(88, 120, 162, 0.2);
+      --gold: #4184CC;
+      --gold-light: #7E93B8;
+      --gold-dark: #4D6592;
+      --gold-glow: rgba(88, 120, 162, 0.15);
+      --text: #EAEAF2;
+      --text-secondary: #C3C3CD;
+      --text-muted: #9D9DB8;
+      --text-faint: #5A5A78;
+      --green: #22c55e;
+      --blue: #3b82f6;
+      --orange: #f97316;
+      --yellow: #eab308;
+      --red: #ef4444;
+      --purple: #8b5cf6;
+      --gradient-gold: linear-gradient(135deg, #4D6592 0%, #7E93B8 50%, #4184CC 100%);
+      --gradient-gold-text: linear-gradient(135deg, #4184CC, #7E93B8, #4184CC);
+      --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+      --radius: 16px;
+      --radius-sm: 10px;
+      --radius-xs: 6px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(6, 6, 16, 0.7);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid transparent;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    nav.scrolled {
+      padding: 0.6rem 2rem;
+      background: rgba(6, 6, 16, 0.92);
+      border-bottom-color: var(--border-subtle);
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      background: var(--gradient-gold-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 0.3s;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links a:hover { color: var(--gold-light); }
+
+    /* ===== LANGUAGE TOGGLE ===== */
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2px;
+      cursor: pointer;
+      user-select: none;
+      gap: 0;
+    }
+
+    .lang-option {
+      padding: 3px 10px;
+      border-radius: 16px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: all 0.3s;
+      letter-spacing: 0.02em;
+    }
+
+    .lang-option.active {
+      background: var(--gradient-gold);
+      color: #060A18;
+    }
+
+    .nav-cta {
+      padding: 0.5rem 1.4rem;
+      background: var(--gradient-gold);
+      color: #060A18 !important;
+      border-radius: var(--radius-sm);
+      font-weight: 700 !important;
+      font-size: 0.85rem !important;
+      transition: transform 0.3s, box-shadow 0.3s !important;
+      letter-spacing: 0 !important;
+      border: none;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 24px rgba(88, 120, 162, 0.35);
+    }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 7rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 900px;
+      background: radial-gradient(circle, rgba(88, 120, 162, 0.08) 0%, rgba(88, 120, 162, 0.03) 40%, transparent 70%);
+      animation: hero-pulse 10s ease-in-out infinite;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      background: linear-gradient(to top, var(--bg), transparent);
+    }
+
+    @keyframes hero-pulse {
+      0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(1); }
+      50% { opacity: 1; transform: translateX(-50%) scale(1.08); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 7vw, 4rem);
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+
+    .hero h1 .gold {
+      background: var(--gradient-gold-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* ===== SECTIONS ===== */
+    .section {
+      padding: 5rem 2rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin-bottom: 3rem;
+      line-height: 1.8;
+    }
+
+    .section-content {
+      max-width: 900px;
+    }
+
+    .section-content p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    /* ===== STATS GRID ===== */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .stat-box {
+      padding: 2rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .stat-box:hover {
+      border-color: var(--gold);
+      box-shadow: 0 8px 24px rgba(88, 120, 162, 0.1);
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: var(--gradient-gold-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* ===== ROBOTS LIST ===== */
+    .robots-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .robot-card {
+      padding: 2rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      transition: all 0.3s;
+    }
+
+    .robot-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 8px 24px rgba(88, 120, 162, 0.1);
+    }
+
+    .robot-name {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .robot-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .robot-type {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      background: rgba(88, 120, 162, 0.1);
+      border: 1px solid var(--border-gold);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.02em;
+    }
+
+    /* ===== DISTRIBUTION CHART ===== */
+    .distribution-chart {
+      margin: 3rem 0;
+    }
+
+    .dist-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .dist-label {
+      min-width: 140px;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .dist-bar-container {
+      flex: 1;
+      height: 32px;
+      background: var(--bg-card);
+      border-radius: 6px;
+      overflow: hidden;
+      margin: 0 1.5rem;
+    }
+
+    .dist-bar {
+      height: 100%;
+      background: var(--gradient-gold);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dist-percent {
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #060A18;
+    }
+
+    /* ===== RISK LIST ===== */
+    .risk-list {
+      margin: 2rem 0;
+    }
+
+    .risk-item {
+      padding: 1.5rem;
+      background: rgba(239, 68, 68, 0.05);
+      border-left: 3px solid var(--red);
+      border-radius: var(--radius-xs);
+      margin-bottom: 1rem;
+    }
+
+    .risk-item-text {
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ===== GLOSSARY TERMS ===== */
+    .g-term {
+      color: var(--gold-light);
+      cursor: pointer;
+      border-bottom: 1px dotted var(--gold-dark);
+      transition: color 0.2s;
+    }
+
+    .g-term:hover {
+      color: var(--gold);
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(88, 120, 162, 0.08) 0%, rgba(88, 120, 162, 0.02) 100%);
+      border-top: 1px solid var(--border-gold);
+      border-bottom: 1px solid var(--border-gold);
+    }
+
+    .cta-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .cta-section p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      line-height: 1.8;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      background: var(--gradient-gold);
+      color: #060A18;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+      letter-spacing: -0.01em;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(88, 120, 162, 0.35);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--border-subtle);
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    footer p {
+      margin-bottom: 1rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      .nav-links {
+        gap: 1.2rem;
+      }
+
+      .nav-links a {
+        font-size: 0.8rem;
+      }
+
+      .section {
+        padding: 3rem 1.5rem;
+      }
+
+      .robots-list {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+
+      .dist-label {
+        min-width: 100px;
+        font-size: 0.9rem;
+      }
+
+      .dist-bar-container {
+        margin: 0 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-links {
+        gap: 0.8rem;
+      }
+
+      .nav-links a {
+        font-size: 0.75rem;
+      }
+
+      .hero {
+        padding: 6rem 1rem 2rem;
+      }
+
+      .section {
+        padding: 2.5rem 1rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .robots-list {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .robot-card,
+      .stat-box {
+        padding: 1.5rem;
+      }
+
+      .dist-label {
+        min-width: 80px;
+        font-size: 0.8rem;
+      }
+
+      .dist-bar-container {
+        margin: 0 0.8rem;
+      }
+
+      .dist-percent {
+        font-size: 0.7rem;
+      }
+    }
+  
+    .hero { min-height: auto; padding: 8rem 2rem 3rem; }
+    .guide-list { display: grid; gap: 1.2rem; margin-top: 2rem; }
+    .guide-card { display: block; padding: 1.6rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); text-decoration: none; transition: border-color .3s; }
+    .guide-card:hover { border-color: var(--gold); }
+    .guide-card h2 { font-size: 1.25rem; color: var(--gold-light); margin-bottom: .4rem; }
+    .guide-card p { color: var(--text-secondary); font-size: .95rem; }
+    .section-content a { color: var(--gold-light); }
+    .crumb { font-size: .85rem; color: var(--text-muted); margin-bottom: 1rem; }
+    .crumb a { color: var(--gold-light); text-decoration: none; }
+    .others { margin-top: 1rem; }
+    .others a { display: block; margin-bottom: .5rem; }
+  </style>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="5613819f-c081-4f1f-a3a8-2257fbcf3b73"></script>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="/" class="nav-logo">KAL ecosystem</a>
+  <ul class="nav-links">
+    <li><a href="/#etapes">Comment ça marche</a></li>
+    <li><a href="/robots-trading-or-bitcoin/">Robots de trading</a></li>
+    <li><a href="/guides/">Guides</a></li>
+    <li><a href="/about/">À propos</a></li>
+    <li><a href="https://home.kalmydas.com/v2.1/" class="nav-cta" data-umami-event="cta_nav_lancer_app" data-umami-event-source="guides_navbar" data-umami-event-destination="home">Ouvrir l’application →</a></li>
+  </ul>
+</nav>
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="crumb"><a href="/">KAL ecosystem</a> › <a href="/guides/">Guides</a></p>
+    <h1>Garder ses clés, ça veut dire quoi ?</h1>
+    <p class="hero-sub">Sans vos clés, vos cryptos ne sont pas à vous. La phrase revient partout sous une forme ou une autre. Voici ce qu’elle veut dire et comment ne pas se faire piéger.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <h2 class="section-title" style="font-size:clamp(1.6rem,4vw,2.4rem)">Deux sortes de portefeuilles</h2>
+    <div class="section-content">
+      <p>Sur une plateforme d’échange, la plateforme garde vos cryptos pour vous. C’est un portefeuille dépositaire. C’est pratique. Vous dépendez d’elle.</p>
+      <p>Avec un portefeuille non dépositaire, c’est vous qui gardez la clé. Vos fonds ne dépendent d’aucune plateforme.</p>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <h2 class="section-title" style="font-size:clamp(1.6rem,4vw,2.4rem)">Les douze mots</h2>
+    <div class="section-content">
+      <p>La clé prend souvent la forme de douze mots, la phrase de récupération. Qui a ces douze mots a le portefeuille.</p>
+      <p>Notez-les sur papier, rangez-les à l’abri, ne les donnez à personne. Aucun service sérieux ne vous les demandera jamais.</p>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <h2 class="section-title" style="font-size:clamp(1.6rem,4vw,2.4rem)">Ce que ça change</h2>
+    <div class="section-content">
+      <p>Aucune plateforme ne tient votre portefeuille. Vous signez vous-même chaque opération.</p>
+      <p>En retour, vous êtes seul à pouvoir le retrouver. Si vous perdez vos douze mots, personne ne pourra vous les rendre. Aucune banque, aucun support ne le peut, nous non plus.</p>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <h2 class="section-title" style="font-size:clamp(1.6rem,4vw,2.4rem)">Les pièges à éviter</h2>
+    <div class="section-content">
+      <p>Le faux support qui vous écrit en privé et demande vos douze mots. La photo des douze mots rangée dans le téléphone. Le site copié qui ressemble au vrai.</p>
+      <p>Vérifiez toujours l’adresse du site avant de signer. Dans le doute, ne signez pas.</p>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <h2 class="section-title" style="font-size:clamp(1.6rem,4vw,2.4rem)">KALpay, le portefeuille de KAL ecosystem</h2>
+    <div class="section-content">
+      <p>KALpay crée un portefeuille sur votre appareil, avec ses douze mots, sans compte ni courriel. Vos douze mots restent sur cet appareil.</p>
+      <p>Il marche sur Base, avec le même jeton KAL que les autres applications de KAL ecosystem. Vous pouvez aussi utiliser MetaMask ou WalletConnect.</p>
+      <p><a href="https://home.kalmydas.com/v2.1/pay">Ouvrir KALpay dans l’application</a></p>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <span class="section-label">Questions fréquentes</span>
+    <div class="section-content">
+      <p><strong>Qu’est-ce qu’un portefeuille non dépositaire ?</strong><br />Un portefeuille dont vous gardez seul la clé. Vos fonds ne dépendent d’aucune plateforme.</p>
+      <p><strong>À quoi servent les douze mots ?</strong><br />C’est la phrase de récupération. Elle permet de retrouver le portefeuille. Qui a les douze mots a le portefeuille, il ne faut jamais les donner.</p>
+      <p><strong>Que se passe-t-il si je perds mes douze mots ?</strong><br />Personne ne peut vous les rendre. Si l’appareil est perdu aussi, les fonds sont perdus.</p>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <span class="section-label">Autres guides</span>
+    <div class="section-content others">
+      <a href="/guides/trading-or-sans-courtier/">Le trading de l’or sans courtier, comment ça marche ?</a>
+      <a href="/guides/robot-de-trading-fiable/">Un robot de trading, c’est fiable ?</a>
+    </div>
+  </div>
+</section>
+<section class="cta-section">
+  <div class="container">
+    <h2>Voir KAL ecosystem en vrai</h2>
+    <div class="cta-buttons">
+      <a href="https://home.kalmydas.com/v2.1/" class="btn-primary" data-umami-event="cta_guide" data-umami-event-source="guide_portefeuille-non-depositaire" data-umami-event-destination="home">Ouvrir l’application →</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <p>KAL ecosystem, quatre applications sur Base autour d’un seul jeton, le KAL.</p>
+  <p style="font-size: 0.85rem;"><a href="/guides/" style="color: var(--gold-light);">Guides</a> · <a href="/terms.html" style="color: var(--gold-light);">Conditions d’utilisation</a> · <a href="/privacy.html" style="color: var(--gold-light);">Confidentialité</a> · <a href="/cookies.html" style="color: var(--gold-light);">Cookies</a></p>
+  <p style="font-size: 0.75rem; max-width: 820px; margin: 0 auto;"><strong>Avertissement risques&nbsp;:</strong> Kal Mydas est un protocole expérimental. Le trading algorithmique et les crypto-actifs comportent un risque élevé de perte totale du capital. Les chiffres de performance cités sont des simulations historiques sur 4 à 21 ans de données XAUUSD. L’exécution réelle via gTrade peut produire des résultats différents. Les performances passées ne garantissent pas les performances futures. Ce site ne constitue ni un conseil financier ni une sollicitation ni une offre d’achat ou de vente d’instruments financiers.</p>
+</footer>
+<script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); });
+</script>
+</body>
+</html>
